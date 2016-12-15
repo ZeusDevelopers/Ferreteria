@@ -1,0 +1,87 @@
+C:\Users\chino\Desktop\PVFP\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\chino\Desktop\PVFP\PVFP\bin\Debug\PVFP.exe
+C:\Users\chino\Desktop\PVFP\PVFP\bin\Debug\PVFP.pdb
+C:\Users\chino\Desktop\PVFP\PVFP\bin\Debug\MySql.Data.dll
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmConsulta.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmInicioSesion.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmMenuAdmin.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.Properties.Resources.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.exe
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.pdb
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmCategorias.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.exe
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.pdb
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\bin\Debug\PVFP.exe
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\bin\Debug\PVFP.pdb
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmCategorias.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmConsulta.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmInicioSesion.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmAltaProductos.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmMenuAdmin.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.Properties.Resources.resources
+C:\Users\angel\Documents\Respaldos\Agencia\PVFP\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.exe
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.pdb
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\bin\Debug\PVFP.exe
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\bin\Debug\PVFP.pdb
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmCategorias.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmConsulta.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmInicioSesion.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmAltaProductos.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmMenuAdmin.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.Properties.Resources.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmAltaProductos.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmEmpleados.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmEmpleados.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.exe
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.pdb
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmCategorias.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmConsulta.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmEmpleados.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmInicioSesion.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmAltaProductos.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmMenuAdmin.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.Properties.Resources.resources
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFP\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmAlmacen.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmEntradas.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmPerdida.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmProveedores.resources
+C:\Users\chino\Desktop\PVFP\PVFP\obj\Debug\PVFP.FrmTiposCargos.resources
+C:\Users\angel\Documents\Semestre 7\PVFP\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\angel\Documents\Semestre 7\PVFP\PVFP\obj\Debug\PVFP.exe
+C:\Users\angel\Documents\Semestre 7\PVFP\PVFP\obj\Debug\PVFP.pdb
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.exe
+C:\Users\chino\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.pdb
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.exe
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.pdb
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmAlmacen.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmCategorias.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmConsulta.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmEmpleados.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmEntradas.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmInicioSesion.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmAltaProductos.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmMenuAdmin.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmPerdida.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmProveedores.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.FrmTiposCargos.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.Properties.Resources.resources
+C:\Users\angel\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\PVFPActualizado\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
