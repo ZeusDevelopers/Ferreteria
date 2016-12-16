@@ -203,3 +203,6 @@ C:\Users\salaz\Dropbox\Carpeta del equipo Zeus Developers\Ferreteria y Plomeria\
 C:\Users\salaz\Documents\PVFPActualizadoEntradas(1412)\PVFP\bin\Debug\PVFP.exe.config
 C:\Users\salaz\Documents\PVFPActualizadoEntradas(1412)\PVFP\obj\Debug\PVFP.exe
 C:\Users\salaz\Documents\PVFPActualizadoEntradas(1412)\PVFP\obj\Debug\PVFP.pdb
+C:\Users\chino\Desktop\Ferreteria\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.exe
+C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.pdb
