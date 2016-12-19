@@ -206,3 +206,6 @@ C:\Users\salaz\Documents\PVFPActualizadoEntradas(1412)\PVFP\obj\Debug\PVFP.pdb
 C:\Users\chino\Desktop\Ferreteria\PVFP\bin\Debug\PVFP.exe.config
 C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.exe
 C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.pdb
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.pdb
