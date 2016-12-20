@@ -46,7 +46,7 @@ namespace PVFP
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                ArregloID.Add(_reader["Descripcion"].ToString());                
+                ArregloID.Add(_reader["Descripcion"].ToString());
             }
             conexion.Close();
         }

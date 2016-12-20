@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;  //Referencia mysqldata
 using System.IO;
 using System.Windows.Forms;
 using System.Collections;
-//hola
+
 namespace PVFP
 {
     class ClsAlmacen

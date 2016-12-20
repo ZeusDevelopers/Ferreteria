@@ -179,6 +179,7 @@
             this.btnaalmacen.TabIndex = 3;
             this.btnaalmacen.Text = "Enviar";
             this.btnaalmacen.UseVisualStyleBackColor = true;
+            this.btnaalmacen.Click += new System.EventHandler(this.btnaalmacen_Click);
             // 
             // label4
             // 

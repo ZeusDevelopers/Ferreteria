@@ -45,5 +45,10 @@ namespace PVFP
             
             txtcantidadapiso.Text = "";
         }
+
+        private void btnaalmacen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
