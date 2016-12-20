@@ -44,9 +44,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbaalmacen = new System.Windows.Forms.ComboBox();
             this.txtcantidadaalmacen = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -56,9 +59,10 @@
             this.Producto,
             this.Piso,
             this.EnAlmacen});
-            this.dataGridView1.Location = new System.Drawing.Point(334, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(410, 60);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(366, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(521, 582);
             this.dataGridView1.TabIndex = 0;
             // 
             // Producto
@@ -83,9 +87,11 @@
             this.groupBox1.Controls.Add(this.btnapiso);
             this.groupBox1.Controls.Add(this.txtcantidadapiso);
             this.groupBox1.Controls.Add(this.cmbapiso);
-            this.groupBox1.Location = new System.Drawing.Point(58, 41);
+            this.groupBox1.Location = new System.Drawing.Point(32, 51);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 124);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Size = new System.Drawing.Size(333, 210);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "De almacen a piso";
@@ -93,26 +99,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 33);
+            this.label1.Location = new System.Drawing.Point(23, 56);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(82, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Producto:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Location = new System.Drawing.Point(25, 102);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Cantidad:";
             // 
             // btnapiso
             // 
-            this.btnapiso.Location = new System.Drawing.Point(94, 83);
+            this.btnapiso.Location = new System.Drawing.Point(157, 140);
+            this.btnapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnapiso.Name = "btnapiso";
-            this.btnapiso.Size = new System.Drawing.Size(75, 23);
+            this.btnapiso.Size = new System.Drawing.Size(125, 39);
             this.btnapiso.TabIndex = 2;
             this.btnapiso.Text = "Enviar";
             this.btnapiso.UseVisualStyleBackColor = true;
@@ -120,17 +129,19 @@
             // 
             // txtcantidadapiso
             // 
-            this.txtcantidadapiso.Location = new System.Drawing.Point(73, 57);
+            this.txtcantidadapiso.Location = new System.Drawing.Point(122, 96);
+            this.txtcantidadapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtcantidadapiso.Name = "txtcantidadapiso";
-            this.txtcantidadapiso.Size = new System.Drawing.Size(121, 20);
+            this.txtcantidadapiso.Size = new System.Drawing.Size(199, 29);
             this.txtcantidadapiso.TabIndex = 2;
             // 
             // cmbapiso
             // 
             this.cmbapiso.FormattingEnabled = true;
-            this.cmbapiso.Location = new System.Drawing.Point(73, 30);
+            this.cmbapiso.Location = new System.Drawing.Point(122, 51);
+            this.cmbapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbapiso.Name = "cmbapiso";
-            this.cmbapiso.Size = new System.Drawing.Size(121, 21);
+            this.cmbapiso.Size = new System.Drawing.Size(199, 30);
             this.cmbapiso.TabIndex = 2;
             // 
             // groupBox2
@@ -140,9 +151,11 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.cmbaalmacen);
             this.groupBox2.Controls.Add(this.txtcantidadaalmacen);
-            this.groupBox2.Location = new System.Drawing.Point(58, 206);
+            this.groupBox2.Location = new System.Drawing.Point(32, 301);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 116);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Size = new System.Drawing.Size(333, 196);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "De piso a almacen";
@@ -150,17 +163,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 22);
+            this.label3.Location = new System.Drawing.Point(23, 37);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(82, 22);
             this.label3.TabIndex = 4;
             this.label3.Text = "Producto:";
             // 
             // btnaalmacen
             // 
-            this.btnaalmacen.Location = new System.Drawing.Point(94, 72);
+            this.btnaalmacen.Location = new System.Drawing.Point(157, 122);
+            this.btnaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnaalmacen.Name = "btnaalmacen";
-            this.btnaalmacen.Size = new System.Drawing.Size(75, 23);
+            this.btnaalmacen.Size = new System.Drawing.Size(125, 39);
             this.btnaalmacen.TabIndex = 3;
             this.btnaalmacen.Text = "Enviar";
             this.btnaalmacen.UseVisualStyleBackColor = true;
@@ -168,35 +183,61 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 49);
+            this.label4.Location = new System.Drawing.Point(25, 83);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 5;
             this.label4.Text = "Cantidad:";
             // 
             // cmbaalmacen
             // 
             this.cmbaalmacen.FormattingEnabled = true;
-            this.cmbaalmacen.Location = new System.Drawing.Point(73, 19);
+            this.cmbaalmacen.Location = new System.Drawing.Point(122, 32);
+            this.cmbaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbaalmacen.Name = "cmbaalmacen";
-            this.cmbaalmacen.Size = new System.Drawing.Size(121, 21);
+            this.cmbaalmacen.Size = new System.Drawing.Size(199, 30);
             this.cmbaalmacen.TabIndex = 5;
             // 
             // txtcantidadaalmacen
             // 
-            this.txtcantidadaalmacen.Location = new System.Drawing.Point(73, 46);
+            this.txtcantidadaalmacen.Location = new System.Drawing.Point(122, 78);
+            this.txtcantidadaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtcantidadaalmacen.Name = "txtcantidadaalmacen";
-            this.txtcantidadaalmacen.Size = new System.Drawing.Size(121, 20);
+            this.txtcantidadaalmacen.Size = new System.Drawing.Size(199, 29);
             this.txtcantidadaalmacen.TabIndex = 4;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(981, 29);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(26, 19);
+            this.xToolStripMenuItem.Text = "X";
             // 
             // FrmAlmacen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 368);
+            this.ClientSize = new System.Drawing.Size(981, 623);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FrmAlmacen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -207,7 +248,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -229,5 +273,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbaalmacen;
         private System.Windows.Forms.TextBox txtcantidadaalmacen;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }

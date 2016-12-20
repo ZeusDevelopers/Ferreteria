@@ -45,9 +45,10 @@
             this.Publico,
             this.Mayoreo,
             this.Subdis});
-            this.dataGridView1.Location = new System.Drawing.Point(76, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(37, 39);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(430, 318);
+            this.dataGridView1.Size = new System.Drawing.Size(502, 538);
             this.dataGridView1.TabIndex = 0;
             // 
             // Publico
@@ -71,28 +72,31 @@
             this.xToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(617, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(640, 36);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // xToolStripMenuItem
             // 
             this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.xToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(26, 19);
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // FrmTiposCargos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 354);
+            this.ClientSize = new System.Drawing.Size(640, 599);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FrmTiposCargos";
             this.Text = "FrmTiposCargos";
             this.Load += new System.EventHandler(this.FrmTiposCargos_Load);
