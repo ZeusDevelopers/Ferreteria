@@ -23,8 +23,16 @@ namespace PVFP
         #region MYSQL
         public static MySqlConnection ObtenerConexion(string pathfinal)
         {
-            MySqlConnection conectar = new MySqlConnection(pathfinal);
-            conectar.Open();
+            MySqlConnection conectar=null;
+            try
+            {
+                conectar = new MySqlConnection(pathfinal);
+                conectar.Open();                
+            }
+            catch (Exception ex)
+            {
+               
+            }
             return conectar;
         }
 

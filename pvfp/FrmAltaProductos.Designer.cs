@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        
 
         /// <summary>
         /// Clean up any resources being used.
@@ -31,6 +32,7 @@
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.Txtcodigobarras = new System.Windows.Forms.TextBox();
             this.TxtMarca = new System.Windows.Forms.TextBox();
@@ -45,7 +47,6 @@
             this.txtFolio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.txtProductoID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,6 +83,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -117,6 +119,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnGuardar);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.Txtcodigobarras);
             this.groupBox1.Controls.Add(this.TxtMarca);
@@ -131,7 +134,6 @@
             this.groupBox1.Controls.Add(this.txtFolio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label);
-            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.cmbTipo);
             this.groupBox1.Controls.Add(this.txtProductoID);
             this.groupBox1.Controls.Add(this.label5);
@@ -143,6 +145,20 @@
             this.groupBox1.Size = new System.Drawing.Size(1200, 863);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnGuardar.ImageIndex = 0;
+            this.BtnGuardar.Location = new System.Drawing.Point(464, 681);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(155, 97);
+            this.BtnGuardar.TabIndex = 68;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label17
             // 
@@ -287,18 +303,6 @@
             this.label.TabIndex = 58;
             this.label.Text = "Tipo";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(452, 694);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(180, 89);
-            this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // cmbTipo
             // 
             this.cmbTipo.Font = new System.Drawing.Font("Calibri", 12F);
@@ -348,6 +352,7 @@
             this.txtCostoCompra.Name = "txtCostoCompra";
             this.txtCostoCompra.Size = new System.Drawing.Size(181, 37);
             this.txtCostoCompra.TabIndex = 4;
+            this.txtCostoCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoCompra_KeyPress);
             // 
             // label4
             // 
@@ -580,6 +585,7 @@
             this.Txt_Compra.Name = "Txt_Compra";
             this.Txt_Compra.Size = new System.Drawing.Size(181, 37);
             this.Txt_Compra.TabIndex = 4;
+//            this.Txt_Compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Compra_KeyPress);
             // 
             // label12
             // 
@@ -656,24 +662,28 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnEliminar.Location = new System.Drawing.Point(550, 723);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(180, 89);
+            this.btnEliminar.Size = new System.Drawing.Size(180, 98);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnModificar.Location = new System.Drawing.Point(321, 723);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(180, 89);
+            this.btnModificar.Size = new System.Drawing.Size(180, 98);
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -681,7 +691,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xToolStripMenuItem});
+            this.xToolStripMenuItem,
+            this._toolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(15, 5, 0, 5);
@@ -696,6 +707,15 @@
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
             this.xToolStripMenuItem.Size = new System.Drawing.Size(35, 29);
             this.xToolStripMenuItem.Text = "X";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            // 
+            // _toolStripMenuItem
+            // 
+            this._toolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._toolStripMenuItem.Name = "_toolStripMenuItem";
+            this._toolStripMenuItem.Size = new System.Drawing.Size(31, 29);
+            this._toolStripMenuItem.Text = "_";
+            this._toolStripMenuItem.Click += new System.EventHandler(this._toolStripMenuItem_Click);
             // 
             // FrmAltaProductos
             // 
@@ -736,7 +756,6 @@
         private System.Windows.Forms.TextBox txtdescripcion;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.TabPage tabPModificar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TabPage tabPMostrar;
@@ -783,5 +802,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _toolStripMenuItem;
+        private System.Windows.Forms.Button BtnGuardar;
     }
 }

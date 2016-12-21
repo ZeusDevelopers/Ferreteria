@@ -13,33 +13,68 @@ namespace PVFP
 {
     public partial class FrmAltaProductos : Form
     {
+        
         public FrmAltaProductos()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            BtnGuardar.Image =new  Bitmap(PVFP.Properties.Resources.ImgGuardar);
+            btnEliminar.Image = new Bitmap(PVFP.Properties.Resources.Eliminar);
+            btnModificar.Image = new Bitmap(PVFP.Properties.Resources.Actualizar);            
         }
         ClsAltaProductos productos = new ClsAltaProductos();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                productos.AgregarProducto("0", txtNombre.Text,
-                    (cmbCategoria.SelectedIndex + 1).ToString(), txtCostoCompra.Text,
-                    cmbTipo.SelectedItem.ToString(), txtFolio.Text, txtdescripcion.Text, txtUM.Text, TxtMarca.Text,Txtcodigobarras.Text);
-                MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCostoCompra.Text = "";
-                txtFolio.Text = "";
-                TxtMarca.Text = "";
-                txtNombre.Text = "";
-                txtUM.Text = "";
-                txtdescripcion.Text = "";
-                cmbTipo.Text = "";
-                cmbCategoria.Text = "";
-                Txtcodigobarras.Text = "";
-                //actualizar campos                
-                cmb_modificar();                
-                llenar_mostrar();
-                //se obtiene proximo id
-                obtener_id();             
+                if (txtNombre.Text == "")
+                {
+                    MessageBox.Show("Ingrese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtCostoCompra.Text == "")
+                {
+                    MessageBox.Show("Ingrese Precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtFolio.Text == "")
+                {
+                    MessageBox.Show("Ingrese Folio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }             
+                else if (txtUM.Text == "")
+                {
+                    MessageBox.Show("Ingrese Unidad Metrica", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (TxtMarca.Text == "")
+                {
+                    MessageBox.Show("Ingrese Marca", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtdescripcion.Text == "")
+                {
+                    MessageBox.Show("Ingrese descripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }              
+                else if (txt_codigodebarras.Text == "")
+                {
+                    MessageBox.Show("Ingrese codigo de barras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {                                 
+                    productos.AgregarProducto("0", txtNombre.Text,
+                        (cmbCategoria.SelectedIndex + 1).ToString(), txtCostoCompra.Text,
+                        cmbTipo.SelectedItem.ToString(), txtFolio.Text, txtdescripcion.Text, txtUM.Text, TxtMarca.Text, Txtcodigobarras.Text);
+                    MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtCostoCompra.Text = "";
+                    txtFolio.Text = "";
+                    TxtMarca.Text = "";
+                    txtNombre.Text = "";
+                    txtUM.Text = "";
+                    txtdescripcion.Text = "";
+                    cmbTipo.Text = "";
+                    cmbCategoria.Text = "";
+                    Txtcodigobarras.Text = "";
+                    //actualizar campos                
+                    cmb_modificar();
+                    llenar_mostrar();
+                    //se obtiene proximo id
+                    obtener_id();
+                }
             }
             catch (Exception ex)
             {
@@ -51,8 +86,9 @@ namespace PVFP
         SqlConnection conexion = new SqlConnection();        
         private void FrmAltaProductos_Load(object sender, EventArgs e)
         {
-
-            obtener_id();
+            try
+            {
+             obtener_id();
             //Lenar categorias
             Categorias.ConsultarPath();
             Categorias.CargarCategorias();
@@ -73,7 +109,12 @@ namespace PVFP
             //Llena_campos_editar
             cmb_modificar();
             //llena dvg
-            llenar_mostrar();
+            llenar_mostrar();          
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error "+ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }     
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -138,21 +179,12 @@ namespace PVFP
             }  
         }
         public void llenar_mostrar()
-        {
-            // gdv con todos los elementos
+        {            
             dgvProducto.DataSource = productos.VerTodosProductos();                        
         }
         public void obtener_id()
-        {
-            try
-            {
-                txtProductoID.Text = (Int32.Parse(productos.Obtener_productoId()) + 1).ToString(); ;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
+        {            
+                txtProductoID.Text = (Int32.Parse(productos.Obtener_productoId()) + 1).ToString(); ;                       
         }
         public void llenar_modifcacion(string indice) {
             try
@@ -166,7 +198,7 @@ namespace PVFP
             txt_unidad_medida.Text = elemento[8].ToString();            
             txt_descripciom.Text= elemento[7].ToString();      
             txt_codigodebarras.Text= elemento[9].ToString();
-                Cmb_categoria.SelectedIndex= Int32.Parse( elemento[3].ToString())-1;                           
+            Cmb_categoria.SelectedIndex= Int32.Parse( elemento[3].ToString())-1;                           
             for (int i = 0; i < Cmb_Tipo.Items.Count; i++)
             {
                 if (Cmb_Tipo.Items[i].ToString() == elemento[5].ToString())
@@ -186,20 +218,35 @@ namespace PVFP
         {
             llenar_modifcacion(CmbId.SelectedItem.ToString());
         }
-
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
             string a;
             for (int i = 0; i < dgvProducto.Rows.Count; i++)
             {
                 a = dgvProducto[1, i].Value.ToString();
-                if (txtBuscar.Text==a)
+                if (a.Contains(txtBuscar.Text))
                 {                    
                     dgvProducto.Rows[i].Selected = true;
                     dgvProducto.FirstDisplayedScrollingRowIndex = i;
                     break;
                 }
             }
+        }
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void _toolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void txtCostoCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsNumber(e.KeyChar) || e.KeyChar=='.' || Char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+           
         }
     }
 }

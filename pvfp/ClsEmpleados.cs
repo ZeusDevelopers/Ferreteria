@@ -37,7 +37,7 @@ namespace PVFP
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `empleados`(`Empleado_ID`, `Nombre`, `Apellido`, `Sexo`, `Direccion`, `Telefono`, `Sesion_ID`) VALUES ('" + id + "','" + nombre + "','" + apellido + "','" + sexo + "','" + direccion + "','" + telefono + "','" + id + "')"), conexion);
-            MySqlDataReader _reader = _comando.ExecuteReader();
+             _comando.ExecuteReader();
             conexion.Close();
         }
 

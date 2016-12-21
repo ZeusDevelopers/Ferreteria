@@ -59,8 +59,19 @@ namespace PVFP
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO productos (`Producto_ID`, `Nombre`, `Categoria_ID`, `CostoCompra`, `Tipo_ID`, `Codigo`, `Descripcion`, `UM`,`Marca`,`CodigoBarras`) VALUES" +
-                " (" + Producto_ID + ",'" + Nombre + "'," + Categoria_ID + "," + CostoCompra + "," + Tipo_ID + ",'" + Folio + "','" + Descripcion + "','" + UM + "','" + marca+ "','" +codigobarras+"')"), conexion);
-            MySqlDataReader _reader = _comando.ExecuteReader();
+             "(@productid,@nombre,@categoriaid,@costocompra,@tipoid,@codigo,@descripcion,@um,@marca,@codigobarras)"), conexion);
+            //  " (" + Producto_ID + ",'" + Nombre + "'," + Categoria_ID + "," + CostoCompra + "," + Tipo_ID + ",'" + Folio + "','" + Descripcion + "','" + UM + "','" + marca + "','" + codigobarras + "')"), conexion);
+            _comando.Parameters.AddWithValue("@productid", Producto_ID);
+            _comando.Parameters.AddWithValue("@nombre", Nombre);
+            _comando.Parameters.AddWithValue("@categoriaid", Categoria_ID);
+            _comando.Parameters.AddWithValue("@costocompra", CostoCompra);
+            _comando.Parameters.AddWithValue("@tipoid", Tipo_ID);
+            _comando.Parameters.AddWithValue("@codigo", Folio);
+            _comando.Parameters.AddWithValue("@descripcion", Descripcion);
+            _comando.Parameters.AddWithValue("@um", UM);
+            _comando.Parameters.AddWithValue("@marca", marca);
+            _comando.Parameters.AddWithValue("@codigobarras", codigobarras);
+            MySqlDataReader _reader =_comando.ExecuteReader();
             conexion.Close();
         }
         public ArrayList ArregloProductomod;
@@ -103,8 +114,9 @@ namespace PVFP
         public void BorrarProducto(string producto)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
-            MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `productos`  WHERE Producto_ID = " + producto), conexion);
-            MySqlDataReader _reader = _comando.ExecuteReader();
+            MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `productos`  WHERE Producto_ID = @producto"), conexion);
+            _comando.Parameters.AddWithValue("@producto", producto);
+            _comando.ExecuteReader();
             conexion.Close();
         }
         public string Obtener_productoId()
