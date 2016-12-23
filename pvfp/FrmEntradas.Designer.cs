@@ -77,6 +77,7 @@
             this.gbxEntrada.Controls.Add(this.btnAgrProductos);
             this.gbxEntrada.Controls.Add(this.label2);
             this.gbxEntrada.Controls.Add(this.cmbProveedores);
+            this.gbxEntrada.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxEntrada.Location = new System.Drawing.Point(43, 37);
             this.gbxEntrada.Name = "gbxEntrada";
             this.gbxEntrada.Size = new System.Drawing.Size(744, 428);
@@ -86,7 +87,7 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Location = new System.Drawing.Point(30, 321);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(98, 53);
@@ -163,7 +164,7 @@
             // 
             // btnComprar
             // 
-            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComprar.Location = new System.Drawing.Point(30, 237);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(98, 53);
@@ -175,25 +176,25 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 20);
+            this.label4.Size = new System.Drawing.Size(96, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "Entrada_ID";
             // 
             // txtEntradaID
             // 
-            this.txtEntradaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntradaID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEntradaID.Location = new System.Drawing.Point(126, 33);
             this.txtEntradaID.Name = "txtEntradaID";
             this.txtEntradaID.ReadOnly = true;
-            this.txtEntradaID.Size = new System.Drawing.Size(124, 24);
+            this.txtEntradaID.Size = new System.Drawing.Size(124, 29);
             this.txtEntradaID.TabIndex = 7;
             // 
             // btnAgrProductos
             // 
-            this.btnAgrProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgrProductos.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgrProductos.Location = new System.Drawing.Point(30, 149);
             this.btnAgrProductos.Name = "btnAgrProductos";
             this.btnAgrProductos.Size = new System.Drawing.Size(98, 53);
@@ -205,20 +206,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(312, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(87, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Proveedor";
             // 
             // cmbProveedores
             // 
-            this.cmbProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProveedores.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProveedores.FormattingEnabled = true;
             this.cmbProveedores.Location = new System.Drawing.Point(408, 33);
             this.cmbProveedores.Name = "cmbProveedores";
-            this.cmbProveedores.Size = new System.Drawing.Size(306, 26);
+            this.cmbProveedores.Size = new System.Drawing.Size(306, 30);
             this.cmbProveedores.TabIndex = 0;
             this.cmbProveedores.SelectedIndexChanged += new System.EventHandler(this.cmbProveedores_SelectedIndexChanged);
             this.cmbProveedores.Click += new System.EventHandler(this.cmbProveedores_Click);
@@ -236,9 +237,10 @@
             this.gbxEntCompra.Controls.Add(this.txtCantidad);
             this.gbxEntCompra.Controls.Add(this.label1);
             this.gbxEntCompra.Controls.Add(this.cmbProducto);
-            this.gbxEntCompra.Location = new System.Drawing.Point(177, 7);
+            this.gbxEntCompra.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxEntCompra.Location = new System.Drawing.Point(177, -8);
             this.gbxEntCompra.Name = "gbxEntCompra";
-            this.gbxEntCompra.Size = new System.Drawing.Size(411, 428);
+            this.gbxEntCompra.Size = new System.Drawing.Size(411, 443);
             this.gbxEntCompra.TabIndex = 1;
             this.gbxEntCompra.TabStop = false;
             this.gbxEntCompra.Text = "Comprar";
@@ -246,7 +248,7 @@
             // 
             // btnCalTotProd
             // 
-            this.btnCalTotProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalTotProd.Location = new System.Drawing.Point(35, 242);
             this.btnCalTotProd.Name = "btnCalTotProd";
             this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
@@ -257,7 +259,7 @@
             // 
             // btnTerminar
             // 
-            this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminar.Location = new System.Drawing.Point(245, 255);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(98, 53);
@@ -268,7 +270,7 @@
             // 
             // btnAgrPG
             // 
-            this.btnAgrPG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgrPG.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgrPG.Location = new System.Drawing.Point(245, 154);
             this.btnAgrPG.Name = "btnAgrPG";
             this.btnAgrPG.Size = new System.Drawing.Size(98, 53);
@@ -280,10 +282,10 @@
             // lblTotProd
             // 
             this.lblTotProd.AutoSize = true;
-            this.lblTotProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotProd.Location = new System.Drawing.Point(29, 298);
             this.lblTotProd.Name = "lblTotProd";
-            this.lblTotProd.Size = new System.Drawing.Size(126, 20);
+            this.lblTotProd.Size = new System.Drawing.Size(121, 22);
             this.lblTotProd.TabIndex = 13;
             this.lblTotProd.Text = "Total Producto";
             this.lblTotProd.Visible = false;
@@ -291,49 +293,49 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(31, 170);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 20);
+            this.label7.Size = new System.Drawing.Size(119, 22);
             this.label7.TabIndex = 12;
             this.label7.Text = "Costo Unitario";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(31, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.Size = new System.Drawing.Size(79, 22);
             this.label6.TabIndex = 11;
             this.label6.Text = "Cantidad";
             // 
             // txtTotalProducto
             // 
-            this.txtTotalProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalProducto.Location = new System.Drawing.Point(33, 337);
             this.txtTotalProducto.Name = "txtTotalProducto";
             this.txtTotalProducto.ReadOnly = true;
-            this.txtTotalProducto.Size = new System.Drawing.Size(124, 26);
+            this.txtTotalProducto.Size = new System.Drawing.Size(124, 29);
             this.txtTotalProducto.TabIndex = 10;
             this.txtTotalProducto.Visible = false;
             // 
             // txtCostoUnit
             // 
-            this.txtCostoUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCostoUnit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCostoUnit.Location = new System.Drawing.Point(35, 193);
             this.txtCostoUnit.Name = "txtCostoUnit";
-            this.txtCostoUnit.Size = new System.Drawing.Size(100, 26);
+            this.txtCostoUnit.Size = new System.Drawing.Size(100, 29);
             this.txtCostoUnit.TabIndex = 9;
             this.txtCostoUnit.Text = "0";
             this.txtCostoUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoUnit_KeyPress);
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(35, 134);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 26);
+            this.txtCantidad.Size = new System.Drawing.Size(100, 29);
             this.txtCantidad.TabIndex = 8;
             this.txtCantidad.Text = "0";
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
@@ -341,20 +343,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 45);
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 7;
             this.label1.Text = "Producto";
             // 
             // cmbProducto
             // 
-            this.cmbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(31, 71);
+            this.cmbProducto.Location = new System.Drawing.Point(123, 75);
             this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(247, 28);
+            this.cmbProducto.Size = new System.Drawing.Size(247, 30);
             this.cmbProducto.TabIndex = 0;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             this.cmbProducto.Click += new System.EventHandler(this.cmbProducto_Click);
