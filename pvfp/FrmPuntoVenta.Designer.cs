@@ -51,7 +51,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(41, 83);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(130, 92);
             this.btnBuscar.TabIndex = 0;
@@ -61,7 +61,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(204, 40);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(5);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1014, 355);
             this.richTextBox1.TabIndex = 1;
@@ -70,7 +70,7 @@
             // txtcodigo
             // 
             this.txtcodigo.Location = new System.Drawing.Point(815, 431);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcodigo.Margin = new System.Windows.Forms.Padding(5);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(403, 29);
             this.txtcodigo.TabIndex = 2;
@@ -96,9 +96,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(204, 408);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(394, 312);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -187,7 +187,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(41, 208);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 92);
             this.button1.TabIndex = 5;
@@ -218,6 +218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 741);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
@@ -229,7 +230,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmPuntoVenta";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

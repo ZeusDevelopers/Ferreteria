@@ -65,7 +65,7 @@
             // txtNom
             // 
             this.txtNom.Location = new System.Drawing.Point(167, 59);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(5);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(164, 29);
             this.txtNom.TabIndex = 0;
@@ -73,7 +73,7 @@
             // txttel
             // 
             this.txttel.Location = new System.Drawing.Point(167, 103);
-            this.txttel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txttel.Margin = new System.Windows.Forms.Padding(5);
             this.txttel.Name = "txttel";
             this.txttel.Size = new System.Drawing.Size(164, 29);
             this.txttel.TabIndex = 1;
@@ -81,7 +81,7 @@
             // txtcorreo
             // 
             this.txtcorreo.Location = new System.Drawing.Point(167, 147);
-            this.txtcorreo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcorreo.Margin = new System.Windows.Forms.Padding(5);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(164, 29);
             this.txtcorreo.TabIndex = 2;
@@ -89,7 +89,7 @@
             // txtdire
             // 
             this.txtdire.Location = new System.Drawing.Point(167, 191);
-            this.txtdire.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtdire.Margin = new System.Windows.Forms.Padding(5);
             this.txtdire.Name = "txtdire";
             this.txtdire.Size = new System.Drawing.Size(164, 29);
             this.txtdire.TabIndex = 3;
@@ -97,7 +97,7 @@
             // txtdescr
             // 
             this.txtdescr.Location = new System.Drawing.Point(167, 235);
-            this.txtdescr.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtdescr.Margin = new System.Windows.Forms.Padding(5);
             this.txtdescr.Name = "txtdescr";
             this.txtdescr.Size = new System.Drawing.Size(164, 29);
             this.txtdescr.TabIndex = 4;
@@ -105,7 +105,7 @@
             // txtbanco
             // 
             this.txtbanco.Location = new System.Drawing.Point(167, 279);
-            this.txtbanco.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtbanco.Margin = new System.Windows.Forms.Padding(5);
             this.txtbanco.Name = "txtbanco";
             this.txtbanco.Size = new System.Drawing.Size(164, 29);
             this.txtbanco.TabIndex = 5;
@@ -113,7 +113,7 @@
             // txtcuenta
             // 
             this.txtcuenta.Location = new System.Drawing.Point(167, 323);
-            this.txtcuenta.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcuenta.Margin = new System.Windows.Forms.Padding(5);
             this.txtcuenta.Name = "txtcuenta";
             this.txtcuenta.Size = new System.Drawing.Size(164, 29);
             this.txtcuenta.TabIndex = 6;
@@ -191,7 +191,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(133, 381);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 51);
             this.btnGuardar.TabIndex = 14;
@@ -205,9 +205,9 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.cmbNombre);
             this.groupBox1.Location = new System.Drawing.Point(52, 455);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(333, 210);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
@@ -216,7 +216,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(93, 142);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(125, 39);
             this.btnEliminar.TabIndex = 2;
@@ -227,7 +227,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(93, 93);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(125, 39);
             this.btnEditar.TabIndex = 1;
@@ -239,7 +239,7 @@
             // 
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Location = new System.Drawing.Point(65, 36);
-            this.cmbNombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbNombre.Margin = new System.Windows.Forms.Padding(5);
             this.cmbNombre.Name = "cmbNombre";
             this.cmbNombre.Size = new System.Drawing.Size(199, 30);
             this.cmbNombre.TabIndex = 0;
@@ -257,7 +257,7 @@
             this.Cuenta,
             this.Descripcion});
             this.dataGridView1.Location = new System.Drawing.Point(369, 59);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(978, 645);
             this.dataGridView1.TabIndex = 16;
@@ -305,7 +305,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1378, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1354, 36);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -322,7 +322,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 674);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1354, 674);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -343,7 +344,7 @@
             this.Controls.Add(this.txtNom);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmProveedores";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

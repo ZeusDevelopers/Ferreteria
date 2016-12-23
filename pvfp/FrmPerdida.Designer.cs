@@ -49,7 +49,7 @@
             // 
             this.cmbproducto.FormattingEnabled = true;
             this.cmbproducto.Location = new System.Drawing.Point(27, 110);
-            this.cmbproducto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbproducto.Margin = new System.Windows.Forms.Padding(5);
             this.cmbproducto.Name = "cmbproducto";
             this.cmbproducto.Size = new System.Drawing.Size(431, 30);
             this.cmbproducto.TabIndex = 0;
@@ -57,7 +57,7 @@
             // txtcantidad
             // 
             this.txtcantidad.Location = new System.Drawing.Point(215, 190);
-            this.txtcantidad.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcantidad.Margin = new System.Windows.Forms.Padding(5);
             this.txtcantidad.Name = "txtcantidad";
             this.txtcantidad.Size = new System.Drawing.Size(199, 29);
             this.txtcantidad.TabIndex = 1;
@@ -65,7 +65,7 @@
             // txtmotivo
             // 
             this.txtmotivo.Location = new System.Drawing.Point(27, 268);
-            this.txtmotivo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtmotivo.Margin = new System.Windows.Forms.Padding(5);
             this.txtmotivo.Multiline = true;
             this.txtmotivo.Name = "txtmotivo";
             this.txtmotivo.Size = new System.Drawing.Size(431, 117);
@@ -104,7 +104,7 @@
             // BtnAgregar
             // 
             this.BtnAgregar.Location = new System.Drawing.Point(178, 432);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(130, 49);
             this.BtnAgregar.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.Cantidad,
             this.Motivo});
             this.dataGridView1.Location = new System.Drawing.Point(506, 68);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(686, 531);
             this.dataGridView1.TabIndex = 7;
@@ -165,6 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1238, 670);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView1);
@@ -177,7 +178,7 @@
             this.Controls.Add(this.cmbproducto);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmPerdida";
             this.Text = "FrmPerdida";
             this.Load += new System.EventHandler(this.FrmPerdida_Load);

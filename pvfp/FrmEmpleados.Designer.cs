@@ -107,9 +107,9 @@
             this.groupBox4.Controls.Add(this.txtapelE);
             this.groupBox4.Controls.Add(this.txtnombreE);
             this.groupBox4.Location = new System.Drawing.Point(14, 411);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox4.Size = new System.Drawing.Size(628, 364);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
@@ -133,7 +133,7 @@
             "Masculino",
             "Femenino"});
             this.cmbBuscarNombre.Location = new System.Drawing.Point(222, 32);
-            this.cmbBuscarNombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbBuscarNombre.Margin = new System.Windows.Forms.Padding(5);
             this.cmbBuscarNombre.Name = "cmbBuscarNombre";
             this.cmbBuscarNombre.Size = new System.Drawing.Size(234, 30);
             this.cmbBuscarNombre.TabIndex = 38;
@@ -141,7 +141,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(460, 259);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(147, 86);
             this.btnEliminar.TabIndex = 37;
@@ -152,7 +152,7 @@
             // btnEditar
             // 
             this.btnEditar.Location = new System.Drawing.Point(303, 259);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(147, 86);
             this.btnEditar.TabIndex = 36;
@@ -177,7 +177,7 @@
             "Administrador",
             "Empleado"});
             this.cmbpuestoE.Location = new System.Drawing.Point(415, 179);
-            this.cmbpuestoE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbpuestoE.Margin = new System.Windows.Forms.Padding(5);
             this.cmbpuestoE.Name = "cmbpuestoE";
             this.cmbpuestoE.Size = new System.Drawing.Size(164, 30);
             this.cmbpuestoE.TabIndex = 34;
@@ -255,7 +255,7 @@
             // txtContraE
             // 
             this.txtContraE.Location = new System.Drawing.Point(415, 135);
-            this.txtContraE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtContraE.Margin = new System.Windows.Forms.Padding(5);
             this.txtContraE.Name = "txtContraE";
             this.txtContraE.Size = new System.Drawing.Size(164, 29);
             this.txtContraE.TabIndex = 26;
@@ -263,7 +263,7 @@
             // txtusuE
             // 
             this.txtusuE.Location = new System.Drawing.Point(415, 91);
-            this.txtusuE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtusuE.Margin = new System.Windows.Forms.Padding(5);
             this.txtusuE.Name = "txtusuE";
             this.txtusuE.Size = new System.Drawing.Size(164, 29);
             this.txtusuE.TabIndex = 25;
@@ -275,7 +275,7 @@
             "Masculino",
             "Femenino"});
             this.cmbsexoE.Location = new System.Drawing.Point(100, 181);
-            this.cmbsexoE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbsexoE.Margin = new System.Windows.Forms.Padding(5);
             this.cmbsexoE.Name = "cmbsexoE";
             this.cmbsexoE.Size = new System.Drawing.Size(164, 30);
             this.cmbsexoE.TabIndex = 24;
@@ -283,7 +283,7 @@
             // txttelefonoE
             // 
             this.txttelefonoE.Location = new System.Drawing.Point(100, 267);
-            this.txttelefonoE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txttelefonoE.Margin = new System.Windows.Forms.Padding(5);
             this.txttelefonoE.Name = "txttelefonoE";
             this.txttelefonoE.Size = new System.Drawing.Size(164, 29);
             this.txttelefonoE.TabIndex = 23;
@@ -291,7 +291,7 @@
             // txtdireE
             // 
             this.txtdireE.Location = new System.Drawing.Point(100, 223);
-            this.txtdireE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtdireE.Margin = new System.Windows.Forms.Padding(5);
             this.txtdireE.Name = "txtdireE";
             this.txtdireE.Size = new System.Drawing.Size(164, 29);
             this.txtdireE.TabIndex = 22;
@@ -299,7 +299,7 @@
             // txtapelE
             // 
             this.txtapelE.Location = new System.Drawing.Point(100, 137);
-            this.txtapelE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtapelE.Margin = new System.Windows.Forms.Padding(5);
             this.txtapelE.Name = "txtapelE";
             this.txtapelE.Size = new System.Drawing.Size(164, 29);
             this.txtapelE.TabIndex = 21;
@@ -307,7 +307,7 @@
             // txtnombreE
             // 
             this.txtnombreE.Location = new System.Drawing.Point(100, 93);
-            this.txtnombreE.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtnombreE.Margin = new System.Windows.Forms.Padding(5);
             this.txtnombreE.Name = "txtnombreE";
             this.txtnombreE.Size = new System.Drawing.Size(164, 29);
             this.txtnombreE.TabIndex = 20;
@@ -332,9 +332,9 @@
             this.groupBox3.Controls.Add(this.txtapellido);
             this.groupBox3.Controls.Add(this.txtnombre);
             this.groupBox3.Location = new System.Drawing.Point(14, 41);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox3.Size = new System.Drawing.Size(610, 347);
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
@@ -343,7 +343,7 @@
             // btnagregar
             // 
             this.btnagregar.Location = new System.Drawing.Point(338, 239);
-            this.btnagregar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnagregar.Margin = new System.Windows.Forms.Padding(5);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(147, 86);
             this.btnagregar.TabIndex = 19;
@@ -368,7 +368,7 @@
             "Administrador",
             "Empleado"});
             this.cmbpuesto.Location = new System.Drawing.Point(415, 174);
-            this.cmbpuesto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbpuesto.Margin = new System.Windows.Forms.Padding(5);
             this.cmbpuesto.Name = "cmbpuesto";
             this.cmbpuesto.Size = new System.Drawing.Size(164, 30);
             this.cmbpuesto.TabIndex = 17;
@@ -446,7 +446,7 @@
             // txtcontraseña
             // 
             this.txtcontraseña.Location = new System.Drawing.Point(415, 130);
-            this.txtcontraseña.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcontraseña.Margin = new System.Windows.Forms.Padding(5);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(164, 29);
             this.txtcontraseña.TabIndex = 8;
@@ -454,7 +454,7 @@
             // txtusuario
             // 
             this.txtusuario.Location = new System.Drawing.Point(415, 86);
-            this.txtusuario.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtusuario.Margin = new System.Windows.Forms.Padding(5);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(164, 29);
             this.txtusuario.TabIndex = 7;
@@ -466,7 +466,7 @@
             "Masculino",
             "Femenino"});
             this.cmbsexo.Location = new System.Drawing.Point(100, 130);
-            this.cmbsexo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbsexo.Margin = new System.Windows.Forms.Padding(5);
             this.cmbsexo.Name = "cmbsexo";
             this.cmbsexo.Size = new System.Drawing.Size(164, 30);
             this.cmbsexo.TabIndex = 6;
@@ -474,7 +474,7 @@
             // txttelefono
             // 
             this.txttelefono.Location = new System.Drawing.Point(100, 217);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(5);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(164, 29);
             this.txttelefono.TabIndex = 3;
@@ -482,7 +482,7 @@
             // txtdireccion
             // 
             this.txtdireccion.Location = new System.Drawing.Point(100, 173);
-            this.txtdireccion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtdireccion.Margin = new System.Windows.Forms.Padding(5);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(164, 29);
             this.txtdireccion.TabIndex = 2;
@@ -490,7 +490,7 @@
             // txtapellido
             // 
             this.txtapellido.Location = new System.Drawing.Point(100, 86);
-            this.txtapellido.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtapellido.Margin = new System.Windows.Forms.Padding(5);
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(164, 29);
             this.txtapellido.TabIndex = 1;
@@ -498,7 +498,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(100, 42);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(5);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(164, 29);
             this.txtnombre.TabIndex = 0;
@@ -517,7 +517,7 @@
             this.dataGridViewTextBoxColumn2,
             this.Puesto});
             this.dataGridView2.Location = new System.Drawing.Point(652, 53);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(885, 666);
             this.dataGridView2.TabIndex = 19;
@@ -573,7 +573,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1378, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 36);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -590,14 +590,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 780);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1370, 769);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmEmpleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmpleados";

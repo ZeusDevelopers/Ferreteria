@@ -60,7 +60,7 @@
             this.Piso,
             this.EnAlmacen});
             this.dataGridView1.Location = new System.Drawing.Point(410, 60);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(521, 582);
             this.dataGridView1.TabIndex = 0;
@@ -88,9 +88,9 @@
             this.groupBox1.Controls.Add(this.txtcantidadapiso);
             this.groupBox1.Controls.Add(this.cmbapiso);
             this.groupBox1.Location = new System.Drawing.Point(32, 51);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(333, 210);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -119,7 +119,7 @@
             // btnapiso
             // 
             this.btnapiso.Location = new System.Drawing.Point(157, 140);
-            this.btnapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnapiso.Margin = new System.Windows.Forms.Padding(5);
             this.btnapiso.Name = "btnapiso";
             this.btnapiso.Size = new System.Drawing.Size(125, 39);
             this.btnapiso.TabIndex = 2;
@@ -130,7 +130,7 @@
             // txtcantidadapiso
             // 
             this.txtcantidadapiso.Location = new System.Drawing.Point(122, 96);
-            this.txtcantidadapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcantidadapiso.Margin = new System.Windows.Forms.Padding(5);
             this.txtcantidadapiso.Name = "txtcantidadapiso";
             this.txtcantidadapiso.Size = new System.Drawing.Size(199, 29);
             this.txtcantidadapiso.TabIndex = 2;
@@ -139,7 +139,7 @@
             // 
             this.cmbapiso.FormattingEnabled = true;
             this.cmbapiso.Location = new System.Drawing.Point(122, 51);
-            this.cmbapiso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbapiso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbapiso.Name = "cmbapiso";
             this.cmbapiso.Size = new System.Drawing.Size(199, 30);
             this.cmbapiso.TabIndex = 2;
@@ -152,9 +152,9 @@
             this.groupBox2.Controls.Add(this.cmbaalmacen);
             this.groupBox2.Controls.Add(this.txtcantidadaalmacen);
             this.groupBox2.Location = new System.Drawing.Point(32, 301);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox2.Size = new System.Drawing.Size(333, 196);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
@@ -173,7 +173,7 @@
             // btnaalmacen
             // 
             this.btnaalmacen.Location = new System.Drawing.Point(157, 122);
-            this.btnaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnaalmacen.Margin = new System.Windows.Forms.Padding(5);
             this.btnaalmacen.Name = "btnaalmacen";
             this.btnaalmacen.Size = new System.Drawing.Size(125, 39);
             this.btnaalmacen.TabIndex = 3;
@@ -195,7 +195,7 @@
             // 
             this.cmbaalmacen.FormattingEnabled = true;
             this.cmbaalmacen.Location = new System.Drawing.Point(122, 32);
-            this.cmbaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbaalmacen.Margin = new System.Windows.Forms.Padding(5);
             this.cmbaalmacen.Name = "cmbaalmacen";
             this.cmbaalmacen.Size = new System.Drawing.Size(199, 30);
             this.cmbaalmacen.TabIndex = 5;
@@ -203,19 +203,20 @@
             // txtcantidadaalmacen
             // 
             this.txtcantidadaalmacen.Location = new System.Drawing.Point(122, 78);
-            this.txtcantidadaalmacen.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtcantidadaalmacen.Margin = new System.Windows.Forms.Padding(5);
             this.txtcantidadaalmacen.Name = "txtcantidadaalmacen";
             this.txtcantidadaalmacen.Size = new System.Drawing.Size(199, 29);
             this.txtcantidadaalmacen.TabIndex = 4;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(981, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(981, 36);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -224,13 +225,15 @@
             this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(26, 19);
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
             this.xToolStripMenuItem.Text = "X";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // FrmAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(981, 623);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
@@ -238,7 +241,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAlmacen";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -39,5 +39,10 @@ namespace PVFP
                 MessageBox.Show("Proveedor no añadido, revise sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

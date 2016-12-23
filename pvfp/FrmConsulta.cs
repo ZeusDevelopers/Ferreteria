@@ -16,5 +16,10 @@ namespace PVFP
         {
             InitializeComponent();
         }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

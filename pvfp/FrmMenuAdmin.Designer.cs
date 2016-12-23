@@ -48,11 +48,11 @@
             // 
             // btnEmpleados
             // 
-            this.btnEmpleados.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.Location = new System.Drawing.Point(382, 606);
+            this.btnEmpleados.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.Location = new System.Drawing.Point(382, 604);
             this.btnEmpleados.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(203, 163);
+            this.btnEmpleados.Size = new System.Drawing.Size(203, 135);
             this.btnEmpleados.TabIndex = 0;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -60,11 +60,11 @@
             // 
             // btnProductos
             // 
-            this.btnProductos.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(147, 411);
+            this.btnProductos.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Location = new System.Drawing.Point(147, 409);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(203, 163);
+            this.btnProductos.Size = new System.Drawing.Size(203, 135);
             this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -72,11 +72,11 @@
             // 
             // btnCategorias
             // 
-            this.btnCategorias.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.Location = new System.Drawing.Point(382, 411);
+            this.btnCategorias.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.Location = new System.Drawing.Point(382, 409);
             this.btnCategorias.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Size = new System.Drawing.Size(203, 163);
+            this.btnCategorias.Size = new System.Drawing.Size(203, 135);
             this.btnCategorias.TabIndex = 2;
             this.btnCategorias.Text = "Categorias";
             this.btnCategorias.UseVisualStyleBackColor = true;
@@ -84,11 +84,11 @@
             // 
             // btnProveedores
             // 
-            this.btnProveedores.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Location = new System.Drawing.Point(147, 606);
+            this.btnProveedores.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.Location = new System.Drawing.Point(147, 604);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(203, 163);
+            this.btnProveedores.Size = new System.Drawing.Size(203, 135);
             this.btnProveedores.TabIndex = 3;
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.UseVisualStyleBackColor = true;
@@ -96,11 +96,11 @@
             // 
             // btnTCargos
             // 
-            this.btnTCargos.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTCargos.Location = new System.Drawing.Point(620, 411);
+            this.btnTCargos.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTCargos.Location = new System.Drawing.Point(620, 409);
             this.btnTCargos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnTCargos.Name = "btnTCargos";
-            this.btnTCargos.Size = new System.Drawing.Size(203, 163);
+            this.btnTCargos.Size = new System.Drawing.Size(203, 135);
             this.btnTCargos.TabIndex = 4;
             this.btnTCargos.Text = "Tipos de Cargos";
             this.btnTCargos.UseVisualStyleBackColor = true;
@@ -108,11 +108,11 @@
             // 
             // BtnPerdida
             // 
-            this.BtnPerdida.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPerdida.Location = new System.Drawing.Point(620, 606);
+            this.BtnPerdida.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPerdida.Location = new System.Drawing.Point(620, 604);
             this.BtnPerdida.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnPerdida.Name = "BtnPerdida";
-            this.BtnPerdida.Size = new System.Drawing.Size(203, 163);
+            this.BtnPerdida.Size = new System.Drawing.Size(203, 135);
             this.BtnPerdida.TabIndex = 5;
             this.BtnPerdida.Text = "Perdida";
             this.BtnPerdida.UseVisualStyleBackColor = true;
@@ -120,11 +120,11 @@
             // 
             // BtnAlmacen
             // 
-            this.BtnAlmacen.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAlmacen.Location = new System.Drawing.Point(857, 411);
+            this.BtnAlmacen.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAlmacen.Location = new System.Drawing.Point(857, 409);
             this.BtnAlmacen.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnAlmacen.Name = "BtnAlmacen";
-            this.BtnAlmacen.Size = new System.Drawing.Size(203, 163);
+            this.BtnAlmacen.Size = new System.Drawing.Size(203, 135);
             this.BtnAlmacen.TabIndex = 6;
             this.BtnAlmacen.Text = "Almacen";
             this.BtnAlmacen.UseVisualStyleBackColor = true;
@@ -186,11 +186,11 @@
             // 
             // btnEntradas
             // 
-            this.btnEntradas.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntradas.Location = new System.Drawing.Point(857, 606);
+            this.btnEntradas.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntradas.Location = new System.Drawing.Point(857, 604);
             this.btnEntradas.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEntradas.Name = "btnEntradas";
-            this.btnEntradas.Size = new System.Drawing.Size(203, 163);
+            this.btnEntradas.Size = new System.Drawing.Size(203, 135);
             this.btnEntradas.TabIndex = 8;
             this.btnEntradas.Text = "Entradas";
             this.btnEntradas.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1314, 741);
+            this.ClientSize = new System.Drawing.Size(1314, 733);
             this.Controls.Add(this.btnEntradas);
             this.Controls.Add(this.BtnAlmacen);
             this.Controls.Add(this.BtnPerdida);

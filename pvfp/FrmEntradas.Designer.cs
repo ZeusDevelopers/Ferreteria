@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.gbxEntCompra = new System.Windows.Forms.GroupBox();
+            this.btnCalTotProd = new System.Windows.Forms.Button();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.btnAgrPG = new System.Windows.Forms.Button();
             this.lblTotProd = new System.Windows.Forms.Label();
@@ -55,14 +56,17 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
-            this.btnCalTotProd = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbxEntCompra.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxEntrada
             // 
+            this.gbxEntrada.Controls.Add(this.gbxEntCompra);
             this.gbxEntrada.Controls.Add(this.btnMenu);
             this.gbxEntrada.Controls.Add(this.txtTotalCompra);
             this.gbxEntrada.Controls.Add(this.label5);
@@ -73,7 +77,7 @@
             this.gbxEntrada.Controls.Add(this.btnAgrProductos);
             this.gbxEntrada.Controls.Add(this.label2);
             this.gbxEntrada.Controls.Add(this.cmbProveedores);
-            this.gbxEntrada.Location = new System.Drawing.Point(43, 32);
+            this.gbxEntrada.Location = new System.Drawing.Point(43, 37);
             this.gbxEntrada.Name = "gbxEntrada";
             this.gbxEntrada.Size = new System.Drawing.Size(744, 428);
             this.gbxEntrada.TabIndex = 0;
@@ -232,13 +236,24 @@
             this.gbxEntCompra.Controls.Add(this.txtCantidad);
             this.gbxEntCompra.Controls.Add(this.label1);
             this.gbxEntCompra.Controls.Add(this.cmbProducto);
-            this.gbxEntCompra.Location = new System.Drawing.Point(206, 16);
+            this.gbxEntCompra.Location = new System.Drawing.Point(177, 7);
             this.gbxEntCompra.Name = "gbxEntCompra";
             this.gbxEntCompra.Size = new System.Drawing.Size(411, 428);
             this.gbxEntCompra.TabIndex = 1;
             this.gbxEntCompra.TabStop = false;
             this.gbxEntCompra.Text = "Comprar";
             this.gbxEntCompra.Visible = false;
+            // 
+            // btnCalTotProd
+            // 
+            this.btnCalTotProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalTotProd.Location = new System.Drawing.Point(35, 242);
+            this.btnCalTotProd.Name = "btnCalTotProd";
+            this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
+            this.btnCalTotProd.TabIndex = 16;
+            this.btnCalTotProd.Text = "Calcular total Producto";
+            this.btnCalTotProd.UseVisualStyleBackColor = true;
+            this.btnCalTotProd.Click += new System.EventHandler(this.btnCalTotProd_Click);
             // 
             // btnTerminar
             // 
@@ -344,24 +359,36 @@
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             this.cmbProducto.Click += new System.EventHandler(this.cmbProducto_Click);
             // 
-            // btnCalTotProd
+            // menuStrip1
             // 
-            this.btnCalTotProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalTotProd.Location = new System.Drawing.Point(35, 242);
-            this.btnCalTotProd.Name = "btnCalTotProd";
-            this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
-            this.btnCalTotProd.TabIndex = 16;
-            this.btnCalTotProd.Text = "Calcular total Producto";
-            this.btnCalTotProd.UseVisualStyleBackColor = true;
-            this.btnCalTotProd.Click += new System.EventHandler(this.btnCalTotProd_Click);
+            this.menuStrip1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.menuStrip1.Size = new System.Drawing.Size(827, 36);
+            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // xToolStripMenuItem
+            // 
+            this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
+            this.xToolStripMenuItem.Text = "X";
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(827, 492);
-            this.Controls.Add(this.gbxEntCompra);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gbxEntrada);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmEntradas";
             this.Text = "FrmEntradas";
             this.Load += new System.EventHandler(this.FrmEntradas_Load);
@@ -370,7 +397,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.gbxEntCompra.ResumeLayout(false);
             this.gbxEntCompra.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -404,5 +434,7 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnCalTotProd;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }

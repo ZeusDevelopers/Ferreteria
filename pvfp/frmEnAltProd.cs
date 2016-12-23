@@ -77,6 +77,11 @@ namespace PVFP
                 cmbTipo.Items.Add(item.ToString());
             }  
         }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
     
 }
