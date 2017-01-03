@@ -83,14 +83,14 @@ namespace PVFP
         }
         ClsCategorias Categorias = new ClsCategorias();
         ClsTiposCargos tipos = new ClsTiposCargos();
-        SqlConnection conexion = new SqlConnection();        
+        SqlConnection conexion = new SqlConnection();  
+        //Localizable = true ; --Formato a Form              
         private void FrmAltaProductos_Load(object sender, EventArgs e)
         {
             try
             {
              obtener_id();
-            //Lenar categorias
-            Categorias.ConsultarPath();
+            //Lenar categorias            
             Categorias.CargarCategorias();
             ArrayList arrcat = Categorias.ArregloID;
             for (int i = 0; i < arrcat.Count; i++)

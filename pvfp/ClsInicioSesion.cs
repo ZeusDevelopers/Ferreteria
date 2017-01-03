@@ -8,7 +8,7 @@ namespace PVFP
     class ClsInicioSesion
     {
         #region Path
-        string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+        private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";       
         public void ConsultarPath()
         {
             string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
@@ -21,7 +21,7 @@ namespace PVFP
 
         #endregion
         #region MYSQL
-        public static MySqlConnection ObtenerConexion(string pathfinal)
+        public static MySqlConnection ObtenerConexion()
         {
             MySqlConnection conectar=null;
             try
@@ -29,7 +29,7 @@ namespace PVFP
                 conectar = new MySqlConnection(pathfinal);
                 conectar.Open();                
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                
             }
@@ -38,9 +38,16 @@ namespace PVFP
 
         public string usuario, contraseña, puesto;
         public bool bandera = false;
+        private static string nombre = "";
+        //se asigna el usuario desde el login 
+        public static string Usuario
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
         public void Sesion(string usuario, string contraseña)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario = '" + usuario + "' and Contraseña = '" + contraseña + "'"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())

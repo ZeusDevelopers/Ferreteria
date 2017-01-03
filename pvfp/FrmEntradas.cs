@@ -37,7 +37,7 @@ namespace PVFP
         public void llenarProvedores()
         {
             cmbProveedores.Items.Clear();
-            proveedor.ConsultarPath();
+            
             proveedor.CargarProveedor();
             ArrayList arrprov = proveedor.ArgProveedor;
             cmbProveedores.Items.Add("0,Registrar Proveedor");
@@ -48,8 +48,7 @@ namespace PVFP
         }
         public void llenarProductos()
         {
-            cmbProducto.Items.Clear();
-            productos.ConsultarPath();
+            cmbProducto.Items.Clear();            
             productos.CargarProductoMod();
             ArrayList arrprod = productos.ArregloProductomod;
             cmbProducto.Items.Add("0,Registrar Producto");

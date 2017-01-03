@@ -62,8 +62,7 @@ namespace PVFP
         private void frmEnAltProd_Load(object sender, EventArgs e)
         {
             obtener_id();
-            //Lenar categorias
-            Categorias.ConsultarPath();
+            //Lenar categorias            
             Categorias.CargarCategorias();
             ArrayList arrcat = Categorias.ArregloID;
             for (int i = 0; i < arrcat.Count; i++)

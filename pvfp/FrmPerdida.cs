@@ -26,8 +26,7 @@ namespace PVFP
         }
 
         void cargar()
-        {
-            perdida.ConsultarPath();
+        {            
             perdida.CargarPerdida();
             ArrayList arreprodid = perdida.arregloproductoid;
             ArrayList arrecan = perdida.arreglocantidad;

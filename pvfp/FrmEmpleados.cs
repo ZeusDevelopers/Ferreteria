@@ -27,8 +27,7 @@ namespace PVFP
         void cargar()
         {
             dataGridView2.Rows.Clear();
-            cmbBuscarNombre.Items.Clear();
-            ObjEmpleados.ConsultarPath();
+            cmbBuscarNombre.Items.Clear();            
             ObjEmpleados.CargarEmpleadosSesion();
             ObjEmpleados.CargarEmpleadosDatos();
             ArrayList arreus = ObjEmpleados.ArregloUsu;

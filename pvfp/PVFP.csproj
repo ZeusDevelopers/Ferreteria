@@ -50,7 +50,6 @@
     <Compile Include="ClsAlmacen.cs" />
     <Compile Include="ClsAltaProductos.cs" />
     <Compile Include="ClsCategorias.cs" />
-    <Compile Include="ClsConexion.cs" />
     <Compile Include="ClsEmpleados.cs" />
     <Compile Include="ClsEntrada.cs" />
     <Compile Include="ClsInicioSesion.cs" />
@@ -59,8 +58,6 @@
     <Compile Include="ClsProveedores.cs" />
     <Compile Include="ClsTiposCargos.cs" />
     <Compile Include="ClsVentas.cs" />
-    <Compile Include="Cls_usuarios_logueado.cs" />
-    <Compile Include="Datatable.cs" />
     <Compile Include="FrmAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>

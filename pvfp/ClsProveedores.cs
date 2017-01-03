@@ -12,32 +12,14 @@ namespace PVFP
 {
     class ClsProveedores
     {
-        #region Path
-        string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
-        public void ConsultarPath()
-        {
-            string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
-            FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader ObjLectura = new StreamReader(ObjArchivo);
-            pathfinal = ObjLectura.ReadToEnd();
-            ObjLectura.Close();
-            pathfinal = pathfinal.Remove(0, 5);
-        }
-
-        #endregion
+       
         #region MYSQL
-        public static MySqlConnection ObtenerConexion(string pathfinal)
-        {
-            MySqlConnection conectar = new MySqlConnection(pathfinal);
-            conectar.Open();
-            return conectar;
-        }
-
+   
         public ArrayList ArregloNombre = new ArrayList();
         public void CargarProveedoresNombre()
         {
             ArregloNombre = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM proveedores"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -50,7 +32,7 @@ namespace PVFP
         public void CargarProveedor()
         {
             ArgProveedor = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Proveedor_ID, Nombre FROM proveedores"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -69,7 +51,7 @@ namespace PVFP
         public void CargarProveedores()
         {
             ArregloNombre = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM proveedores"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -87,7 +69,7 @@ namespace PVFP
 
         public void AgregarProveedor(int proveedor_ID, string nombre, string telefono, string correo, string direccion, string descripcion, string banco, string cuenta)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `Proveedores`(`Proveedor_ID`, `Nombre`, `Telefono`, `Correo`, `Direccion`, `Banco`, `Cuenta`, `Descripcion`) VALUES ('?proveedorid, ?nombre, ?telefono, ?correo, ?direccion, ?banco, ?cuenta, ?descripcion)"), conexion);
             _comando.Parameters.AddWithValue("?nombre", nombre);
             _comando.Parameters.AddWithValue("?telefono", telefono);
@@ -103,7 +85,7 @@ namespace PVFP
 
         public void EditarProveedores(string proveedorid, string nombre, string telefono, string correo, string direccion, string banco, string cuenta, string descripcion)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `proveedores` SET `Nombre`=' ?nombre ',`Telefono`=' ?telefono ',`Correo`=' ?correo ',`Direccion`=' ?direccion ',`Banco`=' ?banco ',`Cuenta`=' ?cuenta ',`Descripcion`=' ?descripcion ' WHERE Proveedor_ID = ?proveedorid"), conexion);
             _comando.Parameters.AddWithValue("?nombre", nombre);
             _comando.Parameters.AddWithValue("?telefono", telefono);
@@ -119,7 +101,7 @@ namespace PVFP
 
         public void BorrarProveedor(string proveedorid)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `proveedores`  WHERE Proveedor_ID = ?proveedorid"), conexion);
             _comando.Parameters.AddWithValue("?proveedorid", proveedorid);
             MySqlDataReader _reader = _comando.ExecuteReader();

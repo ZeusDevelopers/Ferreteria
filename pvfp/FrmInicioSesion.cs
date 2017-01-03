@@ -36,7 +36,7 @@ namespace PVFP
                 else
                 {
                     MessageBox.Show("Correcto", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Cls_usuarios_logueado.usuario = txtusuario.Text;
+                    conexion.usuario = txtusuario.Text;
                     this.WindowState = FormWindowState.Minimized;
                     if (conexion.puesto == "0")//ADMIN
                     {
@@ -57,7 +57,7 @@ namespace PVFP
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un problema " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrio un problema " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

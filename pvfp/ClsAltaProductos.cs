@@ -14,30 +14,13 @@ namespace PVFP
 {
     class ClsAltaProductos
     {
-        #region Path
-        string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
-        public void ConsultarPath()
-        {
-            string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
-            FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader ObjLectura = new StreamReader(ObjArchivo);
-            pathfinal = ObjLectura.ReadToEnd();
-            ObjLectura.Close();
-            pathfinal = pathfinal.Remove(0, 5);
-        }
-
-        #endregion
+       
         #region MYSQL
-        public static MySqlConnection ObtenerConexion(string pathfinal)
-        {
-            MySqlConnection conectar = new MySqlConnection(pathfinal);
-            conectar.Open();
-            return conectar;
-        }
+    
         public DataTable VerProducto(string fol)
         {
             DataTable tabla = new DataTable();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM Productos  WHERE Producto_ID = " + fol), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
@@ -47,7 +30,7 @@ namespace PVFP
         public DataTable VerTodosProductos()
         {
             DataTable tabla = new DataTable();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM Productos"), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
@@ -57,7 +40,7 @@ namespace PVFP
         public void AgregarProducto(string Producto_ID, string Nombre, string Categoria_ID,
         string CostoCompra, string Tipo_ID, string Folio, string Descripcion, string UM,string marca, string codigobarras)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO productos (`Producto_ID`, `Nombre`, `Categoria_ID`, `CostoCompra`, `Tipo_ID`, `Codigo`, `Descripcion`, `UM`,`Marca`,`CodigoBarras`) VALUES" +
              "(@productid,@nombre,@categoriaid,@costocompra,@tipoid,@codigo,@descripcion,@um,@marca,@codigobarras)"), conexion);
             //  " (" + Producto_ID + ",'" + Nombre + "'," + Categoria_ID + "," + CostoCompra + "," + Tipo_ID + ",'" + Folio + "','" + Descripcion + "','" + UM + "','" + marca + "','" + codigobarras + "')"), conexion);
@@ -78,7 +61,7 @@ namespace PVFP
         public void CargarProductoMod()
         {
             ArregloProductomod = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM productos"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -91,7 +74,7 @@ namespace PVFP
         public void CargarTipod()
         {
             ArregloProductomod = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Tipo_ID FROM tiposcargos"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -103,7 +86,7 @@ namespace PVFP
         public void EditarProducto(string Producto_ID, string Nombre, string Categoria_ID,
         string CostoCompra, string Tipo_ID, string Folio, string Descripcion, string UM,string marca,string codigobarras)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `productos` SET  " +
                 "`Nombre`='" + Nombre + "',`Categoria_ID`=" + Categoria_ID + "," +
                 "`CostoCompra`=" + CostoCompra + ",`Tipo_ID`=" + Tipo_ID + ",`Codigo`='" + Folio + "'," +
@@ -113,7 +96,7 @@ namespace PVFP
         }
         public void BorrarProducto(string producto)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `productos`  WHERE Producto_ID = @producto"), conexion);
             _comando.Parameters.AddWithValue("@producto", producto);
             _comando.ExecuteReader();
@@ -122,7 +105,7 @@ namespace PVFP
         public string Obtener_productoId()
         {
             ArregloProductomod = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT  Producto_ID FROM productos"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())

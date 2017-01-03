@@ -12,30 +12,12 @@ namespace PVFP
 {
     class ClsEmpleados
     {
-        #region Path
-        string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
-        public void ConsultarPath()
-        {
-            string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
-            FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader ObjLectura = new StreamReader(ObjArchivo);
-            pathfinal = ObjLectura.ReadToEnd();
-            ObjLectura.Close();
-            pathfinal = pathfinal.Remove(0, 5);
-        }
-
-        #endregion
+   
         #region MYSQL
-        public static MySqlConnection ObtenerConexion(string pathfinal)
-        {
-            MySqlConnection conectar = new MySqlConnection(pathfinal);
-            conectar.Open();
-            return conectar;
-        }
-
+    
         public void GuardarNuevoEmpleado(int id, string nombre, string apellido, string sexo, string direccion, string telefono)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `empleados`(`Empleado_ID`, `Nombre`, `Apellido`, `Sexo`, `Direccion`, `Telefono`, `Sesion_ID`) VALUES ('" + id + "','" + nombre + "','" + apellido + "','" + sexo + "','" + direccion + "','" + telefono + "','" + id + "')"), conexion);
              _comando.ExecuteReader();
             conexion.Close();
@@ -43,7 +25,7 @@ namespace PVFP
 
         public void GuardarNuevoEmpleadoSesion(int id, string usuario, string contraseña, string puesto)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `sesion`(`ID`, `Usuario`, `Contraseña`, `Puesto`) VALUES ('" + id + "','" + usuario + "','" + contraseña + "','" + puesto + "')"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
@@ -51,7 +33,7 @@ namespace PVFP
 
         public void EditarEmpleado(int id, string nombre, string apellido, string sexo, string direccion, string telefono)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `empleados`(`Empleado_ID`, `Nombre`, `Apellido`, `Sexo`, `Direccion`, `Telefono`, `Sesion_ID`) VALUES ('" + id + "','" + nombre + "','" + apellido + "','" + sexo + "','" + direccion + "','" + telefono + "','" + id + "')"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
@@ -59,7 +41,7 @@ namespace PVFP
 
         public void EditarEmpleadoSesion(int id, string usuario, string contraseña, string puesto)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `sesion`(`ID`, `Usuario`, `Contraseña`, `Puesto`) VALUES ('" + id + "','" + usuario + "','" + contraseña + "','" + puesto + "')"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
@@ -67,14 +49,14 @@ namespace PVFP
 
         public void EliminarEmpleado(int id)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("DELETE FROM `empleados` WHERE Empleado_ID ='" + id + "'"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
         public void EliminarSesion(int id)
         { 
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("DELETE FROM `sesion` WHERE Empleado_ID ='" + id + "'"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
@@ -88,7 +70,7 @@ namespace PVFP
             ArregloUsu = new ArrayList();
             ArregloContra = new ArrayList();
             ArregloPuesto = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM sesion"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -111,7 +93,7 @@ namespace PVFP
             ArregloSexo = new ArrayList();
             ArregloDire = new ArrayList();
             ArregloTel = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM empleados"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())

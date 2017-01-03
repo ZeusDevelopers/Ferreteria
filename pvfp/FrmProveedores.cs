@@ -61,8 +61,7 @@ namespace PVFP
             {
                 dataGridView1.Rows.Add(arrNom[i].ToString(), arrTel[i].ToString(), arrCor[i].ToString(), arrDir[i].ToString(), arrBan[i].ToString(), arrCue[i].ToString(), arrDes[i].ToString());
             }
-            ////////////
-            Proveedores.ConsultarPath();
+            ////////////            
             Proveedores.CargarProveedoresNombre();
             ArrayList arrNom1 = Proveedores.ArregloNombre;
             for (int i = 0; i < arrNom1.Count; i++)
@@ -93,8 +92,7 @@ namespace PVFP
         }
 
         private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Proveedores.ConsultarPath();
+        {           
             Proveedores.CargarProveedores();
             ArrayList ArregloNom = Proveedores.ArregloNom;
             ArrayList ArregloTel = Proveedores.ArregloTel;

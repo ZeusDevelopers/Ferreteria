@@ -26,8 +26,7 @@ namespace PVFP
         void cargar()
         {
             cmbCategoriaEditar.Items.Clear();
-            dataGridView1.Rows.Clear();
-            Categorias.ConsultarPath();
+            dataGridView1.Rows.Clear();            
             Categorias.CargarCategorias();
             ArrayList arrID = Categorias.ArregloID;
             ArrayList arrDes = Categorias.ArregloDescripcion;
@@ -83,8 +82,7 @@ namespace PVFP
         }
 
         private void cmbCategoriaEditar_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            Categorias.ConsultarPath();
+        {            
             Categorias.CargarCategorias();
             ArrayList arrDes = Categorias.ArregloDescripcion;
             txtDescripcionEditar.Text = arrDes[cmbCategoriaEditar.SelectedIndex].ToString();

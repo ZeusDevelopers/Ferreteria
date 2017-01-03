@@ -13,27 +13,9 @@ namespace PVFP
 {
     class ClsCategorias
     {
-
-        #region Path
-        string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
-        public void ConsultarPath()
-        {
-            string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
-            FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader ObjLectura = new StreamReader(ObjArchivo);
-            pathfinal = ObjLectura.ReadToEnd();
-            ObjLectura.Close();
-            pathfinal = pathfinal.Remove(0, 5);
-        }
-
-        #endregion
+        
         #region MYSQL
-        public static MySqlConnection ObtenerConexion(string pathfinal)
-        {
-            MySqlConnection conectar = new MySqlConnection(pathfinal);
-            conectar.Open();
-            return conectar;
-        }
+    
 
         public ArrayList ArregloID = new ArrayList();
         public ArrayList ArregloDescripcion = new ArrayList();
@@ -41,7 +23,7 @@ namespace PVFP
         {
             ArregloID = new ArrayList();
             ArregloDescripcion = new ArrayList();
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM categorias"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
@@ -53,7 +35,7 @@ namespace PVFP
 
         public void AgregarCategorias(string categoria, string descripcion)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand comando = new MySqlCommand(String.Format("INSERT INTO categorias (`Categoria_ID`, `Descripcion`) VALUES (?categoria, ?descripcion)"), conexion);
             comando.Parameters.AddWithValue("?categoria", categoria);
             comando.Parameters.AddWithValue("?descripcion", descripcion);
@@ -63,7 +45,7 @@ namespace PVFP
 
         public void EditarCategorias(string categoria, string descripcion)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand comando = new MySqlCommand(String.Format("UPDATE categorias SET Descripcion = ?descripcion WHERE Categoria_ID = ?categoria"), conexion);
             comando.Parameters.AddWithValue("?categoria", categoria);
             comando.Parameters.AddWithValue("?descripcion", descripcion);
@@ -73,7 +55,7 @@ namespace PVFP
 
         public void BorrarCategorias(string categoria)
         {
-            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion(pathfinal);
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand comando = new MySqlCommand(String.Format("Delete From `categorias`  WHERE Categoria_ID = ?categoria"), conexion);
             comando.Parameters.AddWithValue("?categoria", categoria);
             MySqlDataReader reader = comando.ExecuteReader();
