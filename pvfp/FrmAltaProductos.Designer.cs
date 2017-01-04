@@ -380,7 +380,7 @@
             // Txt_Compra
             // 
             resources.ApplyResources(this.Txt_Compra, "Txt_Compra");
-            this.Txt_Compra.Name = "Txt_Compra";            
+            this.Txt_Compra.Name = "Txt_Compra";
             // 
             // label12
             // 

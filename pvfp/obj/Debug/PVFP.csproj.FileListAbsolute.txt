@@ -273,3 +273,6 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta.res
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmTiposCargos.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.Properties.Resources.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
+C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.config
+C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe
+C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.pdb
