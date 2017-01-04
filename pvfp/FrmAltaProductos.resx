@@ -363,8 +363,17 @@
   <data name="CmbId.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 12pt</value>
   </data>
+  <data name="CmbId.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="CmbId.ItemHeight" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
   <data name="CmbId.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 93</value>
+  </data>
+  <data name="CmbId.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="CmbId.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 37</value>
@@ -1279,7 +1288,7 @@
     <value>Palatino Linotype, 12pt</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 685</value>
+    <value>309, 684</value>
   </data>
   <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -1432,7 +1441,7 @@
     <value>Palatino Linotype, 12pt</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 635</value>
+    <value>292, 631</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>

@@ -31,7 +31,10 @@ namespace PVFP
         {
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM Productos"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "select `Producto_ID` as 'Id Producto',`Nombre`,`Marca`,`Categoria_ID` as Categoria,`CostoCompra` as Precio,`Tipo_ID` as Tipo, `Codigo`,`UM` as 'Unidad de medida', `CodigoBarras` as 'Codigo de Barras' from productos"
+                ), conexion);
+
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
             conexion.Close();
@@ -42,8 +45,7 @@ namespace PVFP
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO productos (`Producto_ID`, `Nombre`, `Categoria_ID`, `CostoCompra`, `Tipo_ID`, `Codigo`, `Descripcion`, `UM`,`Marca`,`CodigoBarras`) VALUES" +
-             "(@productid,@nombre,@categoriaid,@costocompra,@tipoid,@codigo,@descripcion,@um,@marca,@codigobarras)"), conexion);
-            //  " (" + Producto_ID + ",'" + Nombre + "'," + Categoria_ID + "," + CostoCompra + "," + Tipo_ID + ",'" + Folio + "','" + Descripcion + "','" + UM + "','" + marca + "','" + codigobarras + "')"), conexion);
+             "(@productid,@nombre,@categoriaid,@costocompra,@tipoid,@codigo,@descripcion,@um,@marca,@codigobarras)"), conexion);            
             _comando.Parameters.AddWithValue("@productid", Producto_ID);
             _comando.Parameters.AddWithValue("@nombre", Nombre);
             _comando.Parameters.AddWithValue("@categoriaid", Categoria_ID);

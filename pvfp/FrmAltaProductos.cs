@@ -12,15 +12,64 @@ using System.Data.SqlClient;
 namespace PVFP
 {
     public partial class FrmAltaProductos : Form
-    {
-        
+    {                
         public FrmAltaProductos()
         {
             InitializeComponent();
             BtnGuardar.Image =new  Bitmap(PVFP.Properties.Resources.ImgGuardar);
             btnEliminar.Image = new Bitmap(PVFP.Properties.Resources.Eliminar);
-            btnModificar.Image = new Bitmap(PVFP.Properties.Resources.Actualizar);            
+            btnModificar.Image = new Bitmap(PVFP.Properties.Resources.Actualizar);
+            txtCostoCompra.LostFocus += TxtCostoCompra_LostFocus;//Evento agrega decimales a precio
+            Txt_Compra.LostFocus += Txt_Compra_LostFocus;//Evento agrega decimales a precio                
         }
+
+        private void Txt_Compra_LostFocus(object sender, EventArgs e)
+        {
+            bool punto = false;
+            if (Char.IsDigit(Txt_Compra.Text[Txt_Compra.Text.Length-1]))
+            {
+                foreach (Char elemento in Txt_Compra.Text)
+                {
+                    if (elemento == '.')
+                    {
+                        punto = true;
+                    }
+                }
+                if (!punto)
+                {
+                    Txt_Compra.Text = Txt_Compra.Text + ".00";
+                }
+            }
+            else  if (Txt_Compra.Text[Txt_Compra.Text.Length - 1]=='.')
+            {
+                Txt_Compra.Text = Txt_Compra.Text + "00";
+            }
+        }
+
+        private void TxtCostoCompra_LostFocus(object sender, EventArgs e)
+        {        
+            if (Char.IsDigit(txtCostoCompra.Text[txtCostoCompra.Text.Length - 1]))
+            {
+                bool punto = false;
+                foreach (Char elemento in txtCostoCompra.Text)
+                {
+                    if (elemento == '.')
+                    {
+                        punto = true;
+                        break;
+                    }
+                }
+                if (!punto)
+                {
+                    txtCostoCompra.Text = txtCostoCompra.Text + ".00";
+                }
+            }
+            else if (txtCostoCompra.Text[txtCostoCompra.Text.Length - 1] == '.')
+            {
+                txtCostoCompra.Text = txtCostoCompra.Text + "00";
+            }
+        }
+
         ClsAltaProductos productos = new ClsAltaProductos();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -50,7 +99,7 @@ namespace PVFP
                 {
                     MessageBox.Show("Ingrese descripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }              
-                else if (txt_codigodebarras.Text == "")
+                else if (Txtcodigobarras.Text == "")
                 {
                     MessageBox.Show("Ingrese codigo de barras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

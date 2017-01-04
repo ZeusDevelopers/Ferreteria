@@ -278,6 +278,8 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvProducto, "dgvProducto");
             this.dgvProducto.Name = "dgvProducto";
@@ -333,6 +335,7 @@
             // 
             // CmbId
             // 
+            this.CmbId.DropDownHeight = 210;
             resources.ApplyResources(this.CmbId, "CmbId");
             this.CmbId.FormattingEnabled = true;
             this.CmbId.Name = "CmbId";
@@ -377,7 +380,7 @@
             // Txt_Compra
             // 
             resources.ApplyResources(this.Txt_Compra, "Txt_Compra");
-            this.Txt_Compra.Name = "Txt_Compra";
+            this.Txt_Compra.Name = "Txt_Compra";            
             // 
             // label12
             // 

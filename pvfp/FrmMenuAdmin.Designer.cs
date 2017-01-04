@@ -49,7 +49,7 @@
             // btnEmpleados
             // 
             this.btnEmpleados.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.Location = new System.Drawing.Point(382, 604);
+            this.btnEmpleados.Location = new System.Drawing.Point(382, 528);
             this.btnEmpleados.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(203, 135);
@@ -61,7 +61,7 @@
             // btnProductos
             // 
             this.btnProductos.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(147, 409);
+            this.btnProductos.Location = new System.Drawing.Point(147, 333);
             this.btnProductos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(203, 135);
@@ -73,7 +73,7 @@
             // btnCategorias
             // 
             this.btnCategorias.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.Location = new System.Drawing.Point(382, 409);
+            this.btnCategorias.Location = new System.Drawing.Point(382, 333);
             this.btnCategorias.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Size = new System.Drawing.Size(203, 135);
@@ -85,7 +85,7 @@
             // btnProveedores
             // 
             this.btnProveedores.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedores.Location = new System.Drawing.Point(147, 604);
+            this.btnProveedores.Location = new System.Drawing.Point(147, 528);
             this.btnProveedores.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(203, 135);
@@ -97,7 +97,7 @@
             // btnTCargos
             // 
             this.btnTCargos.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTCargos.Location = new System.Drawing.Point(620, 409);
+            this.btnTCargos.Location = new System.Drawing.Point(620, 333);
             this.btnTCargos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnTCargos.Name = "btnTCargos";
             this.btnTCargos.Size = new System.Drawing.Size(203, 135);
@@ -109,7 +109,7 @@
             // BtnPerdida
             // 
             this.BtnPerdida.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPerdida.Location = new System.Drawing.Point(620, 604);
+            this.BtnPerdida.Location = new System.Drawing.Point(620, 528);
             this.BtnPerdida.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnPerdida.Name = "BtnPerdida";
             this.BtnPerdida.Size = new System.Drawing.Size(203, 135);
@@ -121,7 +121,7 @@
             // BtnAlmacen
             // 
             this.BtnAlmacen.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAlmacen.Location = new System.Drawing.Point(857, 409);
+            this.BtnAlmacen.Location = new System.Drawing.Point(857, 333);
             this.BtnAlmacen.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.BtnAlmacen.Name = "BtnAlmacen";
             this.BtnAlmacen.Size = new System.Drawing.Size(203, 135);
@@ -132,13 +132,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productosToolStripMenuItem,
             this.xToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1314, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1314, 41);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -150,27 +151,27 @@
             this.mayorDiaToolStripMenuItem});
             this.productosToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(131, 35);
             this.productosToolStripMenuItem.Text = "Productos";
             // 
             // mayorVentaToolStripMenuItem
             // 
             this.mayorVentaToolStripMenuItem.Name = "mayorVentaToolStripMenuItem";
-            this.mayorVentaToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.mayorVentaToolStripMenuItem.Size = new System.Drawing.Size(383, 36);
             this.mayorVentaToolStripMenuItem.Text = "Mayor venta";
             this.mayorVentaToolStripMenuItem.Click += new System.EventHandler(this.mayorVentaToolStripMenuItem_Click);
             // 
             // mayorSemanaToolStripMenuItem
             // 
             this.mayorSemanaToolStripMenuItem.Name = "mayorSemanaToolStripMenuItem";
-            this.mayorSemanaToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.mayorSemanaToolStripMenuItem.Size = new System.Drawing.Size(383, 36);
             this.mayorSemanaToolStripMenuItem.Text = "Mayor vendido en semana";
             this.mayorSemanaToolStripMenuItem.Click += new System.EventHandler(this.mayorSemanaToolStripMenuItem_Click);
             // 
             // mayorDiaToolStripMenuItem
             // 
             this.mayorDiaToolStripMenuItem.Name = "mayorDiaToolStripMenuItem";
-            this.mayorDiaToolStripMenuItem.Size = new System.Drawing.Size(266, 26);
+            this.mayorDiaToolStripMenuItem.Size = new System.Drawing.Size(383, 36);
             this.mayorDiaToolStripMenuItem.Text = "Mayor vendido en dia";
             this.mayorDiaToolStripMenuItem.Click += new System.EventHandler(this.mayorDiaToolStripMenuItem_Click);
             // 
@@ -180,14 +181,14 @@
             this.xToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(32, 25);
+            this.xToolStripMenuItem.Size = new System.Drawing.Size(41, 35);
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
             // btnEntradas
             // 
             this.btnEntradas.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntradas.Location = new System.Drawing.Point(857, 604);
+            this.btnEntradas.Location = new System.Drawing.Point(857, 528);
             this.btnEntradas.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnEntradas.Name = "btnEntradas";
             this.btnEntradas.Size = new System.Drawing.Size(203, 135);
@@ -198,7 +199,7 @@
             // 
             // FrmMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

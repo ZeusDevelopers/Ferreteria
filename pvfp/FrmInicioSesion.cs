@@ -34,16 +34,14 @@ namespace PVFP
                     MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
-                {
-                    MessageBox.Show("Correcto", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {                    
                     conexion.usuario = txtusuario.Text;
                     this.WindowState = FormWindowState.Minimized;
                     if (conexion.puesto == "0")//ADMIN
                     {
                         txtcontraseña.Text = "";
-                        FrmMenuAdmin admin = new FrmMenuAdmin();
+                        FrmMenuAdmin admin = new FrmMenuAdmin();                        
                         admin.Show();
-
                     }
                     else //Trabajador
                     {
