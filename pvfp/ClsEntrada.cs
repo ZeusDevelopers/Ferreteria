@@ -40,11 +40,11 @@ namespace PVFP
         {
             ArregloEntrada = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT  Entrada_ID FROM entrada"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("select IFNULL(max(Entrada_ID),0)entradaid from entrada"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                ArregloEntrada.Add(_reader["Entrada_ID"].ToString());
+                ArregloEntrada.Add(_reader["entradaid"].ToString());
             }
             conexion.Close();
             return ArregloEntrada[ArregloEntrada.Count - 1].ToString();

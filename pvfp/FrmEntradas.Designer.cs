@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.gbxEntrada = new System.Windows.Forms.GroupBox();
+            this.gbxEntCompra = new System.Windows.Forms.GroupBox();
+            this.btnCalTotProd = new System.Windows.Forms.Button();
+            this.btnTerminar = new System.Windows.Forms.Button();
+            this.btnAgrPG = new System.Windows.Forms.Button();
+            this.lblTotProd = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTotalProducto = new System.Windows.Forms.TextBox();
+            this.txtCostoUnit = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.txtTotalCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,23 +56,11 @@
             this.btnAgrProductos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
-            this.gbxEntCompra = new System.Windows.Forms.GroupBox();
-            this.btnCalTotProd = new System.Windows.Forms.Button();
-            this.btnTerminar = new System.Windows.Forms.Button();
-            this.btnAgrPG = new System.Windows.Forms.Button();
-            this.lblTotProd = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtTotalProducto = new System.Windows.Forms.TextBox();
-            this.txtCostoUnit = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxEntrada.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.gbxEntCompra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,143 @@
             this.gbxEntrada.TabIndex = 0;
             this.gbxEntrada.TabStop = false;
             this.gbxEntrada.Text = "Entrada";
+            // 
+            // gbxEntCompra
+            // 
+            this.gbxEntCompra.Controls.Add(this.btnCalTotProd);
+            this.gbxEntCompra.Controls.Add(this.btnTerminar);
+            this.gbxEntCompra.Controls.Add(this.btnAgrPG);
+            this.gbxEntCompra.Controls.Add(this.lblTotProd);
+            this.gbxEntCompra.Controls.Add(this.label7);
+            this.gbxEntCompra.Controls.Add(this.label6);
+            this.gbxEntCompra.Controls.Add(this.txtTotalProducto);
+            this.gbxEntCompra.Controls.Add(this.txtCostoUnit);
+            this.gbxEntCompra.Controls.Add(this.txtCantidad);
+            this.gbxEntCompra.Controls.Add(this.label1);
+            this.gbxEntCompra.Controls.Add(this.cmbProducto);
+            this.gbxEntCompra.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxEntCompra.Location = new System.Drawing.Point(177, -8);
+            this.gbxEntCompra.Name = "gbxEntCompra";
+            this.gbxEntCompra.Size = new System.Drawing.Size(411, 443);
+            this.gbxEntCompra.TabIndex = 1;
+            this.gbxEntCompra.TabStop = false;
+            this.gbxEntCompra.Text = "Comprar";
+            this.gbxEntCompra.Visible = false;
+            // 
+            // btnCalTotProd
+            // 
+            this.btnCalTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalTotProd.Location = new System.Drawing.Point(35, 242);
+            this.btnCalTotProd.Name = "btnCalTotProd";
+            this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
+            this.btnCalTotProd.TabIndex = 16;
+            this.btnCalTotProd.Text = "Calcular total Producto";
+            this.btnCalTotProd.UseVisualStyleBackColor = true;
+            this.btnCalTotProd.Click += new System.EventHandler(this.btnCalTotProd_Click);
+            // 
+            // btnTerminar
+            // 
+            this.btnTerminar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminar.Location = new System.Drawing.Point(245, 255);
+            this.btnTerminar.Name = "btnTerminar";
+            this.btnTerminar.Size = new System.Drawing.Size(98, 53);
+            this.btnTerminar.TabIndex = 15;
+            this.btnTerminar.Text = "Terminar";
+            this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
+            // 
+            // btnAgrPG
+            // 
+            this.btnAgrPG.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgrPG.Location = new System.Drawing.Point(245, 154);
+            this.btnAgrPG.Name = "btnAgrPG";
+            this.btnAgrPG.Size = new System.Drawing.Size(98, 53);
+            this.btnAgrPG.TabIndex = 14;
+            this.btnAgrPG.Text = "Agregar Productos";
+            this.btnAgrPG.UseVisualStyleBackColor = true;
+            this.btnAgrPG.Click += new System.EventHandler(this.btnAgrPG_Click);
+            // 
+            // lblTotProd
+            // 
+            this.lblTotProd.AutoSize = true;
+            this.lblTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotProd.Location = new System.Drawing.Point(29, 298);
+            this.lblTotProd.Name = "lblTotProd";
+            this.lblTotProd.Size = new System.Drawing.Size(121, 22);
+            this.lblTotProd.TabIndex = 13;
+            this.lblTotProd.Text = "Total Producto";
+            this.lblTotProd.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(31, 170);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 22);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Costo Unitario";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(31, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 22);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Cantidad";
+            // 
+            // txtTotalProducto
+            // 
+            this.txtTotalProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalProducto.Location = new System.Drawing.Point(33, 337);
+            this.txtTotalProducto.Name = "txtTotalProducto";
+            this.txtTotalProducto.ReadOnly = true;
+            this.txtTotalProducto.Size = new System.Drawing.Size(124, 29);
+            this.txtTotalProducto.TabIndex = 10;
+            this.txtTotalProducto.Visible = false;
+            // 
+            // txtCostoUnit
+            // 
+            this.txtCostoUnit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCostoUnit.Location = new System.Drawing.Point(35, 193);
+            this.txtCostoUnit.Name = "txtCostoUnit";
+            this.txtCostoUnit.Size = new System.Drawing.Size(100, 29);
+            this.txtCostoUnit.TabIndex = 9;
+            this.txtCostoUnit.Text = "0";
+            this.txtCostoUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoUnit_KeyPress);
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(35, 134);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 29);
+            this.txtCantidad.TabIndex = 8;
+            this.txtCantidad.Text = "0";
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 22);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Producto";
+            // 
+            // cmbProducto
+            // 
+            this.cmbProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(123, 75);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(247, 30);
+            this.cmbProducto.TabIndex = 0;
+            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
+            this.cmbProducto.Click += new System.EventHandler(this.cmbProducto_Click);
             // 
             // btnMenu
             // 
@@ -224,143 +361,6 @@
             this.cmbProveedores.SelectedIndexChanged += new System.EventHandler(this.cmbProveedores_SelectedIndexChanged);
             this.cmbProveedores.Click += new System.EventHandler(this.cmbProveedores_Click);
             // 
-            // gbxEntCompra
-            // 
-            this.gbxEntCompra.Controls.Add(this.btnCalTotProd);
-            this.gbxEntCompra.Controls.Add(this.btnTerminar);
-            this.gbxEntCompra.Controls.Add(this.btnAgrPG);
-            this.gbxEntCompra.Controls.Add(this.lblTotProd);
-            this.gbxEntCompra.Controls.Add(this.label7);
-            this.gbxEntCompra.Controls.Add(this.label6);
-            this.gbxEntCompra.Controls.Add(this.txtTotalProducto);
-            this.gbxEntCompra.Controls.Add(this.txtCostoUnit);
-            this.gbxEntCompra.Controls.Add(this.txtCantidad);
-            this.gbxEntCompra.Controls.Add(this.label1);
-            this.gbxEntCompra.Controls.Add(this.cmbProducto);
-            this.gbxEntCompra.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxEntCompra.Location = new System.Drawing.Point(177, -8);
-            this.gbxEntCompra.Name = "gbxEntCompra";
-            this.gbxEntCompra.Size = new System.Drawing.Size(411, 443);
-            this.gbxEntCompra.TabIndex = 1;
-            this.gbxEntCompra.TabStop = false;
-            this.gbxEntCompra.Text = "Comprar";
-            this.gbxEntCompra.Visible = false;
-            // 
-            // btnCalTotProd
-            // 
-            this.btnCalTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalTotProd.Location = new System.Drawing.Point(35, 242);
-            this.btnCalTotProd.Name = "btnCalTotProd";
-            this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
-            this.btnCalTotProd.TabIndex = 16;
-            this.btnCalTotProd.Text = "Calcular total Producto";
-            this.btnCalTotProd.UseVisualStyleBackColor = true;
-            this.btnCalTotProd.Click += new System.EventHandler(this.btnCalTotProd_Click);
-            // 
-            // btnTerminar
-            // 
-            this.btnTerminar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(245, 255);
-            this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(98, 53);
-            this.btnTerminar.TabIndex = 15;
-            this.btnTerminar.Text = "Terminar";
-            this.btnTerminar.UseVisualStyleBackColor = true;
-            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
-            // 
-            // btnAgrPG
-            // 
-            this.btnAgrPG.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgrPG.Location = new System.Drawing.Point(245, 154);
-            this.btnAgrPG.Name = "btnAgrPG";
-            this.btnAgrPG.Size = new System.Drawing.Size(98, 53);
-            this.btnAgrPG.TabIndex = 14;
-            this.btnAgrPG.Text = "Agregar Productos";
-            this.btnAgrPG.UseVisualStyleBackColor = true;
-            this.btnAgrPG.Click += new System.EventHandler(this.btnAgrPG_Click);
-            // 
-            // lblTotProd
-            // 
-            this.lblTotProd.AutoSize = true;
-            this.lblTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotProd.Location = new System.Drawing.Point(29, 298);
-            this.lblTotProd.Name = "lblTotProd";
-            this.lblTotProd.Size = new System.Drawing.Size(121, 22);
-            this.lblTotProd.TabIndex = 13;
-            this.lblTotProd.Text = "Total Producto";
-            this.lblTotProd.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(31, 170);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 22);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Costo Unitario";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 111);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 22);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Cantidad";
-            // 
-            // txtTotalProducto
-            // 
-            this.txtTotalProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalProducto.Location = new System.Drawing.Point(33, 337);
-            this.txtTotalProducto.Name = "txtTotalProducto";
-            this.txtTotalProducto.ReadOnly = true;
-            this.txtTotalProducto.Size = new System.Drawing.Size(124, 29);
-            this.txtTotalProducto.TabIndex = 10;
-            this.txtTotalProducto.Visible = false;
-            // 
-            // txtCostoUnit
-            // 
-            this.txtCostoUnit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostoUnit.Location = new System.Drawing.Point(35, 193);
-            this.txtCostoUnit.Name = "txtCostoUnit";
-            this.txtCostoUnit.Size = new System.Drawing.Size(100, 29);
-            this.txtCostoUnit.TabIndex = 9;
-            this.txtCostoUnit.Text = "0";
-            this.txtCostoUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoUnit_KeyPress);
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(35, 134);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 29);
-            this.txtCantidad.TabIndex = 8;
-            this.txtCantidad.Text = "0";
-            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Producto";
-            // 
-            // cmbProducto
-            // 
-            this.cmbProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(123, 75);
-            this.cmbProducto.Name = "cmbProducto";
-            this.cmbProducto.Size = new System.Drawing.Size(247, 30);
-            this.cmbProducto.TabIndex = 0;
-            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
-            this.cmbProducto.Click += new System.EventHandler(this.cmbProducto_Click);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,6 +372,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(827, 36);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // xToolStripMenuItem
             // 
@@ -396,9 +397,9 @@
             this.Load += new System.EventHandler(this.FrmEntradas_Load);
             this.gbxEntrada.ResumeLayout(false);
             this.gbxEntrada.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.gbxEntCompra.ResumeLayout(false);
             this.gbxEntCompra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
