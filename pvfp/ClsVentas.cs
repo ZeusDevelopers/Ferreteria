@@ -6,15 +6,34 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;  //Referencia mysqldata
 using System.IO;
 using System.Windows.Forms;
-using System.Collections;
+using System.Data;
 
 namespace PVFP
 {
     class ClsVentas
     {
-   
+
         #region MYSQL
-       
+        public DataTable VerProducto(string productoid)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+                MySqlCommand _comando = new MySqlCommand(String.Format("select Producto_ID,Nombre,costocompra  from productos where CodigoBarras=" + productoid), conexion);
+                MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
+                _dataAdapter.Fill(tabla);
+                conexion.Close();
+            }
+            catch (Exception  ex)
+            {
+                if (ex.Message.Contains("Unknown column"))
+                    MessageBox.Show("No Existe Producto");
+                else
+                    MessageBox.Show(ex.Message);                 
+            }
+            return tabla;
+        }
         #endregion
     }
 }

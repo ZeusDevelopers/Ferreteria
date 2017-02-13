@@ -76,7 +76,8 @@ namespace PVFP
             while (_reader.Read())
             {
                 ArregloUsu.Add(_reader["Usuario"].ToString());
-                ArregloContra.Add(_reader["Contraseña"].ToString());
+                //ArregloContra.Add(_reader["Contraseña"].ToString());
+                ArregloContra.Add(_reader["Contra"].ToString());
                 ArregloPuesto.Add(_reader["Puesto"].ToString());
             }
             conexion.Close();

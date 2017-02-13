@@ -27,30 +27,40 @@ namespace PVFP
         {
             try
             {
-                conexion.Sesion(txtusuario.Text, txtcontraseña.Text);
-                if (conexion.bandera == false)
-                {
-                    txtcontraseña.Text = "";
-                    MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+                if (ClsInicioSesion.Usuario=="") {
+                    conexion.Sesion(txtusuario.Text, txtcontraseña.Text);
+                    if (conexion.bandera == false)
+                    {
+                        txtcontraseña.Text = "";
+                        ClsInicioSesion.Usuario = "";
+                        MessageBox.Show("Usuario o Contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        conexion.usuario = txtusuario.Text;
+                        this.WindowState = FormWindowState.Minimized;
+                        if (conexion.puesto == "0")//ADMIN
+                        {
+                            txtcontraseña.Text = "";
+                            FrmMenuAdmin admin = new FrmMenuAdmin();
+                            conexion.bandera = false;
+                            admin.Show();
+                        }
+                        else //Trabajador
+                        {
+                            txtcontraseña.Text = "";
+                            FrmPuntoVenta venta = new FrmPuntoVenta();
+                            conexion.bandera = false;
+                            venta.Show();
+                        }
+
+
+                    }
                 }
                 else
-                {                    
-                    conexion.usuario = txtusuario.Text;
-                    this.WindowState = FormWindowState.Minimized;
-                    if (conexion.puesto == "0")//ADMIN
-                    {
-                        txtcontraseña.Text = "";
-                        FrmMenuAdmin admin = new FrmMenuAdmin();                        
-                        admin.Show();
-                    }
-                    else //Trabajador
-                    {
-                        txtcontraseña.Text = "";
-                        FrmPuntoVenta venta = new FrmPuntoVenta();
-                        venta.Show();
-                    }
-
-
+                {
+                    MessageBox.Show("Existe una sesion iniciada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

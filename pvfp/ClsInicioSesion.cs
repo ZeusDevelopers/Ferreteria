@@ -18,7 +18,6 @@ namespace PVFP
             ObjLectura.Close();
              pathfinal = pathfinal.Remove(0, 5);
         }
-
         #endregion
         #region MYSQL
         public static MySqlConnection ObtenerConexion()
@@ -35,8 +34,7 @@ namespace PVFP
             }
             return conectar;
         }
-
-        public string usuario, contraseña, puesto;
+        public string usuario,puesto;
         public bool bandera = false;
         private static string nombre = "";
         //se asigna el usuario desde el login 
@@ -48,7 +46,9 @@ namespace PVFP
         public void Sesion(string usuario, string contraseña)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario = '" + usuario + "' and Contraseña = '" + contraseña + "'"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario =@usu and Contra =@contra "), conexion);
+            _comando.Parameters.AddWithValue("@usu", usuario);
+            _comando.Parameters.AddWithValue("@contra", contraseña);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
@@ -57,6 +57,14 @@ namespace PVFP
                 contraseña = _reader.GetString(2);
                 puesto = _reader.GetString(3);
             }
+            _reader.Close();
+            _comando = new MySqlCommand(String.Format("select nombre from empleados left join sesion on empleados.Sesion_ID = (select Sesion_ID from sesion where Usuario =@usu) where Usuario is Null ;"), conexion);
+            _comando.Parameters.AddWithValue("@usu", usuario);
+            _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                nombre = _reader.GetString(0);
+            }            
             conexion.Close();
         }
         #endregion

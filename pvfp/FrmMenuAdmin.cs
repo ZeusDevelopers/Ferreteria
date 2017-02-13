@@ -85,5 +85,10 @@ namespace PVFP
         {
             this.Close();
         }
+
+        private void FrmMenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ClsInicioSesion.Usuario = "";
+        }
     }
 }

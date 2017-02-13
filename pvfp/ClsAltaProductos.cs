@@ -90,9 +90,9 @@ namespace PVFP
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `productos` SET  " +
-                "`Nombre`='" + Nombre + "',`Categoria_ID`=" + Categoria_ID + "," +
+               "`Nombre`='" + Nombre + "',`Categoria_ID`=" + Categoria_ID + "," +
                 "`CostoCompra`=" + CostoCompra + ",`Tipo_ID`=" + Tipo_ID + ",`Codigo`='" + Folio + "'," +
-                "`Descripcion`='" + Descripcion + "',`UM`='" + UM + "',`Marca`='"+marca + "',`CodigoBarras`='" + codigobarras+"' WHERE `Producto_ID`=" + Producto_ID), conexion);
+                "`Descripcion`='" + Descripcion + "',`UM`='" + UM + "',`Marca`='" + marca + "',`CodigoBarras`='" + codigobarras + "' WHERE `Producto_ID`=" + Producto_ID), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
