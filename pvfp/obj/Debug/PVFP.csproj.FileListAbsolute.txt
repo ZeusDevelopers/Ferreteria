@@ -278,3 +278,7 @@ C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe
 C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.pdb
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta_Buscar.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.manifest
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.application
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe.manifest
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.application
