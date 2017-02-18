@@ -87,6 +87,7 @@
     <Compile Include="ClsEmpleados.cs" />
     <Compile Include="ClsEntrada.cs" />
     <Compile Include="ClsInicioSesion.cs" />
+    <Compile Include="Clsinputbox.cs" />
     <Compile Include="ClsMayorProducto.cs" />
     <Compile Include="ClsPerdida.cs" />
     <Compile Include="ClsProveedores.cs" />
@@ -313,6 +314,7 @@
   <ItemGroup>
     <Content Include="icono2.ico" />
     <Content Include="im.ico" />
+    <None Include="Resources\abrir.png" />
     <None Include="Resources\editar.png" />
   </ItemGroup>
   <ItemGroup>

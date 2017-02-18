@@ -44,12 +44,9 @@
             this.txtDescripcionAgregar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -111,7 +108,7 @@
             this.label3.Location = new System.Drawing.Point(42, 52);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 22);
+            this.label3.Size = new System.Drawing.Size(124, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Categoria:";
             // 
@@ -121,7 +118,7 @@
             this.cmbCategoriaEditar.Location = new System.Drawing.Point(142, 47);
             this.cmbCategoriaEditar.Margin = new System.Windows.Forms.Padding(5);
             this.cmbCategoriaEditar.Name = "cmbCategoriaEditar";
-            this.cmbCategoriaEditar.Size = new System.Drawing.Size(199, 30);
+            this.cmbCategoriaEditar.Size = new System.Drawing.Size(199, 40);
             this.cmbCategoriaEditar.TabIndex = 5;
             this.cmbCategoriaEditar.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaEditar_SelectedIndexChanged_1);
             // 
@@ -130,7 +127,7 @@
             this.txtDescripcionEditar.Location = new System.Drawing.Point(142, 113);
             this.txtDescripcionEditar.Margin = new System.Windows.Forms.Padding(5);
             this.txtDescripcionEditar.Name = "txtDescripcionEditar";
-            this.txtDescripcionEditar.Size = new System.Drawing.Size(199, 29);
+            this.txtDescripcionEditar.Size = new System.Drawing.Size(199, 40);
             this.txtDescripcionEditar.TabIndex = 0;
             // 
             // btnEditar
@@ -150,7 +147,7 @@
             this.label4.Location = new System.Drawing.Point(23, 113);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 22);
+            this.label4.Size = new System.Drawing.Size(151, 32);
             this.label4.TabIndex = 3;
             this.label4.Text = "Descripcion:";
             // 
@@ -175,7 +172,7 @@
             this.txtCategoriaAgregar.Location = new System.Drawing.Point(143, 47);
             this.txtCategoriaAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.txtCategoriaAgregar.Name = "txtCategoriaAgregar";
-            this.txtCategoriaAgregar.Size = new System.Drawing.Size(199, 29);
+            this.txtCategoriaAgregar.Size = new System.Drawing.Size(199, 40);
             this.txtCategoriaAgregar.TabIndex = 5;
             // 
             // label1
@@ -184,7 +181,7 @@
             this.label1.Location = new System.Drawing.Point(42, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 22);
+            this.label1.Size = new System.Drawing.Size(124, 32);
             this.label1.TabIndex = 2;
             this.label1.Text = "Categoria:";
             // 
@@ -193,7 +190,7 @@
             this.txtDescripcionAgregar.Location = new System.Drawing.Point(142, 113);
             this.txtDescripcionAgregar.Margin = new System.Windows.Forms.Padding(5);
             this.txtDescripcionAgregar.Name = "txtDescripcionAgregar";
-            this.txtDescripcionAgregar.Size = new System.Drawing.Size(199, 29);
+            this.txtDescripcionAgregar.Size = new System.Drawing.Size(199, 40);
             this.txtDescripcionAgregar.TabIndex = 0;
             // 
             // btnAgregar
@@ -213,43 +210,21 @@
             this.label2.Location = new System.Drawing.Point(22, 113);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 22);
+            this.label2.Size = new System.Drawing.Size(151, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripcion:";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(927, 36);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // xToolStripMenuItem
-            // 
-            this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.xToolStripMenuItem.Name = "xToolStripMenuItem";
-            this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
-            this.xToolStripMenuItem.Text = "X";
-            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
-            // 
             // FrmCategorias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(927, 615);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmCategorias";
             this.ShowIcon = false;
@@ -261,10 +236,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -285,7 +257,5 @@
         private System.Windows.Forms.TextBox txtDescripcionAgregar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
     }
 }

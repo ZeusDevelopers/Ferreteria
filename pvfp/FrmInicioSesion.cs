@@ -16,6 +16,7 @@ namespace PVFP
         public FrmInicioSesion()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)

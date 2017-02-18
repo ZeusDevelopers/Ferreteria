@@ -129,7 +129,7 @@
     <value>10, 3, 0, 3</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1663, 42</value>
+    <value>1912, 42</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>11</value>
   </data>
   <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
@@ -181,7 +181,7 @@
     <value>29, 327</value>
   </data>
   <data name="DgvVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1871, 420</value>
+    <value>1422, 420</value>
   </data>
   <data name="DgvVentas.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -196,7 +196,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>10</value>
   </data>
   <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -232,10 +232,10 @@
     <value>Arial, 18pt, style=Italic</value>
   </data>
   <data name="Txtcodigo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>493, 272</value>
+    <value>657, 272</value>
   </data>
   <data name="Txtcodigo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>667, 49</value>
+    <value>503, 49</value>
   </data>
   <data name="Txtcodigo.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -253,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Txtcodigo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="Lbl_codprd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -265,7 +265,7 @@
     <value>NoControl</value>
   </data>
   <data name="Lbl_codprd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 262</value>
+    <value>14, 264</value>
   </data>
   <data name="Lbl_codprd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Lbl_codprd.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GbVenta.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -439,7 +439,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;GbVenta.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btncerrar.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -754,16 +754,16 @@
     <value>True</value>
   </data>
   <data name="Lblsubtotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="Lblsubtotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="Lblsubtotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1531, 803</value>
+    <value>287, 64</value>
   </data>
   <data name="Lblsubtotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 44</value>
+    <value>136, 65</value>
   </data>
   <data name="Lblsubtotal.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -778,25 +778,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Lblsubtotal.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;Lblsubtotal.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>2</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1329, 803</value>
+    <value>39, 66</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 44</value>
+    <value>258, 65</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -811,25 +811,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>1</value>
   </data>
   <data name="lbliva.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbliva.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="lbliva.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lbliva.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1531, 846</value>
+    <value>287, 119</value>
   </data>
   <data name="lbliva.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 44</value>
+    <value>136, 65</value>
   </data>
   <data name="lbliva.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -844,25 +844,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbliva.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;lbliva.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>0</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1399, 846</value>
+    <value>143, 119</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 44</value>
+    <value>154, 65</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -877,25 +877,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>3</value>
   </data>
   <data name="Lbl_total_final.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Lbl_total_final.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="Lbl_total_final.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="Lbl_total_final.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1531, 892</value>
+    <value>287, 183</value>
   </data>
   <data name="Lbl_total_final.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 44</value>
+    <value>136, 65</value>
   </data>
   <data name="Lbl_total_final.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -910,25 +910,25 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Lbl_total_final.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;Lbl_total_final.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 16pt, style=Bold</value>
+    <value>Palatino Linotype, 24pt, style=Bold</value>
   </data>
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1400, 892</value>
+    <value>142, 182</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 44</value>
+    <value>155, 65</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
@@ -943,10 +943,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>Gb_Venta</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>4</value>
   </data>
   <data name="Btn_limpiar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1013,7 +1013,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_limpiar.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="Btn_Buscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
@@ -1109,7 +1109,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_Buscar.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="Btn_comprar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1176,7 +1176,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_comprar.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>9</value>
   </data>
   <data name="Btn_cantidad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1243,7 +1243,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_cantidad.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="Btn_eliminar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1310,6 +1310,98 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_eliminar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Gb_Venta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>948, 753</value>
+  </data>
+  <data name="Gb_Venta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>494, 254</value>
+  </data>
+  <data name="Gb_Venta.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="Gb_Venta.Text" xml:space="preserve">
+    <value>Ventas</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Name" xml:space="preserve">
+    <value>Gb_Venta</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_abrir_cajon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btn_abrir_cajon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
+  </data>
+  <data name="btn_abrir_cajon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btn_abrir_cajon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="btn_abrir_cajon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_abrir_cajon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>566, 809</value>
+  </data>
+  <data name="btn_abrir_cajon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 150</value>
+  </data>
+  <data name="btn_abrir_cajon.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="btn_abrir_cajon.Text" xml:space="preserve">
+    <value>Cajon
+(F10)</value>
+  </data>
+  <data name="btn_abrir_cajon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;btn_abrir_cajon.Name" xml:space="preserve">
+    <value>btn_abrir_cajon</value>
+  </data>
+  <data name="&gt;&gt;btn_abrir_cajon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_abrir_cajon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_abrir_cajon.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1322,7 +1414,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1663, 1035</value>
+    <value>1912, 1035</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>

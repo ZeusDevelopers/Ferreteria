@@ -46,7 +46,7 @@ namespace PVFP
         public void Sesion(string usuario, string contraseña)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario =@usu and Contra =@contra "), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario =@usu and Contraseña =@contra "), conexion);
             _comando.Parameters.AddWithValue("@usu", usuario);
             _comando.Parameters.AddWithValue("@contra", contraseña);
             MySqlDataReader _reader = _comando.ExecuteReader();

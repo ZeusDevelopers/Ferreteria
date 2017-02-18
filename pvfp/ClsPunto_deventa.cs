@@ -19,10 +19,13 @@ namespace PVFP
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format(
-                "SELECT`CodigoBarras` as 'Codigo',`Nombre` as 'Articulo',`CostoCompra` as 'Precio' FROM `productos`"
+               "SELECT`CodigoBarras` as 'Codigo',`Nombre` as 'Articulo', round(`CostoCompra`, 20) as 'Precio' FROM `productos`"
                 ), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
+            //tabla.Columns["Precio"].Convert(
+    //val => DateTime.Parse(val.ToString()).ToString("dd/MMM/yyyy"));
+           
             conexion.Close();
             return tabla;
         }

@@ -13,6 +13,7 @@ namespace PVFP
 {
     class Cls_imprimir_ticket
     {
+       
         public void imprimir()
         {  
             PrintDocument p = new PrintDocument();
