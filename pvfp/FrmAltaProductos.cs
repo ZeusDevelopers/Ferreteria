@@ -237,5 +237,9 @@ namespace PVFP
             llenar_modifcacion(id[0].ToString());
         }
 
+        private void cmbxTipoCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

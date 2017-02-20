@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PVFP.exe" size="61069280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PVFP.exe" size="61072352">
       <assemblyIdentity name="PVFP" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HeshjW/SJOLbk2qXree2ALWbtsaRr+iOjATOGvWiTEA=</dsig:DigestValue>
+        <dsig:DigestValue>nYgU83Eq8tgFuCBAkWULK9hsKfsZgW7IB8BIMiGpQuE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

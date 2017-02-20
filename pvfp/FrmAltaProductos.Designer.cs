@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        
 
         /// <summary>
         /// Clean up any resources being used.
@@ -150,6 +149,7 @@
             resources.GetString("cmbxTipoCargo.Items4")});
             resources.ApplyResources(this.cmbxTipoCargo, "cmbxTipoCargo");
             this.cmbxTipoCargo.Name = "cmbxTipoCargo";
+            this.cmbxTipoCargo.SelectedIndexChanged += new System.EventHandler(this.cmbxTipoCargo_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -202,6 +202,7 @@
             resources.ApplyResources(this.BtnGuardar, "BtnGuardar");
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
             // 
             // Txtcodigobarras
             // 
@@ -253,6 +254,7 @@
             resources.ApplyResources(this.Btn_Buscar, "Btn_Buscar");
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
             // 
             // txtBuscar
             // 
@@ -318,6 +320,7 @@
             resources.ApplyResources(this.cmbmodProdID, "cmbmodProdID");
             this.cmbmodProdID.FormattingEnabled = true;
             this.cmbmodProdID.Name = "cmbmodProdID";
+            this.cmbmodProdID.SelectedIndexChanged += new System.EventHandler(this.cmbmodProdID_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -422,22 +425,23 @@
             resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnModificar
             // 
             resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // FrmAltaProductos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tabControlALTA);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAltaProductos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             this.tabControlALTA.ResumeLayout(false);
             this.tabPAlta.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -456,8 +460,6 @@
         private System.Windows.Forms.TabControl tabControlALTA;
         private System.Windows.Forms.TabPage tabPAlta;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.ComboBox cmbxTipoCargo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label20;
@@ -481,8 +483,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.TabPage tabPModificar;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtModCantidad;
         private System.Windows.Forms.ComboBox cmbmodProdID;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbxmodTipoCargo;
@@ -503,5 +503,9 @@
         private System.Windows.Forms.TextBox txtmodPrecioCosto;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtModCantidad;
     }
 }

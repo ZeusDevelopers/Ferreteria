@@ -224,6 +224,7 @@ namespace PVFP
                                          
             if (e.KeyChar == 13)
             {
+
                 venta();
             }
         }
@@ -273,11 +274,18 @@ namespace PVFP
                     //imprime imagen
                     ticket.imprimir();
                     //Datos de la cabecera del Ticket.
-                    ticket.TextoCentro("FERRETERIA VEGA");
-                    ticket.lineasAsteriscos();
+                    ticket.TextoIzquierda("     FERRETERIA y PLOMERIA");
+                        ticket.TextoCentro("VEGA");
+                        ticket.lineasAsteriscos();
+                        ticket.TextoCentro("MARITZA FELIX QUINONEZ");
+                        ticket.TextoIzquierda("R.F.C FEQM-661228-1MA");
+                        ticket.TextoIzquierda("Ave.Tecnológico # 1060 Colonia  Jardines de la montana");
+                        ticket.TextoCentro("ventas.vegaexpress@gmail.com");
+                        ticket.TextoCentro("Nogales,Sonora,Mexico");
+                        ticket.lineasAsteriscos();
                     //Sub cabecera.            
                     ticket.TextoIzquierda("ATENDIO: " + ClsInicioSesion.Usuario);
-                    ticket.TextoExtremos("FECHA: " + DateTime.Now.ToShortDateString(), "HORA: " + DateTime.Now.ToShortTimeString());
+                    ticket.TextoExtremos("FECHA:" + DateTime.Now.ToShortDateString(), "HORA:" + DateTime.Now.ToShortTimeString());
                     ticket.lineasAsteriscos();
                     //Articulos a vender.
                     ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE
@@ -365,7 +373,7 @@ namespace PVFP
                 }
                 else
                 {
-                    MessageBox.Show("Producto no Existe");
+                    //MessageBox.Show("Producto no Existe");
                     Txtcodigo.Text = "";
                 }
             }
