@@ -73,7 +73,7 @@ namespace PVFP
         public void EncabezadoVenta()
         {
             //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
-            linea.AppendLine("ARTÍCULO    |CANT|PRECIO|IMPORTE");
+            linea.AppendLine("ARTICULO    |CANT|PRECIO|IMPORTE");
         }
 
         //Creamos un metodo para poner el texto a la izquierda

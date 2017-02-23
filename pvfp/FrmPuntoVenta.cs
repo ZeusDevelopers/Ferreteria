@@ -274,14 +274,17 @@ namespace PVFP
                     //imprime imagen
                     ticket.imprimir();
                     //Datos de la cabecera del Ticket.
-                    ticket.TextoIzquierda("     FERRETERIA y PLOMERIA");
+                    ticket.TextoIzquierda("     PLOMERIA y FERRETERIA");
                         ticket.TextoCentro("VEGA");
                         ticket.lineasAsteriscos();
                         ticket.TextoCentro("MARITZA FELIX QUINONEZ");
                         ticket.TextoIzquierda("R.F.C FEQM-661228-1MA");
-                        ticket.TextoIzquierda("Ave.Tecnológico # 1060 Colonia  Jardines de la montana");
-                        ticket.TextoCentro("ventas.vegaexpress@gmail.com");
+                        ticket.TextoIzquierda("REGIMEN FISCAL:INCORPORACION");
+                        ticket.TextoIzquierda("FISCAL");
+                        ticket.TextoIzquierda("Ave.Tecnologico # 1060 Colonia  Jardines de la montana C.P 84063");
+                        ticket.TextoCentro("(631)315-8024");
                         ticket.TextoCentro("Nogales,Sonora,Mexico");
+
                         ticket.lineasAsteriscos();
                     //Sub cabecera.            
                     ticket.TextoIzquierda("ATENDIO: " + ClsInicioSesion.Usuario);
@@ -306,12 +309,12 @@ namespace PVFP
                     string cade = Lbl_cambio.Text.ToString().Replace("$", String.Empty);
                     double mioa = Double.Parse(cade);
                     ticket.AgregarTotales("         CAMBIO........$", (decimal)mioa);
-                    //Texto final del Ticket.        
-                    ticket.TextoIzquierda("");
+                    //Texto final del Ticket.                            
                     ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
                     ticket.CortaTicket();
-                    ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera            
-                    btncerrar.Enabled = true;
+                    ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera            
+                      //  ticket.ImprimirTicket("Microsoft XPS Document Writer");
+                        btncerrar.Enabled = true;
                     BtnCancelar.Enabled = false;
                     Btn_Aceptar_pago.Enabled = false;
                     cant_correcta = false;

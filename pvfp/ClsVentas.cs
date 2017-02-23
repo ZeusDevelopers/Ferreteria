@@ -20,7 +20,7 @@ namespace PVFP
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-                MySqlCommand _comando = new MySqlCommand(String.Format("select Producto_ID,Nombre,costocompra  from productos where CodigoBarras=" + productoid), conexion);
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Precio_Venta` FROM `producto` where `Codigodebarra`=" + productoid), conexion);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
                 _dataAdapter.Fill(tabla);
                 conexion.Close();

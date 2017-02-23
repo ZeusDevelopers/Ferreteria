@@ -22,9 +22,7 @@ namespace PVFP
             DgvProductos.DataSource = venta.VerTodosProductos();
             this.DgvProductos.Columns[0].Width = 133;
             this.DgvProductos.Columns[1].Width = 392;
-            this.DgvProductos.Columns[2].Width = 133;
-            
-            
+            this.DgvProductos.Columns[2].Width = 133;                        
         }
         ArrayList numeros = new ArrayList();
         private void Btn_Salir_Click(object sender, EventArgs e)

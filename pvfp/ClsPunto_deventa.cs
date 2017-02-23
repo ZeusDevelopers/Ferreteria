@@ -19,7 +19,7 @@ namespace PVFP
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format(
-               "SELECT`CodigoBarras` as 'Codigo',`Nombre` as 'Articulo', round(`CostoCompra`, 20) as 'Precio' FROM `productos`"
+               "SELECT `Codigodebarra`,`Nombre`,`Precio_Venta` FROM `producto`"
                 ), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
