@@ -41,6 +41,7 @@ namespace PVFP
                 cmb_modificar();
                 //llena dvg
                 llenar_mostrar();
+                lblID.Text = (Convert.ToInt32(productos.Obtener_productoId())+1).ToString(); 
             }
             catch (Exception ex)
             {
@@ -147,8 +148,8 @@ namespace PVFP
                     productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
                         cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text);
                     MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    almacen.AgregarPAlmacen("0",Txtcodigobarras.Text,txtFolio.Text,txtCantPiso.Text,txtCantAlmacen.Text,
-                        txtLocalizacion.Text, DateTime.Now.Date.ToString("dd-MM-yy"),txtIVA.Text);
+                    almacen.AgregarPAlmacen("0",lblID.Text,Txtcodigobarras.Text,txtFolio.Text,txtCantPiso.Text,txtCantAlmacen.Text,
+                        txtLocalizacion.Text, DateTime.Now.Date.ToString("dd-MM-yy"));
                     Txtcodigobarras.Text = "";
                     txtFolio.Text = "";
                     txtNombre.Text = "";
@@ -167,7 +168,8 @@ namespace PVFP
                     txtCantPiso.Text = "";
                     txtCantAlmacen.Text = "";
                     txtLocalizacion.Text = "";
-                    txtIVA.Text = "";
+                    //quitar el iva de almacen
+                    lblID.Text = (Convert.ToInt32(productos.Obtener_productoId()) + 1).ToString();
                     //actualizar campos                
                     cmb_modificar();
                     llenar_mostrar();

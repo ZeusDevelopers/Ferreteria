@@ -110,11 +110,11 @@ namespace PVFP
         {
             ArregloProductomod = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT  Producto_ID FROM producto"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT  IFNULL(max(Producto_ID),0)IDProd FROM producto"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                ArregloProductomod.Add(_reader["Producto_ID"].ToString());
+                ArregloProductomod.Add(_reader["IDProd"].ToString());
             }
             conexion.Close();
             return ArregloProductomod[ArregloProductomod.Count - 1].ToString();
