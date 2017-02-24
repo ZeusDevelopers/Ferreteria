@@ -24,6 +24,7 @@ namespace PVFP
         ClsCategorias Categorias = new ClsCategorias();
         ClsTiposCargos tipos = new ClsTiposCargos();
         SqlConnection conexion = new SqlConnection();
+        ClsAlmacen almacen = new ClsAlmacen();
         //Localizable = true ; --Formato a Form              
         private void frmProductos_Load(object sender, EventArgs e)
         {
@@ -147,16 +148,28 @@ namespace PVFP
                     productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
                         cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text, txtCantidad.Text);
                     MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    almacen.AgregarPAlmacen("0",Txtcodigobarras.Text,txtFolio.Text,txtCantPiso.Text,txtCantAlmacen.Text,
+                        txtLocalizacion.Text, DateTime.Now.Date.ToString("dd-MM-yy"),txtIVA.Text);
                     Txtcodigobarras.Text = "";
                     txtFolio.Text = "";
                     txtNombre.Text = "";
                     cmbxTipoCargo.Text = "";
+
+
+
+
+
+                     
                     cmbxUM.Text = "";
                     txtPrecioCosto.Text = "";
                     txtPrecioVenta.Text = "";
                     txtPrecioMayore.Text = "";
                     txtCantidad.Text = "";
+
+                    txtCantPiso.Text = "";
+                    txtCantAlmacen.Text = "";
+                    txtLocalizacion.Text = "";
+                    txtIVA.Text = "";
                     //actualizar campos                
                     cmb_modificar();
                     llenar_mostrar();

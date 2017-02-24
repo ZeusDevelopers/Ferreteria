@@ -32,6 +32,7 @@ namespace PVFP
         {
             gbxEntrada.Visible = false;
             gbxEntCompra.Visible = true;
+            gbxEntCompra.BringToFront();
         }
         #region LoadForma
         public void llenarProvedores()

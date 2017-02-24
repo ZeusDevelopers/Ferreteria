@@ -79,6 +79,14 @@
             this.txtmodPrecioCosto = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtIVA = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtLocalizacion = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCantAlmacen = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtCantPiso = new System.Windows.Forms.TextBox();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,6 +113,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.txtIVA);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.txtLocalizacion);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.txtCantAlmacen);
+            this.groupBox1.Controls.Add(this.label24);
+            this.groupBox1.Controls.Add(this.txtCantPiso);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.cmbxTipoCargo);
@@ -434,6 +450,46 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // txtIVA
+            // 
+            resources.ApplyResources(this.txtIVA, "txtIVA");
+            this.txtIVA.Name = "txtIVA";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // txtLocalizacion
+            // 
+            resources.ApplyResources(this.txtLocalizacion, "txtLocalizacion");
+            this.txtLocalizacion.Name = "txtLocalizacion";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // txtCantAlmacen
+            // 
+            resources.ApplyResources(this.txtCantAlmacen, "txtCantAlmacen");
+            this.txtCantAlmacen.Name = "txtCantAlmacen";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // txtCantPiso
+            // 
+            resources.ApplyResources(this.txtCantPiso, "txtCantPiso");
+            this.txtCantPiso.Name = "txtCantPiso";
+            // 
             // FrmAltaProductos
             // 
             resources.ApplyResources(this, "$this");
@@ -507,5 +563,13 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtModCantidad;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtLocalizacion;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtCantAlmacen;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtCantPiso;
     }
 }
