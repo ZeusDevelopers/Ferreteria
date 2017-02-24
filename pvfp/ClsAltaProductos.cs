@@ -33,7 +33,7 @@ namespace PVFP
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format(
                 "SELECT `Codigodebarra`, `Folio`, `Nombre`," +
-                "`Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo`, `Cantidad` FROM `producto`"
+                "`Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo` FROM `producto`"
                 ), conexion);
 
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
@@ -42,11 +42,11 @@ namespace PVFP
             return tabla;
         }
         public void AgregarProducto(string Producto_ID, string Codigodebarra, string Folio, string Nombre,
-            string Tipo_Cargo, string UM, string Precio_Costo, string Precio_Venta, string Precio_Mayoreo, string Cantidad)
+            string Tipo_Cargo, string UM, string Precio_Costo, string Precio_Venta, string Precio_Mayoreo)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO producto (`Producto_ID`, `Codigodebarra`, `Folio`, `Nombre`, `Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo`,`Cantidad`) VALUES" +
-             "(@producto_ID,@codigodebarra,@folio,@nombre,@tipo_Cargo,@uM,@precio_Costo,@precio_Venta, @precio_Mayoreo,@cantidad)"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO producto (`Producto_ID`, `Codigodebarra`, `Folio`, `Nombre`, `Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo`) VALUES" +
+             "(@producto_ID,@codigodebarra,@folio,@nombre,@tipo_Cargo,@uM,@precio_Costo,@precio_Venta, @precio_Mayoreo)"), conexion);
 
             _comando.Parameters.AddWithValue("@producto_ID", Producto_ID);
             _comando.Parameters.AddWithValue("@codigodebarra", Codigodebarra);
@@ -57,7 +57,6 @@ namespace PVFP
             _comando.Parameters.AddWithValue("@precio_Costo", Precio_Costo);
             _comando.Parameters.AddWithValue("@precio_Venta", Precio_Venta);
             _comando.Parameters.AddWithValue("@precio_Mayoreo", Precio_Mayoreo);
-            _comando.Parameters.AddWithValue("@cantidad", Cantidad);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
@@ -88,13 +87,13 @@ namespace PVFP
             conexion.Close();
         }
         public void EditarProducto(string Producto_ID, string Codigodebarra, string Folio, string Nombre,
-            string Tipo_Cargo, string UM, string Precio_Costo, string Precio_Venta, string Precio_Mayoreo, string Cantidad)
+            string Tipo_Cargo, string UM, string Precio_Costo, string Precio_Venta, string Precio_Mayoreo)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `producto` SET  " +
                 "`Codigodebarra`='" + Codigodebarra + "', `Folio`='" + Folio + "'," +
                 "`Nombre`='" + Nombre + "', `Tipo_Cargo`='" + Tipo_Cargo + "', `UM`='" + UM + "'," +
-                "`Precio_Costo`=" + Precio_Costo + ",`Precio_Venta`=" + Precio_Venta + ",`Precio_Mayoreo`=" + Precio_Mayoreo + ",`Cantidad`=" + Cantidad +
+                "`Precio_Costo`=" + Precio_Costo + ",`Precio_Venta`=" + Precio_Venta + ",`Precio_Mayoreo`=" + Precio_Mayoreo +
                 " WHERE Producto_ID =" + Producto_ID + ""), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();

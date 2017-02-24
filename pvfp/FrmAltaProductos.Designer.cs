@@ -32,8 +32,6 @@
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.cmbxTipoCargo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -57,8 +55,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.tabPModificar = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtModCantidad = new System.Windows.Forms.TextBox();
             this.cmbmodProdID = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbxmodTipoCargo = new System.Windows.Forms.ComboBox();
@@ -121,8 +117,6 @@
             this.groupBox1.Controls.Add(this.txtCantAlmacen);
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Controls.Add(this.txtCantPiso);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.cmbxTipoCargo);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label20);
@@ -143,16 +137,6 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // txtCantidad
-            // 
-            resources.ApplyResources(this.txtCantidad, "txtCantidad");
-            this.txtCantidad.Name = "txtCantidad";
             // 
             // cmbxTipoCargo
             // 
@@ -295,8 +279,6 @@
             // 
             // tabPModificar
             // 
-            this.tabPModificar.Controls.Add(this.label18);
-            this.tabPModificar.Controls.Add(this.txtModCantidad);
             this.tabPModificar.Controls.Add(this.cmbmodProdID);
             this.tabPModificar.Controls.Add(this.label16);
             this.tabPModificar.Controls.Add(this.cmbxmodTipoCargo);
@@ -320,16 +302,6 @@
             resources.ApplyResources(this.tabPModificar, "tabPModificar");
             this.tabPModificar.Name = "tabPModificar";
             this.tabPModificar.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
-            // 
-            // txtModCantidad
-            // 
-            resources.ApplyResources(this.txtModCantidad, "txtModCantidad");
-            this.txtModCantidad.Name = "txtModCantidad";
             // 
             // cmbmodProdID
             // 
@@ -559,10 +531,6 @@
         private System.Windows.Forms.TextBox txtmodPrecioCosto;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtModCantidad;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtIVA;
         private System.Windows.Forms.Label label22;

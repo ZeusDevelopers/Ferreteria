@@ -79,7 +79,6 @@ namespace PVFP
                 txtmodPrecioCosto.Text = elemento[6].ToString();
                 txtmodPrecioVenta.Text = elemento[7].ToString();
                 txtmodPrecioMayoreo.Text = elemento[8].ToString();
-                txtModCantidad.Text = elemento[9].ToString();
             }
             catch (Exception ex)
             {
@@ -146,7 +145,7 @@ namespace PVFP
                 {
 
                     productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
-                        cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text, txtCantidad.Text);
+                        cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text);
                     MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     almacen.AgregarPAlmacen("0",Txtcodigobarras.Text,txtFolio.Text,txtCantPiso.Text,txtCantAlmacen.Text,
                         txtLocalizacion.Text, DateTime.Now.Date.ToString("dd-MM-yy"),txtIVA.Text);
@@ -164,7 +163,6 @@ namespace PVFP
                     txtPrecioCosto.Text = "";
                     txtPrecioVenta.Text = "";
                     txtPrecioMayore.Text = "";
-                    txtCantidad.Text = "";
 
                     txtCantPiso.Text = "";
                     txtCantAlmacen.Text = "";
@@ -200,7 +198,6 @@ namespace PVFP
                     txtmodPrecioVenta.Text = "";
                     cmbmodProdID.Text = "";
                     txtmodPrecioMayoreo.Text = "";
-                    txtModCantidad.Text = "";
                     txtModCodigoBarras.Text = "";
                     //obtener_id();
                     llenar_mostrar();
@@ -222,7 +219,7 @@ namespace PVFP
                 string[] id = cmbmodProdID.SelectedItem.ToString().Split(',');
                 productos.EditarProducto(id[0].ToString(), txtModCodigoBarras.Text, txtmodFolio.Text,
                  txtmodNombre.Text, cmbxmodTipoCargo.SelectedItem.ToString(), cmbxmodUM.SelectedItem.ToString(),
-                 txtmodPrecioCosto.Text, txtmodPrecioVenta.Text, txtmodPrecioMayoreo.Text, txtModCantidad.Text);
+                 txtmodPrecioCosto.Text, txtmodPrecioVenta.Text, txtmodPrecioMayoreo.Text);
                 MessageBox.Show("Producto Modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbmodProdID.Text = "";
                 txtmodFolio.Text = "";
@@ -233,7 +230,6 @@ namespace PVFP
                 txtmodPrecioVenta.Text = "";
 
                 txtmodPrecioMayoreo.Text = "";
-                txtModCantidad.Text = "";
                 txtModCodigoBarras.Text = "";
                 //actualiza gridview
                 llenar_mostrar();

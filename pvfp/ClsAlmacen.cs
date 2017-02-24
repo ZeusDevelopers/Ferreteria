@@ -28,14 +28,14 @@ namespace PVFP
             }
             conexion.Close();
         }
-        public void AgregarPAlmacen(string Producto_ID, string CodigoBarras, 
+        public void AgregarPAlmacen(string Almacen_ID, string CodigoBarras, 
             string Folio, string A_Piso, string A_Almacen, string Localizacion, string FechaCompra, string IVA)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO almacen (`Producto_ID`, `CodigoBarras`, `Folio`, `A_Piso`, `A_Almacen`, `Localizacion`, `FechaCompra`, `IVA`) VALUES" +
-             "(@producto_ID, @codigoBarras, @folio, @a_Piso, @a_Almacen, @localizacion, @fechaCompra, @iVA)"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO almacen (`Almacen_ID`, `CodigoBarras`, `Folio`, `A_Piso`, `A_Almacen`, `Localizacion`, `FechaCompra`, `IVA`) VALUES" +
+             "(@almacen_ID, @codigoBarras, @folio, @a_Piso, @a_Almacen, @localizacion, @fechaCompra, @iVA)"), conexion);
 
-            _comando.Parameters.AddWithValue("@producto_ID", Producto_ID);
+            _comando.Parameters.AddWithValue("@almacen_ID", Almacen_ID);
             _comando.Parameters.AddWithValue("@codigoBarras", CodigoBarras);
             _comando.Parameters.AddWithValue("@folio", Folio);
             _comando.Parameters.AddWithValue("@a_Piso", A_Piso);
