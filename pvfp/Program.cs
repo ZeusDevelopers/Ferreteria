@@ -15,8 +15,8 @@ namespace PVFP
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FrmInicioSesion());
             //Application.Run(new FrmEntradas());
-            Application.Run(new FrmAltaProductos());
-            //Application.Run(new FrmPuntoVenta());
+            //Application.Run(new FrmAltaProductos());
+            Application.Run(new FrmPuntoVenta());
         }
     }
 }

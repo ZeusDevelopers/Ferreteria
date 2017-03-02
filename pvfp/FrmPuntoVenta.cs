@@ -404,6 +404,8 @@ namespace PVFP
             try
             {
                 FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this);
+                 clsventa.precio_dolar();
+
                 frm.Show();
             }
             catch (Exception ex)
