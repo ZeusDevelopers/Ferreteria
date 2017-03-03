@@ -120,8 +120,8 @@ namespace PVFP
         }
         private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 if (txtNombre.Text == "")
                 {
                     MessageBox.Show("Ingrese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -176,11 +176,11 @@ namespace PVFP
                     //se obtiene proximo id
 
                }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)

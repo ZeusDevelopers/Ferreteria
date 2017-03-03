@@ -117,7 +117,7 @@ namespace PVFP
                 ArregloProductomod.Add(_reader["IDProd"].ToString());
             }
             conexion.Close();
-            return ArregloProductomod[ArregloProductomod.Count - 1].ToString();
+            return ArregloProductomod[0].ToString();
 
         }
         #endregion
