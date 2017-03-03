@@ -120,8 +120,8 @@ namespace PVFP
         }
         private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (txtNombre.Text == "")
                 {
                     MessageBox.Show("Ingrese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -175,12 +175,12 @@ namespace PVFP
                     llenar_mostrar();
                     //se obtiene proximo id
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+               }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -249,6 +249,11 @@ namespace PVFP
         }
 
         private void cmbxTipoCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

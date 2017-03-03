@@ -32,6 +32,13 @@
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtLocalizacion = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCantAlmacen = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtCantPiso = new System.Windows.Forms.TextBox();
             this.cmbxTipoCargo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -75,13 +82,6 @@
             this.txtmodPrecioCosto = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtLocalizacion = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtCantAlmacen = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtCantPiso = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -135,6 +135,42 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblID
+            // 
+            resources.ApplyResources(this.lblID, "lblID");
+            this.lblID.Name = "lblID";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
+            // txtLocalizacion
+            // 
+            resources.ApplyResources(this.txtLocalizacion, "txtLocalizacion");
+            this.txtLocalizacion.Name = "txtLocalizacion";
+            // 
+            // label23
+            // 
+            resources.ApplyResources(this.label23, "label23");
+            this.label23.Name = "label23";
+            // 
+            // txtCantAlmacen
+            // 
+            resources.ApplyResources(this.txtCantAlmacen, "txtCantAlmacen");
+            this.txtCantAlmacen.Name = "txtCantAlmacen";
+            // 
+            // label24
+            // 
+            resources.ApplyResources(this.label24, "label24");
+            this.label24.Name = "label24";
+            // 
+            // txtCantPiso
+            // 
+            resources.ApplyResources(this.txtCantPiso, "txtCantPiso");
+            this.txtCantPiso.Name = "txtCantPiso";
             // 
             // cmbxTipoCargo
             // 
@@ -419,41 +455,6 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
-            // 
-            // label22
-            // 
-            resources.ApplyResources(this.label22, "label22");
-            this.label22.Name = "label22";
-            // 
-            // txtLocalizacion
-            // 
-            resources.ApplyResources(this.txtLocalizacion, "txtLocalizacion");
-            this.txtLocalizacion.Name = "txtLocalizacion";
-            // 
-            // label23
-            // 
-            resources.ApplyResources(this.label23, "label23");
-            this.label23.Name = "label23";
-            // 
-            // txtCantAlmacen
-            // 
-            resources.ApplyResources(this.txtCantAlmacen, "txtCantAlmacen");
-            this.txtCantAlmacen.Name = "txtCantAlmacen";
-            // 
-            // label24
-            // 
-            resources.ApplyResources(this.label24, "label24");
-            this.label24.Name = "label24";
-            // 
-            // txtCantPiso
-            // 
-            resources.ApplyResources(this.txtCantPiso, "txtCantPiso");
-            this.txtCantPiso.Name = "txtCantPiso";
-            // 
-            // lblID
-            // 
-            resources.ApplyResources(this.lblID, "lblID");
-            this.lblID.Name = "lblID";
             // 
             // FrmAltaProductos
             // 

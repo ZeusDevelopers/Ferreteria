@@ -288,3 +288,5 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe.manifest
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.application
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Newtonsoft.Json.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Newtonsoft.Json.xml
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Newtonsoft.Json.dll
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Newtonsoft.Json.xml

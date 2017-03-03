@@ -32,7 +32,7 @@ namespace PVFP
             string Folio, string A_Piso, string A_Almacen, string Localizacion, string FechaCompra)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO almacen (`Almacen_ID`, `CodigoBarras`, `Folio`, `A_Piso`, `A_Almacen`, `Localizacion`, `FechaCompra`, `IVA`) VALUES" +
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO almacen (`Almacen_ID`, `CodigoBarras`, `Folio`, `A_Piso`, `A_Almacen`, `Localizacion`, `FechaCompra`) VALUES" +
              "(@almacen_ID,@producto_ID, @codigoBarras, @folio, @a_Piso, @a_Almacen, @localizacion, @fechaCompra)"), conexion);
 
             _comando.Parameters.AddWithValue("@almacen_ID", Almacen_ID);
