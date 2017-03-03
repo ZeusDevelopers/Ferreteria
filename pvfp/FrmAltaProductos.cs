@@ -67,8 +67,8 @@ namespace PVFP
 
         public void llenar_modifcacion(string indice)
         {
-            try
-            {
+            //try
+            //{
                 DataTable tabla = productos.VerProducto(indice);
                 DataRow elemento = tabla.Rows[0];
 
@@ -80,12 +80,12 @@ namespace PVFP
                 txtmodPrecioCosto.Text = elemento[6].ToString();
                 txtmodPrecioVenta.Text = elemento[7].ToString();
                 txtmodPrecioMayoreo.Text = elemento[8].ToString();
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show("Ocurrio un error" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    MessageBox.Show("Ocurrio un error" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -176,12 +176,12 @@ namespace PVFP
                     //se obtiene proximo id
 
                }
-            }
+        }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+}
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
@@ -244,7 +244,7 @@ namespace PVFP
 
         private void cmbmodProdID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] id = cmbmodProdID.SelectedItem.ToString().Split(',');
+            string[] id = cmbmodProdID.SelectedItem.ToString().Split('-');
             llenar_modifcacion(id[0].ToString());
         }
 

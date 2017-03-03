@@ -21,7 +21,7 @@ namespace PVFP
         {
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM Producto  WHERE Producto_ID = " + fol), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `producto` WHERE `Producto_ID` = " + fol), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
             conexion.Close();
