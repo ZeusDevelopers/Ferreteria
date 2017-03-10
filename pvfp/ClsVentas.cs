@@ -22,7 +22,9 @@ namespace PVFP
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Precio_Venta` FROM `producto` where `Codigodebarra`='" + productoid+"'"), conexion);
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Precio_Venta`,A_Piso FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID "+
+                    "  where producto.Codigodebarra='" + productoid + "'"), conexion);
+
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
                 _dataAdapter.Fill(tabla);
                 conexion.Close();

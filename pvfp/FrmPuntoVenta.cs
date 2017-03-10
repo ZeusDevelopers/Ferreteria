@@ -15,6 +15,7 @@ namespace PVFP
     public partial class FrmPuntoVenta : Form
     {
         ClsVentas clsventa = new ClsVentas();
+        NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         bool cant_correcta = false;
         double subtotal = 0, iva = 0, total = 0, roww = -1;
         public FrmPuntoVenta()
@@ -200,32 +201,36 @@ namespace PVFP
             iva = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal * .16), 2));
             total = subtotal + iva;
             total = (Double)Decimal.Round(Convert.ToDecimal(total), 2);
-            lbliva.Text = "$ " + iva.ToString();
-            Lblsubtotal.Text = "$ " + subtotal.ToString();
-            Lbl_total_final.Text = "$ " + total.ToString();           
+            lbliva.Text =  iva.ToString("C",nfi);
+            Lblsubtotal.Text = subtotal.ToString("C", nfi);
+            Lbl_total_final.Text =  total.ToString("C", nfi);
         }
         public void venta()
         {
             try
             {
-                DataTable table = clsventa.VerProducto(Txtcodigo.Text);
+                DataTable table = clsventa.VerProducto(Txtcodigo.Text);                
+                double num1;
+                string n1;
                 if (table.Rows.Count > 0)
                 {
                     foreach (DataRow elemento in table.Rows)
                     {
-                        DgvVentas.Rows.Add(elemento[0], elemento[1], 1, elemento[2], "$" + elemento[2]);
+                        num1 =Double.Parse( elemento[2].ToString());
+                        n1 = num1.ToString("C", nfi);
+                        
+                        DgvVentas.Rows.Add(1,elemento[0], elemento[1], elemento[3],n1 , n1);
                         totales(elemento[2].ToString());
                         Txtcodigo.Text = "";
                     }
-                    NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;                    
-                    lbliva.Text = iva.ToString("C", nfi);                    
-                    Lblsubtotal.Text = "$" + subtotal.ToString();
-                    Lbl_total_final.Text = "$" + total.ToString();                    
+                    totales();                             
                 }
                 else
-                {                    
+                {
+                    MessageBox.Show("No existe producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     Txtcodigo.Text = "";
                 }
+                DgvVentas.ClearSelection();
             }
             catch (Exception ex)
             {
@@ -253,7 +258,7 @@ namespace PVFP
         }          
         private void FrmPuntoVenta_Load(object sender, EventArgs e)
         {
-            DataGridViewColumn row = DgvVentas.Columns[3];
+            DataGridViewColumn row = DgvVentas.Columns[4];
             row.DefaultCellStyle.BackColor = Color.LawnGreen;
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
         }
@@ -262,19 +267,23 @@ namespace PVFP
             cantidad();
         }
         void cantidad()
-        {
+        {            
             if (roww != -1)
             {
                 string cant = Clsinputbox.ShowDialog("INGRESE CANTIDAD", "CANTIDAD", roww.ToString());
-                DgvVentas[2, Int32.Parse(roww.ToString())].Value = cant;
-                DgvVentas[4, Int32.Parse(roww.ToString())].Value = "$" + (Double.Parse(cant) * Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString();
-                roww = -1;
-                totales();
+                if (cant!= "empty")
+                {
+                    DgvVentas[0, Int32.Parse(roww.ToString())].Value = cant;
+                    DgvVentas[4, Int32.Parse(roww.ToString())].Value = (Double.Parse(cant) * Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
+                    roww = -1;
+                    totales();
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione Un elemento");
             }
+            DgvVentas.ClearSelection();
         }
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {
@@ -296,26 +305,31 @@ namespace PVFP
             {
                 MessageBox.Show("Seleccione Un elemento");
             }
+            DgvVentas.ClearSelection();
         }
         private void btn_abrir_cajon_Click(object sender, EventArgs e)
         {
-            Cls_imprimir_ticket tic = new Cls_imprimir_ticket();
-            tic.AbreCajon();
-            tic.ImprimirTicket("POS-58");
+            try
+            {
+                Cls_imprimir_ticket tic = new Cls_imprimir_ticket();
+                tic.AbreCajon();
+                tic.ImprimirTicket("POS-58");
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }      
         private void DgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             roww = e.RowIndex;
         }        
-        internal void dato_encontrado(string codigobarras, string producto, string precio)
+        internal void dato_encontrado(string codigobarras, string producto, string precio,int stock)
         {
             try
             {
-                DgvVentas.Rows.Add(codigobarras, producto, 1, "$" + precio, "$" + precio);
-                totales(precio);
-                lbliva.Text = "$" + iva.ToString();
-                Lblsubtotal.Text = "$" + subtotal.ToString();
-                Lbl_total_final.Text = "$" + total.ToString();
+                DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi));
+                totales(precio);            
                 DgvVentas.ClearSelection();
             }
             catch (Exception ex)

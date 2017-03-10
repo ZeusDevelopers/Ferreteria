@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvVentas = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Txtcodigo = new System.Windows.Forms.TextBox();
             this.Lbl_codprd = new System.Windows.Forms.Label();
             this.Lblsubtotal = new System.Windows.Forms.Label();
@@ -52,6 +50,12 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Gb_Venta = new System.Windows.Forms.GroupBox();
             this.btn_abrir_cajon = new System.Windows.Forms.Button();
+            this.Cantid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -78,43 +82,38 @@
             this.DgvVentas.AllowUserToDeleteRows = false;
             this.DgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Cantid,
             this.Codigo,
             this.Producto,
-            this.Cantidad,
+            this.Existencia,
             this.Precio,
             this.Importe});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvVentas.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
             this.DgvVentas.ReadOnly = true;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.DgvVentas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DgvVentas.RowTemplate.Height = 28;
             this.DgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVentas_CellClick);
-            // 
-            // Codigo
-            // 
-            resources.ApplyResources(this.Codigo, "Codigo");
-            this.Codigo.Name = "Codigo";
-            // 
-            // Producto
-            // 
-            resources.ApplyResources(this.Producto, "Producto");
-            this.Producto.Name = "Producto";
-            // 
-            // Cantidad
-            // 
-            resources.ApplyResources(this.Cantidad, "Cantidad");
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // Precio
-            // 
-            resources.ApplyResources(this.Precio, "Precio");
-            this.Precio.Name = "Precio";
-            // 
-            // Importe
-            // 
-            resources.ApplyResources(this.Importe, "Importe");
-            this.Importe.Name = "Importe";
             // 
             // Txtcodigo
             // 
@@ -235,6 +234,42 @@
             this.btn_abrir_cajon.UseVisualStyleBackColor = false;
             this.btn_abrir_cajon.Click += new System.EventHandler(this.btn_abrir_cajon_Click);
             // 
+            // Cantid
+            // 
+            resources.ApplyResources(this.Cantid, "Cantid");
+            this.Cantid.Name = "Cantid";
+            this.Cantid.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            resources.ApplyResources(this.Codigo, "Codigo");
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            resources.ApplyResources(this.Producto, "Producto");
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Existencia
+            // 
+            resources.ApplyResources(this.Existencia, "Existencia");
+            this.Existencia.Name = "Existencia";
+            this.Existencia.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            resources.ApplyResources(this.Precio, "Precio");
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            resources.ApplyResources(this.Importe, "Importe");
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
             // FrmPuntoVenta
             // 
             resources.ApplyResources(this, "$this");
@@ -276,11 +311,6 @@
         private System.Windows.Forms.DataGridView DgvVentas;
         private System.Windows.Forms.TextBox Txtcodigo;
         private System.Windows.Forms.Label Lbl_codprd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Button Btn_comprar;
         private System.Windows.Forms.Label Lblsubtotal;
         private System.Windows.Forms.Label label4;
@@ -294,5 +324,11 @@
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.GroupBox Gb_Venta;
         private System.Windows.Forms.Button btn_abrir_cajon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Existencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
     }
 }

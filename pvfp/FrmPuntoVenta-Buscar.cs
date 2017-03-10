@@ -105,7 +105,7 @@ namespace PVFP
         {
             try
             {
-                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString());
+               // frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString());
                 this.Close();
             }
             catch (Exception ex)

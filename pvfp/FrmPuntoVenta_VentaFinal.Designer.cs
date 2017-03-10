@@ -100,6 +100,7 @@
             this.Btn_Aceptar_pago.TabIndex = 33;
             this.Btn_Aceptar_pago.Text = "Pagar";
             this.Btn_Aceptar_pago.UseVisualStyleBackColor = true;
+            this.Btn_Aceptar_pago.Click += new System.EventHandler(this.Btn_Aceptar_pago_Click);
             // 
             // Txt_efectivo
             // 

@@ -194,6 +194,12 @@
     <Compile Include="FrmPuntoVenta.Designer.cs">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPuntoVenta_VentaFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPuntoVenta_VentaFinal.Designer.cs">
+      <DependentUpon>FrmPuntoVenta_VentaFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTiposCargos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPuntoVenta.resx">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPuntoVenta_VentaFinal.resx">
+      <DependentUpon>FrmPuntoVenta_VentaFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposCargos.resx">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>

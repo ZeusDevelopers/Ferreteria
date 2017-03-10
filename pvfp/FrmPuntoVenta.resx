@@ -121,6 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Palatino Linotype, 12pt, style=Bold</value>
+  </data>
+  <data name="xToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="xToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 36</value>
+  </data>
+  <data name="xToolStripMenuItem.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -150,17 +162,11 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 12pt, style=Bold</value>
-  </data>
-  <data name="xToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="xToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 36</value>
-  </data>
-  <data name="xToolStripMenuItem.Text" xml:space="preserve">
-    <value>X</value>
+  <metadata name="Cantid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Cantid.HeaderText" xml:space="preserve">
+    <value>Cantidad</value>
   </data>
   <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -174,11 +180,11 @@
   <data name="Producto.HeaderText" xml:space="preserve">
     <value>Producto</value>
   </data>
-  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Existencia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Cantidad.HeaderText" xml:space="preserve">
-    <value>Cantidad</value>
+  <data name="Existencia.HeaderText" xml:space="preserve">
+    <value>Existencia</value>
   </data>
   <metadata name="Precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -193,7 +199,7 @@
     <value>Importe</value>
   </data>
   <data name="DgvVentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 327</value>
+    <value>20, 327</value>
   </data>
   <data name="DgvVentas.Size" type="System.Drawing.Size, System.Drawing">
     <value>1422, 420</value>
@@ -217,7 +223,7 @@
     <value>Arial, 18pt, style=Italic</value>
   </data>
   <data name="Txtcodigo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 272</value>
+    <value>657, 252</value>
   </data>
   <data name="Txtcodigo.Size" type="System.Drawing.Size, System.Drawing">
     <value>503, 49</value>
@@ -250,7 +256,7 @@
     <value>NoControl</value>
   </data>
   <data name="Lbl_codprd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 264</value>
+    <value>14, 244</value>
   </data>
   <data name="Lbl_codprd.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
@@ -614,7 +620,7 @@
     <value>NoControl</value>
   </data>
   <data name="Btn_Buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1166, 268</value>
+    <value>1166, 248</value>
   </data>
   <data name="Btn_Buscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 62</value>
@@ -960,6 +966,12 @@
   <data name="&gt;&gt;xToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Cantid.Name" xml:space="preserve">
+    <value>Cantid</value>
+  </data>
+  <data name="&gt;&gt;Cantid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Codigo.Name" xml:space="preserve">
     <value>Codigo</value>
   </data>
@@ -972,10 +984,10 @@
   <data name="&gt;&gt;Producto.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Cantidad.Name" xml:space="preserve">
-    <value>Cantidad</value>
+  <data name="&gt;&gt;Existencia.Name" xml:space="preserve">
+    <value>Existencia</value>
   </data>
-  <data name="&gt;&gt;Cantidad.Type" xml:space="preserve">
+  <data name="&gt;&gt;Existencia.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Precio.Name" xml:space="preserve">

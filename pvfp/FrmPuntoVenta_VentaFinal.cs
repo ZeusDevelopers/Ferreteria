@@ -80,5 +80,10 @@ namespace PVFP
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
             }
         }
+
+        private void Btn_Aceptar_pago_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
