@@ -129,7 +129,7 @@
     <value>10, 3, 0, 3</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1912, 42</value>
+    <value>1902, 42</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
@@ -161,42 +161,6 @@
   </data>
   <data name="xToolStripMenuItem.Text" xml:space="preserve">
     <value>X</value>
-  </data>
-  <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Importe.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="DgvVentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 327</value>
-  </data>
-  <data name="DgvVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1422, 420</value>
-  </data>
-  <data name="DgvVentas.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;DgvVentas.Name" xml:space="preserve">
-    <value>DgvVentas</value>
-  </data>
-  <data name="&gt;&gt;DgvVentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DgvVentas.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
-    <value>10</value>
   </data>
   <metadata name="Codigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -227,6 +191,27 @@
   </metadata>
   <data name="Importe.HeaderText" xml:space="preserve">
     <value>Importe</value>
+  </data>
+  <data name="DgvVentas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 327</value>
+  </data>
+  <data name="DgvVentas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1422, 420</value>
+  </data>
+  <data name="DgvVentas.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;DgvVentas.Name" xml:space="preserve">
+    <value>DgvVentas</value>
+  </data>
+  <data name="&gt;&gt;DgvVentas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DgvVentas.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="Txtcodigo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 18pt, style=Italic</value>
@@ -290,465 +275,6 @@
   </data>
   <data name="&gt;&gt;Lbl_codprd.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="GbVenta.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Name" xml:space="preserve">
-    <value>btncerrar</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Name" xml:space="preserve">
-    <value>Lbl_tarjeta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Name" xml:space="preserve">
-    <value>BtnCancelar</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Name" xml:space="preserve">
-    <value>Lbl_cambio</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Name" xml:space="preserve">
-    <value>LblCambio</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Name" xml:space="preserve">
-    <value>Btn_Aceptar_pago</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Name" xml:space="preserve">
-    <value>Txt_efectivo</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Name" xml:space="preserve">
-    <value>LblPago</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;LblPago.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Name" xml:space="preserve">
-    <value>Lbltotal</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Name" xml:space="preserve">
-    <value>Lbl_txtTotal</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="GbVenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 381</value>
-  </data>
-  <data name="GbVenta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>727, 375</value>
-  </data>
-  <data name="GbVenta.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="GbVenta.Text" xml:space="preserve">
-    <value>Compra</value>
-  </data>
-  <data name="GbVenta.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;GbVenta.Name" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;GbVenta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GbVenta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;GbVenta.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btncerrar.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btncerrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btncerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 288</value>
-  </data>
-  <data name="btncerrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 37</value>
-  </data>
-  <data name="btncerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="btncerrar.Text" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Name" xml:space="preserve">
-    <value>btncerrar</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;btncerrar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Lbl_tarjeta.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Lbl_tarjeta.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 18pt, style=Bold</value>
-  </data>
-  <data name="Lbl_tarjeta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Lbl_tarjeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 118</value>
-  </data>
-  <data name="Lbl_tarjeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 49</value>
-  </data>
-  <data name="Lbl_tarjeta.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="Lbl_tarjeta.Text" xml:space="preserve">
-    <value>Pago con tarjeta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Name" xml:space="preserve">
-    <value>Lbl_tarjeta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_tarjeta.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="BtnCancelar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 210</value>
-  </data>
-  <data name="BtnCancelar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 51</value>
-  </data>
-  <data name="BtnCancelar.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="BtnCancelar.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Name" xml:space="preserve">
-    <value>BtnCancelar</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;BtnCancelar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Lbl_cambio.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Lbl_cambio.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 14pt, style=Bold</value>
-  </data>
-  <data name="Lbl_cambio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Lbl_cambio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>343, 156</value>
-  </data>
-  <data name="Lbl_cambio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 38</value>
-  </data>
-  <data name="Lbl_cambio.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="Lbl_cambio.Text" xml:space="preserve">
-    <value>$0.00</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Name" xml:space="preserve">
-    <value>Lbl_cambio</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_cambio.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LblCambio.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LblCambio.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 14pt, style=Bold</value>
-  </data>
-  <data name="LblCambio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LblCambio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 156</value>
-  </data>
-  <data name="LblCambio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 38</value>
-  </data>
-  <data name="LblCambio.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="LblCambio.Text" xml:space="preserve">
-    <value>Cambio:</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Name" xml:space="preserve">
-    <value>LblCambio</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;LblCambio.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Btn_Aceptar_pago.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Btn_Aceptar_pago.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 210</value>
-  </data>
-  <data name="Btn_Aceptar_pago.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 51</value>
-  </data>
-  <data name="Btn_Aceptar_pago.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="Btn_Aceptar_pago.Text" xml:space="preserve">
-    <value>Pagar</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Name" xml:space="preserve">
-    <value>Btn_Aceptar_pago</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Btn_Aceptar_pago.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="Txt_efectivo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 14pt, style=Italic</value>
-  </data>
-  <data name="Txt_efectivo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 110</value>
-  </data>
-  <data name="Txt_efectivo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>285, 40</value>
-  </data>
-  <data name="Txt_efectivo.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="Txt_efectivo.Text" xml:space="preserve">
-    <value>$ 0.00</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Name" xml:space="preserve">
-    <value>Txt_efectivo</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Txt_efectivo.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LblPago.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LblPago.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 14pt, style=Bold</value>
-  </data>
-  <data name="LblPago.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LblPago.Location" type="System.Drawing.Point, System.Drawing">
-    <value>100, 107</value>
-  </data>
-  <data name="LblPago.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 38</value>
-  </data>
-  <data name="LblPago.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="LblPago.Text" xml:space="preserve">
-    <value>Pago en Efectivo:</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Name" xml:space="preserve">
-    <value>LblPago</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LblPago.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;LblPago.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Lbltotal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Lbltotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 14pt, style=Bold</value>
-  </data>
-  <data name="Lbltotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Lbltotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 67</value>
-  </data>
-  <data name="Lbltotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 38</value>
-  </data>
-  <data name="Lbltotal.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="Lbltotal.Text" xml:space="preserve">
-    <value>$0.00</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Name" xml:space="preserve">
-    <value>Lbltotal</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbltotal.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="Lbl_txtTotal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Lbl_txtTotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 14pt, style=Bold</value>
-  </data>
-  <data name="Lbl_txtTotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Lbl_txtTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 67</value>
-  </data>
-  <data name="Lbl_txtTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 38</value>
-  </data>
-  <data name="Lbl_txtTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Lbl_txtTotal.Text" xml:space="preserve">
-    <value>Total:</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Name" xml:space="preserve">
-    <value>Lbl_txtTotal</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.Parent" xml:space="preserve">
-    <value>GbVenta</value>
-  </data>
-  <data name="&gt;&gt;Lbl_txtTotal.ZOrder" xml:space="preserve">
-    <value>9</value>
   </data>
   <data name="Lblsubtotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1176,7 +702,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_comprar.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="Btn_cantidad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -1414,7 +940,7 @@
     <value>Stretch</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1912, 1035</value>
+    <value>1902, 1028</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
