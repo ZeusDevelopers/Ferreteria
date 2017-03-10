@@ -18,7 +18,7 @@ namespace PVFP
             InitializeComponent();
         }
         ClsAltaProductos productos = new ClsAltaProductos();
-       
+        ClsAlmacen almacen = new ClsAlmacen();
         private void frmEnAltProd_Load(object sender, EventArgs e)
         {
            
@@ -58,6 +58,8 @@ namespace PVFP
 
                     productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
                         cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text);
+                    almacen.AgregarPAlmacen("0", productos.Obtener_productoId(), Txtcodigobarras.Text, txtFolio.Text, "0", "0",
+                        "Fila1", DateTime.Now.Date.ToString("yy-MM-dd"));
                     MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Txtcodigobarras.Text = "";

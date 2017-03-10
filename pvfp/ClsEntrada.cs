@@ -22,11 +22,11 @@ namespace PVFP
             string query = "";
             if (campo=="Provedores")
             {
-                query = "SELECT CONCAT(Proveedor_ID, " + " - " + ", Nombre) FROM proveedores";
+                query = "SELECT CONCAT(Proveedor_ID," + "-" + ", Nombre) FROM proveedores";
             }
             else
             {
-                query = "SELECT CONCAT(Producto_ID," + " - " + ", Nombre) FROM productos";
+                query = "SELECT CONCAT(Producto_ID," + "-" + ", Nombre) FROM productos";
             }
             DataTable data = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
@@ -50,24 +50,25 @@ namespace PVFP
             return ArregloEntrada[ArregloEntrada.Count - 1].ToString();
 
         }
-        public void agrEntrada(string Entrada_ID, string Proveedor_ID, string Fecha, 
+        public void agrEntrada(string NumFactura, string Proveedor_ID, string Fecha, 
             string TotalCompra,string Empleado_ID)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO entrada (`Entrada_ID`, `Proveedor_ID`, `Fecha`, `TotalCompra`, `Empleado_ID`) VALUES" +
-                " (" + Entrada_ID+","+Proveedor_ID + ",'" + Fecha + "'," + TotalCompra + "," + Empleado_ID + ")"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO entrada (`NumFactura`, `Proveedor_ID`, `Fecha`, `TotalCompra`, `Empleado_ID`) VALUES" +
+                " ('" + NumFactura+"',"+Proveedor_ID + ",'" + Fecha + "'," + TotalCompra + "," + Empleado_ID + ")"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
-        public void agrEntrada_Detalle(string Entrada_ID, string Producto_ID,string Cantidad,
+        public void agrEntrada_Detalle(string NumFactura, string Producto_ID,string Cantidad,
             string CostoCompra, string TotalProducto)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO entrada_detalle (`Entrada_ID`, `Producto_ID`, `Cantidad`, `CostoCompra`, `TotalPoducto`) VALUES" +
-                " (" + Entrada_ID + ","+Producto_ID + "," + Cantidad +"," + CostoCompra+ "," + TotalProducto+")"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO entrada_detalle (`EntradaDetalle_ID`,`NumFactura`, `Producto_ID`, `Cantidad`, `CostoCompra`, `TotalProducto`) VALUES" +
+                " (0,'" + NumFactura + "',"+Producto_ID + "," + Cantidad +"," + CostoCompra+ "," + TotalProducto+")"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
+        
         #endregion
     }
 }

@@ -40,12 +40,12 @@
             this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEntradaID = new System.Windows.Forms.TextBox();
             this.btnAgrProductos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtEntradaID = new System.Windows.Forms.TextBox();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -53,13 +53,13 @@
             // 
             // gbxEntrada
             // 
+            this.gbxEntrada.Controls.Add(this.txtEntradaID);
             this.gbxEntrada.Controls.Add(this.btnMenu);
             this.gbxEntrada.Controls.Add(this.txtTotalCompra);
             this.gbxEntrada.Controls.Add(this.label5);
             this.gbxEntrada.Controls.Add(this.dgvProductos);
             this.gbxEntrada.Controls.Add(this.btnComprar);
             this.gbxEntrada.Controls.Add(this.label4);
-            this.gbxEntrada.Controls.Add(this.txtEntradaID);
             this.gbxEntrada.Controls.Add(this.btnAgrProductos);
             this.gbxEntrada.Controls.Add(this.label2);
             this.gbxEntrada.Controls.Add(this.cmbProveedores);
@@ -169,15 +169,6 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Entrada_ID";
             // 
-            // txtEntradaID
-            // 
-            this.txtEntradaID.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntradaID.Location = new System.Drawing.Point(126, 33);
-            this.txtEntradaID.Name = "txtEntradaID";
-            this.txtEntradaID.ReadOnly = true;
-            this.txtEntradaID.Size = new System.Drawing.Size(124, 29);
-            this.txtEntradaID.TabIndex = 7;
-            // 
             // btnAgrProductos
             // 
             this.btnAgrProductos.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,6 +223,13 @@
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
+            // txtEntradaID
+            // 
+            this.txtEntradaID.Location = new System.Drawing.Point(121, 32);
+            this.txtEntradaID.Name = "txtEntradaID";
+            this.txtEntradaID.Size = new System.Drawing.Size(150, 29);
+            this.txtEntradaID.TabIndex = 14;
+            // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,7 +259,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbProveedores;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEntradaID;
         private System.Windows.Forms.TextBox txtTotalCompra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvProductos;
@@ -274,5 +271,6 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtEntradaID;
     }
 }

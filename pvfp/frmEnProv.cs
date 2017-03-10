@@ -19,9 +19,9 @@ namespace PVFP
         ClsProveedores Proveedores = new ClsProveedores();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Proveedores.AgregarProveedor(0, txtNom.Text, txttel.Text, txtcorreo.Text, txtdire.Text, txtdescr.Text, txtbanco.Text, txtcuenta.Text);
+            //try
+            //{
+                Proveedores.AgregarProveedor("0", txtNom.Text, txttel.Text, txtcorreo.Text, txtdire.Text, txtdescr.Text, txtbanco.Text, txtcuenta.Text);
                 MessageBox.Show("Proveedor añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 txtdescr.Text = "";
@@ -33,11 +33,11 @@ namespace PVFP
                 txtbanco.Text = "";
                 
                 this.Close();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Proveedor no añadido, revise sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Proveedor no añadido, revise sus datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void xToolStripMenuItem_Click(object sender, EventArgs e)

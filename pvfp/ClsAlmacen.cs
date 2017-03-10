@@ -28,6 +28,20 @@ namespace PVFP
             }
             conexion.Close();
         }
+        public string CantidadAlmacen(string Producto_ID)
+        {
+            ArrayList arrCantidadAlmacen = new ArrayList();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT a_Almacen from almacen WHERE Producto_ID="+Producto_ID), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                arrCantidadAlmacen.Add(_reader["a_Almacen"].ToString());
+            }
+            conexion.Close();
+            return arrCantidadAlmacen[0].ToString();
+
+        }
         public void AgregarPAlmacen(string Almacen_ID, string Producto_ID, string CodigoBarras, 
             string Folio, string A_Piso, string A_Almacen, string Localizacion, string FechaCompra)
         {
@@ -43,6 +57,20 @@ namespace PVFP
             _comando.Parameters.AddWithValue("@a_Almacen", A_Almacen);
             _comando.Parameters.AddWithValue("@localizacion", Localizacion);
             _comando.Parameters.AddWithValue("@fechaCompra", FechaCompra);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            conexion.Close();
+        }
+        public void AgregarDesdeEntrada(string A_Almacen,string Fecha,string Producto_ID)
+        {
+            //UPDATE `almacen` SET `A_Almacen`=2,`FechaCompra`='04-03-2017' WHERE Producto_ID=1
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `almacen` SET `A_Almacen`= @a_almacen,"+
+                "`FechaCompra`= @fecha WHERE Producto_ID = @producto_ID"), conexion);
+
+
+            _comando.Parameters.AddWithValue("@a_Almacen", A_Almacen);
+            _comando.Parameters.AddWithValue("@fecha", Fecha);
+            _comando.Parameters.AddWithValue("@producto_ID", Producto_ID);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }

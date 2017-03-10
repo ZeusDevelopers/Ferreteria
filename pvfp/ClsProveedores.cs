@@ -37,7 +37,7 @@ namespace PVFP
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                ArgProveedor.Add(_reader["Proveedor_ID"].ToString() + "," + _reader["Nombre"].ToString());
+                ArgProveedor.Add(_reader["Proveedor_ID"].ToString() + "-" + _reader["Nombre"].ToString());
             }
             conexion.Close();
         }
@@ -67,10 +67,10 @@ namespace PVFP
             conexion.Close();
         }
 
-        public void AgregarProveedor(int proveedor_ID, string nombre, string telefono, string correo, string direccion, string descripcion, string banco, string cuenta)
+        public void AgregarProveedor(string proveedor_ID, string nombre, string telefono, string correo, string direccion, string descripcion, string banco, string cuenta)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `Proveedores`(`Proveedor_ID`, `Nombre`, `Telefono`, `Correo`, `Direccion`, `Banco`, `Cuenta`, `Descripcion`) VALUES ('?proveedorid, ?nombre, ?telefono, ?correo, ?direccion, ?banco, ?cuenta, ?descripcion)"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("INSERT INTO `Proveedores`(`Proveedor_ID`, `Nombre`, `Telefono`, `Correo`, `Direccion`, `Banco`, `Cuenta`, `Descripcion`) VALUES (?proveedorid, ?nombre, ?telefono, ?correo, ?direccion, ?banco, ?cuenta, ?descripcion)"), conexion);
             _comando.Parameters.AddWithValue("?nombre", nombre);
             _comando.Parameters.AddWithValue("?telefono", telefono);
             _comando.Parameters.AddWithValue("?correo", correo);

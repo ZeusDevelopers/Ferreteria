@@ -20,6 +20,7 @@ namespace PVFP
         ClsAltaProductos productos = new ClsAltaProductos();
         ClsProveedores proveedor = new ClsProveedores();
         ClsEntrada entradas = new ClsEntrada();
+        ClsAlmacen almacen = new ClsAlmacen();
 
 
         private void FrmEntradas_Load(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace PVFP
         {
             //gbxEntrada.Visible = false;
             //gbxEntCompra.Visible = true;
+            frmEntradasDetalle entDetalle = new frmEntradasDetalle();
+            entDetalle.agrRenglon += new frmEntradasDetalle.pasar(AgregarRenglon);
             bool form_abierto = false;
             foreach (Form frm in Application.OpenForms)
             {
@@ -42,9 +45,16 @@ namespace PVFP
             }
             if (form_abierto==false)
             {
-                Form  frmEntDetalle= new frmEntradasDetalle();
-                frmEntDetalle.Show();
+                entDetalle.Show();
             }
+
+            
+        }
+        public void AgregarRenglon(string renglon)
+        {
+            string[] r = renglon.Split('|');
+            dgvProductos.Rows.Add(r[0], r[1], r[2],r[3], r[4]);
+            CalularTotal();
         }
         #region LoadForma
         public void llenarProvedores()
@@ -53,35 +63,11 @@ namespace PVFP
             
             proveedor.CargarProveedor();
             ArrayList arrprov = proveedor.ArgProveedor;
-            cmbProveedores.Items.Add("0,Registrar Proveedor");
+            cmbProveedores.Items.Add("0-Registrar Proveedor");
             for (int i = 0; i < arrprov.Count; i++)
             {
                 cmbProveedores.Items.Add(arrprov[i].ToString());
             }
-        }
-        //public void llenarProductos()
-        //{
-        //    cmbProducto.Items.Clear();            
-        //    productos.CargarProductoMod();
-        //    ArrayList arrprod = productos.ArregloProductomod;
-        //    cmbProducto.Items.Add("0,Registrar Producto");
-        //    for (int i = 0; i < arrprod.Count; i++)
-        //    {
-        //        cmbProducto.Items.Add(arrprod[i].ToString());
-        //    }
-        //}
-
-        public void obtener_id()
-        {
-            try
-            {
-                txtEntradaID.Text = (Int32.Parse(entradas.Obtener_entradaId()) + 1).ToString(); ;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
         }
         private void cmbProveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -138,16 +124,21 @@ namespace PVFP
             {
                 if (dgvProductos.RowCount > 0)
                 {
-                    string[] prov = cmbProveedores.SelectedItem.ToString().Split(',');
-                    entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"),
+                
+                    string[] prov = cmbProveedores.SelectedItem.ToString().Split('-');
+                    entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"),
                         txtTotalCompra.Text, "1");
+
+                    //YYYY-MM-DD mysql
 
                     for (int i = 0; i < dgvProductos.RowCount; i++)
                     {
-                        string[] id = dgvProductos[0, i].Value.ToString().Split(',');
+                        string[] id = dgvProductos[0, i].Value.ToString().Split('-');
                         entradas.agrEntrada_Detalle(txtEntradaID.Text, id[0].ToString(),
                         dgvProductos[1, i].Value.ToString(), dgvProductos[2, i].Value.ToString(),
                         dgvProductos[3, i].Value.ToString());
+                        double cantidaProducto= Convert.ToDouble(almacen.CantidadAlmacen(id[0].ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
+                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
                     }
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();

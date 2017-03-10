@@ -69,7 +69,7 @@ namespace PVFP
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                ArregloProductomod.Add(_reader["Producto_ID"].ToString() + " - " + _reader["Nombre"].ToString());
+                ArregloProductomod.Add(_reader["Producto_ID"].ToString() + "-" + _reader["Nombre"].ToString());
             }
             conexion.Close();
         }

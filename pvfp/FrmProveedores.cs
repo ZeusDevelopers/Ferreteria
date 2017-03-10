@@ -23,7 +23,7 @@ namespace PVFP
         {
             try
             {
-                Proveedores.AgregarProveedor(0, txtNom.Text, txttel.Text, txtcorreo.Text, txtdire.Text, txtdescr.Text, txtbanco.Text, txtcuenta.Text);
+                Proveedores.AgregarProveedor("0", txtNom.Text, txttel.Text, txtcorreo.Text, txtdire.Text, txtdescr.Text, txtbanco.Text, txtcuenta.Text);
                 MessageBox.Show("Proveedor añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cargar();
                 txtdescr.Text = "";

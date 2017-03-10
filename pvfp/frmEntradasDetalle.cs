@@ -18,11 +18,14 @@ namespace PVFP
             InitializeComponent();
         }
         ClsAltaProductos productos = new ClsAltaProductos();
+        public delegate void pasar(string renglon);
+        public event pasar agrRenglon;
         private void btnAgrPG_Click(object sender, EventArgs e)
         {
             if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
             if (txtCostoUnit.Text == "") { txtCostoUnit.Text = "0"; }
             txtTotalProducto.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUnit.Text)).ToString();
+            agrRenglon(cmbProducto.SelectedItem.ToString()+"|"+ txtCantidad.Text + "|" +txtCostoUnit.Text + "|" +txtTotalProducto.Text + "|Quitar" );
           //  dgvProductos.Rows.Add(cmbProducto.SelectedItem.ToString(), txtCantidad.Text, txtCostoUnit.Text,
              //   txtTotalProducto.Text, "Quitar");
             txtCantidad.Text = "";
@@ -112,7 +115,7 @@ namespace PVFP
             cmbProducto.Items.Clear();
             productos.CargarProductoMod();
             ArrayList arrprod = productos.ArregloProductomod;
-            cmbProducto.Items.Add("0,Registrar Producto");
+            cmbProducto.Items.Add("0-Registrar Producto");
             for (int i = 0; i < arrprod.Count; i++)
             {
                 cmbProducto.Items.Add(arrprod[i].ToString());
@@ -126,6 +129,11 @@ namespace PVFP
                 frmEnAltProd AltProd = new frmEnAltProd();
                 AltProd.Show();
             }
+        }
+
+        private void btnTerminar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
