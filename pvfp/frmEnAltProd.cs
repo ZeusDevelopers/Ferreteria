@@ -18,68 +18,64 @@ namespace PVFP
             InitializeComponent();
         }
         ClsAltaProductos productos = new ClsAltaProductos();
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //productos.AgregarProducto("0", txtNombre.Text,
-                //    cmbCategoria.SelectedItem.ToString(), txtCostoCompra.Text,
-                //    cmbTipo.SelectedItem.ToString(), txtFolio.Text, txtdescripcion.Text, txtUM.Text,TxtMarca.Text);
-                MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCostoCompra.Text = "";
-                txtFolio.Text = "";
-                txtNombre.Text = "";
-                txtUM.Text = "";
-                txtdescripcion.Text = "";
-                cmbTipo.Text = "";
-                cmbCategoria.Text = "";
-                
-                //se obtiene proximo id
-                obtener_id();
-                
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        public void obtener_id()
-        {
-            try
-            {
-                txtProductoID.Text = (Int32.Parse(productos.Obtener_productoId()) + 1).ToString(); ;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-        ClsCategorias Categorias = new ClsCategorias();
-        ClsTiposCargos tipos = new ClsTiposCargos();
-
+       
         private void frmEnAltProd_Load(object sender, EventArgs e)
         {
-            obtener_id();
-            //Lenar categorias            
-            Categorias.CargarCategorias();
-            ArrayList arrcat = Categorias.ArregloID;
-            for (int i = 0; i < arrcat.Count; i++)
-            {
-                cmbCategoria.Items.Add(arrcat[i].ToString());
-            }
-            //Llena Tipos
-            ArrayList tipo = tipos.Tipo();
-            foreach (String item in tipo)
-            {
-                cmbTipo.Items.Add(item.ToString());
-            }  
+           
         }
 
         private void xToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtNombre.Text == "")
+                {
+                    MessageBox.Show("Ingrese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtPrecioCosto.Text == "")
+                {
+                    MessageBox.Show("Ingrese Precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtFolio.Text == "")
+                {
+                    MessageBox.Show("Ingrese Folio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (cmbxUM.SelectedItem.ToString() == "")
+                {
+                    MessageBox.Show("Ingrese Unidad Metrica", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (Txtcodigobarras.Text == "")
+                {
+                    MessageBox.Show("Ingrese codigo de barras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+
+                    productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
+                        cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text);
+                    MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    Txtcodigobarras.Text = "";
+                    txtFolio.Text = "";
+                    txtNombre.Text = "";
+                    cmbxTipoCargo.Text = "";
+                    cmbxUM.Text = "";
+                    txtPrecioCosto.Text = "";
+                    txtPrecioVenta.Text = "";
+                    txtPrecioMayore.Text = "";
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     

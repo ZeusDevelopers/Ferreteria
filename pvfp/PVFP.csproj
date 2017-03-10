@@ -146,6 +146,12 @@
     <Compile Include="FrmEntradas.Designer.cs">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEntradasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntradasDetalle.Designer.cs">
+      <DependentUpon>frmEntradasDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEntradas.resx">
       <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntradasDetalle.resx">
+      <DependentUpon>frmEntradasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInicioSesion.resx">
       <DependentUpon>FrmInicioSesion.cs</DependentUpon>

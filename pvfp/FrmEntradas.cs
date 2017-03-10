@@ -24,15 +24,27 @@ namespace PVFP
 
         private void FrmEntradas_Load(object sender, EventArgs e)
         {
-            obtener_id();
+            //obtener_id();
             llenarProvedores();
-            llenarProductos();
+           // llenarProductos();
         }
         private void btnAgrProductos_Click(object sender, EventArgs e)
         {
-            gbxEntrada.Visible = false;
-            gbxEntCompra.Visible = true;
-            gbxEntCompra.BringToFront();
+            //gbxEntrada.Visible = false;
+            //gbxEntCompra.Visible = true;
+            bool form_abierto = false;
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.GetType()== typeof(frmEntradasDetalle))
+                {
+                    form_abierto = true;
+                }
+            }
+            if (form_abierto==false)
+            {
+                Form  frmEntDetalle= new frmEntradasDetalle();
+                frmEntDetalle.Show();
+            }
         }
         #region LoadForma
         public void llenarProvedores()
@@ -47,17 +59,17 @@ namespace PVFP
                 cmbProveedores.Items.Add(arrprov[i].ToString());
             }
         }
-        public void llenarProductos()
-        {
-            cmbProducto.Items.Clear();            
-            productos.CargarProductoMod();
-            ArrayList arrprod = productos.ArregloProductomod;
-            cmbProducto.Items.Add("0,Registrar Producto");
-            for (int i = 0; i < arrprod.Count; i++)
-            {
-                cmbProducto.Items.Add(arrprod[i].ToString());
-            }
-        }
+        //public void llenarProductos()
+        //{
+        //    cmbProducto.Items.Clear();            
+        //    productos.CargarProductoMod();
+        //    ArrayList arrprod = productos.ArregloProductomod;
+        //    cmbProducto.Items.Add("0,Registrar Producto");
+        //    for (int i = 0; i < arrprod.Count; i++)
+        //    {
+        //        cmbProducto.Items.Add(arrprod[i].ToString());
+        //    }
+        //}
 
         public void obtener_id()
         {
@@ -71,74 +83,6 @@ namespace PVFP
             }
 
         }
-        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-
-            if ((txtCantidad.Text.Contains(wDecimal)))
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-
-                if (e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-            else
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-
-                if (e.KeyChar == '.' || e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-        }
-
-        private void txtCostoUnit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-
-            if ((txtCostoUnit.Text.Contains(wDecimal)))
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-
-                if (e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-            else
-            {
-                if (!char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-
-                if (e.KeyChar == '.' || e.KeyChar == '\b')
-                {
-                    e.Handled = false;
-                }
-            }
-        }
-        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbProducto.SelectedIndex == 0)
-            {
-                frmEnAltProd AltProd = new frmEnAltProd();
-                AltProd.Show();
-            }
-        }
-
         private void cmbProveedores_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbProveedores.SelectedIndex == 0)
@@ -153,43 +97,19 @@ namespace PVFP
             llenarProvedores();
         }
 
-        private void cmbProducto_Click(object sender, EventArgs e)
-        {
-            llenarProductos();
-        }
+    
         #endregion
-        private void btnTerminar_Click(object sender, EventArgs e)
-        {
-            gbxEntrada.Visible = true;
-            gbxEntCompra.Visible = false;
-            lblTotProd.Visible = false;
-            txtTotalProducto.Visible = false;
-            CalularTotal();
-        }
+        //private void btnTerminar_Click(object sender, EventArgs e)
+        //{
+        //    gbxEntrada.Visible = true;
+        //    gbxEntCompra.Visible = false;
+        //    lblTotProd.Visible = false;
+        //    txtTotalProducto.Visible = false;
+        //    CalularTotal();
+        //}
+        
 
-        private void btnAgrPG_Click(object sender, EventArgs e)
-        {
-            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
-            if (txtCostoUnit.Text == "") { txtCostoUnit.Text = "0"; }
-            txtTotalProducto.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUnit.Text)).ToString();
-            dgvProductos.Rows.Add(cmbProducto.SelectedItem.ToString(), txtCantidad.Text, txtCostoUnit.Text,
-                txtTotalProducto.Text, "Quitar");
-            txtCantidad.Text = "";
-            txtCostoUnit.Text = "";
-            txtTotalProducto.Text = "";
-            lblTotProd.Visible = false;
-            txtTotalProducto.Visible = false;
-            cmbProducto.Refresh();
-        }
-
-        private void btnCalTotProd_Click(object sender, EventArgs e)
-        {
-            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
-            if (txtCostoUnit.Text == "") { txtCostoUnit.Text = "0"; }
-            lblTotProd.Visible = true;
-            txtTotalProducto.Visible = true;
-            txtTotalProducto.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUnit.Text)).ToString();
-        }
+       
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -232,7 +152,7 @@ namespace PVFP
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();
                     txtTotalCompra.Text = "0";
-                    obtener_id();
+                    //obtener_id();
                 }
                 else
                 { MessageBox.Show("Añada un producto a la lista para comprar", "Problema", MessageBoxButtons.OK, MessageBoxIcon.Information); }
