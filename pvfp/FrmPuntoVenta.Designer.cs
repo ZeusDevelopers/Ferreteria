@@ -39,17 +39,6 @@
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Txtcodigo = new System.Windows.Forms.TextBox();
             this.Lbl_codprd = new System.Windows.Forms.Label();
-            this.GbVenta = new System.Windows.Forms.GroupBox();
-            this.btncerrar = new System.Windows.Forms.Button();
-            this.Lbl_tarjeta = new System.Windows.Forms.Label();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            this.Lbl_cambio = new System.Windows.Forms.Label();
-            this.LblCambio = new System.Windows.Forms.Label();
-            this.Btn_Aceptar_pago = new System.Windows.Forms.Button();
-            this.Txt_efectivo = new System.Windows.Forms.TextBox();
-            this.LblPago = new System.Windows.Forms.Label();
-            this.Lbltotal = new System.Windows.Forms.Label();
-            this.Lbl_txtTotal = new System.Windows.Forms.Label();
             this.Lblsubtotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbliva = new System.Windows.Forms.Label();
@@ -65,7 +54,6 @@
             this.btn_abrir_cajon = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
-            this.GbVenta.SuspendLayout();
             this.Gb_Venta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,9 +87,9 @@
             this.Importe});
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
+            this.DgvVentas.ReadOnly = true;
             this.DgvVentas.RowTemplate.Height = 28;
             this.DgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVentas_CellClick);
-            this.DgvVentas.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvVentas_RowsAdded);
             // 
             // Codigo
             // 
@@ -134,7 +122,6 @@
             resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
             this.Txtcodigo.ForeColor = System.Drawing.Color.Silver;
             this.Txtcodigo.Name = "Txtcodigo";
-            this.Txtcodigo.TextChanged += new System.EventHandler(this.Txtcodigo_TextChanged);
             this.Txtcodigo.Enter += new System.EventHandler(this.Txtcodigo_Enter);
             this.Txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcodigo_KeyPress);
             this.Txtcodigo.Leave += new System.EventHandler(this.Txtcodigo_Leave);
@@ -143,91 +130,14 @@
             // 
             resources.ApplyResources(this.Lbl_codprd, "Lbl_codprd");
             this.Lbl_codprd.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_codprd.ForeColor = System.Drawing.Color.White;
+            this.Lbl_codprd.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Lbl_codprd.Name = "Lbl_codprd";
-            // 
-            // GbVenta
-            // 
-            resources.ApplyResources(this.GbVenta, "GbVenta");
-            this.GbVenta.Controls.Add(this.btncerrar);
-            this.GbVenta.Controls.Add(this.Lbl_tarjeta);
-            this.GbVenta.Controls.Add(this.BtnCancelar);
-            this.GbVenta.Controls.Add(this.Lbl_cambio);
-            this.GbVenta.Controls.Add(this.LblCambio);
-            this.GbVenta.Controls.Add(this.Btn_Aceptar_pago);
-            this.GbVenta.Controls.Add(this.Txt_efectivo);
-            this.GbVenta.Controls.Add(this.LblPago);
-            this.GbVenta.Controls.Add(this.Lbltotal);
-            this.GbVenta.Controls.Add(this.Lbl_txtTotal);
-            this.GbVenta.Name = "GbVenta";
-            this.GbVenta.TabStop = false;
-            // 
-            // btncerrar
-            // 
-            resources.ApplyResources(this.btncerrar, "btncerrar");
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.UseVisualStyleBackColor = true;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // Lbl_tarjeta
-            // 
-            resources.ApplyResources(this.Lbl_tarjeta, "Lbl_tarjeta");
-            this.Lbl_tarjeta.Name = "Lbl_tarjeta";
-            // 
-            // BtnCancelar
-            // 
-            resources.ApplyResources(this.BtnCancelar, "BtnCancelar");
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // Lbl_cambio
-            // 
-            resources.ApplyResources(this.Lbl_cambio, "Lbl_cambio");
-            this.Lbl_cambio.Name = "Lbl_cambio";
-            // 
-            // LblCambio
-            // 
-            resources.ApplyResources(this.LblCambio, "LblCambio");
-            this.LblCambio.Name = "LblCambio";
-            // 
-            // Btn_Aceptar_pago
-            // 
-            resources.ApplyResources(this.Btn_Aceptar_pago, "Btn_Aceptar_pago");
-            this.Btn_Aceptar_pago.Name = "Btn_Aceptar_pago";
-            this.Btn_Aceptar_pago.UseVisualStyleBackColor = true;
-            this.Btn_Aceptar_pago.Click += new System.EventHandler(this.Btn_Aceptar_pago_Click);
-            // 
-            // Txt_efectivo
-            // 
-            this.Txt_efectivo.BackColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.Txt_efectivo, "Txt_efectivo");
-            this.Txt_efectivo.ForeColor = System.Drawing.Color.Silver;
-            this.Txt_efectivo.Name = "Txt_efectivo";
-            this.Txt_efectivo.TextChanged += new System.EventHandler(this.Txt_efectivo_TextChanged);
-            this.Txt_efectivo.Enter += new System.EventHandler(this.Txt_efectivo_Enter);
-            this.Txt_efectivo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_efectivo_KeyPress);
-            // 
-            // LblPago
-            // 
-            resources.ApplyResources(this.LblPago, "LblPago");
-            this.LblPago.Name = "LblPago";
-            // 
-            // Lbltotal
-            // 
-            resources.ApplyResources(this.Lbltotal, "Lbltotal");
-            this.Lbltotal.Name = "Lbltotal";
-            // 
-            // Lbl_txtTotal
-            // 
-            resources.ApplyResources(this.Lbl_txtTotal, "Lbl_txtTotal");
-            this.Lbl_txtTotal.Name = "Lbl_txtTotal";
             // 
             // Lblsubtotal
             // 
             resources.ApplyResources(this.Lblsubtotal, "Lblsubtotal");
             this.Lblsubtotal.BackColor = System.Drawing.Color.Transparent;
-            this.Lblsubtotal.ForeColor = System.Drawing.Color.White;
+            this.Lblsubtotal.ForeColor = System.Drawing.SystemColors.Highlight;
             this.Lblsubtotal.Name = "Lblsubtotal";
             // 
             // label4
@@ -241,7 +151,7 @@
             // 
             resources.ApplyResources(this.lbliva, "lbliva");
             this.lbliva.BackColor = System.Drawing.Color.Transparent;
-            this.lbliva.ForeColor = System.Drawing.Color.White;
+            this.lbliva.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbliva.Name = "lbliva";
             // 
             // label5
@@ -330,7 +240,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::PVFP.Properties.Resources.venta_bg;
             this.ControlBox = false;
             this.Controls.Add(this.btn_abrir_cajon);
             this.Controls.Add(this.Gb_Venta);
@@ -340,7 +249,6 @@
             this.Controls.Add(this.Txtcodigo);
             this.Controls.Add(this.Btn_Buscar);
             this.Controls.Add(this.Btn_limpiar);
-            this.Controls.Add(this.GbVenta);
             this.Controls.Add(this.Btn_comprar);
             this.Controls.Add(this.DgvVentas);
             this.Controls.Add(this.menuStrip1);
@@ -355,8 +263,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).EndInit();
-            this.GbVenta.ResumeLayout(false);
-            this.GbVenta.PerformLayout();
             this.Gb_Venta.ResumeLayout(false);
             this.Gb_Venta.PerformLayout();
             this.ResumeLayout(false);
@@ -376,25 +282,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Button Btn_comprar;
-        private System.Windows.Forms.GroupBox GbVenta;
-        private System.Windows.Forms.Label Lbltotal;
-        private System.Windows.Forms.Label Lbl_txtTotal;
         private System.Windows.Forms.Label Lblsubtotal;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Txt_efectivo;
-        private System.Windows.Forms.Label LblPago;
-        private System.Windows.Forms.Button Btn_Aceptar_pago;
-        private System.Windows.Forms.Label Lbl_cambio;
-        private System.Windows.Forms.Label LblCambio;
-        private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Label lbliva;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Lbl_total_final;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label Lbl_tarjeta;
         private System.Windows.Forms.Button Btn_Buscar;
         private System.Windows.Forms.Button Btn_limpiar;
-        private System.Windows.Forms.Button btncerrar;
         private System.Windows.Forms.Button Btn_cantidad;
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.GroupBox Gb_Venta;
