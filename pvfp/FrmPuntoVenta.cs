@@ -150,6 +150,8 @@ namespace PVFP
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             bool bHandled = false;
+            try
+            {                       
             switch (keyData)
             {
                 case Keys.F6:
@@ -173,7 +175,15 @@ namespace PVFP
                     tic.AbreCajon();
                     tic.ImprimirTicket("POS-58");
                     bHandled = true;
-                    break;
+                        MessageBox.Show("Caja Abierta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+            }
+            
+            }
+            catch (Exception)
+            {
+
+                
             }
             return bHandled;
         }
@@ -189,13 +199,14 @@ namespace PVFP
             iva = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal * .16), 2));
             total = subtotal + iva;
             total = (Double)Decimal.Round(Convert.ToDecimal(total), 2);
+            totales();
         }
         public void totales()
         {
             subtotal = 0;
             foreach (DataGridViewRow item in DgvVentas.Rows)
             {
-                subtotal += Double.Parse(item.Cells[4].Value.ToString().Replace("$", String.Empty));
+                subtotal += Double.Parse(item.Cells[5].Value.ToString().Replace("$", String.Empty));
             }
             subtotal = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal), 2));
             iva = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal * .16), 2));
@@ -219,7 +230,7 @@ namespace PVFP
                         num1 =Double.Parse( elemento[2].ToString());
                         n1 = num1.ToString("C", nfi);
                         
-                        DgvVentas.Rows.Add(1,elemento[0], elemento[1], elemento[3],n1 , n1);
+                        DgvVentas.Rows.Add(1,elemento[0], elemento[1], elemento[3],n1 , n1,elemento[4]);
                         totales(elemento[2].ToString());
                         Txtcodigo.Text = "";
                     }
@@ -235,7 +246,7 @@ namespace PVFP
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                throw;
+                
             }
         }          
         private void Btn_Buscar_Click(object sender, EventArgs e)
@@ -261,22 +272,60 @@ namespace PVFP
             DataGridViewColumn row = DgvVentas.Columns[4];
             row.DefaultCellStyle.BackColor = Color.LawnGreen;
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
+            DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         private void Btn_cantidad_Click(object sender, EventArgs e)
         {
+            try
+            {
             cantidad();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
         void cantidad()
         {            
             if (roww != -1)
-            {
-                string cant = Clsinputbox.ShowDialog("INGRESE CANTIDAD", "CANTIDAD", roww.ToString());
-                if (cant!= "empty")
+            {                              
+                string cant = Clsinputbox.ShowDialog("INGRESE CANTIDAD", "CANTIDAD", roww);
+                if (cant != "empty")
                 {
-                    DgvVentas[0, Int32.Parse(roww.ToString())].Value = cant;
-                    DgvVentas[4, Int32.Parse(roww.ToString())].Value = (Double.Parse(cant) * Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
-                    roww = -1;
-                    totales();
+                    
+                        // verifica unidad de medida 
+                        int a = 0;
+                        bool ent = Int32.TryParse(cant, out a) ? true : false, entra = false;
+                        string option = cant.GetType().ToString();
+                    double m = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
+                    if (Double.Parse(cant) <= m && Double.Parse(cant) !=0)
+                    {
+                        string x = DgvVentas[6, Int32.Parse(roww.ToString())].Value.ToString();
+                        if ((x.Contains("Kit") || x.Contains("Unidad")) && ent)
+                        {
+                            entra = true;
+                        }
+                        else if (x.Contains("Decimal") || x.Contains("Metro") && !ent)
+                        {
+                            entra = true;
+                        }
+                        if (entra)
+                        {
+                            DgvVentas[0, Int32.Parse(roww.ToString())].Value = cant;
+                            DgvVentas[5, Int32.Parse(roww.ToString())].Value = (Double.Parse(cant) * Double.Parse(DgvVentas[4, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
+                            roww = -1;
+                            totales();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error con unidad de medida");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Inventario Insuficiente");
+                    }
                 }
             }
             else
@@ -314,21 +363,27 @@ namespace PVFP
                 Cls_imprimir_ticket tic = new Cls_imprimir_ticket();
                 tic.AbreCajon();
                 tic.ImprimirTicket("POS-58");
+                MessageBox.Show("Caja Abierta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (Exception ex)
             {
-                
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }      
         private void DgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            roww = e.RowIndex;
+        {            
+            roww = e.RowIndex;          
         }        
-        internal void dato_encontrado(string codigobarras, string producto, string precio,int stock)
+        internal void dato_encontrado(string codigobarras, string producto, string precio,int stock,string um)
         {
             try
             {
-                DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi));
+
+               // int n1 = num1.ToString("C", nfi);
+
+                //DgvVentas.Rows.Add(1, elemento[0], elemento[1], elemento[3], n1, n1, elemento[4]);
+
+                DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi),um);
                 totales(precio);            
                 DgvVentas.ClearSelection();
             }
@@ -351,6 +406,7 @@ namespace PVFP
                 DgvVentas.Rows.Clear();
                 DgvVentas.Refresh();
             }
+            DgvVentas.ClearSelection();
         }
 
         

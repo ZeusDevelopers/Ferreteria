@@ -15,14 +15,13 @@ namespace PVFP
     {
         ClsPunto_deventa venta = new ClsPunto_deventa();
         FrmPuntoVenta frm = null;
+       
         public FrmPuntoVenta_Buscar(Form forma)
         {
             InitializeComponent();
             frm = forma as FrmPuntoVenta;
             DgvProductos.DataSource = venta.VerTodosProductos();
-            this.DgvProductos.Columns[0].Width = 133;
-            this.DgvProductos.Columns[1].Width = 392;
-            this.DgvProductos.Columns[2].Width = 133;                        
+            
         }
         ArrayList numeros = new ArrayList();
         private void Btn_Salir_Click(object sender, EventArgs e)
@@ -32,30 +31,41 @@ namespace PVFP
         int contador;
         private void Txtcodigo_TextChanged(object sender, EventArgs e)
         {
-            string a;
-            if (Txtcodigo.Text == "")
+            if (Cmb_tipo_busqueda.SelectedIndex != -1)
             {
-                contador = 0;
-                DgvProductos.ClearSelection();
+                if (Cmb_tipo_busqueda.SelectedIndex == 1)
+                {
+                    string a;
+                    if (Txtcodigo.Text == "")
+                    {
+                        contador = 0;
+                        DgvProductos.ClearSelection();
+                    }
+                    else
+                        numeros.Clear();
+                    for (int i = 0; i < DgvProductos.Rows.Count; i++)
+                    {
+                        a = DgvProductos[1, i].Value.ToString();
+                        if (a.Contains(Txtcodigo.Text) || a.ToUpperInvariant().Contains(Txtcodigo.Text.ToUpperInvariant()))
+                        {
+                            contador++;
+                            numeros.Add(i);
+                            if (contador == 1)
+                            {
+                                DgvProductos.Rows[i].Selected = true;
+                                DgvProductos.FirstDisplayedScrollingRowIndex = i;
+                            }
+                        }
+                    }
+                    indice = 0;
+                    contador = 0;
+                }
             }
             else
-                numeros.Clear();
-            for (int i = 0; i < DgvProductos.Rows.Count; i++)
             {
-                a = DgvProductos[1, i].Value.ToString();
-                if (a.Contains(Txtcodigo.Text) || a.ToUpperInvariant().Contains(Txtcodigo.Text.ToUpperInvariant()))
-                {                                      
-                    contador++;                    
-                    numeros.Add(i);
-                    if (contador == 1)
-                    {
-                       DgvProductos.Rows[i].Selected = true;
-                       DgvProductos.FirstDisplayedScrollingRowIndex = i;
-                    }
-                }
-            }            
-            indice = 0;
-            contador = 0;
+                MessageBox.Show("Seleccione una opcion");
+                Txtcodigo.Text = "";
+            }
         }
         int indice;
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -97,15 +107,14 @@ namespace PVFP
             }
         }
         private void DgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //MessageBox.Show( );
+        {            
             Prod_select(e.RowIndex);
         }
         public void Prod_select(int ind)
         {
             try
             {
-               // frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString());
+                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString(), Int32.Parse(DgvProductos[3, ind].Value.ToString()), DgvProductos[4, ind].Value.ToString());
                 this.Close();
             }
             catch (Exception ex)
@@ -118,6 +127,36 @@ namespace PVFP
         private void FrmPuntoVenta_Buscar_Load(object sender, EventArgs e)
         {
             this.DgvProductos.ClearSelection();
+            DgvProductos.Rows[3].Visible = false;
+        }
+
+        private void Txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (e.KeyChar==13 && Cmb_tipo_busqueda.SelectedIndex==0)
+            {
+                bool encontrado=false;
+                string a;
+                for (int i = 0; i < DgvProductos.Rows.Count; i++)
+                {
+                    a = DgvProductos[0, i].Value.ToString();
+                    if (a.Equals(Txtcodigo.Text))
+                    {
+                        DgvProductos.Rows[i].Selected = true;
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (!encontrado)
+                {
+                    MessageBox.Show("Producto inexistente");
+                }
+            }
+        }
+
+        private void DgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

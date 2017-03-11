@@ -10,7 +10,7 @@ namespace PVFP
 {
     static class Clsinputbox
     {
-        public static string ShowDialog(string text, string caption,string cant_actual)
+        public static string ShowDialog(string text, string caption,Double cant_actual)
         {
             Form prompt = new Form()
             {
@@ -24,7 +24,7 @@ namespace PVFP
             TextBox textBox = new TextBox() { Left = 50, Top = 45, Width = 130 };
             Button confirmation = new Button() { Text = "Ok", Left = 50, Width = 60, Top = 70, DialogResult = DialogResult.OK };
             Button cancel = new Button() { Text = "Cancel", Left = 120, Width = 60, Top = 70, DialogResult = DialogResult.Cancel };
-            textBox.Text = cant_actual;
+            textBox.Text = cant_actual.ToString();
             confirmation.Click += (sender, e) => { prompt.Close(); };
             prompt.Controls.Add(textBox);
             prompt.Controls.Add(confirmation);
@@ -36,10 +36,12 @@ namespace PVFP
             prompt.FormBorderStyle = FormBorderStyle.Fixed3D;
             prompt.AcceptButton = confirmation;
 
-            if (prompt.ShowDialog() == DialogResult.OK)
-                return textBox.Text;
-            else
-                return "empty";
+            //if (prompt.ShowDialog() == DialogResult.OK)
+            //    return textBox.Text;
+            //else
+            //    return "empty";
+
+            return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "empty";
         }
     }
 }

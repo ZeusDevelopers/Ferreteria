@@ -198,6 +198,15 @@
   <data name="Importe.HeaderText" xml:space="preserve">
     <value>Importe</value>
   </data>
+  <metadata name="UM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="UM.HeaderText" xml:space="preserve">
+    <value>Um</value>
+  </data>
+  <data name="UM.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="DgvVentas.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 327</value>
   </data>
@@ -219,14 +228,17 @@
   <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="Txtcodigo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="Txtcodigo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 18pt, style=Italic</value>
   </data>
   <data name="Txtcodigo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 252</value>
+    <value>615, 252</value>
   </data>
   <data name="Txtcodigo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>503, 49</value>
+    <value>545, 49</value>
   </data>
   <data name="Txtcodigo.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -547,6 +559,9 @@
   <data name="&gt;&gt;Btn_limpiar.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="Btn_Buscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <data name="Btn_Buscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
   </data>
@@ -620,7 +635,7 @@
     <value>NoControl</value>
   </data>
   <data name="Btn_Buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1166, 248</value>
+    <value>1166, 243</value>
   </data>
   <data name="Btn_Buscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 62</value>
@@ -1000,6 +1015,12 @@
     <value>Importe</value>
   </data>
   <data name="&gt;&gt;Importe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UM.Name" xml:space="preserve">
+    <value>UM</value>
+  </data>
+  <data name="&gt;&gt;UM.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

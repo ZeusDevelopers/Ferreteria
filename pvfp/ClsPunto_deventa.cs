@@ -19,7 +19,8 @@ namespace PVFP
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format(
-               "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`,`Precio_Venta` as 'Precio de venta' FROM `producto`"
+               "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`,`Precio_Venta` as 'Precio de venta',A_Piso as 'Inventario',UM FROM `producto`"+
+               "inner join  almacen on almacen.Producto_ID = producto.Producto_ID"
                 ), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);           
