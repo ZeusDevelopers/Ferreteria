@@ -128,13 +128,11 @@ namespace PVFP
         #endregion
         private void Btn_comprar_Click(object sender, EventArgs e)
         {
-            
+            comprar();
         }
        
        
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {       
-        }
+       
         private void FrmPuntoVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
             ClsInicioSesion.Usuario = "";
@@ -155,7 +153,7 @@ namespace PVFP
             switch (keyData)
             {
                 case Keys.F6:
-                    //comprar();
+                    comprar();
                     bHandled = true;
                     break;
                 case Keys.F7:
@@ -187,11 +185,31 @@ namespace PVFP
             }
             return bHandled;
         }
-        #endregion              
-        private void Btn_Aceptar_pago_Click(object sender, EventArgs e)
+
+        private void comprar()
         {
+            DataTable dt= new DataTable();
+            foreach (DataGridViewColumn col in DgvVentas.Columns)
+            {
+               dt.Columns.Add(col.HeaderText);
+            }
+            for (int i = 0; i < DgvVentas.Rows.Count; i++)
+            {
+                DataGridViewRow row = DgvVentas.Rows[i];
+                DataRow dr = dt.NewRow();
+                for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                {
+                    dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                }
+                dt.Rows.Add(dr);
+            }
+
+            DgvVentas.DataSource = dt;
             
+            FrmPuntoVenta_final venta = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt);
+            venta.Show();
         }
+        #endregion
         public void totales(string numero)
         {
             subtotal = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal), 2));
@@ -253,9 +271,7 @@ namespace PVFP
         {
             try
             {
-                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this);
-                 clsventa.precio_dolar();
-
+                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this);                 
                 frm.Show();
             }
             catch (Exception ex)
@@ -273,7 +289,10 @@ namespace PVFP
             row.DefaultCellStyle.BackColor = Color.LawnGreen;
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
             DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            ClsVentas.precio_dolar();
+             dolar=ClsVentas.Dolar;
         }
+        double dolar = 0;
         private void Btn_cantidad_Click(object sender, EventArgs e)
         {
             try
@@ -294,10 +313,10 @@ namespace PVFP
                 if (cant != "empty")
                 {
                     
-                        // verifica unidad de medida 
-                        int a = 0;
-                        bool ent = Int32.TryParse(cant, out a) ? true : false, entra = false;
-                        string option = cant.GetType().ToString();
+                    // verifica unidad de medida 
+                    int a = 0;
+                    bool ent = Int32.TryParse(cant, out a) ? true : false, entra = false;
+                    string option = cant.GetType().ToString();
                     double m = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
                     if (Double.Parse(cant) <= m && Double.Parse(cant) !=0)
                     {
@@ -378,11 +397,6 @@ namespace PVFP
         {
             try
             {
-
-               // int n1 = num1.ToString("C", nfi);
-
-                //DgvVentas.Rows.Add(1, elemento[0], elemento[1], elemento[3], n1, n1, elemento[4]);
-
                 DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi),um);
                 totales(precio);            
                 DgvVentas.ClearSelection();
@@ -408,7 +422,5 @@ namespace PVFP
             }
             DgvVentas.ClearSelection();
         }
-
-        
     }
 }

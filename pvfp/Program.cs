@@ -12,9 +12,10 @@ namespace PVFP
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);                        
-             //Application.Run(new FrmAltaProductos());
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new FrmAltaProductos());
             Application.Run(new FrmPuntoVenta());
+            //Application.Run(new FrmPuntoVenta_final(9.8));
             //Application.Run(new FrmPuntoVenta_Buscar());
         }
     }

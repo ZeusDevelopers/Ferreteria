@@ -195,11 +195,11 @@
     <Compile Include="FrmPuntoVenta.Designer.cs">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPuntoVenta_VentaFinal.cs">
+    <Compile Include="FrmPuntoVenta_final.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPuntoVenta_VentaFinal.Designer.cs">
-      <DependentUpon>FrmPuntoVenta_VentaFinal.cs</DependentUpon>
+    <Compile Include="FrmPuntoVenta_final.Designer.cs">
+      <DependentUpon>FrmPuntoVenta_final.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTiposCargos.cs">
       <SubType>Form</SubType>
@@ -257,8 +257,8 @@
     <EmbeddedResource Include="FrmPuntoVenta.resx">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPuntoVenta_VentaFinal.resx">
-      <DependentUpon>FrmPuntoVenta_VentaFinal.cs</DependentUpon>
+    <EmbeddedResource Include="FrmPuntoVenta_final.resx">
+      <DependentUpon>FrmPuntoVenta_final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposCargos.resx">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>
@@ -337,6 +337,8 @@
   <ItemGroup>
     <Content Include="icono2.ico" />
     <Content Include="im.ico" />
+    <None Include="Resources\text3.png" />
+    <None Include="Resources\test9.png" />
     <None Include="Resources\abrir.png" />
     <None Include="Resources\editar.png" />
   </ItemGroup>

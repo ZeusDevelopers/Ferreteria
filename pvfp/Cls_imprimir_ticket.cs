@@ -8,10 +8,70 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Drawing.Printing;
 using System.Drawing;
+using System.Data;
+
 
 namespace PVFP
 {
-    class Cls_imprimir_ticket
+    class Cls_imprimir
+    {
+        public void imprime(DataTable Venta,string efectivo,string cambio,double subtotal,double iva,double total)
+        {
+            Cls_imprimir_ticket ticket = new Cls_imprimir_ticket();
+            //imprime imagen
+            //ticket.imprimir();
+            //Datos de la cabecera del Ticket.
+            ticket.TextoIzquierda("     PLOMERIA y FERRETERIA");
+            ticket.TextoCentro("VEGA");
+            ticket.lineasAsteriscos();
+            ticket.TextoCentro("MARITZA FELIX QUINONEZ");
+            ticket.TextoIzquierda("R.F.C FEQM-661228-1MA");
+            ticket.TextoIzquierda("REGIMEN FISCAL:INCORPORACION");
+            ticket.TextoIzquierda("FISCAL");
+            ticket.TextoIzquierda("Ave.Tecnologico # 1060 Colonia  Jardines de la montana C.P 84063");
+            ticket.TextoCentro("(631)315-8024");
+            ticket.TextoCentro("Nogales,Sonora,Mexico");
+
+            ticket.lineasAsteriscos();
+            //Sub cabecera.            
+            ticket.TextoIzquierda("ATENDIO: " + ClsInicioSesion.Usuario);
+            ticket.TextoExtremos("FECHA:" + DateTime.Now.ToShortDateString(), "HORA:" + DateTime.Now.ToShortTimeString());
+            ticket.lineasAsteriscos();
+            //Articulos a vender.
+            ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE
+            ticket.lineasAsteriscos();
+            decimal precio, importe;
+            double cantidad = 0;
+            string a="";
+            foreach (DataRow fila in Venta.Rows)
+            {
+                a = fila[3].ToString();
+                precio = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
+                importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
+                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
+            }
+            ticket.lineasIgual();
+            ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
+            ticket.AgregarTotales("         IVA...........$", (decimal)iva);//La M indica que es un decimal en C#
+            ticket.AgregarTotales("         TOTAL.........$", (decimal)total);
+            ticket.TextoIzquierda("");
+            ticket.AgregarTotales("         EFECTIVO......$", Decimal.Parse(efectivo));
+            string cade = cambio.Replace("$", String.Empty);
+            double mioa = Double.Parse(cade);
+            ticket.AgregarTotales("         CAMBIO........$", (decimal)mioa);
+            //Texto final del Ticket.                            
+            ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
+            ticket.CortaTicket();
+            //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera       
+            ticket.ImprimirTicket("Microsoft Print To PDF");
+            ticket.ImprimirTicket("Microsoft XPS Document Writer");
+
+
+        }
+    }
+
+        #region procesos_ticket
+        class Cls_imprimir_ticket
     {
        
         public void imprimir()
@@ -464,6 +524,7 @@ namespace PVFP
             return true;
         }
     }
+#endregion
 }
 
 
