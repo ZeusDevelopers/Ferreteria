@@ -46,10 +46,11 @@ namespace PVFP
         {
             //   var valor_dolar = new WebClient().DownloadString("http://download.finance.yahoo.com/d/quotes?s=USDMXN%3DX&f=l1n");
             var valor_dolar = new WebClient().DownloadString("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'https%3A%2F%2Fbbv.infosel.com%2Fbancomerindicators%2FindexV5.aspx%3F%23'%20%20%20&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
-            string lur = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D" + "'" + "https%3A%2F%2Fbbv.infosel.com%2Fbancomerindicators%2FindexV5.aspx%3F%23'%20%20%20&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-            XmlDocument doc1 = new XmlDocument();
+            //string lur = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D" + "'" + "https%3A%2F%2Fbbv.infosel.com%2Fbancomerindicators%2FindexV5.aspx%3F%23'%20%20%20&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+            string lur = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%27http%3A%2F%2Fwww.eldolar.info%2Fes-MX%2Fmexico%2Fdia%2Fhoy%27%20and%20xpath%3D%27%2F%2Fhtml%5B%22container%22%5D%2F%2Ftable%5B%22dllsTable%22%5D%27&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+            XmlDocument doc1 = new XmlDocument();            
             doc1.Load(lur);            
-            string elemList = doc1.DocumentElement.ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(4).ChildNodes.Item(0).ChildNodes.Item(4).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(4).ChildNodes.Item(5).ChildNodes.Item(0).Value;          
+            string elemList = doc1.DocumentElement.ChildNodes.Item(0).ChildNodes.Item(1).ChildNodes.Item(2).ChildNodes.Item(4).ChildNodes.Item(4).InnerText;                            
             dolar = Double.Parse(elemList);
             
         }
