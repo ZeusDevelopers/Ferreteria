@@ -45,3 +45,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.Cache
+*.Cache
+pvfp/obj/Debug/PVFP.csprojResolveAssemblyReference.cache
+*.exe
+*.exe
+pvfp/obj/Debug/PVFP.pdb

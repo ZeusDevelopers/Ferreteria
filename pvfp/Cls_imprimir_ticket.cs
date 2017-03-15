@@ -44,11 +44,12 @@ namespace PVFP
             double cantidad = 0;
             string a="";
             foreach (DataRow fila in Venta.Rows)
-            {
-                a = fila[3].ToString();
-                precio = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
+            {                
+                precio = Decimal.Parse(fila[2].ToString().Replace("$", String.Empty));
+                cantidad = Double.Parse(fila[0].ToString());
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
                 ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
+                
             }
             ticket.lineasIgual();
             ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
@@ -63,7 +64,7 @@ namespace PVFP
             ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
             ticket.CortaTicket();
             //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera       
-            ticket.ImprimirTicket("Microsoft Print To PDF");
+            //ticket.ImprimirTicket("Microsoft Print To PDF");
             ticket.ImprimirTicket("Microsoft XPS Document Writer");
 
 

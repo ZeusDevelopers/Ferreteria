@@ -81,19 +81,23 @@ namespace PVFP
         {
             if (chck_pagodolar.Checked)
             {
-                lbldolar.Visible = true;
+                LblDolarPrecio.Visible = true;
                 txtdolar.Visible = true;
+                lbldolar.Visible = true;
             }
             else
             {
-                lbldolar.Visible = false;
+                LblDolarPrecio.Visible = false;
                 txtdolar.Visible = false;
-                txtdolar.Text = "";
+                lbldolar.Visible = false;
             }
         }
-        Cls_imprimir imprimir = new Cls_imprimir();
+        Cls_imprimir imprimir = new Cls_imprimir();        
         private void Btn_Pagar_Click(object sender, EventArgs e)
-        {            
+        {           
+            ven.Columns.RemoveAt(1);
+            ven.Columns.RemoveAt(2);
+            ven.Columns.RemoveAt(4);           
             imprimir.imprime(ven, total.ToString(), cambio.ToString(),subtotal,iva,venta);
         }
 
@@ -187,7 +191,7 @@ namespace PVFP
             caracteres_de_aceptacion(txtdolar);
             caracteres_de_aceptacion(txttarjeta);
             LblTot.Text = venta.ToString();
-            lbldolar.Text = "Dolar Bancomer $" + Environment.NewLine + dolar.ToString();
+            LblDolarPrecio.Text = "Dolar Bancomer $" + Environment.NewLine + dolar.ToString();
         }
         
         private void Txtdinero_TextChanged(object sender, EventArgs e)

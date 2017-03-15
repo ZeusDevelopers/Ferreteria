@@ -46,7 +46,7 @@
             this.Lblcam = new System.Windows.Forms.Label();
             this.Btn_Pagar = new System.Windows.Forms.Button();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblDolarPrecio = new System.Windows.Forms.Label();
             this.Gb_Venta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -294,20 +294,20 @@
             this.Btn_Cancelar.Text = "Cancelar";
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // LblDolarPrecio
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tw Cen MT", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(615, 125);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 74);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Dolar Bancomer\r\n$ 0.000";
-            this.label2.Visible = false;
+            this.LblDolarPrecio.AutoSize = true;
+            this.LblDolarPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.LblDolarPrecio.Font = new System.Drawing.Font("Tw Cen MT", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDolarPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LblDolarPrecio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LblDolarPrecio.Location = new System.Drawing.Point(615, 125);
+            this.LblDolarPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LblDolarPrecio.Name = "LblDolarPrecio";
+            this.LblDolarPrecio.Size = new System.Drawing.Size(229, 74);
+            this.LblDolarPrecio.TabIndex = 46;
+            this.LblDolarPrecio.Text = "Dolar Bancomer\r\n$ 0.000";
+            this.LblDolarPrecio.Visible = false;
             // 
             // FrmPuntoVenta_final
             // 
@@ -315,7 +315,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 858);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblDolarPrecio);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Pagar);
             this.Controls.Add(this.Gb_Venta);
@@ -362,6 +362,6 @@
         private System.Windows.Forms.Label Lblcam;
         private System.Windows.Forms.Button Btn_Pagar;
         private System.Windows.Forms.Button Btn_Cancelar;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblDolarPrecio;
     }
 }
