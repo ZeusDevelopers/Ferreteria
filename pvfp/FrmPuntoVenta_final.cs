@@ -16,9 +16,12 @@ namespace PVFP
         DataTable ven = new DataTable();
         double venta = 100,total=0,val1=0,val2=0,val3=0,cambio=0;
         double dolar = 0,tot,iva,subtotal;
-        public FrmPuntoVenta_final(double dolar,double total,double iva, double subtotal,DataTable ven)
+        FrmPuntoVenta frm = null;
+
+        public FrmPuntoVenta_final(double dolar,double total,double iva, double subtotal,DataTable ven,Form forma)
         {
             InitializeComponent();
+            frm= forma as FrmPuntoVenta;
             this.dolar = dolar;
             this.iva = iva;
             this.subtotal = subtotal;
@@ -84,21 +87,66 @@ namespace PVFP
                 LblDolarPrecio.Visible = true;
                 txtdolar.Visible = true;
                 lbldolar.Visible = true;
+                Lbl_total_dlls.Visible = true;
             }
             else
             {
+                Lbl_total_dlls.Visible = false;
                 LblDolarPrecio.Visible = false;
                 txtdolar.Visible = false;
                 lbldolar.Visible = false;
             }
         }
+
+        private void Btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult resul= MessageBox.Show("¿Desea Cancelar La venta?, se borraran todos los datos", "Cancelar", MessageBoxButtons.YesNo);
+            if (resul.ToString()=="Yes")
+            {
+                frm.limpiar();
+                frm.unlock();
+                this.TopMost = false;
+                this.Close();
+            }
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {            
+            frm.unlock();
+            this.TopMost = false;
+            this.Close();
+        }
+
         Cls_imprimir imprimir = new Cls_imprimir();        
         private void Btn_Pagar_Click(object sender, EventArgs e)
-        {           
-            ven.Columns.RemoveAt(1);
-            ven.Columns.RemoveAt(2);
-            ven.Columns.RemoveAt(4);           
-            imprimir.imprime(ven, total.ToString(), cambio.ToString(),subtotal,iva,venta);
+        {
+            try
+            {                
+                ven.Columns.RemoveAt(1);
+                ven.Columns.RemoveAt(2);
+                ven.Columns.RemoveAt(4);                
+                string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                int id=vender.registrar_venta(total, date, iva, subtotal, 1);
+                double uno, dos;                
+                foreach (DataRow item in ven.Rows)
+                {
+                    uno = Double.Parse(item[2].ToString().Replace("$", String.Empty));
+                    dos = Double.Parse(item[3].ToString().Replace("$", String.Empty));
+                    vender.registrar_productos_venta(id,Int32.Parse(item[4].ToString()), Int32.Parse(item[0].ToString()), 0,uno,dos);
+                }
+                ven.Columns.RemoveAt(4);
+                imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id);
+                frm.limpiar();
+                frm.unlock();
+                this.TopMost = false;
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }           
         }
 
         private void txtdolar_TextChanged(object sender, EventArgs e)
@@ -118,7 +166,8 @@ namespace PVFP
             }
             else
             {
-                val2 = double.Parse(txtdolar.Text);
+                val2 = dolar * double.Parse(txtdolar.Text);
+                Lbl_total_dlls.Text = val2.ToString();
                 total = val1 + val2 + val3;
                 Lblcam.Text = (-venta + total).ToString();
                 cambio = -venta + total;
@@ -168,7 +217,6 @@ namespace PVFP
                 }
             }
         }
-
         public void caracteres_de_aceptacion(TextBox texto)
         {
             texto.KeyPress += Texto_KeyPress;      
@@ -192,8 +240,7 @@ namespace PVFP
             caracteres_de_aceptacion(txttarjeta);
             LblTot.Text = venta.ToString();
             LblDolarPrecio.Text = "Dolar Bancomer $" + Environment.NewLine + dolar.ToString();
-        }
-        
+        }        
         private void Txtdinero_TextChanged(object sender, EventArgs e)
         {
             double a;

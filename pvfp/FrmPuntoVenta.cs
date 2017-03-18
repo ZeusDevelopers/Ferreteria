@@ -14,6 +14,7 @@ namespace PVFP
 {
     public partial class FrmPuntoVenta : Form
     {
+        FrmPuntoVenta_final frmventa;
         ClsVentas clsventa = new ClsVentas();
         NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         bool cant_correcta = false;
@@ -128,7 +129,15 @@ namespace PVFP
         #endregion
         private void Btn_comprar_Click(object sender, EventArgs e)
         {
+            
+            btn_abrir_cajon.Enabled = false;
+            Btn_Buscar.Enabled = false;
+            Btn_cantidad.Enabled = false;
+            //Btn_comprar.Enabled = false;
+            Btn_limpiar.Enabled = false;
+            Btn_eliminar.Enabled = false;
             comprar();
+            
         }
        
        
@@ -202,12 +211,10 @@ namespace PVFP
                     dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
                 }
                 dt.Rows.Add(dr);
-            }
-
-            DgvVentas.DataSource = dt;
-            
-            FrmPuntoVenta_final venta = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt);
-            venta.Show();
+            }          
+            frmventa = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt, this);
+            frmventa.TopMost = true;
+            frmventa.Show();                       
         }
         #endregion
         public void totales(string numero)
@@ -248,7 +255,7 @@ namespace PVFP
                         num1 =Double.Parse( elemento[2].ToString());
                         n1 = num1.ToString("C", nfi);
                         
-                        DgvVentas.Rows.Add(1,elemento[0], elemento[1], elemento[3],n1 , n1,elemento[4]);
+                        DgvVentas.Rows.Add(1,elemento[0], elemento[1], elemento[3],n1 , n1,elemento[4],elemento[5]);
                         totales(elemento[2].ToString());
                         Txtcodigo.Text = "";
                     }
@@ -392,12 +399,18 @@ namespace PVFP
         private void DgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
         {            
             roww = e.RowIndex;          
-        }        
-        internal void dato_encontrado(string codigobarras, string producto, string precio,int stock,string um)
+        }
+
+        private void Txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        internal void dato_encontrado(string codigobarras, string producto, string precio,int stock,string um,string productoid)
         {
             try
             {
-                DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi),um);
+                DgvVentas.Rows.Add(1,codigobarras, producto,stock , Double.Parse(precio).ToString("C",nfi), Double.Parse(precio).ToString("C", nfi),um,productoid);
                 totales(precio);            
                 DgvVentas.ClearSelection();
             }
@@ -421,6 +434,15 @@ namespace PVFP
                 DgvVentas.Refresh();
             }
             DgvVentas.ClearSelection();
+        }
+        public void unlock()
+        {
+            btn_abrir_cajon.Enabled = true;
+            Btn_Buscar.Enabled = true;
+            Btn_cantidad.Enabled = true;
+            Btn_comprar.Enabled = true;
+            Btn_limpiar.Enabled = true;
+            Btn_eliminar.Enabled = true;
         }
     }
 }

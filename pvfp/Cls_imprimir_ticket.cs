@@ -15,7 +15,7 @@ namespace PVFP
 {
     class Cls_imprimir
     {
-        public void imprime(DataTable Venta,string efectivo,string cambio,double subtotal,double iva,double total)
+        public void imprime(DataTable Venta,string efectivo,string cambio,double subtotal,double iva,double total,int id_venta)
         {
             Cls_imprimir_ticket ticket = new Cls_imprimir_ticket();
             //imprime imagen
@@ -25,7 +25,7 @@ namespace PVFP
             ticket.TextoCentro("VEGA");
             ticket.lineasAsteriscos();
             ticket.TextoCentro("MARITZA FELIX QUINONEZ");
-            ticket.TextoIzquierda("R.F.C FEQM-661228-1MA");
+            ticket.TextoIzquierda("R.F.C FEQM-661228-1MA");            
             ticket.TextoIzquierda("REGIMEN FISCAL:INCORPORACION");
             ticket.TextoIzquierda("FISCAL");
             ticket.TextoIzquierda("Ave.Tecnologico # 1060 Colonia  Jardines de la montana C.P 84063");
@@ -36,6 +36,7 @@ namespace PVFP
             //Sub cabecera.            
             ticket.TextoIzquierda("ATENDIO: " + ClsInicioSesion.Usuario);
             ticket.TextoExtremos("FECHA:" + DateTime.Now.ToShortDateString(), "HORA:" + DateTime.Now.ToShortTimeString());
+            ticket.TextoIzquierda("Venta:" + id_venta.ToString());
             ticket.lineasAsteriscos();
             //Articulos a vender.
             ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE

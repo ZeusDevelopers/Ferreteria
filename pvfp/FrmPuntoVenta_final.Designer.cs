@@ -47,6 +47,8 @@
             this.Btn_Pagar = new System.Windows.Forms.Button();
             this.Btn_Cancelar = new System.Windows.Forms.Button();
             this.LblDolarPrecio = new System.Windows.Forms.Label();
+            this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.Lbl_total_dlls = new System.Windows.Forms.Label();
             this.Gb_Venta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,7 +278,7 @@
             // 
             this.Btn_Pagar.Enabled = false;
             this.Btn_Pagar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Pagar.Location = new System.Drawing.Point(128, 676);
+            this.Btn_Pagar.Location = new System.Drawing.Point(50, 676);
             this.Btn_Pagar.Name = "Btn_Pagar";
             this.Btn_Pagar.Size = new System.Drawing.Size(227, 53);
             this.Btn_Pagar.TabIndex = 44;
@@ -287,12 +289,13 @@
             // Btn_Cancelar
             // 
             this.Btn_Cancelar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cancelar.Location = new System.Drawing.Point(369, 676);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(283, 676);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(227, 53);
             this.Btn_Cancelar.TabIndex = 45;
             this.Btn_Cancelar.Text = "Cancelar";
             this.Btn_Cancelar.UseVisualStyleBackColor = true;
+            this.Btn_Cancelar.Click += new System.EventHandler(this.Btn_Cancelar_Click);
             // 
             // LblDolarPrecio
             // 
@@ -309,12 +312,40 @@
             this.LblDolarPrecio.Text = "Dolar Bancomer\r\n$ 0.000";
             this.LblDolarPrecio.Visible = false;
             // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cerrar.Location = new System.Drawing.Point(516, 676);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(227, 53);
+            this.btn_Cerrar.TabIndex = 47;
+            this.btn_Cerrar.Text = "Cerrar";
+            this.btn_Cerrar.UseVisualStyleBackColor = true;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            // 
+            // Lbl_total_dlls
+            // 
+            this.Lbl_total_dlls.AutoSize = true;
+            this.Lbl_total_dlls.BackColor = System.Drawing.Color.Transparent;
+            this.Lbl_total_dlls.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
+            this.Lbl_total_dlls.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Lbl_total_dlls.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Lbl_total_dlls.Location = new System.Drawing.Point(534, 318);
+            this.Lbl_total_dlls.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Lbl_total_dlls.Name = "Lbl_total_dlls";
+            this.Lbl_total_dlls.Size = new System.Drawing.Size(151, 60);
+            this.Lbl_total_dlls.TabIndex = 48;
+            this.Lbl_total_dlls.Text = "$0.00";
+            this.Lbl_total_dlls.Visible = false;
+            // 
             // FrmPuntoVenta_final
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 858);
+            this.Controls.Add(this.Lbl_total_dlls);
+            this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.LblDolarPrecio);
             this.Controls.Add(this.Btn_Cancelar);
             this.Controls.Add(this.Btn_Pagar);
@@ -363,5 +394,7 @@
         private System.Windows.Forms.Button Btn_Pagar;
         private System.Windows.Forms.Button Btn_Cancelar;
         private System.Windows.Forms.Label LblDolarPrecio;
+        private System.Windows.Forms.Button btn_Cerrar;
+        private System.Windows.Forms.Label Lbl_total_dlls;
     }
 }

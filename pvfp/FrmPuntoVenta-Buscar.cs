@@ -21,7 +21,7 @@ namespace PVFP
             InitializeComponent();
             frm = forma as FrmPuntoVenta;
             DgvProductos.DataSource = venta.VerTodosProductos();
-            
+            DgvProductos.Columns["Producto_ID"].Visible = false;
         }
         ArrayList numeros = new ArrayList();
         private void Btn_Salir_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace PVFP
         {
             try
             {
-                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString(), Int32.Parse(DgvProductos[3, ind].Value.ToString()), DgvProductos[4, ind].Value.ToString());
+                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString(), Int32.Parse(DgvProductos[3, ind].Value.ToString()), DgvProductos[4, ind].Value.ToString(), DgvProductos[5,ind].Value.ToString());
                 this.Close();
             }
             catch (Exception ex)
