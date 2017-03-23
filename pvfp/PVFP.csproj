@@ -72,6 +72,8 @@
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +85,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsAlmacen.cs" />
@@ -110,18 +113,6 @@
     </Compile>
     <Compile Include="FrmCategorias.Designer.cs">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConsulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsulta.Designer.cs">
-      <DependentUpon>FrmConsulta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConsultaMayorProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsultaMayorProductos.Designer.cs">
-      <DependentUpon>FrmConsultaMayorProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
@@ -207,6 +198,12 @@
     <Compile Include="FrmTiposCargos.Designer.cs">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Consulta.Designer.cs">
+      <DependentUpon>Frm_Consulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAlmacen.resx">
@@ -214,12 +211,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsulta.resx">
-      <DependentUpon>FrmConsulta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultaMayorProductos.resx">
-      <DependentUpon>FrmConsultaMayorProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>
@@ -262,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposCargos.resx">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Consulta.resx">
+      <DependentUpon>Frm_Consulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

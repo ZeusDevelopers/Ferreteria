@@ -107,7 +107,7 @@
             this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Txtcodigo.ForeColor = System.Drawing.Color.Silver;
             this.Txtcodigo.Name = "Txtcodigo";
-            this.Txtcodigo.TextChanged += new System.EventHandler(this.Txtcodigo_TextChanged);
+//            this.Txtcodigo.TextChanged += new System.EventHandler(this.Txtcodigo_TextChanged);
             this.Txtcodigo.Enter += new System.EventHandler(this.Txtcodigo_Enter);
             this.Txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcodigo_KeyPress);
             this.Txtcodigo.Leave += new System.EventHandler(this.Txtcodigo_Leave);

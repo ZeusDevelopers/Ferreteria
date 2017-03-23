@@ -58,21 +58,21 @@ namespace PVFP
             FrmAlmacen almacen = new FrmAlmacen();
             almacen.Show();
         }
-        FrmConsultaMayorProductos mayor = new FrmConsultaMayorProductos();
+        //FrmConsultaMayorProductos mayor = new FrmConsultaMayorProductos();
 
         private void mayorVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mayor.Show();
+          //  mayor.Show();
         }
 
         private void mayorSemanaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mayor.Show();
+            //mayor.Show();
         }
 
         private void mayorDiaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mayor.Show();
+            //mayor.Show();
         }
 
         private void btnEntradas_Click(object sender, EventArgs e)

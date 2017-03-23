@@ -81,7 +81,7 @@ namespace PVFP
             }
             return numero;
         }
-        public void registrar_productos_venta(int salidaid,int productoid,int cantidad,double descuento,double precio,double prod_vendo)
+        public void registrar_productos_venta(int salidaid,int productoid,double cantidad,double descuento,double precio,double prod_vendo)
         {
             //insert into salida_detalle values(Salida_ID, Producto_ID, Cantidad, Descuento, PrecioUnitario, TotalProducto);
             try
@@ -103,6 +103,17 @@ namespace PVFP
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
+        }
+
+        public void remover_cant(double canti,int id)
+        {
+            int numero;
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand("update almacen set almacen.A_piso = almacen.A_piso - @cant where almacen.Producto_ID = @id", conexion);
+            _comando.Parameters.AddWithValue("@cant", canti);
+            _comando.Parameters.AddWithValue("@id", id);
+            _comando.ExecuteNonQuery();          
+            conexion.Close();
         }
         #endregion
     }

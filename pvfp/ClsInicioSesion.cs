@@ -9,7 +9,7 @@ namespace PVFP
     {
         #region Path        
         private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
-        public void ConsultarPath()
+        public void ConsultarPah()
         {
             string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
             FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);

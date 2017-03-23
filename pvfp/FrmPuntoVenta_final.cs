@@ -109,19 +109,18 @@ namespace PVFP
                 this.Close();
             }
         }
-
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {            
             frm.unlock();
             this.TopMost = false;
             this.Close();
         }
-
         Cls_imprimir imprimir = new Cls_imprimir();        
         private void Btn_Pagar_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
+                this.TopMost = false;
                 ven.Columns.RemoveAt(1);
                 ven.Columns.RemoveAt(2);
                 ven.Columns.RemoveAt(4);                
@@ -132,8 +131,9 @@ namespace PVFP
                 {
                     uno = Double.Parse(item[2].ToString().Replace("$", String.Empty));
                     dos = Double.Parse(item[3].ToString().Replace("$", String.Empty));
-                    vender.registrar_productos_venta(id,Int32.Parse(item[4].ToString()), Int32.Parse(item[0].ToString()), 0,uno,dos);
-                }
+                    vender.registrar_productos_venta(id,Int32.Parse(item[4].ToString()), Double.Parse(item[0].ToString()), 0,uno,dos);
+                    vender.remover_cant(Double.Parse(item[0].ToString()), Convert.ToInt32(item[4].ToString()));
+                }                               
                 ven.Columns.RemoveAt(4);
                 imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id);
                 frm.limpiar();

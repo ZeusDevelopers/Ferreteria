@@ -21,7 +21,7 @@ namespace PVFP
 
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
-            conexion.ConsultarPath();
+            //conexion.ConsultarPath();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

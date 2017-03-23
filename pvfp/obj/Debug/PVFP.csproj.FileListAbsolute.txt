@@ -238,8 +238,6 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.pdb
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmAlmacen.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmCategorias.resources
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmConsulta.resources
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmConsultaMayorProductos.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmEmpleados.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEnAltProd.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEnProv.resources
@@ -293,3 +291,4 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Newtonsoft.Json.xml
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEntradasDetalle.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEntradasDetalle.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta_final.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.Frm_Consulta.resources
