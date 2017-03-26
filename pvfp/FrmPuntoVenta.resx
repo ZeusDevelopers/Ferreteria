@@ -121,18 +121,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Palatino Linotype, 12pt, style=Bold</value>
-  </data>
-  <data name="xToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
-  </data>
-  <data name="xToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 36</value>
-  </data>
-  <data name="xToolStripMenuItem.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -161,6 +149,18 @@
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>10</value>
+  </data>
+  <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Palatino Linotype, 12pt, style=Bold</value>
+  </data>
+  <data name="xToolStripMenuItem.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="xToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 36</value>
+  </data>
+  <data name="xToolStripMenuItem.Text" xml:space="preserve">
+    <value>X</value>
   </data>
   <metadata name="Cantid.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -237,14 +237,11 @@
   <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="Txtcodigo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <data name="Txtcodigo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 18pt, style=Italic</value>
   </data>
   <data name="Txtcodigo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>615, 252</value>
+    <value>630, 252</value>
   </data>
   <data name="Txtcodigo.Size" type="System.Drawing.Size, System.Drawing">
     <value>545, 49</value>
@@ -568,9 +565,6 @@
   <data name="&gt;&gt;Btn_limpiar.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="Btn_Buscar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <data name="Btn_Buscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
   </data>
@@ -644,7 +638,7 @@
     <value>NoControl</value>
   </data>
   <data name="Btn_Buscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1166, 243</value>
+    <value>1181, 243</value>
   </data>
   <data name="Btn_Buscar.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 62</value>

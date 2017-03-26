@@ -230,11 +230,6 @@ C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
 C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.FrmTiposCargos.resources
 C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.Properties.Resources.resources
 C:\Users\chino\Desktop\Ferreteria\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.config
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.pdb
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.pdb
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.csprojResolveAssemblyReference.cache
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmAlmacen.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmCategorias.resources
@@ -249,7 +244,6 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPerdida.resour
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmProveedores.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmTiposCargos.resources
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.Properties.Resources.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.csproj.GenerateResource.Cache
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.pdb
@@ -275,10 +269,6 @@ C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.con
 C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe
 C:\Users\chino\OneDrive\Documentos\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.pdb
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta_Buscar.resources
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.manifest
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.application
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.exe.manifest
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.application
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.exe.manifest
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\PVFP.application
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta_Buscar.resources
@@ -292,3 +282,14 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEntradasDetall
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.frmEntradasDetalle.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.FrmPuntoVenta_final.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.Frm_Consulta.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.Frm_consuta_recibodet.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Properties.Resources.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Ferreteria.exe.config
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Ferreteria.exe.manifest
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Ferreteria.application
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Ferreteria.exe
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Ferreteria.pdb
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.exe.manifest
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.application
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.exe
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.pdb

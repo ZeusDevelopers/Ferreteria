@@ -24,8 +24,8 @@ namespace PVFP
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            FrmCategorias categorias = new FrmCategorias();
+        {            
+            Frm_Consulta categorias = new Frm_Consulta();
             categorias.Show();
         }
 

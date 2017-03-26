@@ -8,15 +8,17 @@ namespace PVFP
     class ClsInicioSesion
     {
         #region Path        
-        private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
+        //private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
+        private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+       // string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
         public void ConsultarPah()
         {
-            string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
-            FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader ObjLectura = new StreamReader(ObjArchivo);
-            pathfinal = ObjLectura.ReadToEnd();
-            ObjLectura.Close();
-             pathfinal = pathfinal.Remove(0, 5);
+           // string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
+            //FileStream ObjArchivo = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
+            //StreamReader ObjLectura = new StreamReader(ObjArchivo);
+            //pathfinal = ObjLectura.ReadToEnd();
+            //ObjLectura.Close();
+            // pathfinal = pathfinal.Remove(0, 5);
         }
         #endregion
         #region MYSQL
@@ -46,25 +48,18 @@ namespace PVFP
         public void Sesion(string usuario, string contraseña)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `sesion` WHERE Usuario =@usu and Contraseña =@contra "), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("select empleados.Empleado_ID,sesion.Puesto from sesion inner join empleados on sesion.Sesion_ID = empleados.Sesion_ID" +
+                " WHERE Usuario =@usu and Contraseña =@contra "), conexion);
             _comando.Parameters.AddWithValue("@usu", usuario);
             _comando.Parameters.AddWithValue("@contra", contraseña);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                bandera = true;
-                usuario = _reader.GetString(1);
-                contraseña = _reader.GetString(2);
-                puesto = _reader.GetString(3);
+                bandera = true;                
+                nombre = _reader["Empleado_ID"].ToString();                
+                puesto = _reader["Puesto"].ToString();
             }
-            _reader.Close();
-            _comando = new MySqlCommand(String.Format("select nombre from empleados left join sesion on empleados.Sesion_ID = (select Sesion_ID from sesion where Usuario =@usu) where Usuario is Null ;"), conexion);
-            _comando.Parameters.AddWithValue("@usu", usuario);
-            _reader = _comando.ExecuteReader();
-            while (_reader.Read())
-            {
-                nombre = _reader.GetString(0);
-            }            
+            _reader.Close();                    
             conexion.Close();
         }
         #endregion

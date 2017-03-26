@@ -26,10 +26,15 @@ namespace PVFP
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            sesion();
+        }
+        public void sesion()
+        {
             try
             {
-                
-                if (ClsInicioSesion.Usuario=="") {
+
+                if (ClsInicioSesion.Usuario == "")
+                {
                     conexion.Sesion(txtusuario.Text, txtcontraseña.Text);
                     if (conexion.bandera == false)
                     {
@@ -70,10 +75,17 @@ namespace PVFP
             }
 
         }
-
         private void xToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtcontraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar==13)
+            {
+                sesion();
+            }
         }
     }
 }

@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvVentas = new System.Windows.Forms.DataGridView();
+            this.Cantid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Txtcodigo = new System.Windows.Forms.TextBox();
             this.Lbl_codprd = new System.Windows.Forms.Label();
             this.Lblsubtotal = new System.Windows.Forms.Label();
@@ -48,14 +56,6 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Gb_Venta = new System.Windows.Forms.GroupBox();
             this.btn_abrir_cajon = new System.Windows.Forms.Button();
-            this.Cantid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -95,19 +95,66 @@
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
             this.DgvVentas.ReadOnly = true;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvVentas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DgvVentas.RowTemplate.Height = 28;
             this.DgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVentas_CellClick);
             // 
+            // Cantid
+            // 
+            resources.ApplyResources(this.Cantid, "Cantid");
+            this.Cantid.Name = "Cantid";
+            this.Cantid.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            resources.ApplyResources(this.Codigo, "Codigo");
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            resources.ApplyResources(this.Producto, "Producto");
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Existencia
+            // 
+            resources.ApplyResources(this.Existencia, "Existencia");
+            this.Existencia.Name = "Existencia";
+            this.Existencia.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            resources.ApplyResources(this.Precio, "Precio");
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            resources.ApplyResources(this.Importe, "Importe");
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // UM
+            // 
+            resources.ApplyResources(this.UM, "UM");
+            this.UM.Name = "UM";
+            this.UM.ReadOnly = true;
+            // 
+            // id_producto
+            // 
+            resources.ApplyResources(this.id_producto, "id_producto");
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            // 
             // Txtcodigo
             // 
-            resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
             this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
+            resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
             this.Txtcodigo.ForeColor = System.Drawing.Color.Silver;
             this.Txtcodigo.Name = "Txtcodigo";
-//            this.Txtcodigo.TextChanged += new System.EventHandler(this.Txtcodigo_TextChanged);
             this.Txtcodigo.Enter += new System.EventHandler(this.Txtcodigo_Enter);
             this.Txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcodigo_KeyPress);
             this.Txtcodigo.Leave += new System.EventHandler(this.Txtcodigo_Leave);
@@ -220,54 +267,6 @@
             this.btn_abrir_cajon.Name = "btn_abrir_cajon";
             this.btn_abrir_cajon.UseVisualStyleBackColor = false;
             this.btn_abrir_cajon.Click += new System.EventHandler(this.btn_abrir_cajon_Click);
-            // 
-            // Cantid
-            // 
-            resources.ApplyResources(this.Cantid, "Cantid");
-            this.Cantid.Name = "Cantid";
-            this.Cantid.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            resources.ApplyResources(this.Codigo, "Codigo");
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Producto
-            // 
-            resources.ApplyResources(this.Producto, "Producto");
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Existencia
-            // 
-            resources.ApplyResources(this.Existencia, "Existencia");
-            this.Existencia.Name = "Existencia";
-            this.Existencia.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            resources.ApplyResources(this.Precio, "Precio");
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            resources.ApplyResources(this.Importe, "Importe");
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            // 
-            // UM
-            // 
-            resources.ApplyResources(this.UM, "UM");
-            this.UM.Name = "UM";
-            this.UM.ReadOnly = true;
-            // 
-            // id_producto
-            // 
-            resources.ApplyResources(this.id_producto, "id_producto");
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
             // 
             // FrmPuntoVenta
             // 

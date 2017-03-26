@@ -125,7 +125,7 @@ namespace PVFP
                 ven.Columns.RemoveAt(2);
                 ven.Columns.RemoveAt(4);                
                 string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                int id=vender.registrar_venta(total, date, iva, subtotal, 1);
+                int id=vender.registrar_venta(venta, date, iva, subtotal,Int32.Parse(ClsInicioSesion.Usuario));
                 double uno, dos;                
                 foreach (DataRow item in ven.Rows)
                 {
@@ -239,7 +239,7 @@ namespace PVFP
             caracteres_de_aceptacion(txtdolar);
             caracteres_de_aceptacion(txttarjeta);
             LblTot.Text = venta.ToString();
-            LblDolarPrecio.Text = "Dolar Bancomer $" + Environment.NewLine + dolar.ToString();
+            LblDolarPrecio.Text = "Dolar Bancomer " + Environment.NewLine + "$ "+dolar.ToString();
         }        
         private void Txtdinero_TextChanged(object sender, EventArgs e)
         {

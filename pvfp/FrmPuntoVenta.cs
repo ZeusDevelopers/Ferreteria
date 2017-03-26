@@ -30,7 +30,7 @@ namespace PVFP
                 string line1 = "Abrir";
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
-                G.DrawImage(PVFP.Properties.Resources.abrir, 24, 2, 40, 40);
+                G.DrawImage(Ferreteria.Properties.Resources.abrir, 24, 2, 40, 40);
                 using (Font arial = new Font("Arial", 13))
                 {
                     Rectangle RC = Btn_comprar.ClientRectangle;
@@ -46,7 +46,7 @@ namespace PVFP
                 string line1 = "Eliminar ";
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
-                G.DrawImage(PVFP.Properties.Resources.Eliminar, 24, 2, 40, 40);
+                G.DrawImage(Ferreteria.Properties.Resources.Eliminar, 24, 2, 40, 40);
                 using (Font arial = new Font("Arial", 13))
                 {
                     Rectangle RC = Btn_comprar.ClientRectangle;
@@ -62,7 +62,7 @@ namespace PVFP
                 string line1 = "Cobrar ";
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
-                G.DrawImage(PVFP.Properties.Resources.Icono, 24, 2, 40, 40);
+                G.DrawImage(Ferreteria.Properties.Resources.Icono, 24, 2, 40, 40);
                 using (Font arial = new Font("Arial", 13))
                 {
                     Rectangle RC = Btn_comprar.ClientRectangle;
@@ -78,7 +78,7 @@ namespace PVFP
                 string line1 = "Limpiar ";
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
-                G.DrawImage(PVFP.Properties.Resources.bote, 24, 2, 40, 40);
+                G.DrawImage(Ferreteria.Properties.Resources.bote, 24, 2, 40, 40);
                 using (Font arial = new Font("Arial", 13))
                 {
                     Rectangle RC = Btn_limpiar.ClientRectangle;
@@ -94,7 +94,7 @@ namespace PVFP
                 string line1 = "Cant.";
                 StringFormat SF = new StringFormat();
                 SF.Alignment = StringAlignment.Center;
-                G.DrawImage(PVFP.Properties.Resources.editar, 24, 4, 40, 40);
+                G.DrawImage(Ferreteria.Properties.Resources.editar, 24, 4, 40, 40);
                 using (Font arial = new Font("Arial", 13))
                 {
                     Rectangle RC = Btn_cantidad.ClientRectangle;

@@ -18,69 +18,157 @@ namespace PVFP
             InitializeComponent();
         }
         ClsEmpleados ObjEmpleados = new ClsEmpleados();
-
+        int id_emp;
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             cargar();
         }
 
-        void cargar()
-        {
-            dataGridView2.Rows.Clear();
-            cmbBuscarNombre.Items.Clear();            
-            ObjEmpleados.CargarEmpleadosSesion();
-            ObjEmpleados.CargarEmpleadosDatos();
-            ArrayList arreus = ObjEmpleados.ArregloUsu;
-            ArrayList arrecontr = ObjEmpleados.ArregloContra;
-            ArrayList arrepuest = ObjEmpleados.ArregloPuesto;
-            //
-            ArrayList arrenom = ObjEmpleados.ArregloNom;
-            ArrayList arreape = ObjEmpleados.ArregloApel;
-            ArrayList arresexo = ObjEmpleados.ArregloSexo;
-            ArrayList arredire = ObjEmpleados.ArregloDire;
-            ArrayList arretel = ObjEmpleados.ArregloTel;
-
-            for (int i = 0; i < arreus.Count; i++)
-            {
-                dataGridView2.Rows.Add(arrenom[i].ToString(), arreape[i].ToString(), arresexo[i].ToString(), arredire[i].ToString(), arretel[i].ToString(), arreus[i].ToString(), arrecontr[i].ToString(), arrepuest[i].ToString());
-            }
-        }
-
-        private void btnagregar_Click_1(object sender, EventArgs e)
+        private void btnagregar_Click(object sender, EventArgs e)
         {
             try
             {
-            ObjEmpleados.GuardarNuevoEmpleado(0, txtnombre.Text, txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text);
-            ObjEmpleados.GuardarNuevoEmpleadoSesion(0, txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex.ToString());
-            MessageBox.Show("Empleado añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cargar();
+                if (txtusuario.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txtcontraseña.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Contrasena", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (cmbpuesto.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Ingrese Puesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txtnombre.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txtapellido.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (cmbsexo.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Ingrese Sexo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txtapellido.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txttelefono.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Numero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (txtdireccion.Text == String.Empty)
+                {
+                    MessageBox.Show("Ingrese Direccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {                    
+                    switch (btnagregar.Text)
+                    {
+                        case "Agregar"://Agregar
+                            ObjEmpleados.GuardarNuevoEmpleado(txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex, txtnombre.Text, txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text);
+                            MessageBox.Show("Usuario Registrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        case "Editar"://Agregar
+                            ObjEmpleados.Editar(txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex, txtnombre.Text,
+                                txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text, id_emp);
+                            MessageBox.Show("Actualizado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnagregar.Text = "Agregar";
+                            break;
+                        default:
+                            break;
+                    }                  
+                    cargar();
+                    id_emp = -1;
+                    Btn_eliminar.Enabled = false ;
+                    txtapellido.Text = "";
+                    txtcontraseña.Text = "";
+                    txtdireccion.Text = "";
+                    txtnombre.Text = "";
+                    txttelefono.Text = "";
+                    txtusuario.Text = "";
+                    cmbpuesto.SelectedIndex = -1;
+                    cmbsexo.SelectedIndex = -1;
+
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
-        private void btnEditar_Click_1(object sender, EventArgs e)
+        public void cargar()
         {
-            ObjEmpleados.EditarEmpleado(0, txtnombre.Text, txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text);
-            ObjEmpleados.EditarEmpleadoSesion(0, txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex.ToString());
-            MessageBox.Show("Empleado modificado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cargar();
+            try
+            {
+                Dgv_datos.DataSource = ObjEmpleados.consulta_usuario();
+                DataGridViewButtonColumn uninstallButtonColumn = new DataGridViewButtonColumn();
+                uninstallButtonColumn.Name = "Seleccionar";                                
+                int columnIndex = 3;
+                if (Dgv_datos.Columns["Seleccionar"] == null)
+                {
+                    Dgv_datos.Columns.Insert(columnIndex, uninstallButtonColumn);
+                    Dgv_datos.CellClick += Dgv_datos_CellClick;
+                }
+                foreach (DataGridViewRow item in Dgv_datos.Rows )
+                {
+                    item.Cells["Seleccionar"].Value = "Seleccionar";
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);                
+            }            
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void Dgv_datos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ObjEmpleados.EliminarEmpleado(cmbBuscarNombre.SelectedIndex);
-            ObjEmpleados.EliminarSesion(cmbBuscarNombre.SelectedIndex);
-            MessageBox.Show("Empleado eliminado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cargar();
+            try
+            {
+                Btn_eliminar.Enabled = true;
+                id_emp = Int32.Parse(Dgv_datos["No Empleado", e.RowIndex].Value.ToString());
+                DataTable pag1 = ObjEmpleados.consulta_dat_empleados(Int32.Parse(Dgv_datos["No Empleado", e.RowIndex].Value.ToString()));
+                foreach (DataRow item in pag1.Rows)
+                {
+                    txtnombre.Text = item[0].ToString();
+                    txtapellido.Text = item[1].ToString();
+                    cmbsexo.SelectedIndex = cmbsexo.FindString(item[2].ToString());
+                    txtdireccion.Text = item[3].ToString();
+                    txttelefono.Text = item[4].ToString();
+                    txtusuario.Text = item[5].ToString();
+                    txtcontraseña.Text=item[6].ToString();
+                    cmbpuesto.SelectedIndex =Int32.Parse(item[7].ToString());                    
+                }
+                btnagregar.Text = "Editar";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                if (id_emp != -1)
+                {
+                    Btn_eliminar.Enabled = false;
+                    btnagregar.Text = "Agregar";
+                    ObjEmpleados.borrar_empleados(id_emp);
+                    cargar();
+                    MessageBox.Show("Usuario Borrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                id_emp = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }           
         }
     }
 }

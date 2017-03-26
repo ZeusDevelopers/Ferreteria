@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Net;
 using System.Xml;
+using System.Net.NetworkInformation;
 
 namespace PVFP
 {
@@ -44,15 +45,22 @@ namespace PVFP
         private static double dolar;
         public  static void precio_dolar()
         {
-            
-            //   var valor_dolar = new WebClient().DownloadString("http://download.finance.yahoo.com/d/quotes?s=USDMXN%3DX&f=l1n");
+
+            try
+            {         
             var valor_dolar = new WebClient().DownloadString("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'https%3A%2F%2Fbbv.infosel.com%2Fbancomerindicators%2FindexV5.aspx%3F%23'%20%20%20&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
             //string lur = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D" + "'" + "https%3A%2F%2Fbbv.infosel.com%2Fbancomerindicators%2FindexV5.aspx%3F%23'%20%20%20&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             string lur = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%27http%3A%2F%2Fwww.eldolar.info%2Fes-MX%2Fmexico%2Fdia%2Fhoy%27%20and%20xpath%3D%27%2F%2Fhtml%5B%22container%22%5D%2F%2Ftable%5B%22dllsTable%22%5D%27&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
             XmlDocument doc1 = new XmlDocument();            
             doc1.Load(lur);            
             string elemList = doc1.DocumentElement.ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(2).ChildNodes.Item(4).ChildNodes.Item(4).InnerText;                            
-            dolar = Double.Parse(elemList);            
+            dolar = Double.Parse(elemList);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
         public int registrar_venta(double totalventa,string fecha,double iva ,double subtotal,int empleadoid)
         {
@@ -82,8 +90,7 @@ namespace PVFP
             return numero;
         }
         public void registrar_productos_venta(int salidaid,int productoid,double cantidad,double descuento,double precio,double prod_vendo)
-        {
-            //insert into salida_detalle values(Salida_ID, Producto_ID, Cantidad, Descuento, PrecioUnitario, TotalProducto);
+        {            
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
@@ -107,6 +114,9 @@ namespace PVFP
 
         public void remover_cant(double canti,int id)
         {
+            //Ping p = new Ping();
+            //PingReply r = p.Send("8.8.8.8");
+            
             int numero;
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand("update almacen set almacen.A_piso = almacen.A_piso - @cant where almacen.Producto_ID = @id", conexion);

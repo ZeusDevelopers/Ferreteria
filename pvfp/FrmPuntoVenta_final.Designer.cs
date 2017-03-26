@@ -57,7 +57,7 @@
             this.Txtdinero.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Txtdinero.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtdinero.ForeColor = System.Drawing.Color.Black;
-            this.Txtdinero.Location = new System.Drawing.Point(232, 262);
+            this.Txtdinero.Location = new System.Drawing.Point(280, 262);
             this.Txtdinero.Name = "Txtdinero";
             this.Txtdinero.Size = new System.Drawing.Size(282, 49);
             this.Txtdinero.TabIndex = 1;
@@ -87,7 +87,7 @@
             this.Btncombinado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Btncombinado.Location = new System.Drawing.Point(416, 125);
             this.Btncombinado.Name = "Btncombinado";
-            this.Btncombinado.Size = new System.Drawing.Size(155, 105);
+            this.Btncombinado.Size = new System.Drawing.Size(175, 105);
             this.Btncombinado.TabIndex = 37;
             this.Btncombinado.Text = "Combinado";
             this.Btncombinado.UseVisualStyleBackColor = false;
@@ -128,7 +128,7 @@
             this.txttarjeta.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txttarjeta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttarjeta.ForeColor = System.Drawing.Color.Black;
-            this.txttarjeta.Location = new System.Drawing.Point(232, 386);
+            this.txttarjeta.Location = new System.Drawing.Point(280, 386);
             this.txttarjeta.Name = "txttarjeta";
             this.txttarjeta.Size = new System.Drawing.Size(282, 49);
             this.txttarjeta.TabIndex = 4;
@@ -140,7 +140,7 @@
             this.BtnTarjeta.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnTarjeta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTarjeta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTarjeta.Image = global::PVFP.Properties.Resources.test9;
+            this.BtnTarjeta.Image = global::Ferreteria.Properties.Resources.test9;
             this.BtnTarjeta.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnTarjeta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BtnTarjeta.Location = new System.Drawing.Point(255, 125);
@@ -157,7 +157,7 @@
             this.BtnEfectivo.BackColor = System.Drawing.Color.Gainsboro;
             this.BtnEfectivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEfectivo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEfectivo.Image = global::PVFP.Properties.Resources.text3;
+            this.BtnEfectivo.Image = global::Ferreteria.Properties.Resources.text3;
             this.BtnEfectivo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnEfectivo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.BtnEfectivo.Location = new System.Drawing.Point(94, 125);
@@ -189,7 +189,7 @@
             this.txtdolar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtdolar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdolar.ForeColor = System.Drawing.Color.Black;
-            this.txtdolar.Location = new System.Drawing.Point(232, 324);
+            this.txtdolar.Location = new System.Drawing.Point(280, 324);
             this.txtdolar.Name = "txtdolar";
             this.txtdolar.Size = new System.Drawing.Size(282, 49);
             this.txtdolar.TabIndex = 3;
@@ -200,7 +200,7 @@
             // 
             this.chck_pagodolar.AutoSize = true;
             this.chck_pagodolar.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chck_pagodolar.Location = new System.Drawing.Point(520, 274);
+            this.chck_pagodolar.Location = new System.Drawing.Point(568, 274);
             this.chck_pagodolar.Name = "chck_pagodolar";
             this.chck_pagodolar.Size = new System.Drawing.Size(191, 32);
             this.chck_pagodolar.TabIndex = 2;
@@ -330,7 +330,7 @@
             this.Lbl_total_dlls.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.Lbl_total_dlls.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Lbl_total_dlls.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lbl_total_dlls.Location = new System.Drawing.Point(534, 318);
+            this.Lbl_total_dlls.Location = new System.Drawing.Point(582, 318);
             this.Lbl_total_dlls.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_total_dlls.Name = "Lbl_total_dlls";
             this.Lbl_total_dlls.Size = new System.Drawing.Size(151, 60);

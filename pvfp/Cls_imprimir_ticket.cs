@@ -42,15 +42,13 @@ namespace PVFP
             ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE
             ticket.lineasAsteriscos();
             decimal precio, importe;
-            double cantidad = 0;
-            string a="";
+            double cantidad = 0;            
             foreach (DataRow fila in Venta.Rows)
             {                
                 precio = Decimal.Parse(fila[2].ToString().Replace("$", String.Empty));
                 cantidad = Double.Parse(fila[0].ToString());
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
-                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
-                
+                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);                
             }
             ticket.lineasIgual();
             ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
@@ -60,15 +58,10 @@ namespace PVFP
             ticket.AgregarTotales("         EFECTIVO......$", Decimal.Parse(efectivo));
             string cade = cambio.Replace("$", String.Empty);
             double mioa = Double.Parse(cade);
-            ticket.AgregarTotales("         CAMBIO........$", (decimal)mioa);
-            //Texto final del Ticket.                            
+            ticket.AgregarTotales("         CAMBIO........$", (decimal)mioa);            
             ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
             ticket.CortaTicket();
-            //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera       
-            //ticket.ImprimirTicket("Microsoft Print To PDF");
-            ticket.ImprimirTicket("Microsoft XPS Document Writer");
-
-
+            ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera                   
         }
     }
 
@@ -79,7 +72,7 @@ namespace PVFP
         public void imprimir()
         {  
             PrintDocument p = new PrintDocument();
-            Bitmap bit = new Bitmap(PVFP.Properties.Resources.Logo);
+            Bitmap bit = new Bitmap(Ferreteria.Properties.Resources.Logo);
             System.Drawing.Image img = bit;
             p.PrinterSettings.PrinterName = "POS-58";
             p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)

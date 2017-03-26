@@ -16,9 +16,9 @@ namespace PVFP
         public FrmAltaProductos()
         {
             InitializeComponent();
-            BtnGuardar.Image = new Bitmap(PVFP.Properties.Resources.ImgGuardar);
-            btnEliminar.Image = new Bitmap(PVFP.Properties.Resources.Eliminar);
-            btnModificar.Image = new Bitmap(PVFP.Properties.Resources.Actualizar); 
+            BtnGuardar.Image = new Bitmap(Ferreteria.Properties.Resources.ImgGuardar);
+            btnEliminar.Image = new Bitmap(Ferreteria.Properties.Resources.Eliminar);
+            btnModificar.Image = new Bitmap(Ferreteria.Properties.Resources.Actualizar); 
         }
         ClsAltaProductos productos = new ClsAltaProductos();
         ClsCategorias Categorias = new ClsCategorias();
