@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvVentas = new System.Windows.Forms.DataGridView();
@@ -49,13 +49,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Lbl_total_final = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Btn_limpiar = new System.Windows.Forms.Button();
-            this.Btn_Buscar = new System.Windows.Forms.Button();
-            this.Btn_comprar = new System.Windows.Forms.Button();
-            this.Btn_cantidad = new System.Windows.Forms.Button();
-            this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Gb_Venta = new System.Windows.Forms.GroupBox();
+            this.btncotizar = new System.Windows.Forms.Button();
             this.btn_abrir_cajon = new System.Windows.Forms.Button();
+            this.Btn_eliminar = new System.Windows.Forms.Button();
+            this.Btn_cantidad = new System.Windows.Forms.Button();
+            this.Btn_Buscar = new System.Windows.Forms.Button();
+            this.Btn_limpiar = new System.Windows.Forms.Button();
+            this.Btn_comprar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -82,6 +84,7 @@
             this.DgvVentas.AllowUserToDeleteRows = false;
             this.DgvVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvVentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvVentas.BackgroundColor = System.Drawing.Color.White;
             this.DgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cantid,
@@ -92,11 +95,13 @@
             this.Importe,
             this.UM,
             this.id_producto});
+            this.DgvVentas.GridColor = System.Drawing.SystemColors.ActiveBorder;
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
             this.DgvVentas.ReadOnly = true;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.DgvVentas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.DgvVentas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DgvVentas.RowTemplate.Height = 28;
             this.DgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVentas_CellClick);
@@ -198,7 +203,7 @@
             // 
             resources.ApplyResources(this.Lbl_total_final, "Lbl_total_final");
             this.Lbl_total_final.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_total_final.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Lbl_total_final.ForeColor = System.Drawing.Color.SeaGreen;
             this.Lbl_total_final.Name = "Lbl_total_final";
             // 
             // label7
@@ -207,45 +212,6 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label7.Name = "label7";
-            // 
-            // Btn_limpiar
-            // 
-            this.Btn_limpiar.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.Btn_limpiar, "Btn_limpiar");
-            this.Btn_limpiar.Name = "Btn_limpiar";
-            this.Btn_limpiar.UseVisualStyleBackColor = false;
-            this.Btn_limpiar.Click += new System.EventHandler(this.Btn_limpiar_Click);
-            // 
-            // Btn_Buscar
-            // 
-            resources.ApplyResources(this.Btn_Buscar, "Btn_Buscar");
-            this.Btn_Buscar.Name = "Btn_Buscar";
-            this.Btn_Buscar.UseVisualStyleBackColor = true;
-            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
-            // 
-            // Btn_comprar
-            // 
-            this.Btn_comprar.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.Btn_comprar, "Btn_comprar");
-            this.Btn_comprar.Name = "Btn_comprar";
-            this.Btn_comprar.UseVisualStyleBackColor = false;
-            this.Btn_comprar.Click += new System.EventHandler(this.Btn_comprar_Click);
-            // 
-            // Btn_cantidad
-            // 
-            this.Btn_cantidad.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.Btn_cantidad, "Btn_cantidad");
-            this.Btn_cantidad.Name = "Btn_cantidad";
-            this.Btn_cantidad.UseVisualStyleBackColor = false;
-            this.Btn_cantidad.Click += new System.EventHandler(this.Btn_cantidad_Click);
-            // 
-            // Btn_eliminar
-            // 
-            this.Btn_eliminar.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.Btn_eliminar, "Btn_eliminar");
-            this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.UseVisualStyleBackColor = false;
-            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Gb_Venta
             // 
@@ -260,6 +226,15 @@
             this.Gb_Venta.Name = "Gb_Venta";
             this.Gb_Venta.TabStop = false;
             // 
+            // btncotizar
+            // 
+            this.btncotizar.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.btncotizar, "btncotizar");
+            this.btncotizar.Image = global::Ferreteria.Properties.Resources.image1;
+            this.btncotizar.Name = "btncotizar";
+            this.btncotizar.UseVisualStyleBackColor = false;
+            this.btncotizar.Click += new System.EventHandler(this.btncotizar_Click);
+            // 
             // btn_abrir_cajon
             // 
             this.btn_abrir_cajon.BackColor = System.Drawing.Color.Gainsboro;
@@ -268,12 +243,60 @@
             this.btn_abrir_cajon.UseVisualStyleBackColor = false;
             this.btn_abrir_cajon.Click += new System.EventHandler(this.btn_abrir_cajon_Click);
             // 
+            // Btn_eliminar
+            // 
+            this.Btn_eliminar.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.Btn_eliminar, "Btn_eliminar");
+            this.Btn_eliminar.Name = "Btn_eliminar";
+            this.Btn_eliminar.UseVisualStyleBackColor = false;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
+            // 
+            // Btn_cantidad
+            // 
+            this.Btn_cantidad.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.Btn_cantidad, "Btn_cantidad");
+            this.Btn_cantidad.Name = "Btn_cantidad";
+            this.Btn_cantidad.UseVisualStyleBackColor = false;
+            this.Btn_cantidad.Click += new System.EventHandler(this.Btn_cantidad_Click);
+            // 
+            // Btn_Buscar
+            // 
+            resources.ApplyResources(this.Btn_Buscar, "Btn_Buscar");
+            this.Btn_Buscar.Name = "Btn_Buscar";
+            this.Btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
+            // 
+            // Btn_limpiar
+            // 
+            this.Btn_limpiar.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.Btn_limpiar, "Btn_limpiar");
+            this.Btn_limpiar.Name = "Btn_limpiar";
+            this.Btn_limpiar.UseVisualStyleBackColor = false;
+            this.Btn_limpiar.Click += new System.EventHandler(this.Btn_limpiar_Click);
+            // 
+            // Btn_comprar
+            // 
+            this.Btn_comprar.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.Btn_comprar, "Btn_comprar");
+            this.Btn_comprar.Name = "Btn_comprar";
+            this.Btn_comprar.UseVisualStyleBackColor = false;
+            this.Btn_comprar.Click += new System.EventHandler(this.Btn_comprar_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Name = "label1";
+            // 
             // FrmPuntoVenta
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btncotizar);
             this.Controls.Add(this.btn_abrir_cajon);
             this.Controls.Add(this.Gb_Venta);
             this.Controls.Add(this.Btn_eliminar);
@@ -330,5 +353,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn UM;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
+        private System.Windows.Forms.Button btncotizar;
+        private System.Windows.Forms.Label label1;
     }
 }

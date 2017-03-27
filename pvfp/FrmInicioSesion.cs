@@ -46,6 +46,7 @@ namespace PVFP
                     {
                         conexion.usuario = txtusuario.Text;
                         this.WindowState = FormWindowState.Minimized;
+                        ClsInicioSesion.precio_dolar();
                         if (conexion.puesto == "0")//ADMIN
                         {
                             txtcontraseña.Text = "";

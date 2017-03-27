@@ -13,8 +13,10 @@ namespace PVFP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new FrmInicioSesion());
-//            Application.Run(new FrmPuntoVenta());
+            // Application.Run(new FrmPuntoVenta());
+            //Application.Run(new FrmAltaProductos());
         }
     }
 }

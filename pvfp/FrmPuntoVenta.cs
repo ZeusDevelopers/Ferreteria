@@ -163,11 +163,15 @@ namespace PVFP
                         bHandled = true;
                         break;
                     case Keys.F8:
-                        limpiar();
+                        limpiar1();
                         bHandled = true;
                         break;
                     case Keys.F9:
                         elim();
+                        bHandled = true;
+                        break;
+                    case Keys.F11:
+                        cotizar();
                         bHandled = true;
                         break;
                     case Keys.F10:
@@ -181,8 +185,7 @@ namespace PVFP
 
             }
             catch (Exception)
-            {
-
+            {                                
 
             }
             return bHandled;
@@ -198,6 +201,7 @@ namespace PVFP
                 //Btn_comprar.Enabled = false;
                 Btn_limpiar.Enabled = false;
                 Btn_eliminar.Enabled = false;
+                btncotizar.Enabled = false;
                 DataTable dt = new DataTable();
                 foreach (DataGridViewColumn col in DgvVentas.Columns)
                 {
@@ -338,16 +342,15 @@ namespace PVFP
         }
         private void Btn_limpiar_Click(object sender, EventArgs e)
         {
-            limpiar();
+            limpiar1();
         }
         private void FrmPuntoVenta_Load(object sender, EventArgs e)
         {
             DataGridViewColumn row = DgvVentas.Columns[4];
             row.DefaultCellStyle.BackColor = Color.LawnGreen;
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
-            DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ClsVentas.precio_dolar();
-            dolar = ClsVentas.Dolar;
+            DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;            
+            dolar = ClsInicioSesion.Dolar;
         }
         double dolar = 0;
         private void Btn_cantidad_Click(object sender, EventArgs e)
@@ -463,6 +466,9 @@ namespace PVFP
         {
             roww = e.RowIndex;
         }
+
+       
+
         internal void dato_encontrado(string codigobarras, string producto, string precio, int stock, string um, string productoid)
         {
             try
@@ -476,7 +482,48 @@ namespace PVFP
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        public void limpiar()
+
+        private void btncotizar_Click(object sender, EventArgs e)
+        {
+            cotizar();
+        }
+        public void cotizar()
+        {
+            if (!(total <= 0))
+            {
+                DialogResult r = MessageBox.Show("Desea cotizar los productos", "Cotizacion", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (r.Equals(DialogResult.Yes))
+                {
+                    DataTable ven = new DataTable();
+                    foreach (DataGridViewColumn col in DgvVentas.Columns)
+                    {
+                        ven.Columns.Add(col.HeaderText);
+                    }
+                    for (int i = 0; i < DgvVentas.Rows.Count; i++)
+                    {
+                        DataGridViewRow row = DgvVentas.Rows[i];
+                        DataRow dr = ven.NewRow();
+                        for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                        {
+                            dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                        }
+                        ven.Rows.Add(dr);
+                    }
+                    Cls_imprimir ob = new Cls_imprimir();
+                    ven.Columns.RemoveAt(1);
+                    ven.Columns.RemoveAt(2);
+                    ven.Columns.RemoveAt(4);
+                    ven.Columns.RemoveAt(4);
+                    ob.imprime(ven, total.ToString(), "", subtotal, iva, total, 0, true);
+                    limpiar();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        public void limpiar1()
         {
             DialogResult r = MessageBox.Show("Desea Limpiar Todo", "Finalizar", MessageBoxButtons.YesNo);
             if (r.ToString() == "Yes")
@@ -492,6 +539,20 @@ namespace PVFP
             }
             DgvVentas.ClearSelection();
         }
+        public void limpiar()
+        {
+           
+                lbliva.Text = "$ 0.00";
+                Lblsubtotal.Text = "$ 0.00";
+                Lbl_total_final.Text = "$ 0.00";
+                iva = 0;
+                subtotal = 0;
+                total = 0;
+                DgvVentas.Rows.Clear();
+                DgvVentas.Refresh();
+            
+            DgvVentas.ClearSelection();
+        }
         public void unlock()
         {
             btn_abrir_cajon.Enabled = true;
@@ -500,6 +561,7 @@ namespace PVFP
             Btn_comprar.Enabled = true;
             Btn_limpiar.Enabled = true;
             Btn_eliminar.Enabled = true;
+            btncotizar.Enabled = true;
         }
     }
 }

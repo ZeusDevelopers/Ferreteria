@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace PVFP
     public partial class FrmPuntoVenta_final : Form
     {
         ClsVentas vender = new ClsVentas();
+        NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         DataTable ven = new DataTable();
         double venta = 100,total=0,val1=0,val2=0,val3=0,cambio=0;
         double dolar = 0,tot,iva,subtotal;
@@ -135,7 +137,7 @@ namespace PVFP
                     vender.remover_cant(Double.Parse(item[0].ToString()), Convert.ToInt32(item[4].ToString()));
                 }                               
                 ven.Columns.RemoveAt(4);
-                imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id);
+                imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id,false);
                 frm.limpiar();
                 frm.unlock();
                 this.TopMost = false;
@@ -160,7 +162,7 @@ namespace PVFP
                 Btn_Pagar.Enabled = false;
                 val2 = 0.0;                
                 total = val1 + val2 + val3;
-                Lblcam.Text = (-venta + total).ToString();
+                Lblcam.Text = (-venta + total).ToString("C", nfi);
                 cambio = -venta + total;
                 Lblcam.ForeColor = Color.Red;
             }
@@ -169,7 +171,7 @@ namespace PVFP
                 val2 = dolar * double.Parse(txtdolar.Text);
                 Lbl_total_dlls.Text = val2.ToString();
                 total = val1 + val2 + val3;
-                Lblcam.Text = (-venta + total).ToString();
+                Lblcam.Text = (-venta + total).ToString("C", nfi);
                 cambio = -venta + total;
                 if (venta <= total)
                 {
@@ -197,13 +199,13 @@ namespace PVFP
                 Lblcam.ForeColor = Color.Red;
                 cambio = -venta + total;
                 total = val1 + val2 + val3;
-                Lblcam.Text = (- venta + total).ToString();
+                Lblcam.Text = (- venta + total).ToString("C", nfi);
             }
             else
             {
                 val3 = double.Parse(txttarjeta.Text);
                 total = val1 + val2 + val3;
-                Lblcam.Text = (-venta + total).ToString();
+                Lblcam.Text = (-venta + total).ToString("C", nfi);
                 cambio = -venta + total;
                 if (venta <= total)
                 {
@@ -252,14 +254,14 @@ namespace PVFP
                 val1 = 0.0;
                 Lblcam.ForeColor = Color.Red;
                 total = val1 + val2 + val3;
-                Lblcam.Text = (-venta + total).ToString();
+                Lblcam.Text = (-venta + total).ToString("C", nfi);
                 cambio = -venta + total;
             }
             else
             {
                 val1 = double.Parse(Txtdinero.Text);
                 total = val1 + val2 + val3;
-                Lblcam.Text = (-venta + total).ToString();
+                Lblcam.Text = (-venta + total).ToString("C",nfi);
                 cambio = -venta + total;
                 if (venta <= total)
                 {

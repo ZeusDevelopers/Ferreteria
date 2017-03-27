@@ -51,3 +51,14 @@ pvfp/obj/Debug/PVFP.csprojResolveAssemblyReference.cache
 *.exe
 *.exe
 pvfp/obj/Debug/PVFP.pdb
+*.pdb
+*.pdb
+.vs/PVFP/v15/.suo
+*.suo
+*.exe
+*.pdb
+pvfp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+pvfp/obj/Debug/PVFP.csproj.GenerateResource.Cache
+*.exe
+pvfp/obj/Debug/PVFP.FrmAlmacen.resources
+pvfp/obj/Debug/PVFP.FrmPuntoVenta.resources

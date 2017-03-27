@@ -15,7 +15,7 @@ namespace PVFP
     {
     
         #region MYSQL
-        string Id_Empleado = "";
+        //string Id_Empleado = "";
         
         public DataTable Fill_Combo(string campo)
         {

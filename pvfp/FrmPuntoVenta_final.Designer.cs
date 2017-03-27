@@ -49,7 +49,9 @@
             this.LblDolarPrecio = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.Lbl_total_dlls = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Gb_Venta.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Txtdinero
@@ -57,7 +59,7 @@
             this.Txtdinero.BackColor = System.Drawing.SystemColors.HighlightText;
             this.Txtdinero.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtdinero.ForeColor = System.Drawing.Color.Black;
-            this.Txtdinero.Location = new System.Drawing.Point(280, 262);
+            this.Txtdinero.Location = new System.Drawing.Point(280, 259);
             this.Txtdinero.Name = "Txtdinero";
             this.Txtdinero.Size = new System.Drawing.Size(282, 49);
             this.Txtdinero.TabIndex = 1;
@@ -71,7 +73,7 @@
             this.label1.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(206, 34);
+            this.label1.Location = new System.Drawing.Point(206, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(286, 60);
@@ -85,7 +87,7 @@
             this.Btncombinado.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btncombinado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Btncombinado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Btncombinado.Location = new System.Drawing.Point(416, 125);
+            this.Btncombinado.Location = new System.Drawing.Point(416, 122);
             this.Btncombinado.Name = "Btncombinado";
             this.Btncombinado.Size = new System.Drawing.Size(175, 105);
             this.Btncombinado.TabIndex = 37;
@@ -100,7 +102,7 @@
             this.Lblefectivo.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.Lblefectivo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Lblefectivo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lblefectivo.Location = new System.Drawing.Point(31, 251);
+            this.Lblefectivo.Location = new System.Drawing.Point(31, 248);
             this.Lblefectivo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lblefectivo.Name = "Lblefectivo";
             this.Lblefectivo.Size = new System.Drawing.Size(196, 60);
@@ -115,7 +117,7 @@
             this.LblTarjeta.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.LblTarjeta.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.LblTarjeta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LblTarjeta.Location = new System.Drawing.Point(54, 374);
+            this.LblTarjeta.Location = new System.Drawing.Point(54, 371);
             this.LblTarjeta.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblTarjeta.Name = "LblTarjeta";
             this.LblTarjeta.Size = new System.Drawing.Size(173, 60);
@@ -128,7 +130,7 @@
             this.txttarjeta.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txttarjeta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttarjeta.ForeColor = System.Drawing.Color.Black;
-            this.txttarjeta.Location = new System.Drawing.Point(280, 386);
+            this.txttarjeta.Location = new System.Drawing.Point(280, 383);
             this.txttarjeta.Name = "txttarjeta";
             this.txttarjeta.Size = new System.Drawing.Size(282, 49);
             this.txttarjeta.TabIndex = 4;
@@ -143,7 +145,7 @@
             this.BtnTarjeta.Image = global::Ferreteria.Properties.Resources.test9;
             this.BtnTarjeta.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnTarjeta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnTarjeta.Location = new System.Drawing.Point(255, 125);
+            this.BtnTarjeta.Location = new System.Drawing.Point(255, 122);
             this.BtnTarjeta.Name = "BtnTarjeta";
             this.BtnTarjeta.Size = new System.Drawing.Size(155, 105);
             this.BtnTarjeta.TabIndex = 36;
@@ -160,7 +162,7 @@
             this.BtnEfectivo.Image = global::Ferreteria.Properties.Resources.text3;
             this.BtnEfectivo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnEfectivo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnEfectivo.Location = new System.Drawing.Point(94, 125);
+            this.BtnEfectivo.Location = new System.Drawing.Point(94, 122);
             this.BtnEfectivo.Name = "BtnEfectivo";
             this.BtnEfectivo.Size = new System.Drawing.Size(155, 105);
             this.BtnEfectivo.TabIndex = 35;
@@ -176,7 +178,7 @@
             this.lbldolar.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.lbldolar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbldolar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbldolar.Location = new System.Drawing.Point(81, 315);
+            this.lbldolar.Location = new System.Drawing.Point(81, 312);
             this.lbldolar.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbldolar.Name = "lbldolar";
             this.lbldolar.Size = new System.Drawing.Size(143, 60);
@@ -189,7 +191,7 @@
             this.txtdolar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtdolar.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdolar.ForeColor = System.Drawing.Color.Black;
-            this.txtdolar.Location = new System.Drawing.Point(280, 324);
+            this.txtdolar.Location = new System.Drawing.Point(280, 321);
             this.txtdolar.Name = "txtdolar";
             this.txtdolar.Size = new System.Drawing.Size(282, 49);
             this.txtdolar.TabIndex = 3;
@@ -200,7 +202,7 @@
             // 
             this.chck_pagodolar.AutoSize = true;
             this.chck_pagodolar.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chck_pagodolar.Location = new System.Drawing.Point(568, 274);
+            this.chck_pagodolar.Location = new System.Drawing.Point(568, 271);
             this.chck_pagodolar.Name = "chck_pagodolar";
             this.chck_pagodolar.Size = new System.Drawing.Size(191, 32);
             this.chck_pagodolar.TabIndex = 2;
@@ -216,7 +218,7 @@
             this.Gb_Venta.Controls.Add(this.label5);
             this.Gb_Venta.Controls.Add(this.label7);
             this.Gb_Venta.Controls.Add(this.Lblcam);
-            this.Gb_Venta.Location = new System.Drawing.Point(116, 467);
+            this.Gb_Venta.Location = new System.Drawing.Point(116, 464);
             this.Gb_Venta.Name = "Gb_Venta";
             this.Gb_Venta.Size = new System.Drawing.Size(494, 203);
             this.Gb_Venta.TabIndex = 43;
@@ -278,7 +280,7 @@
             // 
             this.Btn_Pagar.Enabled = false;
             this.Btn_Pagar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Pagar.Location = new System.Drawing.Point(50, 676);
+            this.Btn_Pagar.Location = new System.Drawing.Point(50, 673);
             this.Btn_Pagar.Name = "Btn_Pagar";
             this.Btn_Pagar.Size = new System.Drawing.Size(227, 53);
             this.Btn_Pagar.TabIndex = 44;
@@ -289,7 +291,7 @@
             // Btn_Cancelar
             // 
             this.Btn_Cancelar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cancelar.Location = new System.Drawing.Point(283, 676);
+            this.Btn_Cancelar.Location = new System.Drawing.Point(283, 673);
             this.Btn_Cancelar.Name = "Btn_Cancelar";
             this.Btn_Cancelar.Size = new System.Drawing.Size(227, 53);
             this.Btn_Cancelar.TabIndex = 45;
@@ -304,7 +306,7 @@
             this.LblDolarPrecio.Font = new System.Drawing.Font("Tw Cen MT", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDolarPrecio.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.LblDolarPrecio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LblDolarPrecio.Location = new System.Drawing.Point(615, 125);
+            this.LblDolarPrecio.Location = new System.Drawing.Point(615, 122);
             this.LblDolarPrecio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.LblDolarPrecio.Name = "LblDolarPrecio";
             this.LblDolarPrecio.Size = new System.Drawing.Size(229, 74);
@@ -315,7 +317,7 @@
             // btn_Cerrar
             // 
             this.btn_Cerrar.Font = new System.Drawing.Font("Arial Narrow", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cerrar.Location = new System.Drawing.Point(516, 676);
+            this.btn_Cerrar.Location = new System.Drawing.Point(516, 673);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(227, 53);
             this.btn_Cerrar.TabIndex = 47;
@@ -330,7 +332,7 @@
             this.Lbl_total_dlls.Font = new System.Drawing.Font("Tw Cen MT", 26F, System.Drawing.FontStyle.Bold);
             this.Lbl_total_dlls.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Lbl_total_dlls.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lbl_total_dlls.Location = new System.Drawing.Point(582, 318);
+            this.Lbl_total_dlls.Location = new System.Drawing.Point(582, 315);
             this.Lbl_total_dlls.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Lbl_total_dlls.Name = "Lbl_total_dlls";
             this.Lbl_total_dlls.Size = new System.Drawing.Size(151, 60);
@@ -338,29 +340,39 @@
             this.Lbl_total_dlls.Text = "$0.00";
             this.Lbl_total_dlls.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.Lbl_total_dlls);
+            this.groupBox1.Controls.Add(this.Txtdinero);
+            this.groupBox1.Controls.Add(this.btn_Cerrar);
+            this.groupBox1.Controls.Add(this.BtnEfectivo);
+            this.groupBox1.Controls.Add(this.LblDolarPrecio);
+            this.groupBox1.Controls.Add(this.BtnTarjeta);
+            this.groupBox1.Controls.Add(this.Btn_Cancelar);
+            this.groupBox1.Controls.Add(this.Btncombinado);
+            this.groupBox1.Controls.Add(this.Btn_Pagar);
+            this.groupBox1.Controls.Add(this.Lblefectivo);
+            this.groupBox1.Controls.Add(this.Gb_Venta);
+            this.groupBox1.Controls.Add(this.txttarjeta);
+            this.groupBox1.Controls.Add(this.chck_pagodolar);
+            this.groupBox1.Controls.Add(this.LblTarjeta);
+            this.groupBox1.Controls.Add(this.lbldolar);
+            this.groupBox1.Controls.Add(this.txtdolar);
+            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(879, 729);
+            this.groupBox1.TabIndex = 49;
+            this.groupBox1.TabStop = false;
+            // 
             // FrmPuntoVenta_final
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(903, 858);
-            this.Controls.Add(this.Lbl_total_dlls);
-            this.Controls.Add(this.btn_Cerrar);
-            this.Controls.Add(this.LblDolarPrecio);
-            this.Controls.Add(this.Btn_Cancelar);
-            this.Controls.Add(this.Btn_Pagar);
-            this.Controls.Add(this.Gb_Venta);
-            this.Controls.Add(this.chck_pagodolar);
-            this.Controls.Add(this.lbldolar);
-            this.Controls.Add(this.txtdolar);
-            this.Controls.Add(this.LblTarjeta);
-            this.Controls.Add(this.txttarjeta);
-            this.Controls.Add(this.Lblefectivo);
-            this.Controls.Add(this.Btncombinado);
-            this.Controls.Add(this.BtnTarjeta);
-            this.Controls.Add(this.BtnEfectivo);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Txtdinero);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPuntoVenta_final";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -368,8 +380,9 @@
             this.Load += new System.EventHandler(this.FrmPuntoVenta_final_Load);
             this.Gb_Venta.ResumeLayout(false);
             this.Gb_Venta.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -396,5 +409,6 @@
         private System.Windows.Forms.Label LblDolarPrecio;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.Label Lbl_total_dlls;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

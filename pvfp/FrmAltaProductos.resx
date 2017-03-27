@@ -601,7 +601,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 238</value>
+    <value>158, 220</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -631,7 +631,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 237</value>
+    <value>284, 219</value>
   </data>
   <data name="txtNombre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -832,7 +832,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtFolio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 158</value>
+    <value>286, 159</value>
   </data>
   <data name="txtFolio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1150,7 +1150,7 @@
     <value>NoControl</value>
   </data>
   <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>460, 92</value>
+    <value>483, 93</value>
   </data>
   <data name="label16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1195,7 +1195,7 @@
     <value>5</value>
   </data>
   <data name="cmbxmodTipoCargo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 529</value>
+    <value>592, 451</value>
   </data>
   <data name="cmbxmodTipoCargo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1228,7 +1228,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 529</value>
+    <value>459, 452</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1264,7 +1264,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 654</value>
+    <value>404, 577</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1294,7 +1294,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtmodPrecioMayoreo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 652</value>
+    <value>592, 576</value>
   </data>
   <data name="txtmodPrecioMayoreo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1327,7 +1327,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>436, 589</value>
+    <value>442, 516</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1357,7 +1357,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtmodPrecioVenta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 588</value>
+    <value>592, 516</value>
   </data>
   <data name="txtmodPrecioVenta.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1396,7 +1396,7 @@
     <value>Metro</value>
   </data>
   <data name="cmbxmodUM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>596, 388</value>
+    <value>592, 331</value>
   </data>
   <data name="cmbxmodUM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1429,7 +1429,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 315</value>
+    <value>483, 273</value>
   </data>
   <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1459,7 +1459,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtmodNombre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 314</value>
+    <value>592, 273</value>
   </data>
   <data name="txtmodNombre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1486,7 +1486,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtModCodigoBarras.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 171</value>
+    <value>592, 166</value>
   </data>
   <data name="txtModCodigoBarras.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1519,7 +1519,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>396, 171</value>
+    <value>404, 166</value>
   </data>
   <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1555,7 +1555,7 @@
     <value>NoControl</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 237</value>
+    <value>518, 219</value>
   </data>
   <data name="label13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1591,7 +1591,7 @@
     <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 388</value>
+    <value>474, 331</value>
   </data>
   <data name="label14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1621,7 +1621,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtmodFolio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 235</value>
+    <value>592, 219</value>
   </data>
   <data name="txtmodFolio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1654,7 +1654,7 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>436, 452</value>
+    <value>442, 388</value>
   </data>
   <data name="label15.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -1684,7 +1684,7 @@
     <value>Calibri, 12pt</value>
   </data>
   <data name="txtmodPrecioCosto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>592, 451</value>
+    <value>592, 387</value>
   </data>
   <data name="txtmodPrecioCosto.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>

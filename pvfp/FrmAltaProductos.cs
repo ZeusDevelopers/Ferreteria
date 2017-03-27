@@ -18,7 +18,7 @@ namespace PVFP
             InitializeComponent();
             BtnGuardar.Image = new Bitmap(Ferreteria.Properties.Resources.ImgGuardar);
             btnEliminar.Image = new Bitmap(Ferreteria.Properties.Resources.Eliminar);
-            btnModificar.Image = new Bitmap(Ferreteria.Properties.Resources.Actualizar); 
+            btnModificar.Image = new Bitmap(Ferreteria.Properties.Resources.Actualizar);
         }
         ClsAltaProductos productos = new ClsAltaProductos();
         ClsCategorias Categorias = new ClsCategorias();
@@ -41,7 +41,7 @@ namespace PVFP
                 cmb_modificar();
                 //llena dvg
                 llenar_mostrar();
-                lblID.Text = (Convert.ToInt32(productos.Obtener_productoId())+1).ToString(); 
+                lblID.Text = (Convert.ToInt32(productos.Obtener_productoId()) + 1).ToString();
             }
             catch (Exception ex)
             {
@@ -67,25 +67,17 @@ namespace PVFP
 
         public void llenar_modifcacion(string indice)
         {
-            //try
-            //{
-                DataTable tabla = productos.VerProducto(indice);
-                DataRow elemento = tabla.Rows[0];
 
-                txtModCodigoBarras.Text = elemento[1].ToString(); ;
-                txtmodFolio.Text = elemento[2].ToString(); ;
-                txtmodNombre.Text = elemento[3].ToString(); ;
-                cmbxmodTipoCargo.Text = "";
-                cmbxmodUM.Text = "";
-                txtmodPrecioCosto.Text = elemento[6].ToString();
-                txtmodPrecioVenta.Text = elemento[7].ToString();
-                txtmodPrecioMayoreo.Text = elemento[8].ToString();
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show("Ocurrio un error" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            DataTable tabla = productos.VerProducto(indice);
+            DataRow elemento = tabla.Rows[0];
+            txtModCodigoBarras.Text = elemento[1].ToString(); ;
+            txtmodFolio.Text = elemento[2].ToString(); ;
+            txtmodNombre.Text = elemento[3].ToString(); ;
+            cmbxmodTipoCargo.SelectedIndex = cmbxmodTipoCargo.FindString(elemento[4].ToString());
+            cmbxmodUM.SelectedIndex = cmbxmodUM.FindStringExact(elemento[5].ToString());
+            txtmodPrecioCosto.Text = elemento[6].ToString();
+            txtmodPrecioVenta.Text = elemento[7].ToString();
+            txtmodPrecioMayoreo.Text = elemento[8].ToString();
         }
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -148,7 +140,7 @@ namespace PVFP
                     productos.AgregarProducto("0", Txtcodigobarras.Text, txtFolio.Text, txtNombre.Text, cmbxTipoCargo.SelectedItem.ToString(),
                         cmbxUM.SelectedItem.ToString(), txtPrecioCosto.Text, txtPrecioVenta.Text, txtPrecioMayore.Text);
                     MessageBox.Show("Producto añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    almacen.AgregarPAlmacen("0",lblID.Text,Txtcodigobarras.Text,txtFolio.Text,txtCantPiso.Text,txtCantAlmacen.Text,
+                    almacen.AgregarPAlmacen("0", lblID.Text, Txtcodigobarras.Text, txtFolio.Text, txtCantPiso.Text, txtCantAlmacen.Text,
                         txtLocalizacion.Text, DateTime.Now.Date.ToString("dd-MM-yy"));
                     Txtcodigobarras.Text = "";
                     txtFolio.Text = "";
@@ -159,7 +151,7 @@ namespace PVFP
 
 
 
-                     
+
                     cmbxUM.Text = "";
                     txtPrecioCosto.Text = "";
                     txtPrecioVenta.Text = "";
@@ -175,14 +167,13 @@ namespace PVFP
                     llenar_mostrar();
                     //se obtiene proximo id
 
-               }
-        }
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
-
+        }
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
@@ -218,7 +209,7 @@ namespace PVFP
         {
             try
             {
-                string[] id = cmbmodProdID.SelectedItem.ToString().Split(',');
+                string[] id = cmbmodProdID.SelectedItem.ToString().Split('-');
                 productos.EditarProducto(id[0].ToString(), txtModCodigoBarras.Text, txtmodFolio.Text,
                  txtmodNombre.Text, cmbxmodTipoCargo.SelectedItem.ToString(), cmbxmodUM.SelectedItem.ToString(),
                  txtmodPrecioCosto.Text, txtmodPrecioVenta.Text, txtmodPrecioMayoreo.Text);
@@ -248,14 +239,6 @@ namespace PVFP
             llenar_modifcacion(id[0].ToString());
         }
 
-        private void cmbxTipoCargo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

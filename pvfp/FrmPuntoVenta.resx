@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="xToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
@@ -235,7 +235,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;DgvVentas.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="Txtcodigo.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 18pt, style=Italic</value>
@@ -262,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Txtcodigo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="Lbl_codprd.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -298,7 +298,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Lbl_codprd.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="Lblsubtotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -498,13 +498,77 @@
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="Btn_limpiar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="Gb_Venta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>948, 753</value>
+  </data>
+  <data name="Gb_Venta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>494, 254</value>
+  </data>
+  <data name="Gb_Venta.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="Gb_Venta.Text" xml:space="preserve">
+    <value>Ventas</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Name" xml:space="preserve">
+    <value>Gb_Venta</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Gb_Venta.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btncotizar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
-  <data name="Btn_limpiar.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btncotizar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial Narrow, 10pt</value>
   </data>
-  <data name="Btn_limpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btncotizar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="btncotizar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btncotizar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>700, 809</value>
+  </data>
+  <data name="btncotizar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 150</value>
+  </data>
+  <data name="btncotizar.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="btncotizar.Text" xml:space="preserve">
+    <value>Cotizar
+(F11)</value>
+  </data>
+  <data name="btncotizar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;btncotizar.Name" xml:space="preserve">
+    <value>btncotizar</value>
+  </data>
+  <data name="&gt;&gt;btncotizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btncotizar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btncotizar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_abrir_cajon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btn_abrir_cajon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
+  </data>
+  <data name="btn_abrir_cajon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD4AAABGCAYAAACUsCfoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
         MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAJnMAACZzAfNsdQoAAAUeSURBVHhe5dtJ6Bt1HAXwqYq7
@@ -532,38 +596,173 @@
         3/g/KZNKhm0gwzaQYRvIsA1k2AYybAMZtoEM93397D8WcrCZWthbSwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Btn_limpiar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btn_abrir_cajon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="Btn_limpiar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btn_abrir_cajon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Btn_limpiar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>297, 809</value>
+  <data name="btn_abrir_cajon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>566, 809</value>
   </data>
-  <data name="Btn_limpiar.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btn_abrir_cajon.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 150</value>
   </data>
-  <data name="Btn_limpiar.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+  <data name="btn_abrir_cajon.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
-  <data name="Btn_limpiar.Text" xml:space="preserve">
-    <value>(F8)</value>
+  <data name="btn_abrir_cajon.Text" xml:space="preserve">
+    <value>Cajon
+(F10)</value>
   </data>
-  <data name="Btn_limpiar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btn_abrir_cajon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;Btn_limpiar.Name" xml:space="preserve">
-    <value>Btn_limpiar</value>
+  <data name="&gt;&gt;btn_abrir_cajon.Name" xml:space="preserve">
+    <value>btn_abrir_cajon</value>
   </data>
-  <data name="&gt;&gt;Btn_limpiar.Type" xml:space="preserve">
+  <data name="&gt;&gt;btn_abrir_cajon.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Btn_limpiar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btn_abrir_cajon.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Btn_limpiar.ZOrder" xml:space="preserve">
-    <value>7</value>
+  <data name="&gt;&gt;btn_abrir_cajon.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Btn_eliminar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Btn_eliminar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
+  </data>
+  <data name="Btn_eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAD4AAABGCAYAAACUsCfoAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAAJnMAACZzAfNsdQoAAAUeSURBVHhe5dtJ6Bt1HAXwqYq7
+        QkHFiuWfitpqKy4HBS9SLEkPigcFUS+K7UkQ1B7EWj24I+pFCqJWRFH0L1KhWOl/qRu4HNxA8aCIShWl
+        7huKGt+LM+HbX98sL/9L0jl8oLyZJu+bZiaT36RZv99vJRm2gQzbQIZtIMM2kGEbyLANZNgGMnR0Znuu
+        jfA9fAvfwTZQ+5VSPVwydKhiNe6EfvAGqP1KqR4uGTpUsQoHwv0QB38TFoPaX1I9XDJ0qGKJFXAtPAPv
+        wW8QB/8LvoRZuBfOhUWgHmtA9XDJ0KGK5c6Ax+B3iIM2MQ/ngXpc2cMlQ4cqBjfAT6CGaupfeAgOgj0e
+        X/VwydCRlgKetdUgo3oeDoXhc6geLhk6YiG4EP4GNcBCPADD51E9XDJ0hELHAz+fVfGF4ou5BsZy8MdB
+        lY540tqeZF/A60mm8O+N3eBHQd2/9vXAfTeFjObgANgSMuUPOBtkD5cMHSwCV4IqW3gSin3TKzf+azPf
+        H9J3Q+p2kD1cMnQsm10LvSeSghGvyZd05nrZ1PzA3cn2YnDiZ3/VyfFtWKR6uGToQBGayYspL05h6BO3
+        9bIVz3azk7Z2b0q2x8F5xfYS8DP8E/gAngNeCF2HF/gC2E/1cMnQ0ZlB4ZnKt+iWqZ297OTpbnb65jXZ
+        ykfPX93ZgXxuuD0OTsfCSjgCeOwPt2HoAdXDJUNHXqpq8P+/duIFOmF7ly7Gn+P2dPBS4zh41Vudl67L
+        IONxDneEbTTRgz8IcZjUU1Dse1eeFSZ68PUQh1EeAV5z3xwymujB+VZOv2cr/D7OFZeYTfTgNA1xoKZe
+        g/g4tVQPlwwdodBZMMqiw8+wA/gd/hSIjympHi4ZOpJS14Aarim+cC/DOjgG0scfUD1cMnSIYlWXrw5+
+        a9sAXKDc4zlUD5cMHWkp4Jl7M6hhRsF3wCoYPofq4ZKhIxZKXAGfgxrGtQt4Dhk8turhkqGjKFNiCdwK
+        X4EayPEZDI571cMlQweLNMCFCp6wtsJClqd4CMkeLhk6WMTEmwZqqCZ+hVNVD5cMHSji4ipKHOZd4JL0
+        hyGrskn1cMnQgSKudOnpFWB+CPAF4C2luD01r3q4ZOhAEVfZmlvhcvgT4j7RbtXDJUMHirjqBqcXIO4T
+        faN6uGToQJHUwXA48Ey+PM+iJoPzjgzX3eJ+hbEZ/GrgNTqPT97n+gi4UMiLjq/haIhDNRm8A2XH+tgM
+        zrOyKlhYDXGoJoOfCWXLzGMzeN2XkochDtVk8Ksg7hONzcmtbtnpH+AxWwzVZHAeMnGfaFr1cMnQgSJc
+        duIVlSpZ+AH4kxDuXzf4JcAXK+4TrVc9XDJ0oAjvfjwdipX5GM6BG0NGr0Ix9KWwG+L2iC/gUtXDJUMH
+        ihBPRnVXXMT7aO8k2VtwEVR9dhf4bpE9XDJ0sEiOJzFVtk7V2zr6FI4E2cMlQweL5Hiv631QpReKC5Jd
+        GDyX6uGSoaMok+OJjhcwqvyofoG1MHwe1cMlQ0cslONVF3+tqIZwceVm+NuXgurhkqEjLZU7DHhzcJR1
+        dvoR7oPjYK/HVz1cMnSoYgHvc3PhgR9lZV86CvwlM1dUb4PKGwuqh0uGDlVM4JLzaXAZ7IQ4MO+n8Uc9
+        S0H93b2oHi4ZOlSxGrdAHDxewDSierhk6FDFajS5Vq+kerhk6FDFarR28HsgDs6PPrVfKdXDJUOHKlZj
+        3/g/KZNKhm0gwzaQYRvIsA1k2AYybAMZtoEM93397D8WcrCZWthbSwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Btn_eliminar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="Btn_eliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_eliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>432, 809</value>
+  </data>
+  <data name="Btn_eliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 150</value>
+  </data>
+  <data name="Btn_eliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="Btn_eliminar.Text" xml:space="preserve">
+    <value>(F9)</value>
+  </data>
+  <data name="Btn_eliminar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;Btn_eliminar.Name" xml:space="preserve">
+    <value>Btn_eliminar</value>
+  </data>
+  <data name="&gt;&gt;Btn_eliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_eliminar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_eliminar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Btn_cantidad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Btn_cantidad.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
+  </data>
+  <data name="Btn_cantidad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="Btn_cantidad.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="Btn_cantidad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_cantidad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 809</value>
+  </data>
+  <data name="Btn_cantidad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 150</value>
+  </data>
+  <data name="Btn_cantidad.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="Btn_cantidad.Text" xml:space="preserve">
+    <value>(F7)</value>
+  </data>
+  <data name="Btn_cantidad.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;Btn_cantidad.Name" xml:space="preserve">
+    <value>Btn_cantidad</value>
+  </data>
+  <data name="&gt;&gt;Btn_cantidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_cantidad.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_cantidad.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="Btn_Buscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Palatino Linotype, 12pt, style=Bold</value>
@@ -659,7 +858,74 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_Buscar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
+  </data>
+  <data name="Btn_limpiar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="Btn_limpiar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Narrow, 10pt</value>
+  </data>
+  <data name="Btn_limpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="Btn_limpiar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="Btn_limpiar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_limpiar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 809</value>
+  </data>
+  <data name="Btn_limpiar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 150</value>
+  </data>
+  <data name="Btn_limpiar.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="Btn_limpiar.Text" xml:space="preserve">
+    <value>(F8)</value>
+  </data>
+  <data name="Btn_limpiar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;Btn_limpiar.Name" xml:space="preserve">
+    <value>Btn_limpiar</value>
+  </data>
+  <data name="&gt;&gt;Btn_limpiar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_limpiar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_limpiar.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="Btn_comprar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -726,232 +992,42 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Btn_comprar.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
-  <data name="Btn_cantidad.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="Btn_cantidad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Narrow, 10pt</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tw Cen MT, 48pt, style=Bold</value>
   </data>
-  <data name="Btn_cantidad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="Btn_cantidad.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="Btn_cantidad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="Btn_cantidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 809</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>552, 73</value>
   </data>
-  <data name="Btn_cantidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 150</value>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 0, 5, 0</value>
   </data>
-  <data name="Btn_cantidad.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>332, 110</value>
   </data>
-  <data name="Btn_cantidad.Text" xml:space="preserve">
-    <value>(F7)</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
   </data>
-  <data name="Btn_cantidad.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>VENTA</value>
   </data>
-  <data name="&gt;&gt;Btn_cantidad.Name" xml:space="preserve">
-    <value>Btn_cantidad</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="&gt;&gt;Btn_cantidad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Btn_cantidad.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Btn_cantidad.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Btn_eliminar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="Btn_eliminar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Narrow, 10pt</value>
-  </data>
-  <data name="Btn_eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="Btn_eliminar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="Btn_eliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Btn_eliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 809</value>
-  </data>
-  <data name="Btn_eliminar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 150</value>
-  </data>
-  <data name="Btn_eliminar.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
-  <data name="Btn_eliminar.Text" xml:space="preserve">
-    <value>(F9)</value>
-  </data>
-  <data name="Btn_eliminar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;Btn_eliminar.Name" xml:space="preserve">
-    <value>Btn_eliminar</value>
-  </data>
-  <data name="&gt;&gt;Btn_eliminar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_eliminar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Btn_eliminar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Gb_Venta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 753</value>
-  </data>
-  <data name="Gb_Venta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 254</value>
-  </data>
-  <data name="Gb_Venta.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="Gb_Venta.Text" xml:space="preserve">
-    <value>Ventas</value>
-  </data>
-  <data name="&gt;&gt;Gb_Venta.Name" xml:space="preserve">
-    <value>Gb_Venta</value>
-  </data>
-  <data name="&gt;&gt;Gb_Venta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Gb_Venta.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Gb_Venta.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btn_abrir_cajon.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="btn_abrir_cajon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Narrow, 10pt</value>
-  </data>
-  <data name="btn_abrir_cajon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="btn_abrir_cajon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_abrir_cajon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_abrir_cajon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>566, 809</value>
-  </data>
-  <data name="btn_abrir_cajon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 150</value>
-  </data>
-  <data name="btn_abrir_cajon.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
-  </data>
-  <data name="btn_abrir_cajon.Text" xml:space="preserve">
-    <value>Cajon
-(F10)</value>
-  </data>
-  <data name="btn_abrir_cajon.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_abrir_cajon.Name" xml:space="preserve">
-    <value>btn_abrir_cajon</value>
-  </data>
-  <data name="&gt;&gt;btn_abrir_cajon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_abrir_cajon.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_abrir_cajon.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
