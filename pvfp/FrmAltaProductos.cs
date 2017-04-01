@@ -28,6 +28,7 @@ namespace PVFP
         //Localizable = true ; --Formato a Form              
         private void frmProductos_Load(object sender, EventArgs e)
         {
+            
             try
             {
                 //Llena Tipos
@@ -40,13 +41,18 @@ namespace PVFP
                 //Llena_campos_editar
                 cmb_modificar();
                 //llena dvg
-                llenar_mostrar();
+                llenar_mostrar();             
                 lblID.Text = (Convert.ToInt32(productos.Obtener_productoId()) + 1).ToString();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DgvProducto_Sorted(object sender, EventArgs e)
+        {
+            
         }
         public void cmb_modificar()
         {
@@ -64,7 +70,6 @@ namespace PVFP
         {
             dgvProducto.DataSource = productos.VerTodosProductos();
         }
-
         public void llenar_modifcacion(string indice)
         {
 
@@ -204,7 +209,6 @@ namespace PVFP
                 MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
             try
@@ -232,13 +236,23 @@ namespace PVFP
                 MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void cmbmodProdID_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] id = cmbmodProdID.SelectedItem.ToString().Split('-');
             llenar_modifcacion(id[0].ToString());
         }
 
-       
+        private void dgvProducto_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvProducto_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dgvProducto.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
     }
 }

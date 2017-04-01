@@ -11,7 +11,7 @@ namespace PVFP
     {
         #region Path        
         private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
-        //private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+         //private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
        // string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
         public void ConsultarPah()
         {
@@ -75,7 +75,7 @@ namespace PVFP
         public void Sesion(string usuario, string contraseña)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("select empleados.Empleado_ID,sesion.Puesto from sesion inner join empleados on sesion.Sesion_ID = empleados.Sesion_ID" +
+            MySqlCommand _comando = new MySqlCommand(String.Format("select Nombre,sesion.Puesto from sesion inner join empleados on sesion.Sesion_ID = empleados.Sesion_ID" +
                 " WHERE Usuario =@usu and Contraseña =@contra "), conexion);
             _comando.Parameters.AddWithValue("@usu", usuario);
             _comando.Parameters.AddWithValue("@contra", contraseña);
@@ -83,9 +83,12 @@ namespace PVFP
             while (_reader.Read())
             {
                 bandera = true;                
-                nombre = _reader["Empleado_ID"].ToString();                
+                nombre = _reader["Nombre"].ToString().Length>12?
+                _reader["Nombre"].ToString().Remove(12):
+                _reader["Nombre"].ToString();                
                 puesto = _reader["Puesto"].ToString();
             }
+            
             _reader.Close();                    
             conexion.Close();
         }

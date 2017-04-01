@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -174,6 +174,7 @@
             // 
             // cmbxTipoCargo
             // 
+            resources.ApplyResources(this.cmbxTipoCargo, "cmbxTipoCargo");
             this.cmbxTipoCargo.FormattingEnabled = true;
             this.cmbxTipoCargo.Items.AddRange(new object[] {
             resources.GetString("cmbxTipoCargo.Items"),
@@ -181,7 +182,6 @@
             resources.GetString("cmbxTipoCargo.Items2"),
             resources.GetString("cmbxTipoCargo.Items3"),
             resources.GetString("cmbxTipoCargo.Items4")});
-            resources.ApplyResources(this.cmbxTipoCargo, "cmbxTipoCargo");
             this.cmbxTipoCargo.Name = "cmbxTipoCargo";
             // 
             // label8
@@ -211,13 +211,13 @@
             // 
             // cmbxUM
             // 
+            resources.ApplyResources(this.cmbxUM, "cmbxUM");
             this.cmbxUM.FormattingEnabled = true;
             this.cmbxUM.Items.AddRange(new object[] {
             resources.GetString("cmbxUM.Items"),
             resources.GetString("cmbxUM.Items1"),
             resources.GetString("cmbxUM.Items2"),
             resources.GetString("cmbxUM.Items3")});
-            resources.ApplyResources(this.cmbxUM, "cmbxUM");
             this.cmbxUM.Name = "cmbxUM";
             // 
             // label3
@@ -303,14 +303,16 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvProducto, "dgvProducto");
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.DataSourceChanged += new System.EventHandler(this.dgvProducto_DataSourceChanged);
+            this.dgvProducto.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellValueChanged);
             // 
             // tabPModificar
             // 

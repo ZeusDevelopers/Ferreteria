@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmpleados));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Btn_eliminar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbpuesto = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.Dgv_datos = new System.Windows.Forms.DataGridView();
-            this.Btn_eliminar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_datos)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +76,14 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+//            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // Btn_eliminar
+            // 
+            resources.ApplyResources(this.Btn_eliminar, "Btn_eliminar");
+            this.Btn_eliminar.Name = "Btn_eliminar";
+            this.Btn_eliminar.UseVisualStyleBackColor = true;
+            this.Btn_eliminar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnagregar
             // 
@@ -186,13 +194,6 @@
             resources.ApplyResources(this.Dgv_datos, "Dgv_datos");
             this.Dgv_datos.Name = "Dgv_datos";
             this.Dgv_datos.RowTemplate.Height = 28;
-            // 
-            // Btn_eliminar
-            // 
-            resources.ApplyResources(this.Btn_eliminar, "Btn_eliminar");
-            this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.UseVisualStyleBackColor = true;
-            this.Btn_eliminar.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmEmpleados
             // 

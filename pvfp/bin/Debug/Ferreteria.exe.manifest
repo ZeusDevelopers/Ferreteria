@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ferreteria.exe" size="23926240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ferreteria.exe" size="24215520">
       <assemblyIdentity name="Ferreteria" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IkljyHuHUZf6oIhWVfFrqRykPPCF2Giqv8SQU7yD0bk=</dsig:DigestValue>
+        <dsig:DigestValue>gPkB46oiTbIpM5O7mEMKok4govfGR/HUH3i+wi9LHXU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,6 +115,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>RMJEpSCccXsw2D/Y023NNqgs3FH3h1ppcj3mS5tLwlA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\icono2.ico" size="241726">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gN7Y9j0SQWfLHUdZofOFy84cRJIOjr728urstMn8sGU=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

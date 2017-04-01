@@ -69,29 +69,33 @@ namespace PVFP
                     switch (btnagregar.Text)
                     {
                         case "Agregar"://Agregar
-                            ObjEmpleados.GuardarNuevoEmpleado(txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex, txtnombre.Text, txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text);
-                            MessageBox.Show("Usuario Registrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            DialogResult r= ObjEmpleados.GuardarNuevoEmpleado(txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex, txtnombre.Text, txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text);
+                            if (r.Equals(DialogResult.Yes))
+                            {
+                                MessageBox.Show("Usuario Registrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                cargar();
+                                id_emp = -1;
+                                Btn_eliminar.Enabled = false;
+                                limpiar_campos();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Usuario Existente pruebe con otro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                             break;
                         case "Editar"://Agregar
                             ObjEmpleados.Editar(txtusuario.Text, txtcontraseña.Text, cmbpuesto.SelectedIndex, txtnombre.Text,
                                 txtapellido.Text, cmbsexo.SelectedText, txtdireccion.Text, txttelefono.Text, id_emp);
                             MessageBox.Show("Actualizado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            btnagregar.Text = "Agregar";
+                            btnagregar.Text = "Agregar";                            
+                            cargar();
+                            id_emp = -1;
+                            Btn_eliminar.Enabled = false;
+                            limpiar_campos();
                             break;
                         default:
                             break;
-                    }                  
-                    cargar();
-                    id_emp = -1;
-                    Btn_eliminar.Enabled = false ;
-                    txtapellido.Text = "";
-                    txtcontraseña.Text = "";
-                    txtdireccion.Text = "";
-                    txtnombre.Text = "";
-                    txttelefono.Text = "";
-                    txtusuario.Text = "";
-                    cmbpuesto.SelectedIndex = -1;
-                    cmbsexo.SelectedIndex = -1;
+                    }                                     
 
                 }
             }
@@ -157,18 +161,36 @@ namespace PVFP
             {
                 if (id_emp != -1)
                 {
-                    Btn_eliminar.Enabled = false;
-                    btnagregar.Text = "Agregar";
-                    ObjEmpleados.borrar_empleados(id_emp);
-                    cargar();
-                    MessageBox.Show("Usuario Borrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                id_emp = -1;
+                    DialogResult r = MessageBox.Show("¿Eliminar Registro?","Eliminar",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    if (r==DialogResult.Yes)
+                    {
+                        Btn_eliminar.Enabled = false;
+                        btnagregar.Text = "Agregar";
+                        ObjEmpleados.borrar_empleados(id_emp);
+                        cargar();
+                        MessageBox.Show("Usuario Borrado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        id_emp = -1;
+                        limpiar_campos();
+                    }
+                }                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }           
         }
+        public void limpiar_campos()
+        {
+            txtapellido.Clear();
+            txtcontraseña.Clear();
+            txtdireccion.Clear();
+            txtnombre.Clear();
+            txttelefono.Clear();
+            txtusuario.Clear();
+            cmbpuesto.SelectedIndex = -1;
+            cmbsexo.SelectedIndex = -1;
+        }
+
+        
     }
 }

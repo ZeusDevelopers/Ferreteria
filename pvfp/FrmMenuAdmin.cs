@@ -90,5 +90,10 @@ namespace PVFP
         {
             ClsInicioSesion.Usuario = "";
         }
+
+        private void FrmMenuAdmin_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

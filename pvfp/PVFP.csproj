@@ -341,6 +341,20 @@
   <ItemGroup>
     <Content Include="icono2.ico" />
     <Content Include="im.ico" />
+    <Content Include="Resources\icono2.ico" />
+    <None Include="Resources\descending-money-arrow-graphic-and-a-businessman4.png" />
+    <None Include="Resources\descending-money-arrow-graphic-and-a-businessman3.png" />
+    <None Include="Resources\descending-money-arrow-graphic-and-a-businessman2.png" />
+    <None Include="Resources\descending-money-arrow-graphic-and-a-businessman1.png" />
+    <None Include="Resources\descending-money-arrow-graphic-and-a-businessman.png" />
+    <None Include="Resources\entradas.png" />
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\Provedor.png" />
+    <None Include="Resources\empleados1.png" />
+    <None Include="Resources\empleados.png" />
+    <None Include="Resources\informe.png" />
+    <None Include="Resources\productos.png" />
+    <None Include="Resources\barcode.png" />
     <None Include="Resources\image1.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\text3.png" />
