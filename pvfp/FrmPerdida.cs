@@ -23,25 +23,31 @@ namespace PVFP
         private void FrmPerdida_Load(object sender, EventArgs e)
         {
             cargar();
+            DataTable tb = perdida.Cargar();
+            foreach (DataRow item in tb.Rows)
+            {
+                cmbproducto.Items.Add(item[0].ToString());
+            }
         }
 
         void cargar()
-        {            
-            perdida.CargarPerdida();
-            ArrayList arreprodid = perdida.arregloproductoid;
-            ArrayList arrecan = perdida.arreglocantidad;
-            ArrayList arremot = perdida.arreglomotivo;
-            for (int i = 0; i < arreprodid.Count; i++)
-            {
-                dataGridView1.Rows.Add(arreprodid[i].ToString(), arrecan[i].ToString(), arremot[i].ToString());
-            }
+        {
+            dataGridView1.DataSource = perdida.CargarPerdida();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            perdida.GuardarPerdida(0, cmbproducto.SelectedIndex, txtcantidad.Text, txtmotivo.Text);
-            MessageBox.Show("Perdida agregada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            cargar();
+            try
+            {
+                perdida.GuardarPerdida(0, cmbproducto.SelectedIndex, txtcantidad.Text, txtmotivo.Text);
+                MessageBox.Show("Perdida agregada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }          
         }
 
         private void xToolStripMenuItem_Click(object sender, EventArgs e)

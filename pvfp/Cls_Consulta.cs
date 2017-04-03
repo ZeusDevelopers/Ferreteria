@@ -79,6 +79,20 @@ namespace PVFP
             }
             return numero;
         }
+        public int intervalo(int id)
+        {
+            int numero = 0;
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            string comando = "select count(Salida_ID)from salida where Empleado_Id=@id";            
+            MySqlCommand _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@id",id);
+            MySqlDataReader lee = _comando.ExecuteReader();
+            while (lee.Read())
+            {
+                numero = Int32.Parse(lee["count(Salida_ID)"].ToString());
+            }
+            return numero;
+        }
         public DataTable num_venta(int id_venta)
         {
              elemento = new DataTable();
@@ -124,6 +138,21 @@ namespace PVFP
             {
                 elemento = lee["Nombre"].ToString();
             }
+            conexion.Close();
+            return elemento;
+        }
+        public DataTable ventas_vendedro(int id,int offset)
+        {
+            elemento = new DataTable();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(
+                  "select Salida_ID as 'No.Venta',Fecha,Subtotal,IVA,TotalVenta from salida where Empleado_Id=@id limit 10 offset @seri"
+
+                , conexion);
+            _comando.Parameters.AddWithValue("@id", id);
+            _comando.Parameters.AddWithValue("@seri",offset);
+            MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
+            _dataAdapter.Fill(elemento);
             conexion.Close();
             return elemento;
         }

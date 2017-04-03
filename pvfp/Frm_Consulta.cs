@@ -12,11 +12,14 @@ namespace PVFP
 {
     public partial class Frm_Consulta : Form
     {
+        string[] datos = new string[] { "unp","dos"};
+
         public Frm_Consulta()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         int inter = 0;
+        int valor_final = 0;
         string tipo = "0";
         string a;
         private void RadBtn_fechaini_CheckedChanged(object sender, EventArgs e)
@@ -47,12 +50,14 @@ namespace PVFP
             {
                 if (true)
                 {
-                    val = Int32.Parse(txtintervalo.Text);
+                    val = valor_final;
+                    txtintervalo.Text = (val+1).ToString();
                     if (val < inter)
                     {
                         val++;
                         tipo_query();
-                        txtintervalo.Text = val.ToString();
+                        valor_final = val;
+                        txtintervalo.Text = (val+1).ToString();
                     }
                 }
             }
@@ -67,12 +72,14 @@ namespace PVFP
             {
                 if (true)
                 {
-                    val = Int32.Parse(txtintervalo.Text);
+                    //val = Int32.Parse(txtintervalo.Text);
+                    val = valor_final;
                     if (val > 0)
                     {
                         val--;
                         tipo_query();
-                        txtintervalo.Text = val.ToString();
+                        valor_final = val;
+                        txtintervalo.Text = (val+1).ToString();
                     }
                 }
             }
@@ -83,21 +90,33 @@ namespace PVFP
         }
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
-            if (!chckfecha.Checked && !chckventa.Checked)
+            
+            if (!chckfecha.Checked && !chckventa.Checked && !chck_empleado.Checked)
             {
                 MessageBox.Show("Seleccione un tipo de busqueda","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
              else  if (chckfecha.Checked && !chckventa.Checked)
             {
-                fechas();
+                fechas();                
             }
-            else if (!chckfecha.Checked && chckventa.Checked)
+            else if (!chckfecha.Checked && chckventa.Checked && !chck_empleado.Checked)
             {
                 val = -1;
                 txtintervalo.Text = "0";
                 LblCantidad.Text = "/0";
                 dataGridView1.DataSource = consulta.num_venta(Int32.Parse(TxtVenta.Text));
+                tipo = "cuatro";
+            }
+            else if (!chckfecha.Checked && !chckventa.Checked && chck_empleado.Checked)
+            {
                 tipo = "tres";
+                int intervalo = consulta.intervalo(Int32.Parse(Cmb_Empleado.SelectedItem.ToString().Split('-')[0].ToString()));
+                int saltos = intervalo / 10 > 0 ? intervalo / 10 : 1;
+                LblCantidad.Text = saltos != 1 ? "/" + (saltos + 1).ToString() : "/" + saltos.ToString();
+                inter = saltos;
+                valor_final = 0;
+                txtintervalo.Text = "1";
+                dataGridView1.DataSource = consulta.ventas_vendedro(Int32.Parse(Cmb_Empleado.SelectedItem.ToString().Split('-')[0].ToString()),0);
             }
         }
         public void fechas()
@@ -111,11 +130,12 @@ namespace PVFP
                     fech_ini = Dtpfechinicio.Value.ToString("yyyy-MM-dd hh:mm:ss");
                     fech_fin = DtpFechafianl.Value.ToString("yyyy-MM-dd hh:mm:ss");
                     a = chck_empleado.Checked && Cmb_Empleado.SelectedIndex!=-1 ? Cmb_Empleado.SelectedItem.ToString().Split('-')[0] : "-1";
-                    int intervalo = consulta.intervalo(fech_ini, fech_fin,Int32.Parse(a));
+                    int intervalo = consulta.intervalo(fech_ini, fech_fin,Int32.Parse(a));                    
                     int saltos = intervalo / 10 > 0 ? intervalo / 10 : 1;
-                    LblCantidad.Text = "/" + saltos.ToString();
+                    LblCantidad.Text = saltos != 1 ? "/" + (saltos + 1).ToString() : "/" + saltos.ToString() ;
                     inter = saltos;
-                    txtintervalo.Text = "0";
+                    valor_final = 0;
+                    txtintervalo.Text = "1";
                     dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, 0, Int32.Parse(a));
                 }
                 else
@@ -132,9 +152,10 @@ namespace PVFP
                 a = chck_empleado.Checked ? Cmb_Empleado.SelectedItem.ToString().Split('-')[0] : "-1";
                 int intervalo = consulta.intervalo(fech_ini, fech_fin, Int32.Parse(a));
                 double salt = intervalo / 10;
-                LblCantidad.Text = "/" + salt.ToString();
+                LblCantidad.Text = "/" + (salt+1).ToString();
                 inter = Int32.Parse(salt.ToString());
-                txtintervalo.Text = "0";
+                valor_final = 0;
+                txtintervalo.Text = "1";
                 dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, 0, Int32.Parse(a));
             }
         }
@@ -149,6 +170,9 @@ namespace PVFP
                 case "dos":
                     dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, val * 10, Int32.Parse(a));
                     break;
+                case "tres":
+                    dataGridView1.DataSource = consulta.ventas_vendedro(Int32.Parse(Cmb_Empleado.SelectedItem.ToString().Split('-')[0].ToString()), val*10);
+                    break;
                 default:
                     break;
             }
@@ -156,8 +180,10 @@ namespace PVFP
 
         private void chckventa_CheckedChanged(object sender, EventArgs e)
         {
+            
             chckfecha.Checked = false;
             chck_empleado.Checked = false;
+            
         }
 
         private void chckfecha_CheckedChanged(object sender, EventArgs e)
@@ -203,6 +229,14 @@ namespace PVFP
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
     }

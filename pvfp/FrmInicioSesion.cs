@@ -44,8 +44,7 @@ namespace PVFP
                     }
                     else
                     {
-                        conexion.usuario = txtusuario.Text;
-                        this.WindowState = FormWindowState.Minimized;
+                        conexion.usuario = txtusuario.Text;                        
                         ClsInicioSesion.precio_dolar();
                         if (conexion.puesto == "0")//ADMIN
                         {
@@ -61,8 +60,7 @@ namespace PVFP
                             conexion.bandera = false;
                             venta.Show();
                         }
-
-
+                        this.WindowState = FormWindowState.Minimized;
                     }
                 }
                 else

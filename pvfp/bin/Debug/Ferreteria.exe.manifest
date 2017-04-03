@@ -43,14 +43,12 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ferreteria.exe" size="24215520">
       <assemblyIdentity name="Ferreteria" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gPkB46oiTbIpM5O7mEMKok4govfGR/HUH3i+wi9LHXU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
