@@ -294,3 +294,4 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.exe.manifes
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.application
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.exe
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.pdb
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Devolucion.resources

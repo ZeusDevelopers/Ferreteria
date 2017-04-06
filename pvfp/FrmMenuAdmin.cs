@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreteria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,7 +44,8 @@ namespace PVFP
 
         private void btnTCargos_Click(object sender, EventArgs e)
         {
-            FrmTiposCargos tiposcargos = new FrmTiposCargos();
+            //FrmTiposCargos tiposcargos = new FrmTiposCargos();
+            Frm_Devolucion tiposcargos = new Frm_Devolucion();
             tiposcargos.Show();
         }
 

@@ -14,12 +14,13 @@ namespace PVFP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FrmInicioSesion());
+            //Application.Run(new FrmInicioSesion());
             // Application.Run(new Frm_Consulta());
             //Application.Run(new FrmPerdida());
             ///Application.Run(new FrmEmpleados());
-            //Application.Run(new FrmMenuAdmin()) ;
+            Application.Run(new FrmMenuAdmin()) ;
             //Application.Run(new FrmAltaProductos());
+            ///Application.Run(new FrmMenuAdmin());
         }
     }
 }
