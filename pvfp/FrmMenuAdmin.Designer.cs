@@ -101,12 +101,15 @@
             // btnTCargos
             // 
             this.btnTCargos.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTCargos.Image = global::Ferreteria.Properties.Resources.Devoluciopn;
+            this.btnTCargos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTCargos.Location = new System.Drawing.Point(518, 214);
             this.btnTCargos.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnTCargos.Name = "btnTCargos";
             this.btnTCargos.Size = new System.Drawing.Size(203, 135);
             this.btnTCargos.TabIndex = 4;
-            this.btnTCargos.Text = "Tipos de Cargos";
+            this.btnTCargos.Text = "Devolucion";
+            this.btnTCargos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTCargos.UseVisualStyleBackColor = true;
             this.btnTCargos.Click += new System.EventHandler(this.btnTCargos_Click);
             // 
