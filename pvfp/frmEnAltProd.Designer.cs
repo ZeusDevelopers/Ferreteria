@@ -47,6 +47,10 @@
             this.txtFolio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrecioCosto = new System.Windows.Forms.TextBox();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.lblPrecioMayoreo = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +62,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(28, 8, 0, 8);
-            this.menuStrip1.Size = new System.Drawing.Size(646, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(697, 42);
             this.menuStrip1.TabIndex = 82;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,7 +84,7 @@
             "3",
             "4",
             "5"});
-            this.cmbxTipoCargo.Location = new System.Drawing.Point(216, 250);
+            this.cmbxTipoCargo.Location = new System.Drawing.Point(143, 253);
             this.cmbxTipoCargo.Name = "cmbxTipoCargo";
             this.cmbxTipoCargo.Size = new System.Drawing.Size(181, 30);
             this.cmbxTipoCargo.TabIndex = 87;
@@ -90,7 +94,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(116, 250);
+            this.label8.Location = new System.Drawing.Point(43, 253);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 22);
             this.label8.TabIndex = 99;
@@ -101,7 +105,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label20.Location = new System.Drawing.Point(90, 379);
+            this.label20.Location = new System.Drawing.Point(380, 253);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(117, 22);
             this.label20.TabIndex = 98;
@@ -110,17 +114,20 @@
             // txtPrecioMayore
             // 
             this.txtPrecioMayore.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtPrecioMayore.Location = new System.Drawing.Point(216, 378);
+            this.txtPrecioMayore.Location = new System.Drawing.Point(516, 201);
             this.txtPrecioMayore.Name = "txtPrecioMayore";
             this.txtPrecioMayore.Size = new System.Drawing.Size(135, 27);
             this.txtPrecioMayore.TabIndex = 90;
+            this.txtPrecioMayore.Text = "0";
+            this.txtPrecioMayore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMayore_KeyPress);
+            this.txtPrecioMayore.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrecioMayore_KeyUp);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(112, 337);
+            this.label4.Location = new System.Drawing.Point(402, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 22);
             this.label4.TabIndex = 97;
@@ -129,10 +136,13 @@
             // txtPrecioVenta
             // 
             this.txtPrecioVenta.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtPrecioVenta.Location = new System.Drawing.Point(216, 336);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(516, 114);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(135, 27);
             this.txtPrecioVenta.TabIndex = 89;
+            this.txtPrecioVenta.Text = "0";
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
+            this.txtPrecioVenta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrecioVenta_KeyUp);
             // 
             // cmbxUM
             // 
@@ -142,7 +152,7 @@
             "A Granel (Usa Decimal)",
             "Como Paquete (Kit)",
             "Metro"});
-            this.cmbxUM.Location = new System.Drawing.Point(218, 206);
+            this.cmbxUM.Location = new System.Drawing.Point(143, 209);
             this.cmbxUM.Name = "cmbxUM";
             this.cmbxUM.Size = new System.Drawing.Size(181, 30);
             this.cmbxUM.TabIndex = 86;
@@ -152,7 +162,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(132, 159);
+            this.label3.Location = new System.Drawing.Point(59, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 96;
@@ -161,7 +171,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtNombre.Location = new System.Drawing.Point(216, 158);
+            this.txtNombre.Location = new System.Drawing.Point(143, 161);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(204, 27);
             this.txtNombre.TabIndex = 85;
@@ -185,7 +195,7 @@
             // Txtcodigobarras
             // 
             this.Txtcodigobarras.Font = new System.Drawing.Font("Calibri", 12F);
-            this.Txtcodigobarras.Location = new System.Drawing.Point(216, 65);
+            this.Txtcodigobarras.Location = new System.Drawing.Point(143, 68);
             this.Txtcodigobarras.Name = "Txtcodigobarras";
             this.Txtcodigobarras.Size = new System.Drawing.Size(254, 27);
             this.Txtcodigobarras.TabIndex = 83;
@@ -195,7 +205,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(85, 65);
+            this.label2.Location = new System.Drawing.Point(12, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 93;
@@ -206,7 +216,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(154, 108);
+            this.label7.Location = new System.Drawing.Point(81, 111);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 22);
             this.label7.TabIndex = 95;
@@ -217,7 +227,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(132, 206);
+            this.label1.Location = new System.Drawing.Point(59, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 22);
             this.label1.TabIndex = 92;
@@ -226,7 +236,7 @@
             // txtFolio
             // 
             this.txtFolio.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtFolio.Location = new System.Drawing.Point(216, 107);
+            this.txtFolio.Location = new System.Drawing.Point(143, 110);
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(152, 27);
             this.txtFolio.TabIndex = 84;
@@ -236,7 +246,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 12F);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(114, 290);
+            this.label5.Location = new System.Drawing.Point(41, 304);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 22);
             this.label5.TabIndex = 94;
@@ -245,17 +255,67 @@
             // txtPrecioCosto
             // 
             this.txtPrecioCosto.Font = new System.Drawing.Font("Calibri", 12F);
-            this.txtPrecioCosto.Location = new System.Drawing.Point(218, 289);
+            this.txtPrecioCosto.Location = new System.Drawing.Point(143, 303);
             this.txtPrecioCosto.Name = "txtPrecioCosto";
             this.txtPrecioCosto.Size = new System.Drawing.Size(135, 27);
             this.txtPrecioCosto.TabIndex = 88;
+            this.txtPrecioCosto.Text = "0";
+            this.txtPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCosto_KeyPress);
+            // 
+            // lblPrecioVenta
+            // 
+            this.lblPrecioVenta.AutoSize = true;
+            this.lblPrecioVenta.Font = new System.Drawing.Font("Palatino Linotype", 12F);
+            this.lblPrecioVenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPrecioVenta.Location = new System.Drawing.Point(512, 158);
+            this.lblPrecioVenta.Name = "lblPrecioVenta";
+            this.lblPrecioVenta.Size = new System.Drawing.Size(34, 22);
+            this.lblPrecioVenta.TabIndex = 108;
+            this.lblPrecioVenta.Text = "$$$";
+            // 
+            // lblPrecioMayoreo
+            // 
+            this.lblPrecioMayoreo.AutoSize = true;
+            this.lblPrecioMayoreo.Font = new System.Drawing.Font("Palatino Linotype", 12F);
+            this.lblPrecioMayoreo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPrecioMayoreo.Location = new System.Drawing.Point(512, 253);
+            this.lblPrecioMayoreo.Name = "lblPrecioMayoreo";
+            this.lblPrecioMayoreo.Size = new System.Drawing.Size(34, 22);
+            this.lblPrecioMayoreo.TabIndex = 107;
+            this.lblPrecioMayoreo.Text = "$$$";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Palatino Linotype", 12F);
+            this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label18.Location = new System.Drawing.Point(363, 115);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(135, 22);
+            this.label18.TabIndex = 106;
+            this.label18.Text = "% Ganancia Venta";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Palatino Linotype", 12F);
+            this.label17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label17.Location = new System.Drawing.Point(340, 202);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(157, 22);
+            this.label17.TabIndex = 105;
+            this.label17.Text = "% Ganancia Mayoreo";
             // 
             // frmEnAltProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(646, 425);
+            this.ClientSize = new System.Drawing.Size(697, 425);
+            this.Controls.Add(this.lblPrecioVenta);
+            this.Controls.Add(this.lblPrecioMayoreo);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.cmbxTipoCargo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label20);
@@ -307,5 +367,9 @@
         private System.Windows.Forms.TextBox txtFolio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecioCosto;
+        private System.Windows.Forms.Label lblPrecioVenta;
+        private System.Windows.Forms.Label lblPrecioMayoreo;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }

@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.gbxEntrada = new System.Windows.Forms.GroupBox();
+            this.txtEntradaID = new System.Windows.Forms.TextBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.txtTotalCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgrProductos = new System.Windows.Forms.Button();
@@ -45,7 +41,11 @@
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtEntradaID = new System.Windows.Forms.TextBox();
+            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -70,6 +70,13 @@
             this.gbxEntrada.TabIndex = 0;
             this.gbxEntrada.TabStop = false;
             this.gbxEntrada.Text = "Entrada";
+            // 
+            // txtEntradaID
+            // 
+            this.txtEntradaID.Location = new System.Drawing.Point(121, 32);
+            this.txtEntradaID.Name = "txtEntradaID";
+            this.txtEntradaID.Size = new System.Drawing.Size(150, 29);
+            this.txtEntradaID.TabIndex = 14;
             // 
             // btnMenu
             // 
@@ -117,36 +124,6 @@
             this.dgvProductos.Size = new System.Drawing.Size(541, 231);
             this.dgvProductos.TabIndex = 10;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
-            // 
-            // clmProducto
-            // 
-            this.clmProducto.HeaderText = "Producto";
-            this.clmProducto.Name = "clmProducto";
-            this.clmProducto.ReadOnly = true;
-            // 
-            // clmCantidad
-            // 
-            this.clmCantidad.HeaderText = "Cantidad";
-            this.clmCantidad.Name = "clmCantidad";
-            this.clmCantidad.ReadOnly = true;
-            // 
-            // clmCostoUnitario
-            // 
-            this.clmCostoUnitario.HeaderText = "CostoUnitario";
-            this.clmCostoUnitario.Name = "clmCostoUnitario";
-            this.clmCostoUnitario.ReadOnly = true;
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.HeaderText = "TotalProducto";
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmBorrar
-            // 
-            this.clmBorrar.HeaderText = "Quitar";
-            this.clmBorrar.Name = "clmBorrar";
-            this.clmBorrar.ReadOnly = true;
             // 
             // btnComprar
             // 
@@ -223,12 +200,35 @@
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
-            // txtEntradaID
+            // clmProducto
             // 
-            this.txtEntradaID.Location = new System.Drawing.Point(121, 32);
-            this.txtEntradaID.Name = "txtEntradaID";
-            this.txtEntradaID.Size = new System.Drawing.Size(150, 29);
-            this.txtEntradaID.TabIndex = 14;
+            this.clmProducto.HeaderText = "Producto";
+            this.clmProducto.Name = "clmProducto";
+            this.clmProducto.ReadOnly = true;
+            // 
+            // clmCantidad
+            // 
+            this.clmCantidad.HeaderText = "Cantidad";
+            this.clmCantidad.Name = "clmCantidad";
+            this.clmCantidad.ReadOnly = true;
+            // 
+            // clmCostoUnitario
+            // 
+            this.clmCostoUnitario.HeaderText = "CostoUnitario";
+            this.clmCostoUnitario.Name = "clmCostoUnitario";
+            this.clmCostoUnitario.ReadOnly = true;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.HeaderText = "Importe";
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
+            // clmBorrar
+            // 
+            this.clmBorrar.HeaderText = "Quitar";
+            this.clmBorrar.Name = "clmBorrar";
+            this.clmBorrar.ReadOnly = true;
             // 
             // FrmEntradas
             // 
@@ -262,15 +262,15 @@
         private System.Windows.Forms.TextBox txtTotalCompra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCostoUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
-        private System.Windows.Forms.DataGridViewButtonColumn clmBorrar;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEntradaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCostoUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
+        private System.Windows.Forms.DataGridViewButtonColumn clmBorrar;
     }
 }

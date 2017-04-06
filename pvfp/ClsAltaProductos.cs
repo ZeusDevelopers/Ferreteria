@@ -21,7 +21,7 @@ namespace PVFP
         {
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `producto` WHERE `Producto_ID` = " + fol), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM `producto` WHERE `Producto_ID` = " + fol+ " order by Nombre"), conexion);
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
             _dataAdapter.Fill(tabla);
             conexion.Close();
@@ -33,7 +33,7 @@ namespace PVFP
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format(
                 "SELECT `Codigodebarra`, `Folio`, `Nombre`," +
-                "`Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo` FROM `producto`"
+                "`Tipo_Cargo`, `UM`, `Precio_Costo`, `Precio_Venta`, `Precio_Mayoreo` FROM `producto` order by Nombre"
                 ), conexion);
 
             MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
@@ -65,7 +65,7 @@ namespace PVFP
         {
             ArregloProductomod = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM producto"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM producto order by Nombre"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {

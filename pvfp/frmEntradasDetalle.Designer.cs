@@ -39,12 +39,15 @@
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.Txtcodigo = new System.Windows.Forms.TextBox();
+            this.Cmb_tipo_busqueda = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCalTotProd
             // 
             this.btnCalTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalTotProd.Location = new System.Drawing.Point(56, 191);
+            this.btnCalTotProd.Location = new System.Drawing.Point(50, 288);
             this.btnCalTotProd.Name = "btnCalTotProd";
             this.btnCalTotProd.Size = new System.Drawing.Size(131, 53);
             this.btnCalTotProd.TabIndex = 27;
@@ -55,7 +58,7 @@
             // btnTerminar
             // 
             this.btnTerminar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(266, 204);
+            this.btnTerminar.Location = new System.Drawing.Point(260, 301);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(98, 53);
             this.btnTerminar.TabIndex = 26;
@@ -66,7 +69,7 @@
             // btnAgrPG
             // 
             this.btnAgrPG.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgrPG.Location = new System.Drawing.Point(266, 103);
+            this.btnAgrPG.Location = new System.Drawing.Point(260, 200);
             this.btnAgrPG.Name = "btnAgrPG";
             this.btnAgrPG.Size = new System.Drawing.Size(98, 53);
             this.btnAgrPG.TabIndex = 25;
@@ -78,18 +81,18 @@
             // 
             this.lblTotProd.AutoSize = true;
             this.lblTotProd.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotProd.Location = new System.Drawing.Point(50, 261);
+            this.lblTotProd.Location = new System.Drawing.Point(44, 358);
             this.lblTotProd.Name = "lblTotProd";
-            this.lblTotProd.Size = new System.Drawing.Size(121, 22);
+            this.lblTotProd.Size = new System.Drawing.Size(71, 22);
             this.lblTotProd.TabIndex = 24;
-            this.lblTotProd.Text = "Total Producto";
+            this.lblTotProd.Text = "Importe";
             this.lblTotProd.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 119);
+            this.label7.Location = new System.Drawing.Point(46, 216);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 22);
             this.label7.TabIndex = 23;
@@ -99,7 +102,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(52, 60);
+            this.label6.Location = new System.Drawing.Point(46, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 22);
             this.label6.TabIndex = 22;
@@ -108,7 +111,7 @@
             // txtTotalProducto
             // 
             this.txtTotalProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalProducto.Location = new System.Drawing.Point(54, 286);
+            this.txtTotalProducto.Location = new System.Drawing.Point(48, 383);
             this.txtTotalProducto.Name = "txtTotalProducto";
             this.txtTotalProducto.ReadOnly = true;
             this.txtTotalProducto.Size = new System.Drawing.Size(124, 29);
@@ -118,7 +121,7 @@
             // txtCostoUnit
             // 
             this.txtCostoUnit.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCostoUnit.Location = new System.Drawing.Point(56, 142);
+            this.txtCostoUnit.Location = new System.Drawing.Point(50, 239);
             this.txtCostoUnit.Name = "txtCostoUnit";
             this.txtCostoUnit.Size = new System.Drawing.Size(100, 29);
             this.txtCostoUnit.TabIndex = 20;
@@ -128,7 +131,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(56, 83);
+            this.txtCantidad.Location = new System.Drawing.Point(50, 180);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 29);
             this.txtCantidad.TabIndex = 19;
@@ -139,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 24);
+            this.label1.Location = new System.Drawing.Point(50, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 18;
@@ -149,18 +152,57 @@
             // 
             this.cmbProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(144, 24);
+            this.cmbProducto.Location = new System.Drawing.Point(144, 94);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(247, 30);
             this.cmbProducto.TabIndex = 17;
             this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             this.cmbProducto.Click += new System.EventHandler(this.cmbProducto_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnBuscar.Location = new System.Drawing.Point(318, 130);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
+            this.btnBuscar.TabIndex = 113;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // Txtcodigo
+            // 
+            this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.Txtcodigo.Font = new System.Drawing.Font("Arial", 14F);
+            this.Txtcodigo.ForeColor = System.Drawing.Color.Black;
+            this.Txtcodigo.Location = new System.Drawing.Point(11, 60);
+            this.Txtcodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.Txtcodigo.Name = "Txtcodigo";
+            this.Txtcodigo.Size = new System.Drawing.Size(395, 29);
+            this.Txtcodigo.TabIndex = 112;
+            // 
+            // Cmb_tipo_busqueda
+            // 
+            this.Cmb_tipo_busqueda.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Cmb_tipo_busqueda.Font = new System.Drawing.Font("Arial", 14F);
+            this.Cmb_tipo_busqueda.FormattingEnabled = true;
+            this.Cmb_tipo_busqueda.Items.AddRange(new object[] {
+            "Codigo\t",
+            "Nombre"});
+            this.Cmb_tipo_busqueda.Location = new System.Drawing.Point(11, 11);
+            this.Cmb_tipo_busqueda.Margin = new System.Windows.Forms.Padding(2);
+            this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
+            this.Cmb_tipo_busqueda.Size = new System.Drawing.Size(205, 30);
+            this.Cmb_tipo_busqueda.TabIndex = 111;
+            // 
             // frmEntradasDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 355);
+            this.ClientSize = new System.Drawing.Size(442, 435);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.Txtcodigo);
+            this.Controls.Add(this.Cmb_tipo_busqueda);
             this.Controls.Add(this.btnCalTotProd);
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.btnAgrPG);
@@ -192,5 +234,8 @@
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox Txtcodigo;
+        private System.Windows.Forms.ComboBox Cmb_tipo_busqueda;
     }
 }

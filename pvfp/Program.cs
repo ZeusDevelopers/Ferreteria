@@ -16,10 +16,10 @@ namespace PVFP
 
             //Application.Run(new FrmInicioSesion());
             // Application.Run(new Frm_Consulta());
-            Application.Run(new FrmPerdida());
+            //Application.Run(new FrmPerdida());
             ///Application.Run(new FrmEmpleados());
             //Application.Run(new FrmMenuAdmin()) ;
-            ///Application.Run(new FrmAltaProductos());
+            Application.Run(new FrmAltaProductos());
         }
     }
 }

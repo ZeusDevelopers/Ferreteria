@@ -16,6 +16,7 @@ namespace PVFP
         public frmEnAltProd()
         {
             InitializeComponent();
+            BtnGuardar.Image = new Bitmap(Ferreteria.Properties.Resources.ImgGuardar);
         }
         ClsAltaProductos productos = new ClsAltaProductos();
         ClsAlmacen almacen = new ClsAlmacen();
@@ -77,6 +78,146 @@ namespace PVFP
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un problema. " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            if ((txtPrecioCosto.Text.Contains(wDecimal)))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            if ((txtPrecioVenta.Text.Contains(wDecimal)))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void txtPrecioMayore_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            if ((txtPrecioMayore.Text.Contains(wDecimal)))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void txtPrecioVenta_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
+            {
+                txtPrecioCosto.Text = "0";
+                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (txtPrecioVenta.Text == "" || txtPrecioVenta.Text == "0")
+                {
+                    txtPrecioVenta.Text = "0";
+                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    double pc = Convert.ToDouble(txtPrecioCosto.Text);
+                    double porcVent = Convert.ToDouble(txtPrecioVenta.Text);
+                    double precioVenta = pc + (pc * (porcVent / 100));
+                    lblPrecioVenta.Text = precioVenta.ToString();
+
+                }
+            }
+        }
+
+        private void txtPrecioMayore_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
+            {
+                txtPrecioCosto.Text = "0";
+                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (txtPrecioMayore.Text == "" || txtPrecioMayore.Text == "0")
+                {
+                    txtPrecioMayore.Text = "0";
+                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    double pc = Convert.ToDouble(txtPrecioCosto.Text);
+                    double porcMayore = Convert.ToDouble(txtPrecioMayore.Text);
+                    double precioMayore = pc + (pc * (porcMayore / 100));
+                    lblPrecioMayoreo.Text = precioMayore.ToString();
+
+                }
             }
         }
     }

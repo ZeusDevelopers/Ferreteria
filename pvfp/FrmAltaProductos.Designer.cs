@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -83,6 +83,17 @@
             this.txtmodPrecioCosto = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.Cmb_tipo_busqueda = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblPrecioMayoreo = new System.Windows.Forms.Label();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.lblmodPrecioVenta = new System.Windows.Forms.Label();
+            this.lblmodPrecioMayoreo = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Txtcodigo = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -109,6 +120,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPrecioVenta);
+            this.groupBox1.Controls.Add(this.lblPrecioMayoreo);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.lblID);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.txtLocalizacion);
@@ -198,6 +213,8 @@
             // 
             resources.ApplyResources(this.txtPrecioMayore, "txtPrecioMayore");
             this.txtPrecioMayore.Name = "txtPrecioMayore";
+            this.txtPrecioMayore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioMayore_KeyPress);
+            this.txtPrecioMayore.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrecioMayore_KeyUp);
             // 
             // label4
             // 
@@ -208,6 +225,8 @@
             // 
             resources.ApplyResources(this.txtPrecioVenta, "txtPrecioVenta");
             this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
+            this.txtPrecioVenta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrecioVenta_KeyUp);
             // 
             // cmbxUM
             // 
@@ -217,7 +236,8 @@
             resources.GetString("cmbxUM.Items"),
             resources.GetString("cmbxUM.Items1"),
             resources.GetString("cmbxUM.Items2"),
-            resources.GetString("cmbxUM.Items3")});
+            resources.GetString("cmbxUM.Items3"),
+            resources.GetString("cmbxUM.Items4")});
             this.cmbxUM.Name = "cmbxUM";
             // 
             // label3
@@ -271,6 +291,7 @@
             // 
             resources.ApplyResources(this.txtPrecioCosto, "txtPrecioCosto");
             this.txtPrecioCosto.Name = "txtPrecioCosto";
+            this.txtPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCosto_KeyPress);
             // 
             // tabPMostrar
             // 
@@ -303,8 +324,8 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -316,6 +337,13 @@
             // 
             // tabPModificar
             // 
+            this.tabPModificar.Controls.Add(this.btnBuscar);
+            this.tabPModificar.Controls.Add(this.Txtcodigo);
+            this.tabPModificar.Controls.Add(this.lblmodPrecioVenta);
+            this.tabPModificar.Controls.Add(this.lblmodPrecioMayoreo);
+            this.tabPModificar.Controls.Add(this.label26);
+            this.tabPModificar.Controls.Add(this.label27);
+            this.tabPModificar.Controls.Add(this.Cmb_tipo_busqueda);
             this.tabPModificar.Controls.Add(this.cmbmodProdID);
             this.tabPModificar.Controls.Add(this.label16);
             this.tabPModificar.Controls.Add(this.cmbxmodTipoCargo);
@@ -378,6 +406,9 @@
             // 
             resources.ApplyResources(this.txtmodPrecioMayoreo, "txtmodPrecioMayoreo");
             this.txtmodPrecioMayoreo.Name = "txtmodPrecioMayoreo";
+            this.txtmodPrecioMayoreo.Tag = "";
+            this.txtmodPrecioMayoreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmodPrecioMayoreo_KeyPress);
+            this.txtmodPrecioMayoreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmodPrecioMayoreo_KeyUp);
             // 
             // label10
             // 
@@ -388,6 +419,8 @@
             // 
             resources.ApplyResources(this.txtmodPrecioVenta, "txtmodPrecioVenta");
             this.txtmodPrecioVenta.Name = "txtmodPrecioVenta";
+            this.txtmodPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmodPrecioVenta_KeyPress);
+            this.txtmodPrecioVenta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmodPrecioVenta_KeyUp);
             // 
             // cmbxmodUM
             // 
@@ -397,7 +430,8 @@
             resources.GetString("cmbxmodUM.Items"),
             resources.GetString("cmbxmodUM.Items1"),
             resources.GetString("cmbxmodUM.Items2"),
-            resources.GetString("cmbxmodUM.Items3")});
+            resources.GetString("cmbxmodUM.Items3"),
+            resources.GetString("cmbxmodUM.Items4")});
             this.cmbxmodUM.Name = "cmbxmodUM";
             // 
             // label11
@@ -444,6 +478,7 @@
             // 
             resources.ApplyResources(this.txtmodPrecioCosto, "txtmodPrecioCosto");
             this.txtmodPrecioCosto.Name = "txtmodPrecioCosto";
+            this.txtmodPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmodPrecioCosto_KeyPress);
             // 
             // btnEliminar
             // 
@@ -458,6 +493,68 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
+            // 
+            // Cmb_tipo_busqueda
+            // 
+            resources.ApplyResources(this.Cmb_tipo_busqueda, "Cmb_tipo_busqueda");
+            this.Cmb_tipo_busqueda.FormattingEnabled = true;
+            this.Cmb_tipo_busqueda.Items.AddRange(new object[] {
+            resources.GetString("Cmb_tipo_busqueda.Items"),
+            resources.GetString("Cmb_tipo_busqueda.Items1")});
+            this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // lblPrecioMayoreo
+            // 
+            resources.ApplyResources(this.lblPrecioMayoreo, "lblPrecioMayoreo");
+            this.lblPrecioMayoreo.Name = "lblPrecioMayoreo";
+            // 
+            // lblPrecioVenta
+            // 
+            resources.ApplyResources(this.lblPrecioVenta, "lblPrecioVenta");
+            this.lblPrecioVenta.Name = "lblPrecioVenta";
+            // 
+            // lblmodPrecioVenta
+            // 
+            resources.ApplyResources(this.lblmodPrecioVenta, "lblmodPrecioVenta");
+            this.lblmodPrecioVenta.Name = "lblmodPrecioVenta";
+            // 
+            // lblmodPrecioMayoreo
+            // 
+            resources.ApplyResources(this.lblmodPrecioMayoreo, "lblmodPrecioMayoreo");
+            this.lblmodPrecioMayoreo.Name = "lblmodPrecioMayoreo";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // Txtcodigo
+            // 
+            this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
+            resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
+            this.Txtcodigo.ForeColor = System.Drawing.Color.Black;
+            this.Txtcodigo.Name = "Txtcodigo";
+            // 
+            // btnBuscar
+            // 
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmAltaProductos
             // 
@@ -535,5 +632,16 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtCantPiso;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ComboBox Cmb_tipo_busqueda;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblPrecioVenta;
+        private System.Windows.Forms.Label lblPrecioMayoreo;
+        private System.Windows.Forms.Label lblmodPrecioVenta;
+        private System.Windows.Forms.Label lblmodPrecioMayoreo;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox Txtcodigo;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
