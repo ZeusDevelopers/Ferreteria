@@ -151,7 +151,8 @@
             "Por Unidad/Pza",
             "A Granel (Usa Decimal)",
             "Como Paquete (Kit)",
-            "Metro"});
+            "Metro",
+            "Litros"});
             this.cmbxUM.Location = new System.Drawing.Point(143, 209);
             this.cmbxUM.Name = "cmbxUM";
             this.cmbxUM.Size = new System.Drawing.Size(181, 30);

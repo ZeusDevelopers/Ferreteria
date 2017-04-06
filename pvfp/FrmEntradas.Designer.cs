@@ -34,6 +34,11 @@
             this.txtTotalCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgrProductos = new System.Windows.Forms.Button();
@@ -41,11 +46,6 @@
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -73,7 +73,7 @@
             // 
             // txtEntradaID
             // 
-            this.txtEntradaID.Location = new System.Drawing.Point(121, 32);
+            this.txtEntradaID.Location = new System.Drawing.Point(153, 31);
             this.txtEntradaID.Name = "txtEntradaID";
             this.txtEntradaID.Size = new System.Drawing.Size(150, 29);
             this.txtEntradaID.TabIndex = 14;
@@ -125,6 +125,36 @@
             this.dgvProductos.TabIndex = 10;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
+            // clmProducto
+            // 
+            this.clmProducto.HeaderText = "Producto";
+            this.clmProducto.Name = "clmProducto";
+            this.clmProducto.ReadOnly = true;
+            // 
+            // clmCantidad
+            // 
+            this.clmCantidad.HeaderText = "Cantidad";
+            this.clmCantidad.Name = "clmCantidad";
+            this.clmCantidad.ReadOnly = true;
+            // 
+            // clmCostoUnitario
+            // 
+            this.clmCostoUnitario.HeaderText = "CostoUnitario";
+            this.clmCostoUnitario.Name = "clmCostoUnitario";
+            this.clmCostoUnitario.ReadOnly = true;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.HeaderText = "Importe";
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
+            // clmBorrar
+            // 
+            this.clmBorrar.HeaderText = "Quitar";
+            this.clmBorrar.Name = "clmBorrar";
+            this.clmBorrar.ReadOnly = true;
+            // 
             // btnComprar
             // 
             this.btnComprar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,9 +172,9 @@
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 22);
+            this.label4.Size = new System.Drawing.Size(129, 22);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Entrada_ID";
+            this.label4.Text = "Num de Factura";
             // 
             // btnAgrProductos
             // 
@@ -199,36 +229,6 @@
             this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
-            // 
-            // clmProducto
-            // 
-            this.clmProducto.HeaderText = "Producto";
-            this.clmProducto.Name = "clmProducto";
-            this.clmProducto.ReadOnly = true;
-            // 
-            // clmCantidad
-            // 
-            this.clmCantidad.HeaderText = "Cantidad";
-            this.clmCantidad.Name = "clmCantidad";
-            this.clmCantidad.ReadOnly = true;
-            // 
-            // clmCostoUnitario
-            // 
-            this.clmCostoUnitario.HeaderText = "CostoUnitario";
-            this.clmCostoUnitario.Name = "clmCostoUnitario";
-            this.clmCostoUnitario.ReadOnly = true;
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.HeaderText = "Importe";
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmBorrar
-            // 
-            this.clmBorrar.HeaderText = "Quitar";
-            this.clmBorrar.Name = "clmBorrar";
-            this.clmBorrar.ReadOnly = true;
             // 
             // FrmEntradas
             // 

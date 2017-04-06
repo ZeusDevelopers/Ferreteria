@@ -33,6 +33,10 @@
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.lblPrecioMayoreo = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtLocalizacion = new System.Windows.Forms.TextBox();
@@ -63,6 +67,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.tabPModificar = new System.Windows.Forms.TabPage();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.Txtcodigo = new System.Windows.Forms.TextBox();
+            this.lblmodPrecioVenta = new System.Windows.Forms.Label();
+            this.lblmodPrecioMayoreo = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cmb_tipo_busqueda = new System.Windows.Forms.ComboBox();
             this.cmbmodProdID = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cmbxmodTipoCargo = new System.Windows.Forms.ComboBox();
@@ -83,17 +94,7 @@
             this.txtmodPrecioCosto = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.Cmb_tipo_busqueda = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblPrecioMayoreo = new System.Windows.Forms.Label();
-            this.lblPrecioVenta = new System.Windows.Forms.Label();
-            this.lblmodPrecioVenta = new System.Windows.Forms.Label();
-            this.lblmodPrecioMayoreo = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.Txtcodigo = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.cmb_tipo_busquedaMostrar = new System.Windows.Forms.ComboBox();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -151,6 +152,26 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // lblPrecioVenta
+            // 
+            resources.ApplyResources(this.lblPrecioVenta, "lblPrecioVenta");
+            this.lblPrecioVenta.Name = "lblPrecioVenta";
+            // 
+            // lblPrecioMayoreo
+            // 
+            resources.ApplyResources(this.lblPrecioMayoreo, "lblPrecioMayoreo");
+            this.lblPrecioMayoreo.Name = "lblPrecioMayoreo";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
             // 
             // lblID
             // 
@@ -295,6 +316,7 @@
             // 
             // tabPMostrar
             // 
+            this.tabPMostrar.Controls.Add(this.cmb_tipo_busquedaMostrar);
             this.tabPMostrar.Controls.Add(this.Btn_Buscar);
             this.tabPMostrar.Controls.Add(this.txtBuscar);
             this.tabPMostrar.Controls.Add(this.label19);
@@ -343,7 +365,7 @@
             this.tabPModificar.Controls.Add(this.lblmodPrecioMayoreo);
             this.tabPModificar.Controls.Add(this.label26);
             this.tabPModificar.Controls.Add(this.label27);
-            this.tabPModificar.Controls.Add(this.Cmb_tipo_busqueda);
+            this.tabPModificar.Controls.Add(this.cmb_tipo_busqueda);
             this.tabPModificar.Controls.Add(this.cmbmodProdID);
             this.tabPModificar.Controls.Add(this.label16);
             this.tabPModificar.Controls.Add(this.cmbxmodTipoCargo);
@@ -367,6 +389,50 @@
             resources.ApplyResources(this.tabPModificar, "tabPModificar");
             this.tabPModificar.Name = "tabPModificar";
             this.tabPModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // Txtcodigo
+            // 
+            this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
+            resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
+            this.Txtcodigo.ForeColor = System.Drawing.Color.Black;
+            this.Txtcodigo.Name = "Txtcodigo";
+            // 
+            // lblmodPrecioVenta
+            // 
+            resources.ApplyResources(this.lblmodPrecioVenta, "lblmodPrecioVenta");
+            this.lblmodPrecioVenta.Name = "lblmodPrecioVenta";
+            // 
+            // lblmodPrecioMayoreo
+            // 
+            resources.ApplyResources(this.lblmodPrecioMayoreo, "lblmodPrecioMayoreo");
+            this.lblmodPrecioMayoreo.Name = "lblmodPrecioMayoreo";
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // label27
+            // 
+            resources.ApplyResources(this.label27, "label27");
+            this.label27.Name = "label27";
+            // 
+            // cmb_tipo_busqueda
+            // 
+            resources.ApplyResources(this.cmb_tipo_busqueda, "cmb_tipo_busqueda");
+            this.cmb_tipo_busqueda.FormattingEnabled = true;
+            this.cmb_tipo_busqueda.Items.AddRange(new object[] {
+            resources.GetString("cmb_tipo_busqueda.Items"),
+            resources.GetString("cmb_tipo_busqueda.Items1")});
+            this.cmb_tipo_busqueda.Name = "cmb_tipo_busqueda";
+            this.cmb_tipo_busqueda.SelectedIndexChanged += new System.EventHandler(this.cmb_tipo_busqueda_SelectedIndexChanged);
             // 
             // cmbmodProdID
             // 
@@ -494,67 +560,14 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
-            // Cmb_tipo_busqueda
+            // cmb_tipo_busquedaMostrar
             // 
-            resources.ApplyResources(this.Cmb_tipo_busqueda, "Cmb_tipo_busqueda");
-            this.Cmb_tipo_busqueda.FormattingEnabled = true;
-            this.Cmb_tipo_busqueda.Items.AddRange(new object[] {
-            resources.GetString("Cmb_tipo_busqueda.Items"),
-            resources.GetString("Cmb_tipo_busqueda.Items1")});
-            this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.Name = "label17";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.Name = "label18";
-            // 
-            // lblPrecioMayoreo
-            // 
-            resources.ApplyResources(this.lblPrecioMayoreo, "lblPrecioMayoreo");
-            this.lblPrecioMayoreo.Name = "lblPrecioMayoreo";
-            // 
-            // lblPrecioVenta
-            // 
-            resources.ApplyResources(this.lblPrecioVenta, "lblPrecioVenta");
-            this.lblPrecioVenta.Name = "lblPrecioVenta";
-            // 
-            // lblmodPrecioVenta
-            // 
-            resources.ApplyResources(this.lblmodPrecioVenta, "lblmodPrecioVenta");
-            this.lblmodPrecioVenta.Name = "lblmodPrecioVenta";
-            // 
-            // lblmodPrecioMayoreo
-            // 
-            resources.ApplyResources(this.lblmodPrecioMayoreo, "lblmodPrecioMayoreo");
-            this.lblmodPrecioMayoreo.Name = "lblmodPrecioMayoreo";
-            // 
-            // label26
-            // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
-            // 
-            // label27
-            // 
-            resources.ApplyResources(this.label27, "label27");
-            this.label27.Name = "label27";
-            // 
-            // Txtcodigo
-            // 
-            this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
-            resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
-            this.Txtcodigo.ForeColor = System.Drawing.Color.Black;
-            this.Txtcodigo.Name = "Txtcodigo";
-            // 
-            // btnBuscar
-            // 
-            resources.ApplyResources(this.btnBuscar, "btnBuscar");
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.cmb_tipo_busquedaMostrar, "cmb_tipo_busquedaMostrar");
+            this.cmb_tipo_busquedaMostrar.FormattingEnabled = true;
+            this.cmb_tipo_busquedaMostrar.Items.AddRange(new object[] {
+            resources.GetString("cmb_tipo_busquedaMostrar.Items"),
+            resources.GetString("cmb_tipo_busquedaMostrar.Items1")});
+            this.cmb_tipo_busquedaMostrar.Name = "cmb_tipo_busquedaMostrar";
             // 
             // FrmAltaProductos
             // 
@@ -632,7 +645,7 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtCantPiso;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.ComboBox Cmb_tipo_busqueda;
+        private System.Windows.Forms.ComboBox cmb_tipo_busqueda;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblPrecioVenta;
@@ -643,5 +656,6 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox Txtcodigo;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox cmb_tipo_busquedaMostrar;
     }
 }

@@ -28,7 +28,7 @@ namespace PVFP
         //Localizable = true ; --Formato a Form              
         private void frmProductos_Load(object sender, EventArgs e)
         {
-            
+
             try
             {
                 //Llena Tipos
@@ -41,8 +41,12 @@ namespace PVFP
                 //Llena_campos_editar
                 cmb_modificar();
                 //llena dvg
-                llenar_mostrar();             
+                llenar_mostrar();
                 lblID.Text = (Convert.ToInt32(productos.Obtener_productoId()) + 1).ToString();
+                cmbmodProdID.Visible = false;
+                label16.Visible = false;
+                Txtcodigo.Visible = false;
+                btnBuscar.Visible = false;
             }
             catch (Exception ex)
             {
@@ -52,7 +56,7 @@ namespace PVFP
 
         private void DgvProducto_Sorted(object sender, EventArgs e)
         {
-            
+
         }
         public void cmb_modificar()
         {
@@ -86,15 +90,36 @@ namespace PVFP
         }
         private void Btn_Buscar_Click(object sender, EventArgs e)
         {
-            string a;
-            for (int i = 0; i < dgvProducto.Rows.Count; i++)
+            if (cmb_tipo_busquedaMostrar.SelectedIndex != -1)
             {
-                a = dgvProducto[2, i].Value.ToString();
-                if (a.Contains(txtBuscar.Text))
+                string a;
+                if (cmb_tipo_busquedaMostrar.SelectedIndex == 1)
                 {
-                    dgvProducto.Rows[i].Selected = true;
-                    dgvProducto.FirstDisplayedScrollingRowIndex = i;
-                    break;
+                    for (int i = 0; i < dgvProducto.Rows.Count; i++)
+                    {
+                        a = dgvProducto[2, i].Value.ToString();
+                        if (a.Contains(txtBuscar.Text))
+                        {
+                            dgvProducto.Rows[i].Selected = true;
+                            dgvProducto.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < dgvProducto.Rows.Count; i++)
+                    {
+                        a = dgvProducto[0, i].Value.ToString();
+                        if (a.Contains(txtBuscar.Text))
+                        {
+                            dgvProducto.Rows[i].Selected = true;
+                            dgvProducto.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+
+                    }
                 }
 
             }
@@ -244,7 +269,7 @@ namespace PVFP
 
         private void dgvProducto_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dgvProducto_DataSourceChanged(object sender, EventArgs e)
@@ -435,7 +460,7 @@ namespace PVFP
         }
         private void txtPrecioVenta_KeyUp(object sender, KeyEventArgs e)
         {
-            if(txtPrecioCosto.Text=="" || txtPrecioCosto.Text=="0")
+            if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
             {
                 txtPrecioCosto.Text = "0";
                 MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -448,11 +473,12 @@ namespace PVFP
                     MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                { double pc= Convert.ToDouble(txtPrecioCosto.Text);
-                    double porcVent= Convert.ToDouble(txtPrecioVenta.Text);
-                    double precioVenta = pc + (pc*(porcVent/100));
+                {
+                    double pc = Convert.ToDouble(txtPrecioCosto.Text);
+                    double porcVent = Convert.ToDouble(txtPrecioVenta.Text);
+                    double precioVenta = pc + (pc * (porcVent / 100));
                     lblPrecioVenta.Text = precioVenta.ToString();
-                   
+
                 }
             }
         }
@@ -531,8 +557,52 @@ namespace PVFP
                 }
             }
         }
+
         #endregion
 
-        
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (cmb_tipo_busqueda.SelectedIndex != -1)
+            {
+                if (cmb_tipo_busqueda.SelectedIndex == 0)
+                {
+                    int a = productos.BuscarCodigoBarra(Txtcodigo.Text);
+                    if (a > 0)
+                    {
+                        productos.BuscarProdCargarProductoMod(Txtcodigo.Text);
+                        ArrayList Productos = productos.ArregloProductomod;
+                        cmbmodProdID.SelectedIndex = cmbmodProdID.FindString(Productos[0].ToString());
+                        string[] id = Productos[0].ToString().Split('-');
+                        llenar_modifcacion(id[0].ToString());
+                    }
+                    else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+                }
+                
+            }
+
+
+
+        }
+
+        private void cmb_tipo_busqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cmb_tipo_busqueda.SelectedIndex == 1)
+            {
+                cmbmodProdID.Visible = true;
+                label16.Visible = true;
+                Txtcodigo.Visible = false;
+                btnBuscar.Visible = false;
+            }
+            if (cmb_tipo_busqueda.SelectedIndex == 0)
+            {
+                cmbmodProdID.Visible = false;
+                label16.Visible = false;
+                Txtcodigo.Visible = true;
+                btnBuscar.Visible = true;
+            }
+        }
+
     }
 }

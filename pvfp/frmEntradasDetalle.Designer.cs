@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradasDetalle));
             this.btnCalTotProd = new System.Windows.Forms.Button();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.btnAgrPG = new System.Windows.Forms.Button();
@@ -142,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 94);
+            this.label1.Location = new System.Drawing.Point(12, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 18;
@@ -152,7 +153,7 @@
             // 
             this.cmbProducto.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProducto.FormattingEnabled = true;
-            this.cmbProducto.Location = new System.Drawing.Point(144, 94);
+            this.cmbProducto.Location = new System.Drawing.Point(111, 61);
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(247, 30);
             this.cmbProducto.TabIndex = 17;
@@ -163,12 +164,13 @@
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBuscar.Location = new System.Drawing.Point(318, 130);
+            this.btnBuscar.Location = new System.Drawing.Point(155, 97);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(112, 35);
             this.btnBuscar.TabIndex = 113;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Txtcodigo
             // 
@@ -189,11 +191,12 @@
             this.Cmb_tipo_busqueda.Items.AddRange(new object[] {
             "Codigo\t",
             "Nombre"});
-            this.Cmb_tipo_busqueda.Location = new System.Drawing.Point(11, 11);
+            this.Cmb_tipo_busqueda.Location = new System.Drawing.Point(32, 11);
             this.Cmb_tipo_busqueda.Margin = new System.Windows.Forms.Padding(2);
             this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
             this.Cmb_tipo_busqueda.Size = new System.Drawing.Size(205, 30);
             this.Cmb_tipo_busqueda.TabIndex = 111;
+            this.Cmb_tipo_busqueda.SelectedIndexChanged += new System.EventHandler(this.Cmb_tipo_busqueda_SelectedIndexChanged);
             // 
             // frmEntradasDetalle
             // 
@@ -214,8 +217,10 @@
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbProducto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEntradasDetalle";
             this.Text = "frmEntradasDetalle";
+            this.Load += new System.EventHandler(this.frmEntradasDetalle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
