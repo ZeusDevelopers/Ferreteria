@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreteria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,12 +40,17 @@ namespace PVFP
                 item.Cells["Eliminar"].Value = "Remover";
             }
         }
-
+        Cls_devolucion devol = new Cls_devolucion();
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex==3)
             {
-                int M = 0;
+                DialogResult r= MessageBox.Show("Desea eliminar este producto de la venta", "eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (r.Equals(DialogResult.Yes))
+                {
+                    devol.eliminar(ids, e.RowIndex);
+                    this.Close();
+                }
             }
         }
 

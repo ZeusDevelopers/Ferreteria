@@ -10,8 +10,8 @@ namespace PVFP
     class ClsInicioSesion
     {
         #region Path        
-        //private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
-         private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+        private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
+        // private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
        // string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
         public void ConsultarPah()
         {
@@ -41,7 +41,7 @@ namespace PVFP
                 doc1.Load(lur);
                 var elemList = doc1.DocumentElement.ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(2).ChildNodes.Item(4).ChildNodes.Item(3).InnerText;
                 //string elemList = doc1.DocumentElement.ChildNodes.Item(0).ChildNodes.Item(0).ChildNodes.Item(2).ChildNodes.Item(4).ChildNodes.Item(4).InnerText;
-                dolar = Double.Parse(elemList);
+                dolar = Double.Parse(elemList)-.50d;
             }
             catch (Exception ex)
             {
