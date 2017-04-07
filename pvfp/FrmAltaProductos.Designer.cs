@@ -441,6 +441,7 @@
             resources.GetString("Cmb_tipo_busqueda.Items"),
             resources.GetString("Cmb_tipo_busqueda.Items1")});
             this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
+            this.Cmb_tipo_busqueda.SelectedIndexChanged += new System.EventHandler(this.Cmb_tipo_busqueda_SelectedIndexChanged);
             // 
             // cmbmodProdID
             // 

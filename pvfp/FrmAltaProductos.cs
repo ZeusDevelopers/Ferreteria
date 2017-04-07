@@ -600,5 +600,23 @@ namespace PVFP
                 btnBuscar.Visible = true;
             }
         }
+
+        private void Cmb_tipo_busqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Cmb_tipo_busqueda.SelectedIndex == 1)
+            {
+                cmbmodProdID.Visible = true;
+                label16.Visible = true;
+                Txtcodigo.Visible = false;
+                btnBuscar.Visible = false;
+            }
+            if (Cmb_tipo_busqueda.SelectedIndex == 0)
+            {
+                cmbmodProdID.Visible = false;
+                label16.Visible = false;
+                Txtcodigo.Visible = true;
+                btnBuscar.Visible = true;
+            }
+        }
     }
 }
