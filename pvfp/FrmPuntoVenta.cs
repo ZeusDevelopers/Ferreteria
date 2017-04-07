@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreteria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -190,7 +191,6 @@ namespace PVFP
             }
             return bHandled;
         }
-
         private void comprar()
         {
             if (!( total <= 0)) {
@@ -486,8 +486,29 @@ namespace PVFP
         private void btncotizar_Click(object sender, EventArgs e)
         {
             cotizar();
+           
         }
-        public void cotizar()
+        public void cotizar() {
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn col in DgvVentas.Columns)
+            {
+                dt.Columns.Add(col.HeaderText);
+            }
+            for (int i = 0; i < DgvVentas.Rows.Count; i++)
+            {
+                DataGridViewRow row = DgvVentas.Rows[i];
+                DataRow dr = dt.NewRow();
+                for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                {
+                    dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                }
+                dt.Rows.Add(dr);
+            }
+
+            Frm_cotizacion frm = new Frm_cotizacion(dt,iva,subtotal,total);
+            frm.Show();
+        }
+        public void cotizar1()
         {
             if (!(total <= 0))
             {

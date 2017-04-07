@@ -127,7 +127,7 @@ namespace PVFP
                 ven.Columns.RemoveAt(2);
                 ven.Columns.RemoveAt(4);                
                 string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                int id=vender.registrar_venta(venta, date, iva, subtotal,Int32.Parse(ClsInicioSesion.Usuario));
+                int id=vender.registrar_venta(venta, date, iva, subtotal,ClsInicioSesion.empleados_id);
                 double uno, dos;                
                 foreach (DataRow item in ven.Rows)
                 {

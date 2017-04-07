@@ -24,7 +24,8 @@ namespace PVFP
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
                 MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Precio_Venta`,A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
-                    "  where producto.Codigodebarra='" + productoid + "' and A_Piso <>'0';"), conexion);
+                    "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
+                _comando.Parameters.AddWithValue("@prod",productoid);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
                 _dataAdapter.Fill(tabla);
                 conexion.Close();

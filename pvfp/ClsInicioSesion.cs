@@ -10,9 +10,9 @@ namespace PVFP
     class ClsInicioSesion
     {
         #region Path        
-        //private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
+        private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";
         // private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
-        private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+        //string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
         public void ConsultarPah()
         {
            // string path = Application.StartupPath.ToString() + "\\Path\\Path.txt";
@@ -28,7 +28,12 @@ namespace PVFP
         {
             get { return dolar; }
         }
-        private static double dolar;
+        public static int empleados_id
+        {
+            get { return emp; }
+        }
+        private static double dolar,empl;
+        private static int emp;
         public static void precio_dolar()
         {
 
@@ -75,7 +80,7 @@ namespace PVFP
         public void Sesion(string usuario, string contraseña)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("select Nombre,sesion.Puesto from sesion inner join empleados on sesion.Sesion_ID = empleados.Sesion_ID" +
+            MySqlCommand _comando = new MySqlCommand(String.Format("select Nombre,sesion.Puesto,Empleado_ID from sesion inner join empleados on sesion.Sesion_ID = empleados.Sesion_ID" +
                 " WHERE Usuario =@usu and Contraseña =@contra "), conexion);
             _comando.Parameters.AddWithValue("@usu", usuario);
             _comando.Parameters.AddWithValue("@contra", contraseña);
@@ -87,6 +92,7 @@ namespace PVFP
                 _reader["Nombre"].ToString().Remove(12):
                 _reader["Nombre"].ToString();                
                 puesto = _reader["Puesto"].ToString();
+                emp = Convert.ToInt32(_reader["Empleado_ID"].ToString());
             }
             
             _reader.Close();                    
