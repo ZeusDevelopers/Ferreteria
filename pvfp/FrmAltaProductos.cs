@@ -560,11 +560,12 @@ namespace PVFP
 
         #endregion
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            if (cmb_tipo_busqueda.SelectedIndex != -1)
+            if (Cmb_tipo_busqueda.SelectedIndex != -1)
             {
-                if (cmb_tipo_busqueda.SelectedIndex == 0)
+                if (Cmb_tipo_busqueda.SelectedIndex == 0)
                 {
                     int a = productos.BuscarCodigoBarra(Txtcodigo.Text);
                     if (a > 0)
@@ -578,24 +579,20 @@ namespace PVFP
                     else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
                 }
-                
+
             }
-
-
-
         }
 
-        private void cmb_tipo_busqueda_SelectedIndexChanged(object sender, EventArgs e)
+        private void Cmb_tipo_busqueda_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
-            if (cmb_tipo_busqueda.SelectedIndex == 1)
+            if (Cmb_tipo_busqueda.SelectedIndex == 1)
             {
                 cmbmodProdID.Visible = true;
                 label16.Visible = true;
                 Txtcodigo.Visible = false;
                 btnBuscar.Visible = false;
             }
-            if (cmb_tipo_busqueda.SelectedIndex == 0)
+            if (Cmb_tipo_busqueda.SelectedIndex == 0)
             {
                 cmbmodProdID.Visible = false;
                 label16.Visible = false;
@@ -603,6 +600,5 @@ namespace PVFP
                 btnBuscar.Visible = true;
             }
         }
-
     }
 }

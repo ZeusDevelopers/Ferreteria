@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProductos));
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbxUM = new System.Windows.Forms.ComboBox();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.lblPrecioMayoreo = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -93,7 +94,10 @@
             this.txtmodPrecioCosto = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.cmbxUM = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo_busquedaMostrar = new System.Windows.Forms.ComboBox();
             this.tabControlALTA.SuspendLayout();
             this.tabPAlta.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -151,6 +155,18 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // cmbxUM
+            // 
+            resources.ApplyResources(this.cmbxUM, "cmbxUM");
+            this.cmbxUM.FormattingEnabled = true;
+            this.cmbxUM.Items.AddRange(new object[] {
+            resources.GetString("cmbxUM.Items"),
+            resources.GetString("cmbxUM.Items1"),
+            resources.GetString("cmbxUM.Items2"),
+            resources.GetString("cmbxUM.Items3"),
+            resources.GetString("cmbxUM.Items4")});
+            this.cmbxUM.Name = "cmbxUM";
             // 
             // lblPrecioVenta
             // 
@@ -303,6 +319,10 @@
             // 
             // tabPMostrar
             // 
+            this.tabPMostrar.Controls.Add(this.cmb_tipo_busquedaMostrar);
+            this.tabPMostrar.Controls.Add(this.comboBox3);
+            this.tabPMostrar.Controls.Add(this.comboBox2);
+            this.tabPMostrar.Controls.Add(this.comboBox1);
             this.tabPMostrar.Controls.Add(this.Btn_Buscar);
             this.tabPMostrar.Controls.Add(this.txtBuscar);
             this.tabPMostrar.Controls.Add(this.label19);
@@ -332,8 +352,8 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -381,6 +401,7 @@
             resources.ApplyResources(this.btnBuscar, "btnBuscar");
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // Txtcodigo
             // 
@@ -544,17 +565,41 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
-            // cmbxUM
+            // comboBox1
             // 
-            resources.ApplyResources(this.cmbxUM, "cmbxUM");
-            this.cmbxUM.FormattingEnabled = true;
-            this.cmbxUM.Items.AddRange(new object[] {
-            resources.GetString("cmbxUM.Items"),
-            resources.GetString("cmbxUM.Items1"),
-            resources.GetString("cmbxUM.Items2"),
-            resources.GetString("cmbxUM.Items3"),
-            resources.GetString("cmbxUM.Items4")});
-            this.cmbxUM.Name = "cmbxUM";
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1")});
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // comboBox2
+            // 
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            resources.GetString("comboBox2.Items"),
+            resources.GetString("comboBox2.Items1")});
+            this.comboBox2.Name = "comboBox2";
+            // 
+            // comboBox3
+            // 
+            resources.ApplyResources(this.comboBox3, "comboBox3");
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            resources.GetString("comboBox3.Items"),
+            resources.GetString("comboBox3.Items1")});
+            this.comboBox3.Name = "comboBox3";
+            // 
+            // cmb_tipo_busquedaMostrar
+            // 
+            resources.ApplyResources(this.cmb_tipo_busquedaMostrar, "cmb_tipo_busquedaMostrar");
+            this.cmb_tipo_busquedaMostrar.FormattingEnabled = true;
+            this.cmb_tipo_busquedaMostrar.Items.AddRange(new object[] {
+            resources.GetString("cmb_tipo_busquedaMostrar.Items"),
+            resources.GetString("cmb_tipo_busquedaMostrar.Items1")});
+            this.cmb_tipo_busquedaMostrar.Name = "cmb_tipo_busquedaMostrar";
             // 
             // FrmAltaProductos
             // 
@@ -643,5 +688,9 @@
         private System.Windows.Forms.TextBox Txtcodigo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cmbxUM;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_tipo_busquedaMostrar;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

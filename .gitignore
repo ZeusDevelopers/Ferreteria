@@ -65,3 +65,6 @@ pvfp/obj/Debug/PVFP.FrmPuntoVenta.resources
 pvfp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 pvfp/obj/Debug/PVFP.csproj.GenerateResource.Cache
 pvfp/obj/Debug/PVFP.csproj.GenerateResource.Cache
+*.suo
+*.Cache
+*.resources
