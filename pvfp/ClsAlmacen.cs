@@ -12,8 +12,9 @@ namespace PVFP
 {
     class ClsAlmacen
     {
-        
-        #region MYSQL    
+
+        #region MYSQL  
+        public ArrayList ArregloPro = new ArrayList();
         public ArrayList ArregloPiso = new ArrayList();
         public ArrayList ArregloAlma = new ArrayList();
         public void CargarAlmacen()
@@ -25,6 +26,17 @@ namespace PVFP
             {
                 ArregloPiso.Add(_reader["A_Piso"].ToString());
                 ArregloAlma.Add(_reader["A_Almacen"].ToString());
+            }
+            conexion.Close();
+        }
+        public void Cargarpro()
+        {
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM producto"), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                ArregloPro.Add(_reader["Nombre"].ToString());
             }
             conexion.Close();
         }

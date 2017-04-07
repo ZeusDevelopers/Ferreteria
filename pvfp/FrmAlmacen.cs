@@ -29,7 +29,8 @@ namespace PVFP
             cmbaalmacen.Items.Clear();
             cmbapiso.Items.Clear();
             almacen.CargarAlmacen();
-            ArrayList arrPro = almacen.ArregloProducto;
+            almacen.Cargarpro();
+            ArrayList arrPro = almacen.ArregloPro;
             ArrayList arrPi = almacen.ArregloPiso;
             ArrayList arrAl = almacen.ArregloAlma;
             for (int i = 0; i < arrPro.Count; i++)

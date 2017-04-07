@@ -219,7 +219,7 @@
             this.Controls.Add(this.cmbProducto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEntradasDetalle";
-            this.Text = "frmEntradasDetalle";
+            this.Text = "Detalle";
             this.Load += new System.EventHandler(this.frmEntradasDetalle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
