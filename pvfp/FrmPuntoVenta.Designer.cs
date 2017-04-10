@@ -58,6 +58,8 @@
             this.Btn_limpiar = new System.Windows.Forms.Button();
             this.Btn_comprar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Btn_mayoreo = new System.Windows.Forms.Button();
+            this.btn_porcentaje = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -289,12 +291,31 @@
             this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Name = "label1";
             // 
+            // Btn_mayoreo
+            // 
+            this.Btn_mayoreo.BackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.Btn_mayoreo, "Btn_mayoreo");
+            this.Btn_mayoreo.Name = "Btn_mayoreo";
+            this.Btn_mayoreo.UseVisualStyleBackColor = false;
+            this.Btn_mayoreo.Click += new System.EventHandler(this.Btn_mayoreo_Click);
+            // 
+            // btn_porcentaje
+            // 
+            this.btn_porcentaje.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.btn_porcentaje, "btn_porcentaje");
+            this.btn_porcentaje.Image = global::Ferreteria.Properties.Resources.image1;
+            this.btn_porcentaje.Name = "btn_porcentaje";
+            this.btn_porcentaje.UseVisualStyleBackColor = false;
+            this.btn_porcentaje.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmPuntoVenta
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
+            this.Controls.Add(this.btn_porcentaje);
+            this.Controls.Add(this.Btn_mayoreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btncotizar);
             this.Controls.Add(this.btn_abrir_cajon);
@@ -355,5 +376,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
         private System.Windows.Forms.Button btncotizar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Btn_mayoreo;
+        private System.Windows.Forms.Button btn_porcentaje;
     }
 }

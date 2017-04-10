@@ -56,7 +56,7 @@ namespace PVFP
                         else //Trabajador
                         {
                             txtcontraseña.Text = "";
-                            FrmPuntoVenta venta = new FrmPuntoVenta();
+                            FrmPuntoVenta venta = new FrmPuntoVenta(false);
                             conexion.bandera = false;
                             venta.Show();
                         }

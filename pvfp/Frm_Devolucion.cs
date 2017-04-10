@@ -20,6 +20,7 @@ namespace Ferreteria
         string tipo = "0";
         Cls_Consulta consulta = new Cls_Consulta();
         string fech_ini;
+        Cls_devolucion dv = new Cls_devolucion();
         string fech_fin;
         string a="0";
         public Frm_Devolucion()
@@ -36,11 +37,11 @@ namespace Ferreteria
         {
             try
             {
-                if (dataGridView1.Columns["Eliminar"] != null)
-                {
-                    dataGridView1.CellClick -= DataGridView1_CellClick;
-                    dataGridView1.Columns.Remove("Eliminar");                    
-                }
+                //if (dataGridView1.Columns["Eliminar"] != null)
+                //{
+                //    dataGridView1.CellClick -= DataGridView1_CellClick;
+                //    dataGridView1.Columns.Remove("Eliminar");                    
+                //}
             if (Rbtn_venta.Checked)
             {
                 val = -1;
@@ -113,18 +114,18 @@ namespace Ferreteria
         }
         private void add_colum_dele()
         {
-            DataGridViewButtonColumn Columna_eliminar = new DataGridViewButtonColumn();
-            Columna_eliminar.Name = "Eliminar";
-            if (dataGridView1.Columns["Eliminar"] == null && dataGridView1.Rows.Count>0)
-            {
+            //DataGridViewButtonColumn Columna_eliminar = new DataGridViewButtonColumn();
+            //Columna_eliminar.Name = "Eliminar";
+            //if (dataGridView1.Columns["Eliminar"] == null && dataGridView1.Rows.Count>0)
+            //{
                 
-                dataGridView1.Columns.Insert(5, Columna_eliminar);
-                dataGridView1.CellClick += DataGridView1_CellClick; 
-                foreach (DataGridViewRow item in dataGridView1.Rows)
-                {
-                    item.Cells["Eliminar"].Value = "Remover";
-                }
-            }
+            //    dataGridView1.Columns.Insert(5, Columna_eliminar);
+            //    dataGridView1.CellClick += DataGridView1_CellClick; 
+            //    foreach (DataGridViewRow item in dataGridView1.Rows)
+            //    {
+            //        item.Cells["Eliminar"].Value = "Remover";
+            //    }
+            //}
         }
         private void dataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
@@ -135,21 +136,22 @@ namespace Ferreteria
             }
         }
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex==5)
-            {
-                DialogResult r = MessageBox.Show("¿Desea eliminar la venta: "+dataGridView1[0,e.RowIndex].Value+" permanentemente?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-                if (r.Equals(DialogResult.Yes))
-                {
+        //private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.ColumnIndex==5)
+        //    {
+        //        DialogResult r = MessageBox.Show("¿Desea eliminar la venta: "+dataGridView1[0,e.RowIndex].Value+" permanentemente?","Alerta",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+        //        if (r.Equals(DialogResult.Yes))
+        //        {
+        //            dv.Eliminar_venta(Int32.Parse(dataGridView1[0, e.RowIndex].Value.ToString()));
+        //            dataGridView1.Rows.RemoveAt(e.RowIndex);
+        //        }
+        //        else
+        //        {
 
-                }
-                else
-                {
-
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         private void Rbtn_venta_CheckedChanged(object sender, EventArgs e)
         {
@@ -165,11 +167,11 @@ namespace Ferreteria
         {
             if (val < salt)
             {
-                if (dataGridView1.Columns["Eliminar"] != null)
-                {
-                    dataGridView1.CellClick -= DataGridView1_CellClick;
-                    dataGridView1.Columns.Remove("Eliminar");
-                }
+                //if (dataGridView1.Columns["Eliminar"] != null)
+                //{
+                //    dataGridView1.CellClick -= DataGridView1_CellClick;
+                //    dataGridView1.Columns.Remove("Eliminar");
+                //}
                 val++;
                 txtintervalo.Text =  (val + 1).ToString();
                 dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, val * 10, -1);
@@ -181,11 +183,11 @@ namespace Ferreteria
         {
             if (val>0)
             {
-                if (dataGridView1.Columns["Eliminar"] != null)
-                {
-                    dataGridView1.CellClick -= DataGridView1_CellClick;
-                    dataGridView1.Columns.Remove("Eliminar");
-                }
+                //if (dataGridView1.Columns["Eliminar"] != null)
+                //{
+                //    dataGridView1.CellClick -= DataGridView1_CellClick;
+                //    dataGridView1.Columns.Remove("Eliminar");
+                //}
                 val--;
                 txtintervalo.Text = (val + 1).ToString();
                 dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, val*10, -1);
@@ -198,10 +200,22 @@ namespace Ferreteria
         {
             if (TxtVenta.Text=="")
             {
+                //if (dataGridView1.Columns["Eliminar"] != null)
+                //{
+                //    dataGridView1.CellClick -= DataGridView1_CellClick;
+                //    dataGridView1.Columns.Remove("Eliminar");
+                //}
+                add_colum_dele();
                 dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, val * 10, -1);
             }
             else
             {
+
+                //if (dataGridView1.Columns["Eliminar"] != null)
+                //{
+                //    dataGridView1.CellClick -= DataGridView1_CellClick;
+                //    dataGridView1.Columns.Remove("Eliminar");
+                //}
                 dataGridView1.DataSource = consulta.num_venta(Int32.Parse(TxtVenta.Text));
             }
         }

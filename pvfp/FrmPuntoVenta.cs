@@ -18,9 +18,9 @@ namespace PVFP
         FrmPuntoVenta_final frmventa;
         ClsVentas clsventa = new ClsVentas();
         NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-        bool cant_correcta = false;
+        bool admin=false,mayorer=false;
         double subtotal = 0, iva = 0, total = 0, roww = -1;
-        public FrmPuntoVenta()
+        public FrmPuntoVenta(bool ad)
         {
             InitializeComponent();
             #region                  
@@ -105,6 +105,7 @@ namespace PVFP
                 Btn_cantidad.Image = bmp;
             }
             #endregion
+            admin = ad;
         }
         #region controles
         private void xToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,7 +259,7 @@ namespace PVFP
         {
             try
             {
-                DataTable table = clsventa.VerProducto(Txtcodigo.Text);
+                DataTable table = mayorer ? clsventa.VerProducto(Txtcodigo.Text,1) : clsventa.VerProducto(Txtcodigo.Text);
                 double num1;
                 int cont = 0;
                 string n1;
@@ -351,6 +352,11 @@ namespace PVFP
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
             DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;            
             dolar = ClsInicioSesion.Dolar;
+            if (admin)
+            {
+                Btn_mayoreo.Visible = true;
+                btn_porcentaje.Visible = true;
+            }
         }
         double dolar = 0;
         private void Btn_cantidad_Click(object sender, EventArgs e)
@@ -489,24 +495,28 @@ namespace PVFP
            
         }
         public void cotizar() {
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in DgvVentas.Columns)
-            {
-                dt.Columns.Add(col.HeaderText);
-            }
-            for (int i = 0; i < DgvVentas.Rows.Count; i++)
-            {
-                DataGridViewRow row = DgvVentas.Rows[i];
-                DataRow dr = dt.NewRow();
-                for (int j = 0; j < DgvVentas.Columns.Count; j++)
+           
+                DataTable dt = new DataTable();
+                foreach (DataGridViewColumn col in DgvVentas.Columns)
                 {
-                    dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                    dt.Columns.Add(col.HeaderText);
                 }
-                dt.Rows.Add(dr);
-            }
+                for (int i = 0; i < DgvVentas.Rows.Count; i++)
+                {
+                    DataGridViewRow row = DgvVentas.Rows[i];
+                    DataRow dr = dt.NewRow();
+                    for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                    {
+                        dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                    }
+                    dt.Rows.Add(dr);
+                }
 
-            Frm_cotizacion frm = new Frm_cotizacion(dt,iva,subtotal,total);
-            frm.Show();
+                Frm_cotizacion frm = new Frm_cotizacion(dt, iva, subtotal, total);
+                frm.Show();
+                
+           
+
         }
         public void cotizar1()
         {
@@ -544,6 +554,46 @@ namespace PVFP
                 MessageBox.Show("No hay articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+        public void porcentaje(string n_price)
+        {//4
+            string a = DgvVentas[0, Convert.ToInt32(roww)].Value.ToString();
+            double dato1 = Double.Parse(n_price) * Double.Parse(a.ToString());
+            DgvVentas[4,Convert.ToInt32(roww)].Value =Double.Parse(n_price).ToString("C",nfi);
+            DgvVentas[5, Convert.ToInt32(roww)].Value =dato1.ToString("C", nfi);
+            //Double.Parse();
+            totales();
+            roww = -1;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (roww != -1)
+            {
+                int t = mayorer ? 0 : 1;
+                Frmpuntodeventaporcentaje mp = new Frmpuntodeventaporcentaje(DgvVentas[1, Convert.ToInt32(roww)].Value.ToString(), t, this);
+                mp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Un elemento");
+            }
+        }
+
+        private void Btn_mayoreo_Click(object sender, EventArgs e)
+        {
+            if (Btn_mayoreo.BackColor.Equals(Color.Red))
+            {
+                Btn_mayoreo.BackColor = Color.Green;
+                Btn_mayoreo.Text = "Mayoreo : Activado";
+                mayorer = true;
+            }
+            else
+            {
+                Btn_mayoreo.BackColor = Color.Red;
+                Btn_mayoreo.Text = "Mayoreo : Desactivado";
+                mayorer = false;
+            }
+        }
+
         public void limpiar1()
         {
             DialogResult r = MessageBox.Show("Desea Limpiar Todo", "Finalizar", MessageBoxButtons.YesNo);

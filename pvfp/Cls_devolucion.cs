@@ -165,5 +165,21 @@ namespace Ferreteria
             conexion.Close();
             
         }
+        public void Eliminar_venta(int id)
+        {
+            try
+            {            
+            string comando = "delete from salida where salida_id = @id";
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand  _comando = new MySqlCommand(comando, conexion);
+                _comando.Parameters.AddWithValue("@id",id);
+            _comando.ExecuteNonQuery();
+            conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

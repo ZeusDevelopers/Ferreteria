@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Ferreteria;
 namespace PVFP
 {
     static class Program
@@ -14,7 +14,9 @@ namespace PVFP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
             Application.Run(new FrmInicioSesion());
+            //Application.Run(new Frmpuntodeventaporcentaje("uno",1));
             // Application.Run(new Frm_Consulta());
             //Application.Run(new FrmPerdida());
             ///Application.Run(new FrmEmpleados());

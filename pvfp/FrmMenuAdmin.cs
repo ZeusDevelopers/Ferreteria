@@ -97,5 +97,11 @@ namespace PVFP
         {
             
         }
+
+        private void Btn_venta_admin_Click(object sender, EventArgs e)
+        {
+            FrmPuntoVenta frm = new FrmPuntoVenta(true);
+            frm.Show();
+        }
     }
 }

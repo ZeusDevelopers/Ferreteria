@@ -367,3 +367,4 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x64\Sql
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmpuntodeventaporcentaje.resources

@@ -37,6 +37,7 @@
             this.BtnPerdida = new System.Windows.Forms.Button();
             this.BtnAlmacen = new System.Windows.Forms.Button();
             this.btnEntradas = new System.Windows.Forms.Button();
+            this.Btn_venta_admin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmpleados
@@ -158,6 +159,20 @@
             this.btnEntradas.UseVisualStyleBackColor = true;
             this.btnEntradas.Click += new System.EventHandler(this.btnEntradas_Click);
             // 
+            // Btn_venta_admin
+            // 
+            this.Btn_venta_admin.Font = new System.Drawing.Font("Palatino Linotype", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_venta_admin.Image = global::Ferreteria.Properties.Resources.Icono;
+            this.Btn_venta_admin.Location = new System.Drawing.Point(45, 571);
+            this.Btn_venta_admin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Btn_venta_admin.Name = "Btn_venta_admin";
+            this.Btn_venta_admin.Size = new System.Drawing.Size(203, 135);
+            this.Btn_venta_admin.TabIndex = 9;
+            this.Btn_venta_admin.Text = "Punto Venta";
+            this.Btn_venta_admin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_venta_admin.UseVisualStyleBackColor = true;
+            this.Btn_venta_admin.Click += new System.EventHandler(this.Btn_venta_admin_Click);
+            // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
@@ -165,6 +180,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1314, 733);
+            this.Controls.Add(this.Btn_venta_admin);
             this.Controls.Add(this.btnEntradas);
             this.Controls.Add(this.BtnAlmacen);
             this.Controls.Add(this.BtnPerdida);
@@ -199,5 +215,6 @@
         private System.Windows.Forms.Button BtnPerdida;
         private System.Windows.Forms.Button BtnAlmacen;
         private System.Windows.Forms.Button btnEntradas;
+        private System.Windows.Forms.Button Btn_venta_admin;
     }
 }

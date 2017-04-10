@@ -17,13 +17,13 @@ namespace PVFP
     {
 
         #region MYSQL
-        public DataTable VerProducto(string productoid)
+        public DataTable VerProducto(string productoid,int a)
         {
             DataTable tabla = new DataTable();
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Ganancia_Venta`,A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,SUM(`Ganancia_Mayoreo`+Precio_Costo),A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
                     "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
                 _comando.Parameters.AddWithValue("@prod",productoid);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
@@ -40,8 +40,30 @@ namespace PVFP
             }
             return tabla;
         }
-       
-       
+        public DataTable VerProducto(string productoid)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,SUM(`Ganancia_Venta`+Precio_Costo),A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
+                    "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
+                _comando.Parameters.AddWithValue("@prod", productoid);
+                MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
+                _dataAdapter.Fill(tabla);
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                //if (ex.Message.Contains("Unknown column"))
+                //    //MessageBox.Show("No Existe Producto o Inventario Insuficiente ");
+                //else
+                //    //MessageBox.Show(ex.Message);                 
+                return tabla;
+            }
+            return tabla;
+        }
+
         public int registrar_venta(double totalventa,string fecha,double iva ,double subtotal,int empleadoid)
         {
             int numero=-1;

@@ -211,6 +211,12 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmpuntodeventaporcentaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmpuntodeventaporcentaje.Designer.cs">
+      <DependentUpon>Frmpuntodeventaporcentaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPuntoVenta-Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmpuntodeventaporcentaje.resx">
+      <DependentUpon>Frmpuntodeventaporcentaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPuntoVenta-Buscar.resx">
       <DependentUpon>FrmPuntoVenta-Buscar.cs</DependentUpon>
