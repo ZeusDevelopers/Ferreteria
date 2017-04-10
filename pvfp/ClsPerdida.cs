@@ -31,21 +31,22 @@ namespace PVFP
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM perdida"), conexion);
             //MySqlDataReader _reader = _comando.ExecuteReader();
-            MySqlDataAdapter ad = new MySqlDataAdapter("SELECT Perdida_ID as No_Perdida,* FROM perdida", conexion);
+            MySqlDataAdapter ad = new MySqlDataAdapter("select Perdida_ID as 'Perdida',producto.Nombre,Cantidad,Motivo from perdida" +
+                " inner join producto on perdida.Producto_ID = producto.Producto_ID ; ", conexion);
             ad.Fill(tb);
             return tb;
         }
-        //select concat(Producto_ID,' - ', Nombre) from producto;^C
-        public DataTable Cargar()
+        public DataTable productso()
         {
             DataTable tb = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("select concat(Producto_ID,' - ', Nombre) from producto;"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT * FROM perdida"), conexion);
             //MySqlDataReader _reader = _comando.ExecuteReader();
-            MySqlDataAdapter ad = new MySqlDataAdapter("select concat(Producto_ID,' - ', Nombre) from producto;", conexion);
+            MySqlDataAdapter ad = new MySqlDataAdapter("select concat(Producto_ID,' - ' ,Nombre)  as campos from producto;", conexion);
             ad.Fill(tb);
             return tb;
         }
+
         #endregion
 
     }

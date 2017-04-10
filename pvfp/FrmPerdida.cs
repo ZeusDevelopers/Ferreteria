@@ -23,7 +23,7 @@ namespace PVFP
         private void FrmPerdida_Load(object sender, EventArgs e)
         {
             cargar();
-            DataTable tb = perdida.Cargar();
+            DataTable tb = perdida.productso();
             foreach (DataRow item in tb.Rows)
             {
                 cmbproducto.Items.Add(item[0].ToString());
@@ -39,9 +39,24 @@ namespace PVFP
         {
             try
             {
-                perdida.GuardarPerdida(0, cmbproducto.SelectedIndex, txtcantidad.Text, txtmotivo.Text);
-                MessageBox.Show("Perdida agregada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                cargar();
+                if (txtcantidad.Text == "")
+                {
+                    MessageBox.Show("Ingrese Cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txtmotivo.Text == "")
+                {
+                    MessageBox.Show("Ingrese Motivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (cmbproducto.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Ingrese Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    perdida.GuardarPerdida(0, cmbproducto.SelectedIndex, txtcantidad.Text, txtmotivo.Text);
+                    MessageBox.Show("Perdida agregada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargar();
+                }
             }
             catch (Exception ex)
             {
