@@ -23,7 +23,7 @@ namespace PVFP
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Precio_Venta`,A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,`Ganancia_Venta`,A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
                     "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
                 _comando.Parameters.AddWithValue("@prod",productoid);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
@@ -32,10 +32,11 @@ namespace PVFP
             }
             catch (Exception  ex)
             {
-                if (ex.Message.Contains("Unknown column"))
-                    MessageBox.Show("No Existe Producto o Inventario Insuficiente ");
-                else
-                    MessageBox.Show(ex.Message);                 
+                //if (ex.Message.Contains("Unknown column"))
+                //    //MessageBox.Show("No Existe Producto o Inventario Insuficiente ");
+                //else
+                //    //MessageBox.Show(ex.Message);                 
+                return tabla;
             }
             return tabla;
         }

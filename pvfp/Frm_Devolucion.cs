@@ -93,7 +93,7 @@ namespace Ferreteria
             {
                 if (e.ColumnIndex!=5)
                 {
-                    Frm_consuta_recibodet rec = new Frm_consuta_recibodet(Int32.Parse(dataGridView1["No.Venta", e.RowIndex].Value.ToString()),1);
+                    Frm_consuta_recibodet rec = new Frm_consuta_recibodet(Int32.Parse(dataGridView1["No.Venta", e.RowIndex].Value.ToString()),1,this);
                     rec.Show();
                 }
                
@@ -194,9 +194,16 @@ namespace Ferreteria
             
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       public void llenado()
         {
-
+            if (TxtVenta.Text=="")
+            {
+                dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, val * 10, -1);
+            }
+            else
+            {
+                dataGridView1.DataSource = consulta.num_venta(Int32.Parse(TxtVenta.Text));
+            }
         }
     }
 }

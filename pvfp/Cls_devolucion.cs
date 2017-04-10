@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ferreteria
 {
@@ -14,6 +15,8 @@ namespace Ferreteria
 
         public void eliminar(int id_vent,int valor)
         {
+            try
+            {
             int cant=0; int numero=0;
             llenar_dtb(id_vent);
             //unnod
@@ -28,9 +31,52 @@ namespace Ferreteria
                 cant = Int32.Parse(lee["Cantidad"].ToString());
             }
             lee.Close();
-            conexion.Clone();            
-            ///////BORRAR//////////
-            conexion = ClsInicioSesion.ObtenerConexion();
+            conexion.Close();
+                ////// cambiar salida el total////////
+                /*     obtiene el subtotal         */
+                double subtot=0;
+                conexion = ClsInicioSesion.ObtenerConexion();
+                comando = "select Subtotal from salida where Salida_ID= @id";
+                _comando = new MySqlCommand(comando, conexion);
+                _comando.Parameters.AddWithValue("@id", id_vent);
+                lee = _comando.ExecuteReader();
+                while (lee.Read())
+                {
+                    subtot = Double.Parse(lee["Subtotal"].ToString());
+                }                
+                lee.Close();
+                conexion.Close();
+
+                /*               seleccionamos                   */
+                conexion = ClsInicioSesion.ObtenerConexion();
+                double c = 0;
+                comando = "select TotalProducto from salida_detalle where salida_ID=@id and Producto_ID= @sal_id";
+                _comando = new MySqlCommand(comando, conexion);
+                _comando.Parameters.AddWithValue("@id", id_vent);
+                _comando.Parameters.AddWithValue("@sal_id", elemento.Rows[valor][0].ToString());
+                lee = _comando.ExecuteReader();
+                while (lee.Read())
+                {
+                    c = Double.Parse(lee["TotalProducto"].ToString());
+                }
+                lee.Close();
+                conexion.Close();
+                double nuevo_precio = subtot - c,iva=0,tot=0;
+                /*          Nuevo Precio de la venta           */
+
+                conexion = ClsInicioSesion.ObtenerConexion();                
+                comando = "update salida set salida.Subtotal =@np,salida.IVA=@niva,salida.TotalVenta=@totven where salida.Salida_ID=@id;";
+                _comando = new MySqlCommand(comando, conexion);
+                _comando.Parameters.AddWithValue("@id", id_vent);
+                _comando.Parameters.AddWithValue("@np",nuevo_precio);
+                iva = (nuevo_precio * .16);
+                _comando.Parameters.AddWithValue("@niva", iva);
+                tot = iva + nuevo_precio;
+                _comando.Parameters.AddWithValue("@totven",tot);
+                 _comando.ExecuteReader();
+                conexion.Close();
+                    ///////BORRAR//////////
+                    conexion = ClsInicioSesion.ObtenerConexion();
             comando = "delete  from salida_detalle where  salida_ID=@id and Producto_ID= @sal_id";
             _comando = new MySqlCommand(comando, conexion);
             _comando.Parameters.AddWithValue("@id", id_vent);
@@ -58,9 +104,52 @@ namespace Ferreteria
             _comando.Parameters.AddWithValue("@id",elemento.Rows[valor][0].ToString());
             _comando.ExecuteNonQuery();
             conexion.Close();
-        }
-        //        select Producto_ID from Salida inner join salida_detalle on salida.Salida_ID=salida_detalle.Salida_ID where SALIDA.SALIDA_iD=60;
-        //;
+            string cadena = "";
+            /////////////VERIFICAR SI NO HAY PRODUCTOS PARA ELIMINAR LA VENTA///////////////
+            conexion = ClsInicioSesion.ObtenerConexion();
+            comando =
+              "select Count(Salida_id)  as t from Salida_detalle where salida_Id=@id ;";
+          _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            MySqlDataReader lee2 = _comando.ExecuteReader();
+            while (lee2.Read())
+            {
+                cadena = lee2["t"].ToString();
+            }
+            lee2.Close();
+            conexion.Close();
+            conexion.Open();
+            comando =
+                "select if (@a>0," +
+                "'uno'," +
+                "concat('delete from salida where salida_id=',@id)) as t";
+            _comando = new MySqlCommand(comando, conexion);            
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            _comando.Parameters.AddWithValue("@a", cadena);
+            lee2 = _comando.ExecuteReader();            
+            comando = "";
+            while (lee2.Read())
+            {
+                comando= lee2["t"].ToString();
+            }
+            lee2.Close();
+            conexion.Clone();
+                ///////////////////ejecuta query///////////////////
+                if (!comando.Equals("uno"))
+                {
+                    conexion = ClsInicioSesion.ObtenerConexion();
+                    _comando = new MySqlCommand(comando, conexion);
+                    _comando.ExecuteNonQuery();
+                    conexion.Close();
+                }
+                            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }       
         DataTable elemento;
         public void llenar_dtb(int id)
         {

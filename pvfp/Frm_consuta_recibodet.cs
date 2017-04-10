@@ -19,10 +19,12 @@ namespace PVFP
             InitializeComponent();
             ids = id;           
         }
-        public Frm_consuta_recibodet(int id,int tipo)
+        Frm_Devolucion frm = null;
+        public Frm_consuta_recibodet(int id,int tipo,Form from)
         {
             InitializeComponent();
             ids = id;
+            frm = from as Frm_Devolucion;
             numero = tipo;            
         }
 
@@ -49,6 +51,7 @@ namespace PVFP
                 if (r.Equals(DialogResult.Yes))
                 {
                     devol.eliminar(ids, e.RowIndex);
+                    frm.llenado();
                     this.Close();
                 }
             }

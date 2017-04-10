@@ -140,7 +140,9 @@ namespace PVFP
                 imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id,false);
                 frm.limpiar();
                 frm.unlock();
+                MessageBox.Show("$ " + cambio.ToString(), "Cambio", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.TopMost = false;
+                
                 this.Close();
 
             }
