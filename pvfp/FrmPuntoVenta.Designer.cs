@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuntoVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvVentas = new System.Windows.Forms.DataGridView();
@@ -50,6 +50,9 @@
             this.Lbl_total_final = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Gb_Venta = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Btn_mayoreo = new System.Windows.Forms.Button();
+            this.btn_porcentaje = new System.Windows.Forms.Button();
             this.btncotizar = new System.Windows.Forms.Button();
             this.btn_abrir_cajon = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
@@ -57,9 +60,6 @@
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Btn_limpiar = new System.Windows.Forms.Button();
             this.Btn_comprar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Btn_mayoreo = new System.Windows.Forms.Button();
-            this.btn_porcentaje = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -101,8 +101,8 @@
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
             this.DgvVentas.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvVentas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.DgvVentas.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DgvVentas.RowTemplate.Height = 28;
@@ -228,6 +228,30 @@
             this.Gb_Venta.Name = "Gb_Venta";
             this.Gb_Venta.TabStop = false;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Name = "label1";
+            // 
+            // Btn_mayoreo
+            // 
+            this.Btn_mayoreo.BackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.Btn_mayoreo, "Btn_mayoreo");
+            this.Btn_mayoreo.Name = "Btn_mayoreo";
+            this.Btn_mayoreo.UseVisualStyleBackColor = false;
+            this.Btn_mayoreo.Click += new System.EventHandler(this.Btn_mayoreo_Click);
+            // 
+            // btn_porcentaje
+            // 
+            this.btn_porcentaje.BackColor = System.Drawing.Color.Gainsboro;
+            resources.ApplyResources(this.btn_porcentaje, "btn_porcentaje");
+            this.btn_porcentaje.Image = global::Ferreteria.Properties.Resources.percent1;
+            this.btn_porcentaje.Name = "btn_porcentaje";
+            this.btn_porcentaje.UseVisualStyleBackColor = false;
+            this.btn_porcentaje.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btncotizar
             // 
             this.btncotizar.BackColor = System.Drawing.Color.Gainsboro;
@@ -283,30 +307,6 @@
             this.Btn_comprar.Name = "Btn_comprar";
             this.Btn_comprar.UseVisualStyleBackColor = false;
             this.Btn_comprar.Click += new System.EventHandler(this.Btn_comprar_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Name = "label1";
-            // 
-            // Btn_mayoreo
-            // 
-            this.Btn_mayoreo.BackColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.Btn_mayoreo, "Btn_mayoreo");
-            this.Btn_mayoreo.Name = "Btn_mayoreo";
-            this.Btn_mayoreo.UseVisualStyleBackColor = false;
-            this.Btn_mayoreo.Click += new System.EventHandler(this.Btn_mayoreo_Click);
-            // 
-            // btn_porcentaje
-            // 
-            this.btn_porcentaje.BackColor = System.Drawing.Color.Gainsboro;
-            resources.ApplyResources(this.btn_porcentaje, "btn_porcentaje");
-            this.btn_porcentaje.Image = global::Ferreteria.Properties.Resources.image1;
-            this.btn_porcentaje.Name = "btn_porcentaje";
-            this.btn_porcentaje.UseVisualStyleBackColor = false;
-            this.btn_porcentaje.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmPuntoVenta
             // 

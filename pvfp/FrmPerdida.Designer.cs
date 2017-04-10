@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerdida));
             this.cmbproducto = new System.Windows.Forms.ComboBox();
             this.txtcantidad = new System.Windows.Forms.TextBox();
@@ -64,7 +65,7 @@
             // 
             // txtmotivo
             // 
-            this.txtmotivo.Location = new System.Drawing.Point(27, 268);
+            this.txtmotivo.Location = new System.Drawing.Point(27, 278);
             this.txtmotivo.Margin = new System.Windows.Forms.Padding(5);
             this.txtmotivo.Multiline = true;
             this.txtmotivo.Name = "txtmotivo";
@@ -74,7 +75,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(210, 83);
+            this.label1.Location = new System.Drawing.Point(21, 73);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 32);
@@ -94,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(118, 195);
+            this.label3.Location = new System.Drawing.Point(85, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 32);
@@ -114,6 +115,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(537, 110);
             this.dataGridView1.Name = "dataGridView1";
@@ -140,7 +147,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmPerdida";
-            this.Text = "FrmPerdida";
+            this.Text = "Perdida";
             this.Load += new System.EventHandler(this.FrmPerdida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
