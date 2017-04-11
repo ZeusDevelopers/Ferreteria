@@ -579,20 +579,34 @@ namespace PVFP
                     else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
                 }
+                if (Cmb_tipo_busqueda.SelectedIndex == 1)
+                {
+                    int a = productos.BuscarFolio(Txtcodigo.Text);
+                    if (a > 0)
+                    {
+                        productos.BuscarPFolioProductoMod(Txtcodigo.Text);
+                        ArrayList Productos = productos.ArregloProductomod;
+                        cmbmodProdID.SelectedIndex = cmbmodProdID.FindString(Productos[0].ToString());
+                        string[] id = Productos[0].ToString().Split('-');
+                        MessageBox.Show(id[1].ToString(), "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+                }
 
             }
         }
 
         private void Cmb_tipo_busqueda_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (Cmb_tipo_busqueda.SelectedIndex == 1)
+            if (Cmb_tipo_busqueda.SelectedIndex == 2)
             {
                 cmbmodProdID.Visible = true;
                 label16.Visible = true;
                 Txtcodigo.Visible = false;
                 btnBuscar.Visible = false;
             }
-            if (Cmb_tipo_busqueda.SelectedIndex == 0)
+            if (Cmb_tipo_busqueda.SelectedIndex < 2)
             {
                 cmbmodProdID.Visible = false;
                 label16.Visible = false;
@@ -617,6 +631,11 @@ namespace PVFP
                 Txtcodigo.Visible = true;
                 btnBuscar.Visible = true;
             }
+        }
+
+        private void cmbmodProdID_Click(object sender, EventArgs e)
+        {
+            cmb_modificar();
         }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -355,8 +355,8 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -439,7 +439,8 @@
             this.Cmb_tipo_busqueda.FormattingEnabled = true;
             this.Cmb_tipo_busqueda.Items.AddRange(new object[] {
             resources.GetString("Cmb_tipo_busqueda.Items"),
-            resources.GetString("Cmb_tipo_busqueda.Items1")});
+            resources.GetString("Cmb_tipo_busqueda.Items1"),
+            resources.GetString("Cmb_tipo_busqueda.Items2")});
             this.Cmb_tipo_busqueda.Name = "Cmb_tipo_busqueda";
             this.Cmb_tipo_busqueda.SelectedIndexChanged += new System.EventHandler(this.Cmb_tipo_busqueda_SelectedIndexChanged);
             // 
@@ -449,6 +450,7 @@
             this.cmbmodProdID.FormattingEnabled = true;
             this.cmbmodProdID.Name = "cmbmodProdID";
             this.cmbmodProdID.SelectedIndexChanged += new System.EventHandler(this.cmbmodProdID_SelectedIndexChanged);
+            this.cmbmodProdID.Click += new System.EventHandler(this.cmbmodProdID_Click);
             // 
             // label16
             // 

@@ -122,10 +122,28 @@ namespace PVFP
         {
             try
             {
-                if (dgvProductos.RowCount > 0)
+                if (dgvProductos.RowCount <= 0)
                 {
-                
+                MessageBox.Show("Añada un producto a la lista para comprar", "Problema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               else if (cmbProveedores.SelectedItem.ToString() == ""|| cmbProveedores.SelectedIndex==0)
+                {
+                    MessageBox.Show("Elija un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (cmbLugarAlmacen.SelectedItem.ToString() == "" || cmbProveedores.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Elija un Lugar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtEntradaID.Text == "")
+                {
+                    MessageBox.Show("Ingrese Numero de Factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    
                     string[] prov = cmbProveedores.SelectedItem.ToString().Split('-');
+                    double iva = Convert.ToDouble(txtIVA.Text); double SumProd = Convert.ToDouble(txtTotalCompra.Text);
+                    double ImporteTotal = SumProd+(iva*SumProd);
                     entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"),
                         txtTotalCompra.Text, "1");
 
@@ -137,16 +155,15 @@ namespace PVFP
                         entradas.agrEntrada_Detalle(txtEntradaID.Text, id[0].ToString(),
                         dgvProductos[1, i].Value.ToString(), dgvProductos[2, i].Value.ToString(),
                         dgvProductos[3, i].Value.ToString());
-                        double cantidaProducto= Convert.ToDouble(almacen.CantidadAlmacen(id[0].ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
-                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
+                        double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + cmbLugarAlmacen.SelectedItem.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
+                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ cmbLugarAlmacen.SelectedItem.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
+                        productos.ModifPrecio(id[0].ToString(), dgvProductos[2, i]);
                     }
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();
                     txtTotalCompra.Text = "0";
                     //obtener_id();
-                }
-                else
-                { MessageBox.Show("Añada un producto a la lista para comprar", "Problema", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                 }
             }
             catch (Exception ex)
             {

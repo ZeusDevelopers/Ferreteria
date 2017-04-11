@@ -124,13 +124,13 @@ namespace PVFP
         public int BuscarCodigoBarra(string CodigoBarra)
         {
             ArregloProductomod = new ArrayList();
-            int num= 0;
+            int num = 0;
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("select count(Tabla.Producto_ID) numCosas FROM (select Producto_ID FROM producto WHERE Codigodebarra='"+CodigoBarra+"') as Tabla"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("select count(Tabla.Producto_ID) numCosas FROM (select Producto_ID FROM producto WHERE Codigodebarra='" + CodigoBarra + "') as Tabla"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                num=Convert.ToInt32(_reader["numCosas"].ToString());
+                num = Convert.ToInt32(_reader["numCosas"].ToString());
             }
             conexion.Close();
             return num;
@@ -139,7 +139,7 @@ namespace PVFP
         {
             ArregloProductomod = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM producto where Codigodebarra='"+codigobarras+"'"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM producto where Codigodebarra='" + codigobarras + "'"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
@@ -147,6 +147,53 @@ namespace PVFP
             }
             conexion.Close();
         }
-
+        public int BuscarFolio(string folio)
+        {
+            ArregloProductomod = new ArrayList();
+            int num = 0;
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("select count(Tabla.Producto_ID) numCosas FROM (select Producto_ID FROM producto WHERE Folio='" + folio + "') as Tabla"), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                num = Convert.ToInt32(_reader["numCosas"].ToString());
+            }
+            conexion.Close();
+            return num;
+        }
+        public void BuscarPFolioProductoMod(string Folio)
+        {
+            ArregloProductomod = new ArrayList();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT Nombre, Producto_ID FROM producto where Folio='" + Folio + "'"), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                ArregloProductomod.Add(_reader["Producto_ID"].ToString() + "-" + _reader["Nombre"].ToString());
+            }
+            conexion.Close();
+        }
+        public double ObtenerPrecio(string Producto_ID)
+        {
+            double num = 0;
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("select Precio_Costo FROM producto WHERE Producto_ID =" + Producto_ID), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                num = Convert.ToDouble(_reader["Precio_Costo"].ToString());
+            }
+            conexion.Close();
+            return num;
+        }
+        public void ModifPrecio(string Producto_ID, string Precio_Costo)
+        {
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `producto` SET  " +
+                "`Precio_Costo`=" + Precio_Costo +
+                " WHERE Producto_ID =" + Producto_ID ), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            conexion.Close();
+        }
     }
 }
