@@ -40,15 +40,15 @@ namespace PVFP
             }
             conexion.Close();
         }
-        public string CantidadAlmacen(string Producto_ID)
+        public string CantidadtablaAlmacen(string Producto_ID,string lugar)
         {
             ArrayList arrCantidadAlmacen = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT a_Almacen from almacen WHERE Producto_ID="+Producto_ID), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT A_"+lugar+" as lugar from almacen WHERE Producto_ID="+Producto_ID), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
-                arrCantidadAlmacen.Add(_reader["a_Almacen"].ToString());
+                arrCantidadAlmacen.Add(_reader["lugar"].ToString());
             }
             conexion.Close();
             return arrCantidadAlmacen[0].ToString();
@@ -72,15 +72,15 @@ namespace PVFP
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
-        public void AgregarDesdeEntrada(string A_Almacen,string Fecha,string Producto_ID)
+        public void AgregarDesdeEntrada(string CalntidadAAlmacen, string Lugar,string Fecha,string Producto_ID)
         {
             //UPDATE `almacen` SET `A_Almacen`=2,`FechaCompra`='04-03-2017' WHERE Producto_ID=1
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `almacen` SET `A_Almacen`= @a_almacen,"+
+            MySqlCommand _comando = new MySqlCommand(String.Format("UPDATE `almacen` SET `"+Lugar+"`= @Cantidad,"+
                 "`FechaCompra`= @fecha WHERE Producto_ID = @producto_ID"), conexion);
 
 
-            _comando.Parameters.AddWithValue("@a_Almacen", A_Almacen);
+            _comando.Parameters.AddWithValue("@Cantidad", CalntidadAAlmacen);
             _comando.Parameters.AddWithValue("@fecha", Fecha);
             _comando.Parameters.AddWithValue("@producto_ID", Producto_ID);
             MySqlDataReader _reader = _comando.ExecuteReader();

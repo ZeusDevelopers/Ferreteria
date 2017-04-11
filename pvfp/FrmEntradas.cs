@@ -157,7 +157,7 @@ namespace PVFP
                         dgvProductos[3, i].Value.ToString());
                         double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + cmbLugarAlmacen.SelectedItem.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
                         almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ cmbLugarAlmacen.SelectedItem.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
-                        productos.ModifPrecio(id[0].ToString(), dgvProductos[2, i]);
+                        productos.ModifPrecio(id[0].ToString(), dgvProductos[2, i].Value.ToString());
                     }
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();

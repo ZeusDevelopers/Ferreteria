@@ -138,6 +138,11 @@ namespace PVFP
                 frmEnAltProd AltProd = new frmEnAltProd();
                 AltProd.Show();
             }
+            else
+            {
+                string[] id= cmbProducto.SelectedItem.ToString().Split('-');
+                lblPrecioAnterior.Text = productos.ObtenerPrecio(id[0].ToString()).ToString();
+            }
         }
 
         private void btnTerminar_Click(object sender, EventArgs e)
@@ -147,14 +152,14 @@ namespace PVFP
 
         private void Cmb_tipo_busqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Cmb_tipo_busqueda.SelectedIndex == 1)
+            if (Cmb_tipo_busqueda.SelectedIndex == 2)
             {
                 cmbProducto.Visible = true;
                 label1.Visible = true;
                 Txtcodigo.Visible = false;
                 btnBuscar.Visible = false;
             }
-            if (Cmb_tipo_busqueda.SelectedIndex == 0)
+            if (Cmb_tipo_busqueda.SelectedIndex <2)
             {
                 cmbProducto.Visible = false;
                 label1.Visible = false;
@@ -176,12 +181,49 @@ namespace PVFP
                         ArrayList Productos = productos.ArregloProductomod;
                         cmbProducto.SelectedIndex = cmbProducto.FindString(Productos[0].ToString());
                         string[] id = Productos[0].ToString().Split('-');
+                       lblPrecioAnterior.Text= productos.ObtenerPrecio(id[0].ToString()).ToString();
                         MessageBox.Show(id[1].ToString(), "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
                 }
+                if (Cmb_tipo_busqueda.SelectedIndex == 1)
+                {
+                    int a = productos.BuscarFolio(Txtcodigo.Text);
+                    if (a > 0)
+                    {
+                        productos.BuscarPFolioProductoMod(Txtcodigo.Text);
+                        ArrayList Productos = productos.ArregloProductomod;
+                        cmbProducto.SelectedIndex = cmbProducto.FindString(Productos[0].ToString());
+                        string[] id = Productos[0].ToString().Split('-');
+                        lblPrecioAnterior.Text = productos.ObtenerPrecio(id[0].ToString()).ToString();
+                        MessageBox.Show(id[1].ToString(), "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+                }
+
             }
+        }
+
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
+            if (txtCostoUnit.Text == "") { txtCostoUnit.Text = "0"; }
+            lblTotProd.Visible = true;
+            txtTotalProducto.Visible = true;
+            txtTotalProducto.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUnit.Text)).ToString();
+
+        }
+
+        private void txtCostoUnit_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
+            if (txtCostoUnit.Text == "") { txtCostoUnit.Text = "0"; }
+            lblTotProd.Visible = true;
+            txtTotalProducto.Visible = true;
+            txtTotalProducto.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUnit.Text)).ToString();
+
         }
     }
 }

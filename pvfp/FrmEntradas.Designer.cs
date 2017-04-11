@@ -46,6 +46,11 @@
             this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtIVA = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbLugarAlmacen = new System.Windows.Forms.ComboBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -53,6 +58,10 @@
             // 
             // gbxEntrada
             // 
+            this.gbxEntrada.Controls.Add(this.label3);
+            this.gbxEntrada.Controls.Add(this.cmbLugarAlmacen);
+            this.gbxEntrada.Controls.Add(this.txtIVA);
+            this.gbxEntrada.Controls.Add(this.label1);
             this.gbxEntrada.Controls.Add(this.txtEntradaID);
             this.gbxEntrada.Controls.Add(this.btnMenu);
             this.gbxEntrada.Controls.Add(this.txtTotalCompra);
@@ -66,7 +75,7 @@
             this.gbxEntrada.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxEntrada.Location = new System.Drawing.Point(43, 12);
             this.gbxEntrada.Name = "gbxEntrada";
-            this.gbxEntrada.Size = new System.Drawing.Size(744, 453);
+            this.gbxEntrada.Size = new System.Drawing.Size(744, 478);
             this.gbxEntrada.TabIndex = 0;
             this.gbxEntrada.TabStop = false;
             this.gbxEntrada.Text = "Entrada";
@@ -92,7 +101,7 @@
             // txtTotalCompra
             // 
             this.txtTotalCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalCompra.Location = new System.Drawing.Point(580, 388);
+            this.txtTotalCompra.Location = new System.Drawing.Point(578, 431);
             this.txtTotalCompra.Name = "txtTotalCompra";
             this.txtTotalCompra.ReadOnly = true;
             this.txtTotalCompra.Size = new System.Drawing.Size(124, 24);
@@ -102,7 +111,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(431, 392);
+            this.label5.Location = new System.Drawing.Point(586, 395);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 20);
             this.label5.TabIndex = 11;
@@ -118,7 +127,7 @@
             this.clmCostoUnitario,
             this.clmTotal,
             this.clmBorrar});
-            this.dgvProductos.Location = new System.Drawing.Point(163, 118);
+            this.dgvProductos.Location = new System.Drawing.Point(161, 143);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.Size = new System.Drawing.Size(541, 231);
@@ -230,6 +239,47 @@
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
+            // txtIVA
+            // 
+            this.txtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIVA.Location = new System.Drawing.Point(387, 431);
+            this.txtIVA.Name = "txtIVA";
+            this.txtIVA.ReadOnly = true;
+            this.txtIVA.Size = new System.Drawing.Size(124, 24);
+            this.txtIVA.TabIndex = 16;
+            this.txtIVA.Text = "0.16";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(383, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "I.V.A.";
+            // 
+            // cmbLugarAlmacen
+            // 
+            this.cmbLugarAlmacen.FormattingEnabled = true;
+            this.cmbLugarAlmacen.Items.AddRange(new object[] {
+            "Piso",
+            "Almacen"});
+            this.cmbLugarAlmacen.Location = new System.Drawing.Point(387, 93);
+            this.cmbLugarAlmacen.Name = "cmbLugarAlmacen";
+            this.cmbLugarAlmacen.Size = new System.Drawing.Size(156, 30);
+            this.cmbLugarAlmacen.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(168, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 22);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Elija lugar, almacen o piso";
+            // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,5 +322,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCostoUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
         private System.Windows.Forms.DataGridViewButtonColumn clmBorrar;
+        private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbLugarAlmacen;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
