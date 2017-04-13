@@ -44,7 +44,7 @@ namespace PVFP
         {
             ArrayList arrCantidadAlmacen = new ArrayList();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT A_"+lugar+" as lugar from almacen WHERE Producto_ID="+Producto_ID), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("SELECT "+lugar+" as lugar from almacen WHERE Producto_ID="+Producto_ID), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {

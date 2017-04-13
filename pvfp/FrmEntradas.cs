@@ -116,6 +116,9 @@ namespace PVFP
                 }
             }
             txtTotalCompra.Text = TotalCompra.ToString();
+            double iva = Convert.ToDouble(txtIVA.Text); double SumProd = Convert.ToDouble(txtTotalCompra.Text);
+            double ImporteTotal = SumProd + (iva * SumProd);
+            txtTotalImporte.Text = ImporteTotal.ToString();
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
@@ -145,7 +148,7 @@ namespace PVFP
                     double iva = Convert.ToDouble(txtIVA.Text); double SumProd = Convert.ToDouble(txtTotalCompra.Text);
                     double ImporteTotal = SumProd+(iva*SumProd);
                     entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                        txtTotalCompra.Text, "1");
+                       ImporteTotal.ToString(), "1");
 
                     //YYYY-MM-DD mysql
 
@@ -162,8 +165,9 @@ namespace PVFP
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();
                     txtTotalCompra.Text = "0";
+                    txtTotalImporte.Text = "0";
                     //obtener_id();
-                 }
+                }
             }
             catch (Exception ex)
             {

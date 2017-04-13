@@ -617,14 +617,14 @@ namespace PVFP
 
         private void Cmb_tipo_busqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Cmb_tipo_busqueda.SelectedIndex == 1)
+            if (Cmb_tipo_busqueda.SelectedIndex == 2)
             {
                 cmbmodProdID.Visible = true;
                 label16.Visible = true;
                 Txtcodigo.Visible = false;
                 btnBuscar.Visible = false;
             }
-            if (Cmb_tipo_busqueda.SelectedIndex == 0)
+            if (Cmb_tipo_busqueda.SelectedIndex < 2)
             {
                 cmbmodProdID.Visible = false;
                 label16.Visible = false;
