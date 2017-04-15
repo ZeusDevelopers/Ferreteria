@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Ferreteria
     {
         string id_venta="";
         int tipo=0;
+        NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         FrmPuntoVenta frm;
         public Frmpuntodeventaporcentaje(string id,int tipo,Form forma)
         {
@@ -46,9 +48,11 @@ namespace Ferreteria
                 cant = double.Parse(lee["Precio_Costo"].ToString());
                 ganan = double.Parse(lee["t"].ToString());
             }
-            lblporact.Text = ganan.ToString();
-            LblPrecioactual.Text = (cant + ganan).ToString();
-            Porcentaje.Text = cant.ToString();
+            lblporact.Text = ganan.ToString("C",nfi);
+            LblPrecioactual.Text = (cant + ganan).ToString("C",nfi);
+            Porcentaje.Text = cant.ToString("C",nfi);
+            Lblpercen.Text = cant.ToString("C", nfi);
+            Lblpreact.Text= (cant + ganan).ToString("C", nfi);
             lee.Close();
             conexion.Close();
         }
@@ -69,8 +73,8 @@ namespace Ferreteria
         {
             if (TxtProcentaje.Text!="" && !(TxtProcentaje.Text=="." && TxtProcentaje.TextLength==1))
             {
-               a = Double.Parse(TxtProcentaje.Text);
-                Lbl_nuevo.Text = (a + cant).ToString();
+                a = Double.Parse(TxtProcentaje.Text);
+                Lblpreact.Text = (a + cant).ToString("C",nfi);
             }            
         }
     }

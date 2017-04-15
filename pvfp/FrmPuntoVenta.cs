@@ -131,13 +131,8 @@ namespace PVFP
         #endregion
         private void Btn_comprar_Click(object sender, EventArgs e)
         {
-
             comprar();
-
-        }
-
-
-
+        }    
         private void FrmPuntoVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
             ClsInicioSesion.Usuario = "";
@@ -198,8 +193,7 @@ namespace PVFP
 
                 btn_abrir_cajon.Enabled = false;
                 Btn_Buscar.Enabled = false;
-                Btn_cantidad.Enabled = false;
-                //Btn_comprar.Enabled = false;
+                Btn_cantidad.Enabled = false;               
                 Btn_limpiar.Enabled = false;
                 Btn_eliminar.Enabled = false;
                 btncotizar.Enabled = false;
@@ -231,14 +225,6 @@ namespace PVFP
         public void totales(string numero)
         {
             totales();
-            //subtotal = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal), 2));
-            //subtotal += Double.Parse(numero);
-            //iva = Convert.ToDouble(Decimal.Round(Convert.ToDecimal(subtotal * .16), 2));
-            //total = subtotal + iva;
-            //total = (Double)Decimal.Round(Convert.ToDecimal(total), 2);
-            //lbliva.Text = iva.ToString("C", nfi);
-            //Lblsubtotal.Text = subtotal.ToString("C", nfi);
-            //Lbl_total_final.Text = total.ToString("C", nfi);
         }
         public void totales()
         {
@@ -264,8 +250,11 @@ namespace PVFP
                 int cont = 0;
                 string n1;
                 bool codigo=true;
-                if (table.Rows.Count > 0)
-                {                   
+                var m = table.Rows[0][0].ToString();
+                if (table.Rows.Count > 0  && !m.Equals(""))
+                {
+
+                    
                     if (DgvVentas.Rows.Count>0)
                     {
                         foreach (DataGridViewRow item in DgvVentas.Rows)

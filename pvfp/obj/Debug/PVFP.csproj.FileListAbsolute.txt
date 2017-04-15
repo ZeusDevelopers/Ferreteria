@@ -296,15 +296,6 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.exe
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.pdb
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Devolucion.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Devolucion.resources
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.Common.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.Common.resources.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.Design.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.Design.resources.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\EnvDTE.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
@@ -466,3 +457,9 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Text.Logic.xml
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.xml
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
