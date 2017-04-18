@@ -19,7 +19,7 @@ namespace Ferreteria
             {
             int cant=0; int numero=0;
             llenar_dtb(id_vent);
-            //unnod
+            //Obtiene la cantidad
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             string comando = "select Cantidad from salida_detalle where salida_ID=@id and Producto_ID= @sal_id";
             MySqlCommand _comando = new MySqlCommand(comando, conexion);
@@ -165,21 +165,38 @@ namespace Ferreteria
             conexion.Close();
             
         }
-        public void Eliminar_venta(int id)
+        public void Eliminar_uno(int id_vent,int poscion,double cant)
         {
-            try
-            {            
-            string comando = "delete from salida where salida_id = @id";
+            llenar_dtb(id_vent);
+            /*                Ingreso Nueva Cantidad                   */
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand  _comando = new MySqlCommand(comando, conexion);
-                _comando.Parameters.AddWithValue("@id",id);
+            string comando = "update salida_detalle " +
+                "set Cantidad=(Cantidad-@num) where Salida_ID = @id and Producto_ID=@sal_id";
+            MySqlCommand _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            _comando.Parameters.AddWithValue("@num", cant);
+            _comando.Parameters.AddWithValue("@sal_id", elemento.Rows[poscion][0].ToString());
             _comando.ExecuteNonQuery();
             conexion.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            /*  Cambiamos el precio del total de producto             */
+            conexion = ClsInicioSesion.ObtenerConexion();
+            comando = "update salida_detalle set " +
+                "TotalProducto=(select Cantidad*PrecioUnitario)where Salida_ID=@id;";
+            _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            _comando.ExecuteNonQuery();
+            conexion.Close();
+            /*    Regresamos al A_piso el producto      */            
+            conexion = ClsInicioSesion.ObtenerConexion();
+            comando = "UPDATe almacen set almacen.A_Piso=@num+A_piso " +
+                "where almacen.Producto_ID=@id";
+            _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@num", cant);
+            _comando.Parameters.AddWithValue("@id", elemento.Rows[poscion][0].ToString());
+            _comando.ExecuteNonQuery();
+            conexion.Close();
+
         }
+
     }
 }

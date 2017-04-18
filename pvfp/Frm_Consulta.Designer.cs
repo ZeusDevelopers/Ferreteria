@@ -51,6 +51,7 @@
             this.Cmb_Empleado = new System.Windows.Forms.ComboBox();
             this.chck_empleado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.GrBx_Fecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Gb_No_Venta.SuspendLayout();
@@ -291,12 +292,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Empleado";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(142, 374);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(965, 250);
+            this.webBrowser1.TabIndex = 35;
+            // 
             // Frm_Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1518, 796);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.gbempleado);
             this.Controls.Add(this.Gb_No_Venta);
             this.Controls.Add(this.Btn_Buscar);
@@ -347,5 +357,6 @@
         private System.Windows.Forms.CheckBox chck_empleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Cmb_Empleado;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

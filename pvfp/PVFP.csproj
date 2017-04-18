@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>24</ApplicationRevision>
+    <PublisherName>ZeusDevelopers</PublisherName>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -65,8 +66,8 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp">
-      <HintPath>..\..\..\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common">
       <HintPath>..\..\..\..\Desktop\New folder\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -134,6 +135,7 @@
     <Compile Include="Cls_Consulta.cs" />
     <Compile Include="Cls_devolucion.cs" />
     <Compile Include="Cls_imprimir_ticket.cs" />
+    <Compile Include="cls_uno.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,12 +255,6 @@
     <Compile Include="Frm_consuta_recibodet.Designer.cs">
       <DependentUpon>Frm_consuta_recibodet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_cotizacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_cotizacion.designer.cs">
-      <DependentUpon>Frm_cotizacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_Devolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,9 +321,6 @@
     <EmbeddedResource Include="Frm_consuta_recibodet.resx">
       <DependentUpon>Frm_consuta_recibodet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_cotizacion.resx">
-      <DependentUpon>Frm_cotizacion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Devolucion.resx">
       <DependentUpon>Frm_Devolucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +330,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>

@@ -47,12 +47,47 @@ namespace PVFP
         {
             if (e.ColumnIndex==3)
             {
-                DialogResult r= MessageBox.Show("Desea eliminar este producto de la venta", "eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (r.Equals(DialogResult.Yes))
+                double val_act = Double.Parse(dataGridView1[1, e.RowIndex].Value.ToString());
+                if (val_act > 1)
                 {
-                    devol.eliminar(ids, e.RowIndex);
-                    frm.llenado();
-                    this.Close();
+
+                    DialogResult resul = MessageBox.Show("¿Desea eliminar la venta?" + Environment.NewLine + Environment.NewLine +
+                        "(Presione No para fijar cantidad)", "eliminar", MessageBoxButtons.YesNoCancel,
+                        MessageBoxIcon.Information);
+                    if (resul.Equals(DialogResult.No))
+                    {
+                        string r = Clsinputbox.ShowDialog("Cantidad", "Cantidad a eliminar", val_act);
+                        double n_r = Double.Parse(r);
+                        if (n_r > val_act)
+                        {
+                            MessageBox.Show("La cantidad es incorrecta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if(n_r == val_act)
+                        {
+                            devol.eliminar(ids, e.RowIndex);
+                            frm.llenado();
+                            this.Close();
+                        }
+                        else
+                        {
+                            devol.Eliminar_uno(ids, e.RowIndex,Double.Parse(r));
+                        }
+                    }
+                    else if (resul.Equals(DialogResult.Yes))
+                    {
+
+                    }
+                    
+                }
+                else
+                {
+                    DialogResult r = MessageBox.Show("Desea eliminar este producto de la venta", "eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (r.Equals(DialogResult.Yes))
+                    {
+                        devol.eliminar(ids, e.RowIndex);
+                        frm.llenado();
+                        this.Close();
+                    }
                 }
             }
         }

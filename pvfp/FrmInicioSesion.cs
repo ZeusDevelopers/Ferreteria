@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreteria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,8 @@ namespace PVFP
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
             //conexion.ConsultarPath();
+            //cls_uno m = new cls_uno();
+            //m.Genera();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

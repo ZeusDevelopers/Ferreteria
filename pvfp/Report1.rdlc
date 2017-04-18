@@ -52,16 +52,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.48611in</Width>
+                  <Width>2.24653in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.76042in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.76042in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.00695in</Width>
+                  <Width>0.76737in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -337,9 +337,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.06944in</Top>
-            <Left>0.43403in</Left>
+            <Left>0.26737in</Left>
             <Height>0.5in</Height>
-            <Width>5.49306in</Width>
+            <Width>4.53474in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -363,10 +363,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Fecha</rd:DefaultName>
-            <Top>0.79514in</Top>
-            <Left>3.8993in</Left>
+            <Top>0.54514in</Top>
+            <Left>3.9618in</Left>
             <Height>0.32639in</Height>
-            <Width>0.88195in</Width>
+            <Width>0.94445in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -395,7 +395,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Fecha</rd:DefaultName>
-            <Top>1.19098in</Top>
+            <Top>0.94098in</Top>
             <Left>4.19791in</Left>
             <Height>0.32639in</Height>
             <Width>0.58334in</Width>
@@ -427,7 +427,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Fecha</rd:DefaultName>
-            <Top>1.54515in</Top>
+            <Top>1.29515in</Top>
             <Left>4.19791in</Left>
             <Height>0.32639in</Height>
             <Width>0.625in</Width>
@@ -459,7 +459,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>sub</rd:DefaultName>
-            <Top>0.79514in</Top>
+            <Top>0.54514in</Top>
             <Left>4.82292in</Left>
             <Height>0.32639in</Height>
             <Width>1in</Width>
@@ -491,7 +491,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>iva</rd:DefaultName>
-            <Top>1.19098in</Top>
+            <Top>0.94098in</Top>
             <Left>4.80903in</Left>
             <Height>0.32639in</Height>
             <Width>1in</Width>
@@ -523,7 +523,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>tot</rd:DefaultName>
-            <Top>1.57292in</Top>
+            <Top>1.32292in</Top>
             <Left>4.82292in</Left>
             <Height>0.29861in</Height>
             <Width>1in</Width>
@@ -539,13 +539,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.99654in</Height>
+        <Height>4.75371cm</Height>
         <Style />
       </Body>
-      <Width>7.51736in</Width>
+      <Width>16.23662cm</Width>
       <Page>
         <PageHeader>
-          <Height>1.85638in</Height>
+          <Height>4.71521cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -698,7 +698,7 @@
               <Top>1.56472in</Top>
               <Left>0.26737in</Left>
               <Height>0.16666in</Height>
-              <Width>6.84028in</Width>
+              <Width>4.81249in</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -777,82 +777,13 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageFooter>
-          <Height>0.95139in</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Fecha3">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Ave.Tecnologico # 1060 Colonia Jardines de la montana C.P 84063      Telefono: (631)315-8024
-                                                          Nogales,Sonora,Mexico</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>precios sujetos a cambios</Value>
-                      <Style>
-                        <FontStyle>Italic</FontStyle>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>.</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Fecha</rd:DefaultName>
-              <Top>0.35417in</Top>
-              <Left>0.26042in</Left>
-              <Height>0.55556in</Height>
-              <Width>6.63889in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Image Name="Image3">
-              <Source>Embedded</Source>
-              <Value>BANNER1</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.06944in</Top>
-              <Left>0.26737in</Left>
-              <Height>0.21528in</Height>
-              <Width>6.63194in</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>27.94cm</PageHeight>
+        <PageWidth>21.59cm</PageWidth>
+        <LeftMargin>2.54cm</LeftMargin>
+        <RightMargin>2.54cm</RightMargin>
+        <TopMargin>2.54cm</TopMargin>
+        <BottomMargin>2.54cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -2776,6 +2707,7 @@ v8d/of8AGuvf4x/R/n1737/Kv+mf/rJ79/jv9D/jXXv8Y/o/z6979/lX/TP/ANZPfv8AHf6H/Guvf4x/
 73737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvfvfuvde9+9+69173737r3Xvf8A/9k=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>03e0f379-f7bb-4abb-ab33-17074004350c</rd:ReportID>
 </Report>

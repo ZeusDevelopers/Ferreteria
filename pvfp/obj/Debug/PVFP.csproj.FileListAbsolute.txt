@@ -352,7 +352,6 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\zh-CHS\Microsoft.Repor
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_cotizacion.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -463,3 +462,5 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.dll
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.xml

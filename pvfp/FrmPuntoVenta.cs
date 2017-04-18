@@ -18,7 +18,7 @@ namespace PVFP
         FrmPuntoVenta_final frmventa;
         ClsVentas clsventa = new ClsVentas();
         NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-        bool admin=false,mayorer=false;
+        bool admin = false, mayorer = false;
         double subtotal = 0, iva = 0, total = 0, roww = -1;
         public FrmPuntoVenta(bool ad)
         {
@@ -132,7 +132,7 @@ namespace PVFP
         private void Btn_comprar_Click(object sender, EventArgs e)
         {
             comprar();
-        }    
+        }
         private void FrmPuntoVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
             ClsInicioSesion.Usuario = "";
@@ -182,18 +182,19 @@ namespace PVFP
 
             }
             catch (Exception)
-            {                                
+            {
 
             }
             return bHandled;
         }
         private void comprar()
         {
-            if (!( total <= 0)) {
+            if (!(total <= 0))
+            {
 
                 btn_abrir_cajon.Enabled = false;
                 Btn_Buscar.Enabled = false;
-                Btn_cantidad.Enabled = false;               
+                Btn_cantidad.Enabled = false;
                 Btn_limpiar.Enabled = false;
                 Btn_eliminar.Enabled = false;
                 btncotizar.Enabled = false;
@@ -245,29 +246,30 @@ namespace PVFP
         {
             try
             {
-                DataTable table = mayorer ? clsventa.VerProducto(Txtcodigo.Text,1) : clsventa.VerProducto(Txtcodigo.Text);
+                DataTable table = mayorer ? clsventa.VerProducto(Txtcodigo.Text, 1) : clsventa.VerProducto(Txtcodigo.Text);
                 double num1;
                 int cont = 0;
                 string n1;
-                bool codigo=true;
+                bool codigo = true;
                 var m = table.Rows[0][0].ToString();
-                if (table.Rows.Count > 0  && !m.Equals(""))
+                if (table.Rows.Count > 0 && !m.Equals(""))
                 {
 
-                    
-                    if (DgvVentas.Rows.Count>0)
+
+                    if (DgvVentas.Rows.Count > 0)
                     {
                         foreach (DataGridViewRow item in DgvVentas.Rows)
-                        {                                          
-                            if (item.Cells[1].Value.ToString()==table.Rows[0][0].ToString() && item.Cells[2].Value.ToString() == table.Rows[0][1].ToString())
+                        {
+                            if (item.Cells[1].Value.ToString() == table.Rows[0][0].ToString() && item.Cells[2].Value.ToString() == table.Rows[0][1].ToString())
                             {
-                                double a =Double.Parse(item.Cells[3].Value.ToString());
-                                if (a>0)
-                                {                                    
-                                    DgvVentas[3, cont].Value = a - 1;
+                                double a = Double.Parse(item.Cells[3].Value.ToString());
+                                double b = Double.Parse(item.Cells[0].Value.ToString());
+                                if (b < a)
+                                {
+                                    DgvVentas[3, cont].Value = a;
                                     DgvVentas[0, cont].Value = (Double.Parse(DgvVentas[0, cont].Value.ToString()) + 1);
                                     codigo = false;
-                                    DgvVentas[5, cont].Value = (Double.Parse( DgvVentas[0, cont].Value.ToString()) * Double.Parse(DgvVentas[4, cont].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
+                                    DgvVentas[5, cont].Value = (Double.Parse(DgvVentas[0, cont].Value.ToString()) * Double.Parse(DgvVentas[4, cont].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
                                     totales(DgvVentas[5, cont].Value.ToString().Replace("$", String.Empty));
                                     Txtcodigo.Text = "";
                                     break;
@@ -278,12 +280,12 @@ namespace PVFP
                                     Txtcodigo.Text = "";
                                     MessageBox.Show("Inventario insuficiente");
                                 }
-                                
+
                             }
                             cont++;
                         }
                     }
-                  
+
 
 
                     if (!codigo)
@@ -296,9 +298,9 @@ namespace PVFP
                         {
                             num1 = Double.Parse(elemento[2].ToString());
                             n1 = num1.ToString("C", nfi);
-                            double p = Double.Parse(elemento[3].ToString()) - 1;
+                            double p = Double.Parse(elemento[3].ToString());
                             DgvVentas.Rows.Add(1, elemento[0], elemento[1], p, n1, n1, elemento[4], elemento[5]);
-                            totales(elemento[2].ToString());                            
+                            totales(elemento[2].ToString());
                             Txtcodigo.Text = "";
                         }
                         totales();
@@ -339,13 +341,14 @@ namespace PVFP
             DataGridViewColumn row = DgvVentas.Columns[4];
             row.DefaultCellStyle.BackColor = Color.LawnGreen;
             Gb_Venta.BackColor = Color.FromArgb(5, 255, 255, 255);
-            DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;            
+            DgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dolar = ClsInicioSesion.Dolar;
             if (admin)
             {
                 Btn_mayoreo.Visible = true;
                 btn_porcentaje.Visible = true;
             }
+            
         }
         double dolar = 0;
         private void Btn_cantidad_Click(object sender, EventArgs e)
@@ -364,7 +367,10 @@ namespace PVFP
         {
             if (roww != -1)
             {
-                string cant = Clsinputbox.ShowDialog("INGRESE CANTIDAD", "CANTIDAD", roww);
+
+                string cant = Clsinputbox.ShowDialog("INGRESE CANTIDAD", "CANTIDAD",
+                    Double.Parse(DgvVentas[0, Int32.Parse(roww.ToString())].Value.ToString()));
+
                 if (cant != "empty")
                 {
 
@@ -372,34 +378,25 @@ namespace PVFP
                     int a = 0;
                     bool ent = Int32.TryParse(cant, out a) ? true : false, entra = false;
                     string option = cant.GetType().ToString();
-                    double m = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
-                    if (Double.Parse(cant) <= m && Double.Parse(cant) != 0)
+                    
+                    string x = DgvVentas[6, Int32.Parse(roww.ToString())].Value.ToString();
+                    if ((x.Contains("Kit") || x.Contains("Unidad")) && ent)
                     {
-                        string x = DgvVentas[6, Int32.Parse(roww.ToString())].Value.ToString();
-                        if ((x.Contains("Kit") || x.Contains("Unidad")) && ent)
-                        {
-                            entra = true;
-                        }
-                        else if (x.Contains("Decimal") || x.Contains("Metro") && !ent)
-                        {
-                            entra = true;
-                        }
+                        entra = true;
+                    }
+                    else if (x.Contains("Decimal") || x.Contains("Metro") && !ent)
+                    {
+                        entra = true;
+                    }
+                    double m = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
+                    if ((Double.Parse(cant) > 0 && Double.Parse(cant) <= (m)) )
+                    {
                         if (entra)
                         {
-                            double ini = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
-                            double cmp = Double.Parse(DgvVentas[0, Int32.Parse(roww.ToString())].Value.ToString());
-                            if (cmp > Double.Parse(cant))
-                            {
-                                DgvVentas[3, Int32.Parse(roww.ToString())].Value = ini + (cmp-Double.Parse(cant)) ;
-                            }
-                            else
-                            {
-                                DgvVentas[3, Int32.Parse(roww.ToString())].Value = ini - Double.Parse(cant);
-                            }
-                            DgvVentas[0, Int32.Parse(roww.ToString())].Value = cant;                        
-                            DgvVentas[5, Int32.Parse(roww.ToString())].Value = (Double.Parse(cant) * Double.Parse(DgvVentas[4, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
-                          
-                           
+                            double ini = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());                            
+                            DgvVentas[0, Int32.Parse(roww.ToString())].Value = Double.Parse(cant);
+                            DgvVentas[5, Int32.Parse(roww.ToString())].Value = (Double.Parse(DgvVentas[0, Int32.Parse(roww.ToString())].Value.ToString())
+                            * Double.Parse(DgvVentas[4, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
                             roww = -1;
                             totales();
                         }
@@ -441,7 +438,7 @@ namespace PVFP
             {
                 MessageBox.Show("Seleccione Un elemento");
             }
-            DgvVentas.ClearSelection();            
+            DgvVentas.ClearSelection();
         }
         private void btn_abrir_cajon_Click(object sender, EventArgs e)
         {
@@ -462,7 +459,7 @@ namespace PVFP
             roww = e.RowIndex;
         }
 
-       
+
 
         internal void dato_encontrado(string codigobarras, string producto, string precio, int stock, string um, string productoid)
         {
@@ -481,10 +478,15 @@ namespace PVFP
         private void btncotizar_Click(object sender, EventArgs e)
         {
             cotizar();
-           
+
         }
-        public void cotizar() {
-           
+        public void cotizar()
+        {
+            try
+            {
+
+            if (DgvVentas.Rows.Count > 0)
+            {
                 DataTable dt = new DataTable();
                 foreach (DataGridViewColumn col in DgvVentas.Columns)
                 {
@@ -499,13 +501,41 @@ namespace PVFP
                         dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
                     }
                     dt.Rows.Add(dr);
+                }                
+                cls_reporte cl = new cls_reporte();
+                DataTable tb = new DataTable();
+                tb.Columns.Add("Articulo");
+                tb.Columns.Add("Cantidad");
+                tb.Columns.Add("Precio");
+                tb.Columns.Add("Importe");
+                for (int i = 0; i < 29; i++)
+                {
+
+
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        tb.Rows.Add(item[2], item[0], item[4], item[5]);
+                    }
                 }
+                NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
+                cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
 
-                Frm_cotizacion frm = new Frm_cotizacion(dt, iva, subtotal, total);
-                frm.Show();
-                
-           
+            }
+            else
+            {
+                MessageBox.Show("No hay productos para cotizat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
+            }
+            catch (Exception ex)
+            {
+                //ex.Message = "The process cannot access the file 'C:\\Users\\salaz\\Documents\\GitHub\\Ferreteria\\PVFP\\bin\\Debug\\cotizar.pdf' "
+                //because it is being used by another process.
+                if (ex.Message.Contains("because it is being used by another process."))
+                MessageBox.Show("Cierre la cotizacion actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         public void cotizar1()
         {
@@ -535,20 +565,22 @@ namespace PVFP
                     ven.Columns.RemoveAt(4);
                     ven.Columns.RemoveAt(4);
                     ob.imprime(ven, total.ToString(), "", subtotal, iva, total, 0, true);
+
+
                     limpiar();
                 }
             }
             else
             {
-                MessageBox.Show("No hay articulos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No hay articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void porcentaje(string n_price)
         {//4
             string a = DgvVentas[0, Convert.ToInt32(roww)].Value.ToString();
             double dato1 = Double.Parse(n_price) * Double.Parse(a.ToString());
-            DgvVentas[4,Convert.ToInt32(roww)].Value =Double.Parse(n_price).ToString("C",nfi);
-            DgvVentas[5, Convert.ToInt32(roww)].Value =dato1.ToString("C", nfi);
+            DgvVentas[4, Convert.ToInt32(roww)].Value = Double.Parse(n_price).ToString("C", nfi);
+            DgvVentas[5, Convert.ToInt32(roww)].Value = dato1.ToString("C", nfi);
             //Double.Parse();
             totales();
             roww = -1;
@@ -601,16 +633,16 @@ namespace PVFP
         }
         public void limpiar()
         {
-           
-                lbliva.Text = "$ 0.00";
-                Lblsubtotal.Text = "$ 0.00";
-                Lbl_total_final.Text = "$ 0.00";
-                iva = 0;
-                subtotal = 0;
-                total = 0;
-                DgvVentas.Rows.Clear();
-                DgvVentas.Refresh();
-            
+
+            lbliva.Text = "$ 0.00";
+            Lblsubtotal.Text = "$ 0.00";
+            Lbl_total_final.Text = "$ 0.00";
+            iva = 0;
+            subtotal = 0;
+            total = 0;
+            DgvVentas.Rows.Clear();
+            DgvVentas.Refresh();
+
             DgvVentas.ClearSelection();
         }
         public void unlock()
