@@ -171,7 +171,7 @@ namespace PVFP
             else
             {
                 val2 = dolar * double.Parse(txtdolar.Text);
-                Lbl_total_dlls.Text = val2.ToString();
+                Lbl_total_dlls.Text = val2.ToString("C",nfi);
                 total = val1 + val2 + val3;
                 Lblcam.Text = (-venta + total).ToString("C", nfi);
                 cambio = -venta + total;
@@ -242,7 +242,7 @@ namespace PVFP
             caracteres_de_aceptacion(Txtdinero);
             caracteres_de_aceptacion(txtdolar);
             caracteres_de_aceptacion(txttarjeta);
-            LblTot.Text = venta.ToString();
+            LblTot.Text = venta.ToString("C",nfi);
             LblDolarPrecio.Text = "Dolar Bancomer " + Environment.NewLine + "$ "+dolar.ToString();
         }        
         private void Txtdinero_TextChanged(object sender, EventArgs e)

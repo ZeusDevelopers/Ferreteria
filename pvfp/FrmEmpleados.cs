@@ -191,6 +191,12 @@ namespace PVFP
             cmbsexo.SelectedIndex = -1;
         }
 
-        
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            limpiar_campos();
+            id_emp = -1;
+            Btn_eliminar.Enabled = false;
+            btnagregar.Text = "Agregar";
+        }
     }
 }

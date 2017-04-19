@@ -16,6 +16,7 @@ namespace PVFP
 
 
             Application.Run(new FrmInicioSesion());
+            //Application.Run(new FrmPuntoVenta_Buscar());
             //Application.Run(new Frmpuntodeventaporcentaje("uno",1));
             // Application.Run(new Frm_Consulta());
             //Application.Run(new FrmPerdida());

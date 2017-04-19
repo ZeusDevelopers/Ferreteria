@@ -17,7 +17,7 @@ namespace Ferreteria
         {
             try
             {
-            int cant=0; int numero=0;
+            double cant=0, numero=0;
             llenar_dtb(id_vent);
             //Obtiene la cantidad
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
@@ -28,7 +28,7 @@ namespace Ferreteria
             MySqlDataReader lee = _comando.ExecuteReader();
             while (lee.Read())
             {
-                cant = Int32.Parse(lee["Cantidad"].ToString());
+                cant = Double.Parse(lee["Cantidad"].ToString());
             }
             lee.Close();
             conexion.Close();
@@ -91,7 +91,7 @@ namespace Ferreteria
             lee = _comando.ExecuteReader();            
             while (lee.Read())
             {
-                numero = Int32.Parse(lee["A_piso"].ToString());
+                numero = Double.Parse(lee["A_piso"].ToString());
             }
             numero = numero + cant;
             lee.Close();

@@ -49,12 +49,14 @@
             this.txtapellido = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.Dgv_datos = new System.Windows.Forms.DataGridView();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_datos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Btn_cancelar);
             this.groupBox3.Controls.Add(this.Btn_eliminar);
             this.groupBox3.Controls.Add(this.btnagregar);
             this.groupBox3.Controls.Add(this.label8);
@@ -76,7 +78,6 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-//            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // Btn_eliminar
             // 
@@ -195,6 +196,13 @@
             this.Dgv_datos.Name = "Dgv_datos";
             this.Dgv_datos.RowTemplate.Height = 28;
             // 
+            // Btn_cancelar
+            // 
+            resources.ApplyResources(this.Btn_cancelar, "Btn_cancelar");
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
+            // 
             // FrmEmpleados
             // 
             resources.ApplyResources(this, "$this");
@@ -233,5 +241,6 @@
         private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.DataGridView Dgv_datos;
         private System.Windows.Forms.Button Btn_eliminar;
+        private System.Windows.Forms.Button Btn_cancelar;
     }
 }

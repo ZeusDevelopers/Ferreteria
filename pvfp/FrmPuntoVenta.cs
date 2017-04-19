@@ -324,7 +324,7 @@ namespace PVFP
         {
             try
             {
-                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this);
+                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this,mayorer);
                 frm.Show();
             }
             catch (Exception ex)
@@ -461,20 +461,48 @@ namespace PVFP
 
 
 
-        internal void dato_encontrado(string codigobarras, string producto, string precio, int stock, string um, string productoid)
+        internal void dato_encontrado(string codigobarras, string producto, string precio, double stock, string um, string productoid)
         {
             try
             {
-                DgvVentas.Rows.Add(1, codigobarras, producto, stock, Double.Parse(precio).ToString("C", nfi), Double.Parse(precio).ToString("C", nfi), um, productoid);
+                if (DgvVentas.Rows.Count>0)
+                {
+                    // DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);                    
+                    bool aceptado = false; 
+                    foreach(DataGridViewRow x in DgvVentas.Rows)
+                    {
+                        if (x.Cells[1].Value.Equals(codigobarras) && x.Cells[2].Value.Equals(producto))
+                        {
+                            double m = Double.Parse(DgvVentas[3, x.Index].Value.ToString());
+                            aceptado = true;
+                            if (double.Parse(x.Cells[0].Value.ToString())<m)
+                            {
+                                DgvVentas[0, x.Index].Value = Double.Parse(DgvVentas[0,x.Index].Value.ToString())+1;                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("Inventario Insuficiente");
+                            }
+                        }
+                    }
+                    if (!aceptado)
+                    {
+                        DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);
+                    }
+                }
+                else
+                {
+                    DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);
+                }
                 totales(precio);
                 DgvVentas.ClearSelection();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void btncotizar_Click(object sender, EventArgs e)
         {
             cotizar();
@@ -507,23 +535,21 @@ namespace PVFP
                 tb.Columns.Add("Articulo");
                 tb.Columns.Add("Cantidad");
                 tb.Columns.Add("Precio");
-                tb.Columns.Add("Importe");
-                for (int i = 0; i < 29; i++)
-                {
+                tb.Columns.Add("Importe");               
 
 
                     foreach (DataRow item in dt.Rows)
                     {
                         tb.Rows.Add(item[2], item[0], item[4], item[5]);
                     }
-                }
+                
                 NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
                 cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
 
             }
             else
             {
-                MessageBox.Show("No hay productos para cotizat", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             }

@@ -71,11 +71,15 @@ namespace PVFP
                         else
                         {
                             devol.Eliminar_uno(ids, e.RowIndex,Double.Parse(r));
+                            frm.llenado();
+                            this.Close();
                         }
                     }
                     else if (resul.Equals(DialogResult.Yes))
                     {
-
+                        devol.eliminar(ids, e.RowIndex);
+                        frm.llenado();
+                        this.Close();
                     }
                     
                 }

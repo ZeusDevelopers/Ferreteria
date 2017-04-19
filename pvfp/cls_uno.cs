@@ -16,7 +16,7 @@ namespace Ferreteria
         public void Genera(DataTable tb,string usu,string sub,string iva,string tot)
         {            
             MyClass m = new MyClass();
-            m.CreatePDF(tb,usu,sub,iva,tot);
+            m.CreatePDF(tb,usu,sub,iva,tot);            
             System.Diagnostics.Process.Start(@".\cotizar.pdf");
         }
     }

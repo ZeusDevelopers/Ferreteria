@@ -63,6 +63,16 @@ namespace Ferreteria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _checked {
+            get {
+                object obj = ResourceManager.GetObject("checked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap abrir {
             get {
                 object obj = ResourceManager.GetObject("abrir", resourceCulture);
@@ -276,6 +286,16 @@ namespace Ferreteria.Properties {
         internal static System.Drawing.Bitmap Lupa {
             get {
                 object obj = ResourceManager.GetObject("Lupa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lupa_2 {
+            get {
+                object obj = ResourceManager.GetObject("Lupa-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

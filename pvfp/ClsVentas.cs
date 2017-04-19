@@ -121,7 +121,7 @@ namespace PVFP
             
             int numero;
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand("update almacen set almacen.A_piso = almacen.A_piso - @cant where almacen.Producto_ID = @id", conexion);
+            MySqlCommand _comando = new MySqlCommand("update almacen set almacen.A_piso =Round(almacen.A_piso - @cant,2 )where almacen.Producto_ID = @id", conexion);
             _comando.Parameters.AddWithValue("@cant", canti);
             _comando.Parameters.AddWithValue("@id", id);
             _comando.ExecuteNonQuery();          
