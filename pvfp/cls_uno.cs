@@ -142,7 +142,8 @@ public class ITextEvents : PdfPageEventHelper
 
     // this is the BaseFont we are going to use for the header / footer
     BaseFont bf = null;
-   
+    BaseFont btf = null;
+
     // This keeps track of the creation time
     DateTime PrintTime = DateTime.Now;
 
@@ -171,6 +172,8 @@ public class ITextEvents : PdfPageEventHelper
         {
             PrintTime = DateTime.Now;
             bf = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            btf = BaseFont.CreateFont(BaseFont.HELVETICA_OBLIQUE
+                , BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
             cb = writer.DirectContent;
             headerTemplate = cb.CreateTemplate(10, 100);
             footerTemplate = cb.CreateTemplate(50, 50);
@@ -204,16 +207,31 @@ public class ITextEvents : PdfPageEventHelper
         //PdfPCell pdfCell1 = new PdfPCell();
         PdfPCell pdfCell1 = new PdfPCell(p1Header);
         PdfPCell pdfCell3 = new PdfPCell();
-       
+
         //Add paging to footer
         {
-            //cb.BeginText();
-            //cb.SetFontAndSize(bf, 12);
-            //cb.SetTextMatrix(document.PageSize.GetRight(180), document.PageSize.GetBottom(30));
-            //cb.ShowText(text);
-            //cb.EndText();
-            //float len = bf.GetWidthPoint(text, 12);
-            //cb.AddTemplate(footerTemplate, document.PageSize.GetRight(180) + len, document.PageSize.GetBottom(30));
+            cb.BeginText();
+            cb.SetFontAndSize(bf, 9);
+            cb.SetTextMatrix(document.PageSize.GetRight(550), document.PageSize.GetBottom(40));
+            string mni = "Ave.Tecnologico # 1060 Colonia Jardines de la montana C.P 84063         Telefono: (631)315-8024"+Environment.NewLine
+                ;
+            cb.ShowText(mni);                       
+            cb.EndText();
+            float len = bf.GetWidthPoint(mni, 10);
+            cb.AddTemplate(footerTemplate, document.PageSize.GetRight(550) + len, document.PageSize.GetBottom(40));
+
+            cb.BeginText();
+            cb.SetFontAndSize(btf, 9);
+            cb.SetTextMatrix(document.PageSize.GetRight(550), document.PageSize.GetBottom(30));
+            mni = "Precio sujeto a cambios";
+            cb.ShowText(mni);
+            
+            cb.EndText();
+            len = btf.GetWidthPoint(mni, 10);
+            cb.AddTemplate(footerTemplate, document.PageSize.GetRight(550) + len, document.PageSize.GetBottom(30));
+
+
+
         }
         //Row 2
         PdfPCell pdfCell4 = new PdfPCell(new Phrase("MARITZA FELIX QUINONEZ                                                                                                            "+ "Fecha: " + PrintTime.ToShortDateString()+
@@ -288,7 +306,7 @@ public class ITextEvents : PdfPageEventHelper
         footerTemplate.BeginText();
         footerTemplate.SetFontAndSize(bf, 12);
         footerTemplate.SetTextMatrix(0, 0);
-        footerTemplate.ShowText((writer.PageNumber - 1).ToString());
+        //footerTemplate.ShowText((writer.PageNumber - 1).ToString());
         footerTemplate.EndText();
 
 
