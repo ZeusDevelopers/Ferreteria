@@ -464,3 +464,4 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmconsulta_vntas.resources

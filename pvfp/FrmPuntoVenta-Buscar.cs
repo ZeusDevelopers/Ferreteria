@@ -46,7 +46,7 @@ namespace PVFP
                 if (Txtcodigo.Text != "")
                 {
                     tb = venta.VerTodosProductos(Cmb_tipo_busqueda.SelectedIndex, Txtcodigo.Text,_admin);
-                    var c = tb.Rows[0].ItemArray[0].ToString();
+                    var c = tb.Rows.Count>0 ? tb.Rows[0].ItemArray[0].ToString():"";
                     if (c=="")
                     {
                         MessageBox.Show("No existe Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);

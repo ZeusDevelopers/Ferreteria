@@ -51,7 +51,7 @@
             this.Cmb_Empleado = new System.Windows.Forms.ComboBox();
             this.chck_empleado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.btn_nuevo_form = new System.Windows.Forms.Button();
             this.GrBx_Fecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Gb_No_Venta.SuspendLayout();
@@ -102,7 +102,7 @@
             this.GrBx_Fecha.Controls.Add(this.Lbl_fechinicio);
             this.GrBx_Fecha.Controls.Add(this.LblFechFin);
             this.GrBx_Fecha.Controls.Add(this.DtpFechafianl);
-            this.GrBx_Fecha.Location = new System.Drawing.Point(53, 31);
+            this.GrBx_Fecha.Location = new System.Drawing.Point(18, 21);
             this.GrBx_Fecha.Name = "GrBx_Fecha";
             this.GrBx_Fecha.Size = new System.Drawing.Size(1026, 102);
             this.GrBx_Fecha.TabIndex = 5;
@@ -152,7 +152,7 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 318);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 308);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -166,7 +166,7 @@
             // 
             this.LblCantidad.AutoSize = true;
             this.LblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCantidad.Location = new System.Drawing.Point(836, 282);
+            this.LblCantidad.Location = new System.Drawing.Point(801, 272);
             this.LblCantidad.Name = "LblCantidad";
             this.LblCantidad.Size = new System.Drawing.Size(33, 29);
             this.LblCantidad.TabIndex = 8;
@@ -174,7 +174,7 @@
             // 
             // txtintervalo
             // 
-            this.txtintervalo.Location = new System.Drawing.Point(772, 281);
+            this.txtintervalo.Location = new System.Drawing.Point(737, 271);
             this.txtintervalo.Name = "txtintervalo";
             this.txtintervalo.Size = new System.Drawing.Size(58, 26);
             this.txtintervalo.TabIndex = 9;
@@ -182,7 +182,7 @@
             // 
             // Btn_anteriro
             // 
-            this.Btn_anteriro.Location = new System.Drawing.Point(888, 276);
+            this.Btn_anteriro.Location = new System.Drawing.Point(853, 266);
             this.Btn_anteriro.Name = "Btn_anteriro";
             this.Btn_anteriro.Size = new System.Drawing.Size(75, 36);
             this.Btn_anteriro.TabIndex = 10;
@@ -192,7 +192,7 @@
             // 
             // btn_siguiente
             // 
-            this.btn_siguiente.Location = new System.Drawing.Point(691, 276);
+            this.btn_siguiente.Location = new System.Drawing.Point(656, 266);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(75, 36);
             this.btn_siguiente.TabIndex = 11;
@@ -205,7 +205,7 @@
             this.Btn_Buscar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
             this.Btn_Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Buscar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Btn_Buscar.Location = new System.Drawing.Point(53, 267);
+            this.Btn_Buscar.Location = new System.Drawing.Point(18, 257);
             this.Btn_Buscar.Name = "Btn_Buscar";
             this.Btn_Buscar.Size = new System.Drawing.Size(262, 44);
             this.Btn_Buscar.TabIndex = 32;
@@ -218,7 +218,7 @@
             this.Gb_No_Venta.Controls.Add(this.chckventa);
             this.Gb_No_Venta.Controls.Add(this.LblNumventa);
             this.Gb_No_Venta.Controls.Add(this.TxtVenta);
-            this.Gb_No_Venta.Location = new System.Drawing.Point(53, 143);
+            this.Gb_No_Venta.Location = new System.Drawing.Point(18, 133);
             this.Gb_No_Venta.Name = "Gb_No_Venta";
             this.Gb_No_Venta.Size = new System.Drawing.Size(437, 78);
             this.Gb_No_Venta.TabIndex = 33;
@@ -257,7 +257,7 @@
             this.gbempleado.Controls.Add(this.Cmb_Empleado);
             this.gbempleado.Controls.Add(this.chck_empleado);
             this.gbempleado.Controls.Add(this.label1);
-            this.gbempleado.Location = new System.Drawing.Point(526, 143);
+            this.gbempleado.Location = new System.Drawing.Point(491, 133);
             this.gbempleado.Name = "gbempleado";
             this.gbempleado.Size = new System.Drawing.Size(437, 78);
             this.gbempleado.TabIndex = 34;
@@ -292,21 +292,25 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Empleado";
             // 
-            // webBrowser1
+            // btn_nuevo_form
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(142, 374);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(965, 250);
-            this.webBrowser1.TabIndex = 35;
+            this.btn_nuevo_form.Image = global::Ferreteria.Properties.Resources.text3;
+            this.btn_nuevo_form.Location = new System.Drawing.Point(934, 144);
+            this.btn_nuevo_form.Name = "btn_nuevo_form";
+            this.btn_nuevo_form.Size = new System.Drawing.Size(110, 81);
+            this.btn_nuevo_form.TabIndex = 35;
+            this.btn_nuevo_form.Text = "Ventas";
+            this.btn_nuevo_form.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_nuevo_form.UseVisualStyleBackColor = true;
+            this.btn_nuevo_form.Click += new System.EventHandler(this.btn_nuevo_form_Click);
             // 
             // Frm_Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1518, 796);
-            this.Controls.Add(this.webBrowser1);
+            this.ClientSize = new System.Drawing.Size(1128, 796);
+            this.Controls.Add(this.btn_nuevo_form);
             this.Controls.Add(this.gbempleado);
             this.Controls.Add(this.Gb_No_Venta);
             this.Controls.Add(this.Btn_Buscar);
@@ -357,6 +361,6 @@
         private System.Windows.Forms.CheckBox chck_empleado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Cmb_Empleado;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button btn_nuevo_form;
     }
 }

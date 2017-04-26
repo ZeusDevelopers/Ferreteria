@@ -135,7 +135,10 @@ namespace PVFP
         }
         private void FrmPuntoVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ClsInicioSesion.Usuario = "";
+            if (!admin)
+            {
+                ClsInicioSesion.Usuario = "";
+            }            
         }
         private void Txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -384,7 +387,7 @@ namespace PVFP
                     {
                         entra = true;
                     }
-                    else if (x.Contains("Decimal") || x.Contains("Metro") && !ent)
+                    else if (x.Contains("Decimal") || x.Contains("Metro") || x.Contains("Litro") && !ent)
                     {
                         entra = true;
                     }
@@ -505,8 +508,7 @@ namespace PVFP
         }
         private void btncotizar_Click(object sender, EventArgs e)
         {
-            cotizar();
-
+            cotizar();            
         }
         public void cotizar()
         {
@@ -623,6 +625,11 @@ namespace PVFP
             {
                 MessageBox.Show("Seleccione Un elemento");
             }
+        }
+
+        private void Txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Btn_mayoreo_Click(object sender, EventArgs e)

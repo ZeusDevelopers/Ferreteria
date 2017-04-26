@@ -21,7 +21,9 @@ namespace PVFP
         int id_emp;
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
+            this.Width = this.Width + 150;
             cargar();
+            
         }
 
         private void btnagregar_Click(object sender, EventArgs e)

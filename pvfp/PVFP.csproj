@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <PublisherName>ZeusDevelopers</PublisherName>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>37</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -135,6 +135,7 @@
     <Compile Include="Cls_Consulta.cs" />
     <Compile Include="Cls_devolucion.cs" />
     <Compile Include="Cls_imprimir_ticket.cs" />
+    <Compile Include="Cls_reporte_ventas.cs" />
     <Compile Include="cls_uno.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -152,6 +153,12 @@
     </Compile>
     <Compile Include="FrmCategorias.Designer.cs">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmconsulta_vntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmconsulta_vntas.Designer.cs">
+      <DependentUpon>Frmconsulta_vntas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEmpleados.cs">
       <SubType>Form</SubType>
@@ -269,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmconsulta_vntas.resx">
+      <DependentUpon>Frmconsulta_vntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEmpleados.resx">
       <DependentUpon>FrmEmpleados.cs</DependentUpon>

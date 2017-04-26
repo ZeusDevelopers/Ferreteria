@@ -196,6 +196,30 @@ namespace Ferreteria
             _comando.ExecuteNonQuery();
             conexion.Close();
 
+
+            conexion = ClsInicioSesion.ObtenerConexion();
+            comando = "select round(Sum(TotalProducto),2) as uno from salida_detalle " +
+                "where Salida_ID = @id";
+            _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            MySqlDataReader lee = _comando.ExecuteReader();
+            double sub=0, tot=0, iva=0;
+            while (lee.Read())
+            {
+                sub = Double.Parse(lee["uno"].ToString());
+            }
+            iva = sub * .16;
+            tot = sub + iva;            
+            conexion = ClsInicioSesion.ObtenerConexion();
+            comando = "update salida sd set sd.Subtotal=@sub,sd.IVA=@iva,sd.TotalVenta=@tot " +
+                "where sd.Salida_ID = @id; ";
+            _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@sub", sub);
+            _comando.Parameters.AddWithValue("@iva", iva);
+            _comando.Parameters.AddWithValue("@tot", tot);
+            _comando.Parameters.AddWithValue("@id", id_vent);
+            _comando.ExecuteNonQuery();
+            conexion.Close();
         }
 
     }

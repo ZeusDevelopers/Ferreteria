@@ -16,8 +16,18 @@ namespace PVFP
     {
         public DataTable VerTodosProductos(int tipo,string param,bool ad)
         {
-            string conca = ad ? "SUM(`Ganancia_Mayoreo`+Precio_Costo)" : "SUM(`Ganancia_Venta`+Precio_Costo)";
-            string comando = "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`," + conca+" as 'Precio de venta', A_Piso as 'Inventario',UM,producto.Producto_ID FROM `producto` inner join  almacen on almacen.Producto_ID = producto.Producto_ID ";
+            //   string opcion = tipo == 2 ? "Ganancia_Mayoreo`+Precio_Costo" : "`Ganancia_Venta`+Precio_Costo ";
+
+            string conca = "";
+            if (tipo == 2)
+            {
+                  conca = ad ? "`Ganancia_Mayoreo`+Precio_Costo" : "`Ganancia_Venta`+Precio_Costo";
+            }
+            else
+            {
+                 conca = ad ? "SUM(`Ganancia_Mayoreo`+Precio_Costo)" : "SUM(`Ganancia_Venta`+Precio_Costo)";
+            }
+                string comando = "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`," + conca+" as 'Precio de venta', A_Piso as 'Inventario',UM,producto.Producto_ID FROM `producto` inner join  almacen on almacen.Producto_ID = producto.Producto_ID ";
             switch (tipo)
             {
                 case 0:
@@ -27,11 +37,12 @@ namespace PVFP
                     comando += "where producto.Folio=@v";
                     break;
                 case 2:
-                    comando += "where producto.Nombre like concat('%',@v,'%')";
+                    comando += " where producto.Nombre like concat('%',@v,'%') ";
                     break;
                 default:
                     break;
             }
+            comando += "  and almacen.A_Piso>0 ";
             DataTable tabla = new DataTable();
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
             MySqlCommand _comando = new MySqlCommand(comando, conexion);

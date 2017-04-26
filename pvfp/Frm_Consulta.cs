@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreteria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,7 +108,7 @@ namespace PVFP
                 dataGridView1.DataSource = consulta.num_venta(Int32.Parse(TxtVenta.Text));
                 tipo = "cuatro";
             }
-            else if (!chckfecha.Checked && !chckventa.Checked && chck_empleado.Checked)
+            else if (!chckfecha.Checked && !chckventa.Checked && chck_empleado.Checked && Cmb_Empleado.SelectedItem!=null)
             {
                 tipo = "tres";
                 int intervalo = consulta.intervalo(Int32.Parse(Cmb_Empleado.SelectedItem.ToString().Split('-')[0].ToString()));
@@ -127,7 +128,7 @@ namespace PVFP
                 {
                     tipo = "uno";
                     dataGridView1.DataSource = null;
-                    fech_ini = Dtpfechinicio.Value.ToString("yyyy-MM-dd hh:mm:ss");
+                    fech_ini = Dtpfechinicio.Value.ToString("yyyy-MM-dd 00:00:00");
                     fech_fin = DtpFechafianl.Value.ToString("yyyy-MM-dd hh:mm:ss");
                     a = chck_empleado.Checked && Cmb_Empleado.SelectedIndex!=-1 ? Cmb_Empleado.SelectedItem.ToString().Split('-')[0] : "-1";
                     int intervalo = consulta.intervalo(fech_ini, fech_fin,Int32.Parse(a));                    
@@ -198,6 +199,7 @@ namespace PVFP
             {
                 Cmb_Empleado.Items.Add(item[0].ToString());
             }
+            this.Width = this.Width + 20;
         }
 
         private void chck_empleado_CheckedChanged(object sender, EventArgs e)
@@ -238,6 +240,12 @@ namespace PVFP
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+        }
+
+        private void btn_nuevo_form_Click(object sender, EventArgs e)
+        {
+            Frmconsulta_vntas ferre = new Frmconsulta_vntas();
+            ferre.Show();
         }
     }
 }
