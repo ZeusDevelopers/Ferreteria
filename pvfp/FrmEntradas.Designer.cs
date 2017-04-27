@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             this.gbxEntrada = new System.Windows.Forms.GroupBox();
+            this.lblIndex = new System.Windows.Forms.Label();
+            this.lblImporte = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbLugarAlmacen = new System.Windows.Forms.ComboBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtCostoUn = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtTotalImporte = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtIVA = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEntradaID = new System.Windows.Forms.TextBox();
@@ -38,11 +46,6 @@
             this.txtTotalCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnComprar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgrProductos = new System.Windows.Forms.Button();
@@ -51,8 +54,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.txtTotalImporte = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmlugar = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmbtnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -60,10 +68,16 @@
             // 
             // gbxEntrada
             // 
+            this.gbxEntrada.Controls.Add(this.lblIndex);
+            this.gbxEntrada.Controls.Add(this.lblImporte);
+            this.gbxEntrada.Controls.Add(this.label8);
+            this.gbxEntrada.Controls.Add(this.label7);
+            this.gbxEntrada.Controls.Add(this.label3);
+            this.gbxEntrada.Controls.Add(this.btnEditar);
+            this.gbxEntrada.Controls.Add(this.txtCostoUn);
+            this.gbxEntrada.Controls.Add(this.txtCantidad);
             this.gbxEntrada.Controls.Add(this.txtTotalImporte);
             this.gbxEntrada.Controls.Add(this.label6);
-            this.gbxEntrada.Controls.Add(this.label3);
-            this.gbxEntrada.Controls.Add(this.cmbLugarAlmacen);
             this.gbxEntrada.Controls.Add(this.txtIVA);
             this.gbxEntrada.Controls.Add(this.label1);
             this.gbxEntrada.Controls.Add(this.txtEntradaID);
@@ -79,31 +93,118 @@
             this.gbxEntrada.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxEntrada.Location = new System.Drawing.Point(43, 12);
             this.gbxEntrada.Name = "gbxEntrada";
-            this.gbxEntrada.Size = new System.Drawing.Size(744, 478);
+            this.gbxEntrada.Size = new System.Drawing.Size(1000, 478);
             this.gbxEntrada.TabIndex = 0;
             this.gbxEntrada.TabStop = false;
             this.gbxEntrada.Text = "Entrada";
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.AutoSize = true;
+            this.lblIndex.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIndex.Location = new System.Drawing.Point(957, 88);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(22, 22);
+            this.lblIndex.TabIndex = 29;
+            this.lblIndex.Text = "...";
+            this.lblIndex.Visible = false;
+            // 
+            // lblImporte
+            // 
+            this.lblImporte.AutoSize = true;
+            this.lblImporte.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImporte.Location = new System.Drawing.Point(750, 82);
+            this.lblImporte.Name = "lblImporte";
+            this.lblImporte.Size = new System.Drawing.Size(22, 22);
+            this.lblImporte.TabIndex = 28;
+            this.lblImporte.Text = "...";
+            this.lblImporte.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(653, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(71, 22);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Importe";
+            this.label8.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(345, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 22);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Costo Unitario";
+            this.label7.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(168, 93);
+            this.label3.Location = new System.Drawing.Point(99, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 22);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Elija lugar, almacen o piso";
+            this.label3.Size = new System.Drawing.Size(79, 22);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Cantidad";
+            this.label3.Visible = false;
             // 
-            // cmbLugarAlmacen
+            // btnEditar
             // 
-            this.cmbLugarAlmacen.FormattingEnabled = true;
-            this.cmbLugarAlmacen.Items.AddRange(new object[] {
-            "Piso",
-            "Almacen"});
-            this.cmbLugarAlmacen.Location = new System.Drawing.Point(387, 93);
-            this.cmbLugarAlmacen.Name = "cmbLugarAlmacen";
-            this.cmbLugarAlmacen.Size = new System.Drawing.Size(156, 30);
-            this.cmbLugarAlmacen.TabIndex = 17;
+            this.btnEditar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(853, 69);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(98, 53);
+            this.btnEditar.TabIndex = 24;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // txtCostoUn
+            // 
+            this.txtCostoUn.Location = new System.Drawing.Point(470, 81);
+            this.txtCostoUn.Name = "txtCostoUn";
+            this.txtCostoUn.Size = new System.Drawing.Size(125, 29);
+            this.txtCostoUn.TabIndex = 22;
+            this.txtCostoUn.Text = "0";
+            this.txtCostoUn.Visible = false;
+            this.txtCostoUn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoUn_KeyPress);
+            this.txtCostoUn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCostoUn_KeyUp);
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(194, 81);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(129, 29);
+            this.txtCantidad.TabIndex = 21;
+            this.txtCantidad.Text = "0";
+            this.txtCantidad.Visible = false;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            this.txtCantidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyUp);
+            // 
+            // txtTotalImporte
+            // 
+            this.txtTotalImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalImporte.Location = new System.Drawing.Point(559, 431);
+            this.txtTotalImporte.Name = "txtTotalImporte";
+            this.txtTotalImporte.ReadOnly = true;
+            this.txtTotalImporte.Size = new System.Drawing.Size(124, 24);
+            this.txtTotalImporte.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(555, 395);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Total Importe";
             // 
             // txtIVA
             // 
@@ -171,43 +272,15 @@
             this.clmCantidad,
             this.clmCostoUnitario,
             this.clmTotal,
-            this.clmBorrar});
+            this.clmlugar,
+            this.clmBorrar,
+            this.clmbtnEditar});
+            this.dgvProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvProductos.Location = new System.Drawing.Point(161, 143);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(541, 231);
+            this.dgvProductos.Size = new System.Drawing.Size(833, 231);
             this.dgvProductos.TabIndex = 10;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
-            // 
-            // clmProducto
-            // 
-            this.clmProducto.HeaderText = "Producto";
-            this.clmProducto.Name = "clmProducto";
-            this.clmProducto.ReadOnly = true;
-            // 
-            // clmCantidad
-            // 
-            this.clmCantidad.HeaderText = "Cantidad";
-            this.clmCantidad.Name = "clmCantidad";
-            this.clmCantidad.ReadOnly = true;
-            // 
-            // clmCostoUnitario
-            // 
-            this.clmCostoUnitario.HeaderText = "CostoUnitario";
-            this.clmCostoUnitario.Name = "clmCostoUnitario";
-            this.clmCostoUnitario.ReadOnly = true;
-            // 
-            // clmTotal
-            // 
-            this.clmTotal.HeaderText = "Importe";
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
-            // 
-            // clmBorrar
-            // 
-            this.clmBorrar.HeaderText = "Quitar";
-            this.clmBorrar.Name = "clmBorrar";
-            this.clmBorrar.ReadOnly = true;
             // 
             // btnComprar
             // 
@@ -270,10 +343,9 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(827, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1055, 36);
             this.menuStrip1.TabIndex = 21;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // xToolStripMenuItem
             // 
@@ -284,31 +356,57 @@
             this.xToolStripMenuItem.Text = "X";
             this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
             // 
-            // txtTotalImporte
+            // clmProducto
             // 
-            this.txtTotalImporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalImporte.Location = new System.Drawing.Point(559, 431);
-            this.txtTotalImporte.Name = "txtTotalImporte";
-            this.txtTotalImporte.ReadOnly = true;
-            this.txtTotalImporte.Size = new System.Drawing.Size(124, 24);
-            this.txtTotalImporte.TabIndex = 20;
+            this.clmProducto.HeaderText = "Producto";
+            this.clmProducto.Name = "clmProducto";
+            this.clmProducto.ReadOnly = true;
+            this.clmProducto.Width = 200;
             // 
-            // label6
+            // clmCantidad
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(555, 395);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 20);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Total Importe";
+            this.clmCantidad.HeaderText = "Cantidad";
+            this.clmCantidad.Name = "clmCantidad";
+            this.clmCantidad.ReadOnly = true;
+            // 
+            // clmCostoUnitario
+            // 
+            this.clmCostoUnitario.HeaderText = "CostoUnitario";
+            this.clmCostoUnitario.Name = "clmCostoUnitario";
+            this.clmCostoUnitario.ReadOnly = true;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.HeaderText = "Importe";
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
+            // clmlugar
+            // 
+            this.clmlugar.HeaderText = "Lugar";
+            this.clmlugar.Items.AddRange(new object[] {
+            "Piso",
+            "Almacen"});
+            this.clmlugar.Name = "clmlugar";
+            // 
+            // clmBorrar
+            // 
+            this.clmBorrar.HeaderText = "Quitar";
+            this.clmBorrar.Name = "clmBorrar";
+            this.clmBorrar.ReadOnly = true;
+            // 
+            // clmbtnEditar
+            // 
+            this.clmbtnEditar.HeaderText = "Editar";
+            this.clmbtnEditar.Name = "clmbtnEditar";
+            this.clmbtnEditar.ReadOnly = true;
             // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(827, 492);
+            this.ClientSize = new System.Drawing.Size(1055, 492);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gbxEntrada);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -340,17 +438,25 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEntradaID;
+        private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TextBox txtTotalImporte;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblImporte;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtCostoUn;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label lblIndex;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCostoUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTotal;
+        private System.Windows.Forms.DataGridViewComboBoxColumn clmlugar;
         private System.Windows.Forms.DataGridViewButtonColumn clmBorrar;
-        private System.Windows.Forms.TextBox txtIVA;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbLugarAlmacen;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TextBox txtTotalImporte;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewButtonColumn clmbtnEditar;
     }
 }

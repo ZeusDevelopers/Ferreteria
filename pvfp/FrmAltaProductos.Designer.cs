@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaProductos));
             this.tabControlALTA = new System.Windows.Forms.TabControl();
             this.tabPAlta = new System.Windows.Forms.TabPage();
@@ -313,6 +313,7 @@
             resources.ApplyResources(this.txtPrecioCosto, "txtPrecioCosto");
             this.txtPrecioCosto.Name = "txtPrecioCosto";
             this.txtPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCosto_KeyPress);
+            this.txtPrecioCosto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrecioCosto_KeyUp);
             // 
             // tabPMostrar
             // 
@@ -355,8 +356,8 @@
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvProducto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -556,6 +557,7 @@
             resources.ApplyResources(this.txtmodPrecioCosto, "txtmodPrecioCosto");
             this.txtmodPrecioCosto.Name = "txtmodPrecioCosto";
             this.txtmodPrecioCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmodPrecioCosto_KeyPress);
+            this.txtmodPrecioCosto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtmodPrecioCosto_KeyUp);
             // 
             // btnEliminar
             // 

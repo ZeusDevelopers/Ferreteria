@@ -142,6 +142,7 @@ namespace PVFP
             {
                 string[] id= cmbProducto.SelectedItem.ToString().Split('-');
                 lblPrecioAnterior.Text = productos.ObtenerPrecio(id[0].ToString()).ToString();
+                txtCostoUnit.Text = lblPrecioAnterior.Text;
             }
         }
 
@@ -182,6 +183,7 @@ namespace PVFP
                         cmbProducto.SelectedIndex = cmbProducto.FindString(Productos[0].ToString());
                         string[] id = Productos[0].ToString().Split('-');
                        lblPrecioAnterior.Text= productos.ObtenerPrecio(id[0].ToString()).ToString();
+                        txtCostoUnit.Text = lblPrecioAnterior.Text;
                         MessageBox.Show(id[1].ToString(), "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -197,6 +199,7 @@ namespace PVFP
                         cmbProducto.SelectedIndex = cmbProducto.FindString(Productos[0].ToString());
                         string[] id = Productos[0].ToString().Split('-');
                         lblPrecioAnterior.Text = productos.ObtenerPrecio(id[0].ToString()).ToString();
+                        txtCostoUnit.Text = lblPrecioAnterior.Text;
                         MessageBox.Show(id[1].ToString(), "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else { MessageBox.Show("Producto no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }

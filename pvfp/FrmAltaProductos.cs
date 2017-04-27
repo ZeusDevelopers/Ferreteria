@@ -458,19 +458,43 @@ namespace PVFP
                 }
             }
         }
+        private void txtPrecioCosto_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
+            {
+                txtPrecioCosto.Text = "0";
+
+            }
+            if (txtPrecioVenta.Text == "" || txtPrecioVenta.Text == "0")
+            { txtPrecioVenta.Text = "0";}
+            if (txtPrecioMayore.Text == "" || txtPrecioMayore.Text == "0")
+            {txtPrecioMayore.Text = "0";}
+                    double pc = Convert.ToDouble(txtPrecioCosto.Text);
+                    double porcVent = Convert.ToDouble(txtPrecioVenta.Text);
+                    double precioVenta = pc + (pc * (porcVent / 100));
+                    lblPrecioVenta.Text = precioVenta.ToString();
+            
+                double porcMayore = Convert.ToDouble(txtPrecioMayore.Text);
+                double precioMayore = pc + (pc * (porcMayore / 100));
+                lblPrecioMayoreo.Text = precioMayore.ToString();
+
+            
+
+
+
+        }
         private void txtPrecioVenta_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
             {
                 txtPrecioCosto.Text = "0";
-                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
             else
             {
                 if (txtPrecioVenta.Text == "" || txtPrecioVenta.Text == "0")
                 {
                     txtPrecioVenta.Text = "0";
-                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -488,14 +512,12 @@ namespace PVFP
             if (txtPrecioCosto.Text == "" || txtPrecioCosto.Text == "0")
             {
                 txtPrecioCosto.Text = "0";
-                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (txtPrecioMayore.Text == "" || txtPrecioMayore.Text == "0")
                 {
                     txtPrecioMayore.Text = "0";
-                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -507,30 +529,45 @@ namespace PVFP
                 }
             }
         }
+        private void txtmodPrecioCosto_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtmodPrecioCosto.Text == "" || txtmodPrecioCosto.Text == "0")
+            {
+                txtmodPrecioCosto.Text = "0";
 
+            }
+            if (txtmodPrecioVenta.Text == "" || txtmodPrecioVenta.Text == "0")
+            {
+                txtmodPrecioVenta.Text = "0";
+            }
+            if (txtmodPrecioMayoreo.Text == "" || txtmodPrecioMayoreo.Text == "0")
+            { txtmodPrecioMayoreo.Text = "0"; }
+            double pc = Convert.ToDouble(txtmodPrecioCosto.Text);
+            double porcVent = Convert.ToDouble(txtmodPrecioVenta.Text);
+            double precioVenta = pc + (pc * (porcVent / 100));
+            lblmodPrecioVenta.Text = precioVenta.ToString();
+
+            double porcMayore = Convert.ToDouble(txtmodPrecioMayoreo.Text);
+            double precioMayore = pc + (pc * (porcMayore / 100));
+            lblmodPrecioMayoreo.Text = precioMayore.ToString();
+        }
         private void txtmodPrecioVenta_KeyUp(object sender, KeyEventArgs e)
         {
             if (txtmodPrecioCosto.Text == "" || txtmodPrecioCosto.Text == "0")
             {
                 txtmodPrecioCosto.Text = "0";
-                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
-            else
-            {
-                if (txtmodPrecioVenta.Text == "" || txtmodPrecioVenta.Text == "0")
-                {
-                    txtmodPrecioVenta.Text = "0";
-                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+            if (txtmodPrecioVenta.Text == "" || txtmodPrecioVenta.Text == "0")
+                {txtmodPrecioVenta.Text = "0";}
+              
                     double pc = Convert.ToDouble(txtmodPrecioCosto.Text);
                     double porcVent = Convert.ToDouble(txtmodPrecioVenta.Text);
                     double precioVenta = pc + (pc * (porcVent / 100));
                     lblmodPrecioVenta.Text = precioVenta.ToString();
+            
 
-                }
-            }
+
         }
 
         private void txtmodPrecioMayoreo_KeyUp(object sender, KeyEventArgs e)
@@ -538,24 +575,16 @@ namespace PVFP
             if (txtmodPrecioCosto.Text == "" || txtmodPrecioCosto.Text == "0")
             {
                 txtmodPrecioCosto.Text = "0";
-                MessageBox.Show("Agregue un valor al precio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                if (txtmodPrecioMayoreo.Text == "" || txtmodPrecioMayoreo.Text == "0")
-                {
-                    txtmodPrecioMayoreo.Text = "0";
-                    MessageBox.Show("Agregue un valor entero para calcular un resultado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+            if (txtmodPrecioMayoreo.Text == "" || txtmodPrecioMayoreo.Text == "0")
+                { txtmodPrecioMayoreo.Text = "0";}
+                
                     double pc = Convert.ToDouble(txtmodPrecioCosto.Text);
                     double porcMayore = Convert.ToDouble(txtmodPrecioMayoreo.Text);
                     double precioMayore = pc + (pc * (porcMayore / 100));
                     lblmodPrecioMayoreo.Text = precioMayore.ToString();
 
-                }
-            }
+              
         }
 
         #endregion
@@ -637,5 +666,7 @@ namespace PVFP
         {
             cmb_modificar();
         }
+
+        
     }
 }

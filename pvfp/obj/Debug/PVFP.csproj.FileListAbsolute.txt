@@ -360,9 +360,6 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.SqlServer.Ty
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmpuntodeventaporcentaje.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\PVFP.csproj.Ferreteria.exe.config
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmpuntodeventaporcentaje.resources
-C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_cotizacion.resources
-C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\RdlCompile.cache
-C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\RdlCompile.compiled
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -465,3 +462,6 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.dll
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.xml
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmconsulta_vntas.resources
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.dll
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\itextsharp.xml
+C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frmconsulta_vntas.resources

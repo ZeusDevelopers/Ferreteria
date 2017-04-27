@@ -53,7 +53,7 @@ namespace PVFP
         public void AgregarRenglon(string renglon)
         {
             string[] r = renglon.Split('|');
-            dgvProductos.Rows.Add(r[0], r[1], r[2],r[3], r[4]);
+            dgvProductos.Rows.Add(r[0], r[1], r[2],r[3],"Almacen", r[4],"Editar" );
             CalularTotal();
         }
         #region LoadForma
@@ -83,7 +83,7 @@ namespace PVFP
             llenarProvedores();
         }
 
-    
+
         #endregion
         //private void btnTerminar_Click(object sender, EventArgs e)
         //{
@@ -93,18 +93,50 @@ namespace PVFP
         //    txtTotalProducto.Visible = false;
         //    CalularTotal();
         //}
-        
 
-       
+
+
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvProductos.CurrentCell.ColumnIndex == 4)
+            if (dgvProductos.CurrentCell.ColumnIndex == 5)
             {
                 dgvProductos.Rows.RemoveAt(dgvProductos.CurrentCell.RowIndex);
                 CalularTotal();
+
+            }
+            if (dgvProductos.CurrentCell.ColumnIndex == 6)
+            {
+                txtCantidad.Text = dgvProductos[1, dgvProductos.CurrentCell.RowIndex].Value.ToString();
+                txtCostoUn.Text = dgvProductos[2, dgvProductos.CurrentCell.RowIndex].Value.ToString();
+                lblImporte.Text = dgvProductos[3, dgvProductos.CurrentCell.RowIndex].Value.ToString();
+                lblIndex.Text = dgvProductos.CurrentCell.RowIndex.ToString();
+
+                txtCantidad.Visible = true;
+                txtCostoUn.Visible = true;
+                lblImporte.Visible = true;
+                btnEditar.Visible = true;
+                label3.Visible = true;
+                label7.Visible = true;
+                label8.Visible = true;
+
             }
         }
+        private void btnEditar_Click(object sender, EventArgs e)
+        { int index =Convert.ToInt32(lblIndex.Text);
+            dgvProductos[1, index].Value=txtCantidad.Text.ToString();
+            dgvProductos[2, index].Value= txtCostoUn.Text.ToString();
+            dgvProductos[3, index].Value = lblImporte.Text.ToString();
+            CalularTotal();
+            txtCantidad.Visible = false;
+            txtCostoUn.Visible = false;
+            lblImporte.Visible = false;
+            btnEditar.Visible = false;
+            label3.Visible = false;
+            label7.Visible = false;
+            label8.Visible = false;
+        }
+        
         private void CalularTotal()
         {
             double TotalCompra = 0;
@@ -133,10 +165,10 @@ namespace PVFP
                 {
                     MessageBox.Show("Elija un proveedor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (cmbLugarAlmacen.SelectedItem.ToString() == "" || cmbProveedores.SelectedIndex == 0)
-                {
-                    MessageBox.Show("Elija un Lugar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                //else if (cmbLugarAlmacen.SelectedItem.ToString() == "" || cmbProveedores.SelectedIndex == 0)
+                //{
+                //    MessageBox.Show("Elija un Lugar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
                 else if (txtEntradaID.Text == "")
                 {
                     MessageBox.Show("Ingrese Numero de Factura", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -158,8 +190,8 @@ namespace PVFP
                         entradas.agrEntrada_Detalle(txtEntradaID.Text, id[0].ToString(),
                         dgvProductos[1, i].Value.ToString(), dgvProductos[2, i].Value.ToString(),
                         dgvProductos[3, i].Value.ToString());
-                        double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + cmbLugarAlmacen.SelectedItem.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
-                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ cmbLugarAlmacen.SelectedItem.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
+                        double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + dgvProductos[5, i].Value.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
+                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ dgvProductos[5, i].Value.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
                         productos.ModifPrecio(id[0].ToString(), dgvProductos[2, i].Value.ToString());
                     }
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -186,10 +218,78 @@ namespace PVFP
         {
             this.Close();
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
+            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
 
+            if ((txtCantidad.Text.Contains(wDecimal)))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void txtCostoUn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+
+            if ((txtCostoUn.Text.Contains(wDecimal)))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.' || e.KeyChar == '\b')
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        private void txtCantidad_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
+            if (txtCostoUn.Text == "") { txtCostoUn.Text = "0"; }
+            lblImporte.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUn.Text)).ToString();
+        }
+
+        private void txtCostoUn_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
+            if (txtCostoUn.Text == "") { txtCostoUn.Text = "0"; }
+            lblImporte.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUn.Text)).ToString();
         }
     }
 }
