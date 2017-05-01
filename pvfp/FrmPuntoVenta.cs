@@ -537,13 +537,16 @@ namespace PVFP
                 tb.Columns.Add("Articulo");
                 tb.Columns.Add("Cantidad");
                 tb.Columns.Add("Precio");
-                tb.Columns.Add("Importe");               
+                tb.Columns.Add("Importe");
 
-
-                    foreach (DataRow item in dt.Rows)
+                    for (int i = 0; i < 50; i++)
                     {
-                        tb.Rows.Add(item[2], item[0], item[4], item[5]);
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            tb.Rows.Add(item[2], item[0], item[4], item[5]);
+                        }
                     }
+                   
                 
                 NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
                 cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
