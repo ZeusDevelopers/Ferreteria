@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradas));
             this.gbxEntrada = new System.Windows.Forms.GroupBox();
             this.lblIndex = new System.Windows.Forms.Label();
             this.lblImporte = new System.Windows.Forms.Label();
@@ -46,14 +49,6 @@
             this.txtTotalCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnComprar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAgrProductos = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbProveedores = new System.Windows.Forms.ComboBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.clmProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCostoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +56,38 @@
             this.clmlugar = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clmBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmbtnEditar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnComprar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAgrProductos = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbProveedores = new System.Windows.Forms.ComboBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.tabCEntrada = new System.Windows.Forms.TabControl();
+            this.RegistrarEntrada = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmb_tipo_busquedaMostrar = new System.Windows.Forms.ComboBox();
+            this.Btn_Buscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dgvEntradas = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clmentNumFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmentProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEntFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEntTotalCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEntEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEntVer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvEntDetalle = new System.Windows.Forms.DataGridView();
+            this.btnVerEntradas = new System.Windows.Forms.Button();
             this.gbxEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            this.tabCEntrada.SuspendLayout();
+            this.RegistrarEntrada.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxEntrada
@@ -91,9 +115,9 @@
             this.gbxEntrada.Controls.Add(this.label2);
             this.gbxEntrada.Controls.Add(this.cmbProveedores);
             this.gbxEntrada.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxEntrada.Location = new System.Drawing.Point(43, 12);
+            this.gbxEntrada.Location = new System.Drawing.Point(30, 17);
             this.gbxEntrada.Name = "gbxEntrada";
-            this.gbxEntrada.Size = new System.Drawing.Size(1000, 478);
+            this.gbxEntrada.Size = new System.Drawing.Size(1009, 476);
             this.gbxEntrada.TabIndex = 0;
             this.gbxEntrada.TabStop = false;
             this.gbxEntrada.Text = "Entrada";
@@ -282,6 +306,51 @@
             this.dgvProductos.TabIndex = 10;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
+            // clmProducto
+            // 
+            this.clmProducto.HeaderText = "Producto";
+            this.clmProducto.Name = "clmProducto";
+            this.clmProducto.ReadOnly = true;
+            this.clmProducto.Width = 200;
+            // 
+            // clmCantidad
+            // 
+            this.clmCantidad.HeaderText = "Cantidad";
+            this.clmCantidad.Name = "clmCantidad";
+            this.clmCantidad.ReadOnly = true;
+            // 
+            // clmCostoUnitario
+            // 
+            this.clmCostoUnitario.HeaderText = "CostoUnitario";
+            this.clmCostoUnitario.Name = "clmCostoUnitario";
+            this.clmCostoUnitario.ReadOnly = true;
+            // 
+            // clmTotal
+            // 
+            this.clmTotal.HeaderText = "Importe";
+            this.clmTotal.Name = "clmTotal";
+            this.clmTotal.ReadOnly = true;
+            // 
+            // clmlugar
+            // 
+            this.clmlugar.HeaderText = "Lugar";
+            this.clmlugar.Items.AddRange(new object[] {
+            "Piso",
+            "Almacen"});
+            this.clmlugar.Name = "clmlugar";
+            // 
+            // clmBorrar
+            // 
+            this.clmBorrar.HeaderText = "Quitar";
+            this.clmBorrar.Name = "clmBorrar";
+            this.clmBorrar.ReadOnly = true;
+            // 
+            // clmbtnEditar
+            // 
+            this.clmbtnEditar.HeaderText = "Editar";
+            this.clmbtnEditar.Name = "clmbtnEditar";
+            this.clmbtnEditar.ReadOnly = true;
+            // 
             // btnComprar
             // 
             this.btnComprar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -335,89 +404,242 @@
             this.cmbProveedores.SelectedIndexChanged += new System.EventHandler(this.cmbProveedores_SelectedIndexChanged);
             this.cmbProveedores.Click += new System.EventHandler(this.cmbProveedores_Click);
             // 
+            // tabCEntrada
+            // 
+            this.tabCEntrada.Controls.Add(this.RegistrarEntrada);
+            this.tabCEntrada.Controls.Add(this.tabPage2);
+            this.tabCEntrada.Location = new System.Drawing.Point(0, 33);
+            this.tabCEntrada.Name = "tabCEntrada";
+            this.tabCEntrada.SelectedIndex = 0;
+            this.tabCEntrada.Size = new System.Drawing.Size(1062, 526);
+            this.tabCEntrada.TabIndex = 22;
+            // 
+            // RegistrarEntrada
+            // 
+            this.RegistrarEntrada.Controls.Add(this.gbxEntrada);
+            this.RegistrarEntrada.Location = new System.Drawing.Point(4, 22);
+            this.RegistrarEntrada.Name = "RegistrarEntrada";
+            this.RegistrarEntrada.Padding = new System.Windows.Forms.Padding(3);
+            this.RegistrarEntrada.Size = new System.Drawing.Size(1054, 500);
+            this.RegistrarEntrada.TabIndex = 0;
+            this.RegistrarEntrada.Text = "Registrar Entrada";
+            this.RegistrarEntrada.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.cmb_tipo_busquedaMostrar);
+            this.tabPage2.Controls.Add(this.Btn_Buscar);
+            this.tabPage2.Controls.Add(this.txtBuscar);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.dgvEntradas);
+            this.tabPage2.Controls.Add(this.btnVerEntradas);
+            this.tabPage2.Controls.Add(this.dgvEntDetalle);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 500);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Ver Entradas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cmb_tipo_busquedaMostrar
+            // 
+            this.cmb_tipo_busquedaMostrar.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
+            this.cmb_tipo_busquedaMostrar.FormattingEnabled = true;
+            this.cmb_tipo_busquedaMostrar.Items.AddRange(new object[] {
+            "Numero de Factura",
+            "Fecha"});
+            this.cmb_tipo_busquedaMostrar.Location = new System.Drawing.Point(61, 39);
+            this.cmb_tipo_busquedaMostrar.Name = "cmb_tipo_busquedaMostrar";
+            this.cmb_tipo_busquedaMostrar.Size = new System.Drawing.Size(179, 30);
+            this.cmb_tipo_busquedaMostrar.TabIndex = 105;
+            // 
+            // Btn_Buscar
+            // 
+            this.Btn_Buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Buscar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Btn_Buscar.Location = new System.Drawing.Point(693, 35);
+            this.Btn_Buscar.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_Buscar.Name = "Btn_Buscar";
+            this.Btn_Buscar.Size = new System.Drawing.Size(119, 34);
+            this.Btn_Buscar.TabIndex = 104;
+            this.Btn_Buscar.Text = "Buscar";
+            this.Btn_Buscar.UseVisualStyleBackColor = true;
+            this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Calibri", 12F);
+            this.txtBuscar.Location = new System.Drawing.Point(390, 39);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(289, 27);
+            this.txtBuscar.TabIndex = 102;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label19.Location = new System.Drawing.Point(282, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(102, 18);
+            this.label19.TabIndex = 103;
+            this.label19.Text = "Ingrese texto";
+            // 
+            // dgvEntradas
+            // 
+            this.dgvEntradas.AllowUserToAddRows = false;
+            this.dgvEntradas.AllowUserToDeleteRows = false;
+            this.dgvEntradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEntradas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmentNumFactura,
+            this.clmentProveedor,
+            this.clmEntFecha,
+            this.clmEntTotalCompra,
+            this.clmEntEmpleado,
+            this.clmEntVer});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntradas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEntradas.Location = new System.Drawing.Point(61, 112);
+            this.dgvEntradas.Name = "dgvEntradas";
+            this.dgvEntradas.ReadOnly = true;
+            this.dgvEntradas.Size = new System.Drawing.Size(767, 355);
+            this.dgvEntradas.TabIndex = 0;
+            this.dgvEntradas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradas_CellContentClick);
+            // 
             // menuStrip1
             // 
-            this.menuStrip1.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(17, 5, 0, 5);
-            this.menuStrip1.Size = new System.Drawing.Size(1055, 36);
-            this.menuStrip1.TabIndex = 21;
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1055, 30);
+            this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // xToolStripMenuItem
             // 
             this.xToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.xToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold);
             this.xToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.xToolStripMenuItem.Name = "xToolStripMenuItem";
             this.xToolStripMenuItem.Size = new System.Drawing.Size(33, 26);
             this.xToolStripMenuItem.Text = "X";
-            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click);
+            this.xToolStripMenuItem.Click += new System.EventHandler(this.xToolStripMenuItem_Click_1);
             // 
-            // clmProducto
+            // clmentNumFactura
             // 
-            this.clmProducto.HeaderText = "Producto";
-            this.clmProducto.Name = "clmProducto";
-            this.clmProducto.ReadOnly = true;
-            this.clmProducto.Width = 200;
+            this.clmentNumFactura.HeaderText = "Numero de factura";
+            this.clmentNumFactura.Name = "clmentNumFactura";
+            this.clmentNumFactura.ReadOnly = true;
+            this.clmentNumFactura.Width = 80;
             // 
-            // clmCantidad
+            // clmentProveedor
             // 
-            this.clmCantidad.HeaderText = "Cantidad";
-            this.clmCantidad.Name = "clmCantidad";
-            this.clmCantidad.ReadOnly = true;
+            this.clmentProveedor.HeaderText = "Proveedor";
+            this.clmentProveedor.Name = "clmentProveedor";
+            this.clmentProveedor.ReadOnly = true;
+            this.clmentProveedor.Width = 81;
             // 
-            // clmCostoUnitario
+            // clmEntFecha
             // 
-            this.clmCostoUnitario.HeaderText = "CostoUnitario";
-            this.clmCostoUnitario.Name = "clmCostoUnitario";
-            this.clmCostoUnitario.ReadOnly = true;
+            this.clmEntFecha.HeaderText = "Fecha";
+            this.clmEntFecha.Name = "clmEntFecha";
+            this.clmEntFecha.ReadOnly = true;
+            this.clmEntFecha.Width = 62;
             // 
-            // clmTotal
+            // clmEntTotalCompra
             // 
-            this.clmTotal.HeaderText = "Importe";
-            this.clmTotal.Name = "clmTotal";
-            this.clmTotal.ReadOnly = true;
+            this.clmEntTotalCompra.HeaderText = "Importe Total";
+            this.clmEntTotalCompra.Name = "clmEntTotalCompra";
+            this.clmEntTotalCompra.ReadOnly = true;
+            this.clmEntTotalCompra.Width = 87;
             // 
-            // clmlugar
+            // clmEntEmpleado
             // 
-            this.clmlugar.HeaderText = "Lugar";
-            this.clmlugar.Items.AddRange(new object[] {
-            "Piso",
-            "Almacen"});
-            this.clmlugar.Name = "clmlugar";
+            this.clmEntEmpleado.HeaderText = "Empleado";
+            this.clmEntEmpleado.Name = "clmEntEmpleado";
+            this.clmEntEmpleado.ReadOnly = true;
+            this.clmEntEmpleado.Width = 79;
             // 
-            // clmBorrar
+            // clmEntVer
             // 
-            this.clmBorrar.HeaderText = "Quitar";
-            this.clmBorrar.Name = "clmBorrar";
-            this.clmBorrar.ReadOnly = true;
+            this.clmEntVer.HeaderText = "Ver Detalle";
+            this.clmEntVer.Name = "clmEntVer";
+            this.clmEntVer.ReadOnly = true;
+            this.clmEntVer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmEntVer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.clmEntVer.Width = 78;
             // 
-            // clmbtnEditar
+            // dgvEntDetalle
             // 
-            this.clmbtnEditar.HeaderText = "Editar";
-            this.clmbtnEditar.Name = "clmbtnEditar";
-            this.clmbtnEditar.ReadOnly = true;
+            this.dgvEntDetalle.AllowUserToAddRows = false;
+            this.dgvEntDetalle.AllowUserToDeleteRows = false;
+            this.dgvEntDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEntDetalle.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEntDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntDetalle.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEntDetalle.Location = new System.Drawing.Point(61, 103);
+            this.dgvEntDetalle.Name = "dgvEntDetalle";
+            this.dgvEntDetalle.ReadOnly = true;
+            this.dgvEntDetalle.Size = new System.Drawing.Size(651, 262);
+            this.dgvEntDetalle.TabIndex = 106;
+            this.dgvEntDetalle.Visible = false;
+            // 
+            // btnVerEntradas
+            // 
+            this.btnVerEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerEntradas.Location = new System.Drawing.Point(693, 27);
+            this.btnVerEntradas.Name = "btnVerEntradas";
+            this.btnVerEntradas.Size = new System.Drawing.Size(108, 52);
+            this.btnVerEntradas.TabIndex = 107;
+            this.btnVerEntradas.Text = "Volver Entradas";
+            this.btnVerEntradas.UseVisualStyleBackColor = true;
+            this.btnVerEntradas.Visible = false;
+            this.btnVerEntradas.Click += new System.EventHandler(this.btnVerEntradas_Click);
             // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1055, 492);
+            this.ClientSize = new System.Drawing.Size(1055, 554);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.gbxEntrada);
+            this.Controls.Add(this.tabCEntrada);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEntradas";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "FrmEntradas";
             this.Load += new System.EventHandler(this.FrmEntradas_Load);
             this.gbxEntrada.ResumeLayout(false);
             this.gbxEntrada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.tabCEntrada.ResumeLayout(false);
+            this.RegistrarEntrada.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,8 +657,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.TextBox txtEntradaID;
         private System.Windows.Forms.TextBox txtIVA;
         private System.Windows.Forms.Label label1;
@@ -458,5 +678,23 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn clmlugar;
         private System.Windows.Forms.DataGridViewButtonColumn clmBorrar;
         private System.Windows.Forms.DataGridViewButtonColumn clmbtnEditar;
+        private System.Windows.Forms.TabControl tabCEntrada;
+        private System.Windows.Forms.TabPage RegistrarEntrada;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvEntradas;
+        private System.Windows.Forms.ComboBox cmb_tipo_busquedaMostrar;
+        private System.Windows.Forms.Button Btn_Buscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmentNumFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmentProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmEntFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmEntTotalCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmEntEmpleado;
+        private System.Windows.Forms.DataGridViewButtonColumn clmEntVer;
+        private System.Windows.Forms.DataGridView dgvEntDetalle;
+        private System.Windows.Forms.Button btnVerEntradas;
     }
 }

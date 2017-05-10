@@ -27,7 +27,20 @@ namespace PVFP
         {
             //obtener_id();
             llenarProvedores();
-           // llenarProductos();
+            // llenarProductos();
+            llenar_mostrar();
+        }
+        public void llenar_mostrar()
+        {
+            dgvEntradas.Rows.Clear();
+
+            ArrayList arrEntradas = entradas.CargarEntradas();
+            for (int i = 0; i < arrEntradas.Count; i++)
+            {
+                
+                string[] r = arrEntradas[i].ToString().Split('|');
+                dgvEntradas.Rows.Add(r[0], r[1], r[2], r[3], r[4], "VerDetalle");
+            }
         }
         private void btnAgrProductos_Click(object sender, EventArgs e)
         {
@@ -175,12 +188,12 @@ namespace PVFP
                 }
                 else
                 {
-                    
+                    int EmpleadoID = ClsInicioSesion.empleados_id;
                     string[] prov = cmbProveedores.SelectedItem.ToString().Split('-');
                     double iva = Convert.ToDouble(txtIVA.Text); double SumProd = Convert.ToDouble(txtTotalCompra.Text);
                     double ImporteTotal = SumProd+(iva*SumProd);
                     entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"),
-                       ImporteTotal.ToString(), "1");
+                       ImporteTotal.ToString(), EmpleadoID.ToString());
 
                     //YYYY-MM-DD mysql
 
@@ -190,14 +203,15 @@ namespace PVFP
                         entradas.agrEntrada_Detalle(txtEntradaID.Text, id[0].ToString(),
                         dgvProductos[1, i].Value.ToString(), dgvProductos[2, i].Value.ToString(),
                         dgvProductos[3, i].Value.ToString());
-                        double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + dgvProductos[5, i].Value.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
-                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ dgvProductos[5, i].Value.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
+                        double cantidaProducto= Convert.ToDouble(almacen.CantidadtablaAlmacen(id[0].ToString(), "A_" + dgvProductos[4, i].Value.ToString())) + Convert.ToDouble(dgvProductos[1, i].Value.ToString());
+                        almacen.AgregarDesdeEntrada(cantidaProducto.ToString(), "A_"+ dgvProductos[4, i].Value.ToString(), DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"), id[0].ToString());
                         productos.ModifPrecio(id[0].ToString(), dgvProductos[2, i].Value.ToString());
                     }
                     MessageBox.Show("Registro de entrada añadido correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dgvProductos.Rows.Clear();
                     txtTotalCompra.Text = "0";
                     txtTotalImporte.Text = "0";
+                    llenar_mostrar();
                     //obtener_id();
                 }
             }
@@ -213,11 +227,7 @@ namespace PVFP
             menu.Show();
             this.Close();
         }
-
-        private void xToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             char wDecimal = char.Parse(System.Windows.Forms.Application.CurrentCulture.NumberFormat.NumberDecimalSeparator);
@@ -290,6 +300,76 @@ namespace PVFP
             if (txtCantidad.Text == "") { txtCantidad.Text = "0"; }
             if (txtCostoUn.Text == "") { txtCostoUn.Text = "0"; }
             lblImporte.Text = (Convert.ToDouble(txtCantidad.Text) * Convert.ToDouble(txtCostoUn.Text)).ToString();
+        }
+
+        private void xToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_Buscar_Click(object sender, EventArgs e)
+        {
+            if (cmb_tipo_busquedaMostrar.SelectedIndex != -1)
+            {
+                string a;
+                if (cmb_tipo_busquedaMostrar.SelectedIndex == 1)
+                {
+                    for (int i = 0; i < dgvEntradas.Rows.Count; i++)
+                    {
+                        dgvEntradas.Rows[i].Selected = false;
+                        a = dgvEntradas[2, i].Value.ToString();
+                        if (a.Contains(txtBuscar.Text))
+                        {
+                            dgvEntradas.Rows[i].Selected = true;
+                            dgvEntradas.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < dgvEntradas.Rows.Count; i++)
+                    {
+                        dgvEntradas.Rows[i].Selected = false;
+                        a = dgvEntradas[0, i].Value.ToString();
+                        if (a.Contains(txtBuscar.Text))
+                        {
+                            dgvEntradas.Rows[i].Selected = true;
+                            dgvEntradas.FirstDisplayedScrollingRowIndex = i;
+                            break;
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        private void dgvEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvEntradas.CurrentCell.ColumnIndex == 5)
+            {
+                dgvEntDetalle.DataSource = entradas.VerEntradaDetalle(dgvEntradas[0, dgvEntradas.CurrentCell.RowIndex].Value.ToString());
+                cmb_tipo_busquedaMostrar.Visible = false;
+                label19.Visible = false;
+                txtBuscar.Visible = false;
+                Btn_Buscar.Visible = false;
+                dgvEntradas.Visible = false;
+                dgvEntDetalle.Visible = true;
+                btnVerEntradas.Visible = true;
+            }
+        }
+
+        private void btnVerEntradas_Click(object sender, EventArgs e)
+        {
+            cmb_tipo_busquedaMostrar.Visible = true;
+            label19.Visible = true;
+            txtBuscar.Visible = true;
+            Btn_Buscar.Visible = true;
+            dgvEntradas.Visible = true;
+            dgvEntDetalle.Visible = false;
+            btnVerEntradas.Visible = false;
         }
     }
 }

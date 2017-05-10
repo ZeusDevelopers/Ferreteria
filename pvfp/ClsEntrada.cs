@@ -69,6 +69,59 @@ namespace PVFP
             conexion.Close();
         }
         
+        public DataTable VerTodasentradas()
+        {
+            
+            DataTable tabla = new DataTable();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "SELECT NumFactura, proveedores.Nombre as Proveedor, DATE_FORMAT(FEcha, '%d-%m-%Y') AS Fecha, TotalCompra, "+
+                " concat_ws(' ',empleados.Nombre, empleados.Apellido) as Empleado FROM `entrada` "+
+                " inner join proveedores on proveedores.Proveedor_ID=entrada.Proveedor_ID INNER join "+
+                " empleados on empleados.Empleado_ID=entrada.Empleado_ID order by Fecha DESC"
+                ), conexion);
+
+            MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
+            _dataAdapter.Fill(tabla);
+            conexion.Close();
+            return tabla;
+        }
+        public ArrayList CargarEntradas()
+        {
+            ArrayList arrEntradas = new ArrayList();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "SELECT NumFactura, proveedores.Nombre as Proveedor, DATE_FORMAT(FEcha, '%d-%m-%Y') AS Fecha, TotalCompra, " +
+                " concat_ws(' ',empleados.Nombre, empleados.Apellido) as Empleado FROM `entrada` " +
+                " inner join proveedores on proveedores.Proveedor_ID=entrada.Proveedor_ID INNER join " +
+                " empleados on empleados.Empleado_ID=entrada.Empleado_ID order by Fecha DESC"), conexion);
+            MySqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                arrEntradas.Add(_reader["NumFactura"].ToString() + "|" + _reader["Proveedor"].ToString() + "|" + 
+                    _reader["Fecha"].ToString() + "|" + _reader["TotalCompra"].ToString() + "|" +
+                    _reader["Empleado"].ToString());
+            }
+            conexion.Close();
+            return arrEntradas;
+        }
+        public DataTable VerEntradaDetalle( string Factura)
+        {
+
+            DataTable tabla = new DataTable();
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            MySqlCommand _comando = new MySqlCommand(String.Format(
+                "Select producto.Nombre, Cantidad, CostoCompra as PrecioUnitario, "+
+                " TotalProducto as Importe from entrada_detalle inner join producto "+
+                " on producto.Producto_ID= entrada_detalle.Producto_ID WHERE NumFactura = '"+Factura+"'"
+                ), conexion);
+
+            MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
+            _dataAdapter.Fill(tabla);
+            conexion.Close();
+            return tabla;
+        }
+
         #endregion
     }
 }
