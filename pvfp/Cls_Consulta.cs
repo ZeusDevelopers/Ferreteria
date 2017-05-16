@@ -62,6 +62,26 @@ namespace PVFP
             }
             return numero;
         }
+        public double corte_coj(string fecha_ini, string Fecha_fin, int id_empl)
+        {
+            //select round(sum(salida.TotalVenta),2) as Ventas from salida where Fecha between
+            double numero = 0;
+            MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
+            string comando = id_empl == -1 ?
+                "select round(sum(salida.TotalVenta),2) as Ventas from salida where Fecha between  @fech1 and @fech2 " :
+                "select round(sum(salida.TotalVenta),2) as Ventas from salida where Fecha between @fech1 and @fech2 and Empleado_ID=@emp";
+            MySqlCommand _comando = new MySqlCommand(comando, conexion);
+            _comando.Parameters.AddWithValue("@fech1", fecha_ini);
+            _comando.Parameters.AddWithValue("@fech2", Fecha_fin);
+            if (id_empl != -1) { _comando.Parameters.AddWithValue("@emp", id_empl); }
+            MySqlDataReader lee = _comando.ExecuteReader();
+            while (lee.Read())
+            {
+                string num = lee["Ventas"].ToString();
+                numero =num!="" ? Double.Parse(num):0.0d;
+            }
+            return numero;
+        }             
         public int intervalo(string fecha_ini, int id_empl)
         {
             int numero = 0;

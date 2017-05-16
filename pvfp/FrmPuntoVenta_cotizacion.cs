@@ -16,7 +16,7 @@ namespace Ferreteria
     {
         DataTable tb = new DataTable();
         DataGridView DgvVentas;
-        double subtotal = 0,iva=0,total=0;
+        double subtotal = 0, iva = 0, total = 0;
         FrmPuntoVenta frm;
         cls_reporte cl = new cls_reporte();
         private void Btn_Buscar_Click(object sender, EventArgs e)
@@ -24,23 +24,40 @@ namespace Ferreteria
             Buscar();
         }
         Cls_cotizacion cotizacion = new Cls_cotizacion();
-        void Buscar() {
-            if (txtbuscar.Text != String.Empty)
+        void Buscar()
+        {
+            try
             {
-                string _co = txtbuscar.Text.Split('-')[1];
-                tb= cotizacion.Regresa(Int32.Parse(_co));
-                if (tb.Rows.Count>0)
+                if (txtbuscar.Text != String.Empty)
                 {
-                    frm.Llenar_venta(tb);
-                }
-                else
-                {
-                    MessageBox.Show("No existe cotizacion","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    string _co = txtbuscar.Text.Split('-')[1];
+                    tb = cotizacion.Regresa(Int32.Parse(_co));
+                    if (tb.Rows.Count > 0)
+                    {
+                        frm.Llenar_venta(tb);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No existe cotizacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-        public FrmPuntoVenta_cotizacion(DataGridView dv ,double _subtotal, double _iva,double _total,Form drm)
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                Buscar();
+            }
+        }
+
+        public FrmPuntoVenta_cotizacion(DataGridView dv, double _subtotal, double _iva, double _total, Form drm)
         {
             InitializeComponent();
             DgvVentas = dv;
@@ -49,46 +66,47 @@ namespace Ferreteria
             total = _total;
             frm = drm as FrmPuntoVenta;
         }
-        
+
         private void Btn_aceptar_Click(object sender, EventArgs e)
         {
             try
-            {          
-            DataTable dt = new DataTable();
-            foreach (DataGridViewColumn col in DgvVentas.Columns)
             {
-                dt.Columns.Add(col.HeaderText);
-            }
-            for (int i = 0; i < DgvVentas.Rows.Count; i++)
-            {
-                DataGridViewRow row = DgvVentas.Rows[i];
-                DataRow dr = dt.NewRow();
-                for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                if (DgvVentas.Rows.Count > 0)
                 {
-                    dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                    DataTable dt = new DataTable();
+                    foreach (DataGridViewColumn col in DgvVentas.Columns)
+                    {
+                        dt.Columns.Add(col.HeaderText);
+                    }
+                    for (int i = 0; i < DgvVentas.Rows.Count; i++)
+                    {
+                        DataGridViewRow row = DgvVentas.Rows[i];
+                        DataRow dr = dt.NewRow();
+                        for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                        {
+                            dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                    DataTable tb = new DataTable();
+                    tb.Columns.Add("Articulo");
+                    tb.Columns.Add("Cantidad");
+                    tb.Columns.Add("Precio");
+                    tb.Columns.Add("Importe");
+                    tb.Columns.Add("producto_id");
+                    foreach (DataRow item in dt.Rows)
+                    {
+                        tb.Rows.Add(item[2], item[0], item[4], item[5], item[7]);
+                    }
+                    NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
+                    cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
+                    frm.limpiar();
+                    this.Close();
                 }
-                dt.Rows.Add(dr);
-            }
-            
-            DataTable tb = new DataTable();
-            tb.Columns.Add("Articulo");
-            tb.Columns.Add("Cantidad");
-            tb.Columns.Add("Precio");
-            tb.Columns.Add("Importe");
-            tb.Columns.Add("producto_id");
-
-         
-            foreach (DataRow item in dt.Rows)
-            {
-                tb.Rows.Add(item[2], item[0], item[4], item[5], item[7]);
-            }
-            
-
-
-            NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-            cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
-            frm.limpiar();
-            this.Close();
+                else
+                {
+                    MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {

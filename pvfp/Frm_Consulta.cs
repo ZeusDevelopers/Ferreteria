@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -138,6 +139,7 @@ namespace PVFP
                     valor_final = 0;
                     txtintervalo.Text = "1";
                     dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, 0, Int32.Parse(a));
+                    lbl_cant.Text = "";
                 }
                 else
                 {
@@ -158,6 +160,7 @@ namespace PVFP
                 valor_final = 0;
                 txtintervalo.Text = "1";
                 dataGridView1.DataSource = consulta.fecha_intervalo(fech_ini, fech_fin, 0, Int32.Parse(a));
+                lbl_cant.Text="Cantidad: "+consulta.corte_coj(fech_ini, fech_fin, Int32.Parse(a)).ToString("C",nfi);
             }
         }
         int val;       
@@ -178,7 +181,7 @@ namespace PVFP
                     break;
             }
         }
-
+        NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         private void chckventa_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -200,6 +203,7 @@ namespace PVFP
                 Cmb_Empleado.Items.Add(item[0].ToString());
             }
             this.Width = this.Width + 20;
+            this.Height += 80;
         }
 
         private void chck_empleado_CheckedChanged(object sender, EventArgs e)

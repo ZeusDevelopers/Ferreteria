@@ -18,7 +18,7 @@ namespace PVFP
         FrmPuntoVenta_final frmventa;
         ClsVentas clsventa = new ClsVentas();
         NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-        bool admin = false, mayorer = false;
+        bool admin = false, mayorer = false, malos = false;
         double subtotal = 0, iva = 0, total = 0, roww = -1;
         public FrmPuntoVenta(bool ad)
         {
@@ -138,7 +138,7 @@ namespace PVFP
             if (!admin)
             {
                 ClsInicioSesion.Usuario = "";
-            }            
+            }
         }
         private void Txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -192,7 +192,7 @@ namespace PVFP
         }
         private void comprar()
         {
-            if (!(total <= 0))
+            if (!(total <= 0) && !malos)
             {
 
                 btn_abrir_cajon.Enabled = false;
@@ -222,7 +222,11 @@ namespace PVFP
             }
             else
             {
-                MessageBox.Show("No hay articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (malos) { MessageBox.Show("Inventario insuficiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                else
+                {
+                    MessageBox.Show("No hay articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
         #endregion
@@ -327,7 +331,7 @@ namespace PVFP
         {
             try
             {
-                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this,mayorer);
+                FrmPuntoVenta_Buscar frm = new FrmPuntoVenta_Buscar(this, mayorer);
                 frm.Show();
             }
             catch (Exception ex)
@@ -351,7 +355,7 @@ namespace PVFP
                 Btn_mayoreo.Visible = true;
                 btn_porcentaje.Visible = true;
             }
-            
+
         }
         double dolar = 0;
         private void Btn_cantidad_Click(object sender, EventArgs e)
@@ -381,7 +385,7 @@ namespace PVFP
                     int a = 0;
                     bool ent = Int32.TryParse(cant, out a) ? true : false, entra = false;
                     string option = cant.GetType().ToString();
-                    
+
                     string x = DgvVentas[6, Int32.Parse(roww.ToString())].Value.ToString();
                     if ((x.Contains("Kit") || x.Contains("Unidad")) && ent)
                     {
@@ -392,11 +396,17 @@ namespace PVFP
                         entra = true;
                     }
                     double m = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
-                    if ((Double.Parse(cant) > 0 && Double.Parse(cant) <= (m)) )
+                    if ((Double.Parse(cant) > 0 && Double.Parse(cant) <= (m)))
                     {
+
                         if (entra)
                         {
-                            double ini = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());                            
+                            if (DgvVentas.Rows[Int32.Parse(roww.ToString())].DefaultCellStyle.BackColor.Equals(Color.Red))
+                            {
+                                malos = false;
+                                DgvVentas.Rows[Int32.Parse(roww.ToString())].DefaultCellStyle.BackColor = Color.White;
+                            }
+                            double ini = Double.Parse(DgvVentas[3, Int32.Parse(roww.ToString())].Value.ToString());
                             DgvVentas[0, Int32.Parse(roww.ToString())].Value = Double.Parse(cant);
                             DgvVentas[5, Int32.Parse(roww.ToString())].Value = (Double.Parse(DgvVentas[0, Int32.Parse(roww.ToString())].Value.ToString())
                             * Double.Parse(DgvVentas[4, Int32.Parse(roww.ToString())].Value.ToString().Replace("$", String.Empty))).ToString("C", nfi);
@@ -432,6 +442,10 @@ namespace PVFP
                 DialogResult dialogResult = MessageBox.Show("Eliminar", "Eliminar elemento", MessageBoxButtons.YesNo);
                 if (DialogResult.Yes == dialogResult)
                 {
+                    if (DgvVentas.Rows[Convert.ToInt32(roww)].DefaultCellStyle.BackColor.Equals(Color.Red))
+                    {
+                        malos = false;
+                    }
                     DgvVentas.Rows.RemoveAt(Convert.ToInt32(roww));
                     totales();
                 }
@@ -465,19 +479,19 @@ namespace PVFP
         {
             try
             {
-                if (DgvVentas.Rows.Count>0)
+                if (DgvVentas.Rows.Count > 0)
                 {
                     // DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);                    
-                    bool aceptado = false; 
-                    foreach(DataGridViewRow x in DgvVentas.Rows)
+                    bool aceptado = false;
+                    foreach (DataGridViewRow x in DgvVentas.Rows)
                     {
                         if (x.Cells[1].Value.Equals(codigobarras) && x.Cells[2].Value.Equals(producto))
                         {
                             double m = Double.Parse(DgvVentas[3, x.Index].Value.ToString());
                             aceptado = true;
-                            if (double.Parse(x.Cells[0].Value.ToString())<m)
+                            if (double.Parse(x.Cells[0].Value.ToString()) < m)
                             {
-                                DgvVentas[0, x.Index].Value = Double.Parse(DgvVentas[0,x.Index].Value.ToString())+1;                                
+                                DgvVentas[0, x.Index].Value = Double.Parse(DgvVentas[0, x.Index].Value.ToString()) + 1;
                             }
                             else
                             {
@@ -505,74 +519,21 @@ namespace PVFP
         }
         private void btncotizar_Click(object sender, EventArgs e)
         {
-            //cantidad,codigo,producto  nombre,cant existencia,precio,importe,um,id_prod
-            //var un = DgvVentas.Columns;
-           cotizar();            
+            cotizar();
         }
         public void cotizar()
         {
             try
             {
-
-                if (DgvVentas.Rows.Count > 0)
-                {
-                    FrmPuntoVenta_cotizacion cti = new FrmPuntoVenta_cotizacion(DgvVentas,subtotal,iva,total,this);
-                    cti.Show();
-                }
-                else
-                {
-                    MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                //        DataTable dt = new DataTable();
-                //    foreach (DataGridViewColumn col in DgvVentas.Columns)
-                //    {
-                //        dt.Columns.Add(col.HeaderText);
-                //    }
-                //    for (int i = 0; i < DgvVentas.Rows.Count; i++)
-                //    {
-                //        DataGridViewRow row = DgvVentas.Rows[i];
-                //        DataRow dr = dt.NewRow();
-                //        for (int j = 0; j < DgvVentas.Columns.Count; j++)
-                //        {
-                //            dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
-                //        }
-                //        dt.Rows.Add(dr);
-                //    }                
-                //    cls_reporte cl = new cls_reporte();
-                //    DataTable tb = new DataTable();
-                //    tb.Columns.Add("Articulo");
-                //    tb.Columns.Add("Cantidad");
-                //    tb.Columns.Add("Precio");
-                //    tb.Columns.Add("Importe");
-                //    tb.Columns.Add("producto_id");
-
-                //        //for (int i = 0; i < 50; i++)
-                //        //{
-                //        foreach (DataRow item in dt.Rows)
-                //            {
-                //                tb.Rows.Add(item[2], item[0], item[4], item[5], item[7]);
-                //            }
-                //       // }
-
-
-                //    NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-                //    cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
-
+                FrmPuntoVenta_cotizacion cti = new FrmPuntoVenta_cotizacion(DgvVentas, subtotal, iva, total, this);
+                cti.Show();
             }
             catch (Exception ex)
             {
-                //ex.Message = "The process cannot access the file 'C:\\Users\\salaz\\Documents\\GitHub\\Ferreteria\\PVFP\\bin\\Debug\\cotizar.pdf' "
-                //because it is being used by another process.
                 if (ex.Message.Contains("because it is being used by another process."))
-                MessageBox.Show("Cierre la cotizacion actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Cierre la cotizacion actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         public void cotizar1()
@@ -636,7 +597,6 @@ namespace PVFP
                 MessageBox.Show("Seleccione Un elemento");
             }
         }
-       
         private void Btn_mayoreo_Click(object sender, EventArgs e)
         {
             if (Btn_mayoreo.BackColor.Equals(Color.Red))
@@ -665,6 +625,7 @@ namespace PVFP
                 total = 0;
                 DgvVentas.Rows.Clear();
                 DgvVentas.Refresh();
+                malos = false;
             }
             DgvVentas.ClearSelection();
         }
@@ -692,23 +653,39 @@ namespace PVFP
             Btn_eliminar.Enabled = true;
             btncotizar.Enabled = true;
         }
-
         public void Llenar_venta(DataTable tb)
         {
-            //DataTable tn = tb.Clone();
-            //tn.Columns[4].DataType = typeof(string);
-            //tn.Columns[5].DataType = typeof(string);
-            
-            foreach (DataRow item in tb.Rows)
+            try
             {
-               string i = Double.Parse(item[4].ToString()).ToString("C", nfi);
-               string b = Double.Parse(item[5].ToString()).ToString("C", nfi);
-                DgvVentas.Rows.Add(item[0], item[1], item[2], item[3], i, b, item[6], item[7]);
-            }
-            //DgvVentas.DataSource = tb;
-         //   var colums1 = tb.AsEnumerable().Select(x => Double.Parse(x.ItemArray[4].ToString()).ToString("C",nfi)).ToList();
-          //  var colums2 = tb.AsEnumerable().Select(x => Double.Parse(x.ItemArray[5].ToString()).ToString("C", nfi)).ToList();
 
+
+
+
+                limpiar();
+                int cont = 0;
+                foreach (DataRow item in tb.Rows)
+                {
+
+
+                    string i = Double.Parse(item[4].ToString()).ToString("C", nfi);
+                    string b = Double.Parse(item[5].ToString()).ToString("C", nfi);
+                    DgvVentas.Rows.Add(item[0], item[1], item[2], item[3], i, b, item[6], item[7]);
+                    if (Double.Parse(item[3].ToString()) < Double.Parse(item[0].ToString()))
+                    {
+                        DgvVentas.Rows[cont].DefaultCellStyle.BackColor = Color.Red;
+                        malos = true;
+                    }
+                    cont++;
+                }
+
+                totales();
+                DgvVentas.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
+

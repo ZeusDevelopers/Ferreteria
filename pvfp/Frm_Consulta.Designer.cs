@@ -52,6 +52,7 @@
             this.chck_empleado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_nuevo_form = new System.Windows.Forms.Button();
+            this.lbl_cant = new System.Windows.Forms.Label();
             this.GrBx_Fecha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Gb_No_Venta.SuspendLayout();
@@ -304,12 +305,22 @@
             this.btn_nuevo_form.UseVisualStyleBackColor = true;
             this.btn_nuevo_form.Click += new System.EventHandler(this.btn_nuevo_form_Click);
             // 
+            // lbl_cant
+            // 
+            this.lbl_cant.AutoSize = true;
+            this.lbl_cant.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cant.Location = new System.Drawing.Point(26, 813);
+            this.lbl_cant.Name = "lbl_cant";
+            this.lbl_cant.Size = new System.Drawing.Size(0, 37);
+            this.lbl_cant.TabIndex = 8;
+            // 
             // Frm_Consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1128, 796);
+            this.ClientSize = new System.Drawing.Size(1128, 879);
+            this.Controls.Add(this.lbl_cant);
             this.Controls.Add(this.btn_nuevo_form);
             this.Controls.Add(this.gbempleado);
             this.Controls.Add(this.Gb_No_Venta);
@@ -362,5 +373,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Cmb_Empleado;
         private System.Windows.Forms.Button btn_nuevo_form;
+        private System.Windows.Forms.Label lbl_cant;
     }
 }
