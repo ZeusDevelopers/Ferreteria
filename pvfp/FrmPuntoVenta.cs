@@ -461,9 +461,6 @@ namespace PVFP
         {
             roww = e.RowIndex;
         }
-
-
-
         internal void dato_encontrado(string codigobarras, string producto, string precio, double stock, string um, string productoid)
         {
             try
@@ -508,54 +505,64 @@ namespace PVFP
         }
         private void btncotizar_Click(object sender, EventArgs e)
         {
-            cotizar();            
+            //cantidad,codigo,producto  nombre,cant existencia,precio,importe,um,id_prod
+            //var un = DgvVentas.Columns;
+           cotizar();            
         }
         public void cotizar()
         {
             try
             {
 
-            if (DgvVentas.Rows.Count > 0)
-            {
-                DataTable dt = new DataTable();
-                foreach (DataGridViewColumn col in DgvVentas.Columns)
+                if (DgvVentas.Rows.Count > 0)
                 {
-                    dt.Columns.Add(col.HeaderText);
+                    FrmPuntoVenta_cotizacion cti = new FrmPuntoVenta_cotizacion(DgvVentas,subtotal,iva,total,this);
+                    cti.Show();
                 }
-                for (int i = 0; i < DgvVentas.Rows.Count; i++)
+                else
                 {
-                    DataGridViewRow row = DgvVentas.Rows[i];
-                    DataRow dr = dt.NewRow();
-                    for (int j = 0; j < DgvVentas.Columns.Count; j++)
-                    {
-                        dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
-                    }
-                    dt.Rows.Add(dr);
-                }                
-                cls_reporte cl = new cls_reporte();
-                DataTable tb = new DataTable();
-                tb.Columns.Add("Articulo");
-                tb.Columns.Add("Cantidad");
-                tb.Columns.Add("Precio");
-                tb.Columns.Add("Importe");
+                    MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                //        DataTable dt = new DataTable();
+                //    foreach (DataGridViewColumn col in DgvVentas.Columns)
+                //    {
+                //        dt.Columns.Add(col.HeaderText);
+                //    }
+                //    for (int i = 0; i < DgvVentas.Rows.Count; i++)
+                //    {
+                //        DataGridViewRow row = DgvVentas.Rows[i];
+                //        DataRow dr = dt.NewRow();
+                //        for (int j = 0; j < DgvVentas.Columns.Count; j++)
+                //        {
+                //            dr[j] = (row.Cells[j].Value == null) ? "" : row.Cells[j].Value.ToString();
+                //        }
+                //        dt.Rows.Add(dr);
+                //    }                
+                //    cls_reporte cl = new cls_reporte();
+                //    DataTable tb = new DataTable();
+                //    tb.Columns.Add("Articulo");
+                //    tb.Columns.Add("Cantidad");
+                //    tb.Columns.Add("Precio");
+                //    tb.Columns.Add("Importe");
+                //    tb.Columns.Add("producto_id");
 
-                    for (int i = 0; i < 50; i++)
-                    {
-                        foreach (DataRow item in dt.Rows)
-                        {
-                            tb.Rows.Add(item[2], item[0], item[4], item[5]);
-                        }
-                    }
-                   
-                
-                NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
-                cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
+                //        //for (int i = 0; i < 50; i++)
+                //        //{
+                //        foreach (DataRow item in dt.Rows)
+                //            {
+                //                tb.Rows.Add(item[2], item[0], item[4], item[5], item[7]);
+                //            }
+                //       // }
 
-            }
-            else
-            {
-                MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+
+                //    NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
+                //    cl.Genera(tb, ClsInicioSesion.Usuario, subtotal.ToString("C", nfi), iva.ToString("C", nfi), total.ToString("C", nfi));
+
+                //}
+                //else
+                //{
+                //    MessageBox.Show("No hay productos para cotizar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //}
 
             }
             catch (Exception ex)
@@ -629,12 +636,7 @@ namespace PVFP
                 MessageBox.Show("Seleccione Un elemento");
             }
         }
-
-        private void Txtcodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void Btn_mayoreo_Click(object sender, EventArgs e)
         {
             if (Btn_mayoreo.BackColor.Equals(Color.Red))
@@ -650,7 +652,6 @@ namespace PVFP
                 mayorer = false;
             }
         }
-
         public void limpiar1()
         {
             DialogResult r = MessageBox.Show("Desea Limpiar Todo", "Finalizar", MessageBoxButtons.YesNo);
@@ -690,6 +691,24 @@ namespace PVFP
             Btn_limpiar.Enabled = true;
             Btn_eliminar.Enabled = true;
             btncotizar.Enabled = true;
+        }
+
+        public void Llenar_venta(DataTable tb)
+        {
+            //DataTable tn = tb.Clone();
+            //tn.Columns[4].DataType = typeof(string);
+            //tn.Columns[5].DataType = typeof(string);
+            
+            foreach (DataRow item in tb.Rows)
+            {
+               string i = Double.Parse(item[4].ToString()).ToString("C", nfi);
+               string b = Double.Parse(item[5].ToString()).ToString("C", nfi);
+                DgvVentas.Rows.Add(item[0], item[1], item[2], item[3], i, b, item[6], item[7]);
+            }
+            //DgvVentas.DataSource = tb;
+         //   var colums1 = tb.AsEnumerable().Select(x => Double.Parse(x.ItemArray[4].ToString()).ToString("C",nfi)).ToList();
+          //  var colums2 = tb.AsEnumerable().Select(x => Double.Parse(x.ItemArray[5].ToString()).ToString("C", nfi)).ToList();
+
         }
     }
 }

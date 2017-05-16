@@ -109,7 +109,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -135,11 +137,19 @@
     <Compile Include="ClsPunto_deventa.cs" />
     <Compile Include="ClsTiposCargos.cs" />
     <Compile Include="ClsVentas.cs" />
+    <Compile Include="Cls_almacen.cs" />
     <Compile Include="Cls_Consulta.cs" />
+    <Compile Include="Cls_cotizacion.cs" />
     <Compile Include="Cls_devolucion.cs" />
     <Compile Include="Cls_imprimir_ticket.cs" />
     <Compile Include="Cls_reporte_ventas.cs" />
     <Compile Include="cls_uno.cs" />
+    <Compile Include="Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -241,6 +251,12 @@
     <Compile Include="FrmPuntoVenta.Designer.cs">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPuntoVenta_cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPuntoVenta_cotizacion.Designer.cs">
+      <DependentUpon>FrmPuntoVenta_cotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPuntoVenta_final.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +268,18 @@
     </Compile>
     <Compile Include="FrmTiposCargos.Designer.cs">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Almacen.Designer.cs">
+      <DependentUpon>Frm_Almacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Almacen_buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Almacen_buscar.Designer.cs">
+      <DependentUpon>Frm_Almacen_buscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Consulta.cs">
       <SubType>Form</SubType>
@@ -322,11 +350,20 @@
     <EmbeddedResource Include="FrmPuntoVenta.resx">
       <DependentUpon>FrmPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPuntoVenta_cotizacion.resx">
+      <DependentUpon>FrmPuntoVenta_cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPuntoVenta_final.resx">
       <DependentUpon>FrmPuntoVenta_final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTiposCargos.resx">
       <DependentUpon>FrmTiposCargos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Almacen.resx">
+      <DependentUpon>Frm_Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Almacen_buscar.resx">
+      <DependentUpon>Frm_Almacen_buscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Consulta.resx">
       <DependentUpon>Frm_Consulta.cs</DependentUpon>
@@ -342,7 +379,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

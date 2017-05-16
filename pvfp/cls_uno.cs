@@ -16,17 +16,24 @@ namespace Ferreteria
     class cls_reporte
     {
         public void Genera(DataTable tb,string usu,string sub,string iva,string tot)
-        {            
+        {
+            Cls_cotizacion cotizacion = new Cls_cotizacion();           
+            cotizacion.Inicio(Double.Parse(tot.Remove(0, 1)), Double.Parse(iva.Remove(0, 1)), Double.Parse(sub.Remove(0, 1)));
+            int num=cotizacion.Registrar_cotizacion(tb);
             MyClass m = new MyClass();
-            m.CreatePDF(tb,usu,sub,iva,tot);            
+            tb.Columns.RemoveAt(4);
+            m.CreatePDF(tb,usu,sub,iva,tot,num.ToString());    
+            
             System.Diagnostics.Process.Start(@".\cotizar.pdf");
         }
     }
 }
 class MyClass
 {
-    public void CreatePDF(DataTable dt,string usuario,string sub,string iva,string tot)
+    public void CreatePDF(DataTable dt,string usuario,string sub,string iva,string tot,string ccode)
     {
+        
+        
         string fileName = "uno";    
         DateTime fileCreationDatetime = DateTime.Now;
         fileName = string.Format("{0}.pdf", fileCreationDatetime.ToString(@"yyyyMMdd") + "_" + fileCreationDatetime.ToString(@"HHmmss"));    
@@ -44,8 +51,8 @@ class MyClass
                     ITextEvents it = new ITextEvents();
                     it.Usu = usuario;
                     pdfWriter.PageEvent = it;
-                        
-                    
+                    it.code = "cot-" + ccode;
+
 
                     //open the stream 
                     pdfDoc.Open();
@@ -186,7 +193,8 @@ public class ITextEvents : PdfPageEventHelper
         }
     }
     int mio = 0;
-    public override void OnEndPage(iTextSharp.text.pdf.PdfWriter writer, iTextSharp.text.Document document)
+    public string code = "";
+    public override void OnEndPage(iTextSharp.text.pdf.PdfWriter writer, iTextSharp.text.Document document )
     {
         base.OnEndPage(writer, document);
         Font baseFontNormal = new Font(Font.FontFamily.HELVETICA, 08f,Font.NORMAL,BaseColor.BLACK);
@@ -251,7 +259,7 @@ public class ITextEvents : PdfPageEventHelper
             ForeColor = System.Drawing.Color.Black,
         };
         
-        System.Drawing.Image img = barcode.Encode(BarcodeLib.TYPE.CODE128B, "123456789");
+        System.Drawing.Image img = barcode.Encode(BarcodeLib.TYPE.CODE128B, code);
         img.Save(@".\cotizar.jpg");
         
         iTextSharp.text.Image im = Image.GetInstance(@".\cotizar.jpg");

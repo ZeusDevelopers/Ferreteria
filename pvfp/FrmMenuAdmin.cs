@@ -57,7 +57,8 @@ namespace PVFP
 
         private void BtnAlmacen_Click(object sender, EventArgs e)
         {
-            FrmAlmacen almacen = new FrmAlmacen();
+            //FrmAlmacen almacen = new FrmAlmacen();
+            Frm_Almacen almacen = new Frm_Almacen();
             almacen.Show();
         }
         //FrmConsultaMayorProductos mayor = new FrmConsultaMayorProductos();
