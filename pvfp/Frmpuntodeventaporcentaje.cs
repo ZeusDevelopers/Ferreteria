@@ -37,7 +37,8 @@ namespace Ferreteria
         private void Frmpuntodeventaporcentaje_Load(object sender, EventArgs e)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            string m = tipo == 1 ? "Ganancia_Venta" : "Ganancia_Mayoreo";
+            //string m = tipo == 1 ? "Ganancia_Venta" : "Ganancia_Mayoreo";
+            string m = tipo == 1 ? "Round(((Precio_Costo*Ganancia_Venta)/100),2)" : "Round(((Precio_Costo*Ganancia_Mayoreo)/100),2)   ";
             string comando = "select Precio_Costo, " + m + " as t from producto where Codigodebarra=@id";
             MySqlCommand _comando = new MySqlCommand(comando, conexion);
             _comando.Parameters.AddWithValue("@id", id_venta);

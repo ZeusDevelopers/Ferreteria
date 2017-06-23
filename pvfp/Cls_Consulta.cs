@@ -80,7 +80,7 @@ namespace PVFP
                 string num = lee["Ventas"].ToString();
                 numero =num!="" ? Double.Parse(num):0.0d;
             }
-            return numero;
+            return id_empl!=-1 ? numero : 0;
         }             
         public int intervalo(string fecha_ini, int id_empl)
         {

@@ -74,8 +74,8 @@ namespace PVFP
                 ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
             }
             ticket.CortaTicket();
-            //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
-            ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera   
+            ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
+            //ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera   
             ticket.AbreCajon();
         }
     }

@@ -258,10 +258,10 @@ namespace PVFP
                 int cont = 0;
                 string n1;
                 bool codigo = true;
-                var m = table.Rows[0][0].ToString();
+                var m = table.Rows.Count > 0?  table.Rows[0][0].ToString() : "";
                 if (table.Rows.Count > 0 && !m.Equals(""))
                 {
-
+                    m = table.Rows[0][0].ToString();
 
                     if (DgvVentas.Rows.Count > 0)
                     {
@@ -591,6 +591,7 @@ namespace PVFP
                 int t = mayorer ? 0 : 1;
                 Frmpuntodeventaporcentaje mp = new Frmpuntodeventaporcentaje(DgvVentas[1, Convert.ToInt32(roww)].Value.ToString(), t, this);
                 mp.Show();
+                DgvVentas.ClearSelection();
             }
             else
             {
