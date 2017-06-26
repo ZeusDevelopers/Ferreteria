@@ -15,8 +15,8 @@ namespace PVFP
 {
     class Cls_imprimir
     {
-        public void imprime(DataTable Venta,string efectivo,string cambio,double subtotal
-            ,double iva,double total,int id_venta,bool cotiza)
+        public void imprime(DataTable Venta, string efectivo, string cambio, double subtotal
+            , double iva, double total, int id_venta, bool cotiza)
         {
             Cls_imprimir_ticket ticket = new Cls_imprimir_ticket();
             //imprime imagen
@@ -46,21 +46,21 @@ namespace PVFP
             if (!cotiza)
             {
                 ticket.TextoIzquierda("Venta:" + id_venta.ToString());
-            }                       
+            }
             ticket.lineasAsteriscos();
             //Articulos a vender.
             ticket.EncabezadoVenta();//NOMBRE DEL ARTICULO, CANT, PRECIO, IMPORTE
             ticket.lineasAsteriscos();
             decimal precio, importe;
-            double cantidad = 0;            
+            double cantidad = 0;
             foreach (DataRow fila in Venta.Rows)
-            {                
+            {
                 precio = Decimal.Parse(fila[2].ToString().Replace("$", String.Empty));
                 cantidad = Double.Parse(fila[0].ToString());
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
-                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);                
+                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
             }
-            ticket.lineasIgual();            
+            ticket.lineasIgual();
             ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
             ticket.AgregarTotales("         IVA...........$", (decimal)iva);//La M indica que es un decimal en C#
             ticket.AgregarTotales("         TOTAL.........$", (decimal)total);
@@ -74,33 +74,33 @@ namespace PVFP
                 ticket.TextoCentro("¡GRACIAS POR SU COMPRA!");
             }
             ticket.CortaTicket();
-            ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
-            //ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera   
             ticket.AbreCajon();
+            ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
+            //ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera               
         }
     }
 
-        #region procesos_ticket
-        class Cls_imprimir_ticket
+    #region procesos_ticket
+    class Cls_imprimir_ticket
     {
-       
+
         public void imprimir()
-        {  
+        {
             PrintDocument p = new PrintDocument();
             Bitmap bit = new Bitmap(Ferreteria.Properties.Resources.Logo);
             System.Drawing.Image img = bit;
             p.PrinterSettings.PrinterName = "POS-58";
             p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)
             {
-                e1.Graphics.DrawImage(img, new RectangleF(65, 5, 68,61));                
+                e1.Graphics.DrawImage(img, new RectangleF(65, 5, 68, 61));
             };
             try
             {
                 p.Print();
             }
             catch (Exception ex)
-            {          
-                
+            {
+
             }
         }
         //Creamos un objeto de la clase StringBuilder, en este objeto agregaremos las lineas del ticket
@@ -535,7 +535,7 @@ namespace PVFP
             return true;
         }
     }
-#endregion
+    #endregion
 }
 
 

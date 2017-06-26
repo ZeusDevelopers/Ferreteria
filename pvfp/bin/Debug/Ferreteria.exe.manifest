@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ferreteria.exe" size="26750432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ferreteria.exe" size="26749920">
       <assemblyIdentity name="Ferreteria" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zcK+HtyW5O7TJITKYNjxoHIB6mYx0Vmwls49mvYxj6g=</dsig:DigestValue>
+        <dsig:DigestValue>Fnq6RpDx+SjOnHuXh51QK2EOjXmhBFN4ejFsVviaLQU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -891,6 +891,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>V14w+Y5OpCyeUW7ci7sprYtQsXOj5rNrW6OeEzzOlAY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SgmlReaderDll.dll" size="139776">
+      <assemblyIdentity name="SgmlReaderDll" version="1.8.11.0" publicKeyToken="46B2DB9CA481831B" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6RUx9WgHLIYpU2RwcWEvxZiUVichj8Llv0l0ejY9RcA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

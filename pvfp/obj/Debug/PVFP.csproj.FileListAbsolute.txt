@@ -438,3 +438,4 @@ C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Almacen.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Almacen_buscar.resources
 C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.FrmPuntoVenta_cotizacion.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SgmlReaderDll.dll
