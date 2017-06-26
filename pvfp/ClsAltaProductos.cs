@@ -94,14 +94,16 @@ namespace PVFP
                 "`Codigodebarra`='" + Codigodebarra + "', `Folio`='" + Folio + "'," +
                 "`Nombre`='" + Nombre + "', `Tipo_Cargo`='" + Tipo_Cargo + "', `UM`='" + UM + "'," +
                 "`Precio_Costo`=" + Precio_Costo + ",`Ganancia_Venta`=" + Precio_Venta + ",`Ganancia_Mayoreo`=" + Precio_Mayoreo +
-                " WHERE Producto_ID =" + Producto_ID + ""), conexion);
+                " WHERE Producto_ID =" + Producto_ID + "; UPDATE `almacen` SET `CodigoBarras`='"+ Codigodebarra + "',`Folio`='"+ Folio + "'"+
+                " WHERE `Producto_ID`='"+ Producto_ID + "';"), conexion);
             MySqlDataReader _reader = _comando.ExecuteReader();
             conexion.Close();
         }
         public void BorrarProducto(string producto)
         {
             MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-            MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `producto`  WHERE Producto_ID = @producto"), conexion);
+            MySqlCommand _comando = new MySqlCommand(String.Format("Delete From `producto`  WHERE Producto_ID = @producto ;"+
+                " DELETE FROM `almacen` WHERE Producto_ID = @producto;"), conexion);
             _comando.Parameters.AddWithValue("@producto", producto);
             _comando.ExecuteReader();
             conexion.Close();
