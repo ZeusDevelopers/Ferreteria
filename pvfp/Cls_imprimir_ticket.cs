@@ -58,7 +58,8 @@ namespace PVFP
                 precio = Decimal.Parse(fila[2].ToString().Replace("$", String.Empty));
                 cantidad = Double.Parse(fila[0].ToString());
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
-                ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
+                //ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
+                ticket.AgregaArticulo(fila[1].ToString(),fila[4].ToString() ,(int)cantidad, importe);
             }
             ticket.lineasIgual();
             ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
@@ -75,8 +76,8 @@ namespace PVFP
             }
             ticket.CortaTicket();
             ticket.AbreCajon();
-            ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
-            //ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera               
+            //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
+            ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera               
         }
     }
 
@@ -144,7 +145,8 @@ namespace PVFP
         public void EncabezadoVenta()
         {
             //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
-            linea.AppendLine("ARTICULO    |CANT|PRECIO|IMPORTE");
+            //linea.AppendLine("ARTICULO    |CANT|PRECIO|IMPORTE");
+              linea.AppendLine("ARTICULO    |FOLIO|CANTI|IMPORTE");
         }
 
         //Creamos un metodo para poner el texto a la izquierda
@@ -313,7 +315,7 @@ namespace PVFP
         }
 
         //Metodo para agreagar articulos al ticket de venta
-        public void AgregaArticulo(string articulo, int cant, decimal precio, decimal importe)
+        public void AgregaArticulo(string articulo, string cant, decimal precio, decimal importe)
         {
             //Valida que cant precio e importe esten dentro del rango.
             if (cant.ToString().Length <= 5 && precio.ToString().Length <= 7 && importe.ToString().Length <= 8)
@@ -326,7 +328,7 @@ namespace PVFP
                 if (articulo.Length > 11)
                 {
                     //Colocar la cantidad a la derecha.
-                    nroEspacios = (5 - cant.ToString().Length);
+                    nroEspacios = (6 - cant.ToString().Length);
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
@@ -382,7 +384,9 @@ namespace PVFP
                     elemento = articulo + espacios;
 
                     //Colocar la cantidad a la derecha.
-                    nroEspacios = (4 - cant.ToString().Length);// +(20 - elemento.Length);
+                  
+                    nroEspacios = (6 - cant.ToString().Length);// +(20 - elemento.Length);
+                    //nroEspacios = (4 - cant.ToString().Length);// +(20 - elemento.Length);
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {

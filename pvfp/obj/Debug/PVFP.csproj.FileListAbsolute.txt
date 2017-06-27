@@ -443,3 +443,8 @@ C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\bin\Debug\SgmlReaderDll.dll
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.FrmPuntoVenta_cotizacion.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Almacen.resources
 C:\Users\angel\Documents\GitHub\Ferreteria\PVFP\obj\Debug\Ferreteria.Frm_Almacen_buscar.resources
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\salaz\Documents\GitHub\Ferreteria\PVFP\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml

@@ -23,7 +23,7 @@ namespace PVFP
             try
             {
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
-                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,SUM(`Ganancia_Mayoreo`+Precio_Costo),A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,SUM(`Ganancia_Mayoreo`+Precio_Costo),A_Piso,UM,producto.Producto_ID,producto.Folio FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
                     "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
                 _comando.Parameters.AddWithValue("@prod",productoid);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);
@@ -48,7 +48,7 @@ namespace PVFP
                 MySqlConnection conexion = ClsInicioSesion.ObtenerConexion();
                 //MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,SUM(`Ganancia_Venta`+Precio_Costo),A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
                 //Round(Precio_Costo + ((Precio_Costo*Ganancia_Venta)/100),2) 
-                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,Round(Precio_Costo + ((Precio_Costo*Ganancia_Venta)/100),2),A_Piso,UM,producto.Producto_ID FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
+                MySqlCommand _comando = new MySqlCommand(String.Format("SELECT `Codigodebarra`,`Nombre`,Round(Precio_Costo + ((Precio_Costo*Ganancia_Venta)/100),2),A_Piso,UM,producto.Producto_ID,producto.Folio FROM `producto` left join almacen on producto.Producto_ID=almacen.Producto_ID " +
                     "  where producto.Codigodebarra=@prod and A_Piso <>'0';"), conexion);
                 _comando.Parameters.AddWithValue("@prod", productoid);
                 MySqlDataAdapter _dataAdapter = new MySqlDataAdapter(_comando);

@@ -31,7 +31,7 @@ namespace PVFP
                 // conca = ad ? "SUM(`Ganancia_Mayoreo`+Precio_Costo)" : "SUM(`Ganancia_Venta`+Precio_Costo)";
                  conca = ad ? " Round(Precio_Costo + ((Precio_Costo*Ganancia_Mayoreo)/100),2) " : " Round(Precio_Costo + ((Precio_Costo*Ganancia_Venta)/100),2)  ";
             }
-                string comando = "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`," + conca+" as 'Precio de venta', A_Piso as 'Inventario',UM,producto.Producto_ID FROM `producto` inner join  almacen on almacen.Producto_ID = producto.Producto_ID ";
+                string comando = "SELECT `Codigodebarra` as 'Codigo de Barras',`Nombre`," + conca+ " as 'Precio de venta', A_Piso as 'Inventario',UM,producto.Producto_ID,producto.Folio FROM `producto` inner join  almacen on almacen.Producto_ID = producto.Producto_ID ";
             switch (tipo)
             {
                 case 0:

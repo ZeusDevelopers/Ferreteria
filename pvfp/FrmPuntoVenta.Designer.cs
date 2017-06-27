@@ -33,14 +33,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DgvVentas = new System.Windows.Forms.DataGridView();
-            this.Cantid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Txtcodigo = new System.Windows.Forms.TextBox();
             this.Lbl_codprd = new System.Windows.Forms.Label();
             this.Lblsubtotal = new System.Windows.Forms.Label();
@@ -60,6 +52,15 @@
             this.Btn_Buscar = new System.Windows.Forms.Button();
             this.Btn_limpiar = new System.Windows.Forms.Button();
             this.Btn_comprar = new System.Windows.Forms.Button();
+            this.Cantid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Folio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvVentas)).BeginInit();
             this.Gb_Venta.SuspendLayout();
@@ -96,7 +97,8 @@
             this.Precio,
             this.Importe,
             this.UM,
-            this.id_producto});
+            this.id_producto,
+            this.Folio});
             this.DgvVentas.GridColor = System.Drawing.SystemColors.ActiveBorder;
             resources.ApplyResources(this.DgvVentas, "DgvVentas");
             this.DgvVentas.Name = "DgvVentas";
@@ -108,61 +110,12 @@
             this.DgvVentas.RowTemplate.Height = 28;
             this.DgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvVentas_CellClick);
             // 
-            // Cantid
-            // 
-            resources.ApplyResources(this.Cantid, "Cantid");
-            this.Cantid.Name = "Cantid";
-            this.Cantid.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            resources.ApplyResources(this.Codigo, "Codigo");
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Producto
-            // 
-            resources.ApplyResources(this.Producto, "Producto");
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Existencia
-            // 
-            resources.ApplyResources(this.Existencia, "Existencia");
-            this.Existencia.Name = "Existencia";
-            this.Existencia.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            resources.ApplyResources(this.Precio, "Precio");
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            resources.ApplyResources(this.Importe, "Importe");
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            // 
-            // UM
-            // 
-            resources.ApplyResources(this.UM, "UM");
-            this.UM.Name = "UM";
-            this.UM.ReadOnly = true;
-            // 
-            // id_producto
-            // 
-            resources.ApplyResources(this.id_producto, "id_producto");
-            this.id_producto.Name = "id_producto";
-            this.id_producto.ReadOnly = true;
-            // 
             // Txtcodigo
             // 
             this.Txtcodigo.BackColor = System.Drawing.SystemColors.HighlightText;
             resources.ApplyResources(this.Txtcodigo, "Txtcodigo");
             this.Txtcodigo.ForeColor = System.Drawing.Color.Silver;
             this.Txtcodigo.Name = "Txtcodigo";
-            
             this.Txtcodigo.Enter += new System.EventHandler(this.Txtcodigo_Enter);
             this.Txtcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txtcodigo_KeyPress);
             this.Txtcodigo.Leave += new System.EventHandler(this.Txtcodigo_Leave);
@@ -309,6 +262,60 @@
             this.Btn_comprar.UseVisualStyleBackColor = false;
             this.Btn_comprar.Click += new System.EventHandler(this.Btn_comprar_Click);
             // 
+            // Cantid
+            // 
+            resources.ApplyResources(this.Cantid, "Cantid");
+            this.Cantid.Name = "Cantid";
+            this.Cantid.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            resources.ApplyResources(this.Codigo, "Codigo");
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Producto
+            // 
+            resources.ApplyResources(this.Producto, "Producto");
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Existencia
+            // 
+            resources.ApplyResources(this.Existencia, "Existencia");
+            this.Existencia.Name = "Existencia";
+            this.Existencia.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            resources.ApplyResources(this.Precio, "Precio");
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            resources.ApplyResources(this.Importe, "Importe");
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // UM
+            // 
+            resources.ApplyResources(this.UM, "UM");
+            this.UM.Name = "UM";
+            this.UM.ReadOnly = true;
+            // 
+            // id_producto
+            // 
+            resources.ApplyResources(this.id_producto, "id_producto");
+            this.id_producto.Name = "id_producto";
+            this.id_producto.ReadOnly = true;
+            // 
+            // Folio
+            // 
+            resources.ApplyResources(this.Folio, "Folio");
+            this.Folio.Name = "Folio";
+            this.Folio.ReadOnly = true;
+            // 
             // FrmPuntoVenta
             // 
             resources.ApplyResources(this, "$this");
@@ -367,6 +374,10 @@
         private System.Windows.Forms.Button Btn_eliminar;
         private System.Windows.Forms.GroupBox Gb_Venta;
         private System.Windows.Forms.Button btn_abrir_cajon;
+        private System.Windows.Forms.Button btncotizar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button Btn_mayoreo;
+        private System.Windows.Forms.Button btn_porcentaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
@@ -375,9 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.DataGridViewTextBoxColumn UM;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_producto;
-        private System.Windows.Forms.Button btncotizar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Btn_mayoreo;
-        private System.Windows.Forms.Button btn_porcentaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Folio;
     }
 }

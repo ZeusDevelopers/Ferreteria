@@ -306,7 +306,7 @@ namespace PVFP
                             num1 = Double.Parse(elemento[2].ToString());
                             n1 = num1.ToString("C", nfi);
                             double p = Double.Parse(elemento[3].ToString());
-                            DgvVentas.Rows.Add(1, elemento[0], elemento[1], p, n1, n1, elemento[4], elemento[5]);
+                            DgvVentas.Rows.Add(1, elemento[0], elemento[1], p, n1, n1, elemento[4], elemento[5],elemento[6]);
                             totales(elemento[2].ToString());
                             Txtcodigo.Text = "";
                         }

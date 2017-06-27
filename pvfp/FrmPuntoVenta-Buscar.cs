@@ -31,6 +31,7 @@ namespace PVFP
         {
             if(DgvProductos.Columns.Count>0)
             DgvProductos.Columns["Producto_ID"].Visible = false;
+            DgvProductos.Columns["Folio"].Visible = false;
         }
         private void Btn_seleccionar_Click(object sender, EventArgs e)
         {
