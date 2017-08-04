@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,10 +106,29 @@ namespace PVFP
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
         }
-
+        NumberFormatInfo nfi = new CultureInfo("Es-MX", false).NumberFormat;
         private void Frm_consuta_recibodet_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = cn.ventas(ids);
+            
+            //dataGridView1.DataSource = cn.ventas(ids);
+            DataTable tb = cn.ventas(ids); //consulta.num_venta(Int32.Parse(TxtVenta.Text));
+            DataTable resul = new DataTable();
+            foreach (DataColumn item in tb.Columns)
+            {
+                resul.Columns.Add(item.ColumnName);
+            }
+            foreach (DataRow item in tb.Rows)
+            {
+                DataRow dr = resul.NewRow();
+                dr[0] = item[0];
+                dr[1] = item[1];
+                dr[2] = Double.Parse(item[2].ToString()).ToString("C", nfi);
+                //dr[3] = Double.Parse(item[3].ToString()).ToString("C", nfi);
+                //dr[4] = Double.Parse(item[4].ToString()).ToString("C", nfi);
+                resul.Rows.Add(dr);
+
+            }
+            dataGridView1.DataSource = resul;
             label1.Text = "Empleado: " + cn.empledado(ids);
             if (numero == 1)
             {

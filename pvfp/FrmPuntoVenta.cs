@@ -253,6 +253,7 @@ namespace PVFP
         {
             try
             {
+                
                 DataTable table = mayorer ? clsventa.VerProducto(Txtcodigo.Text, 1) : clsventa.VerProducto(Txtcodigo.Text);
                 double num1;
                 int cont = 0;
@@ -262,7 +263,7 @@ namespace PVFP
                 if (table.Rows.Count > 0 && !m.Equals(""))
                 {
                     m = table.Rows[0][0].ToString();
-
+                    double VALOR = 1;
                     if (DgvVentas.Rows.Count > 0)
                     {
                         foreach (DataGridViewRow item in DgvVentas.Rows)
@@ -306,7 +307,15 @@ namespace PVFP
                             num1 = Double.Parse(elemento[2].ToString());
                             n1 = num1.ToString("C", nfi);
                             double p = Double.Parse(elemento[3].ToString());
-                            DgvVentas.Rows.Add(1, elemento[0], elemento[1], p, n1, n1, elemento[4], elemento[5],elemento[6]);
+                            string x = elemento[4].ToString();
+                            if (x.Contains("Decimal") || x.Contains("Metro") || x.Contains("Litro"))
+                            {
+                                if (p < 1)
+                                {
+                                    VALOR = p;
+                                }
+                            }                                
+                            DgvVentas.Rows.Add(VALOR, elemento[0], elemento[1], p, n1, n1, elemento[4], elemento[5],elemento[6]);
                             totales(elemento[2].ToString());
                             Txtcodigo.Text = "";
                         }
@@ -479,7 +488,15 @@ namespace PVFP
         {
             try
             {
-                if (DgvVentas.Rows.Count > 0)
+                double VALOR = 1;
+                if (um.Contains("Decimal") || um.Contains("Metro") || um.Contains("Litro"))
+                {
+                    if (stock < 1)
+                    {
+                        VALOR = stock;
+                    }
+                }
+                    if (DgvVentas.Rows.Count > 0)
                 {
                     // DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);                    
                     bool aceptado = false;
@@ -501,12 +518,14 @@ namespace PVFP
                     }
                     if (!aceptado)
                     {
-                        DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);
+                       
+                        DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid);
                     }
                 }
                 else
                 {
-                    DgvVentas.Rows.Add(1, codigobarras, producto, stock, precio, precio, um, productoid);
+
+                    DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid);
                 }
                 totales(precio);
                 DgvVentas.ClearSelection();
