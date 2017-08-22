@@ -60,6 +60,7 @@ namespace PVFP
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
                 //ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
                 ticket.AgregaArticulo(fila[1].ToString(),fila[4].ToString() ,(int)cantidad, importe);
+                //ticket.AgregaArticulo(fila[1].ToString(), fila[4].ToString(), (int)cantidad, importe);
             }
             ticket.lineasIgual();
             ticket.AgregarTotales("         SUBTOTAL......$", (decimal)subtotal);
@@ -76,7 +77,7 @@ namespace PVFP
             }
             ticket.CortaTicket();
             ticket.AbreCajon();
-            //ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
+         //   ticket.ImprimirTicket("POS-58");//Nombre de la impresora ticketera   
             ticket.ImprimirTicket("Microsoft XPS Document Writer");//Nombre de la impresora ticketera               
         }
     }
@@ -146,7 +147,8 @@ namespace PVFP
         {
             //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
             //linea.AppendLine("ARTICULO    |CANT|PRECIO|IMPORTE");
-              linea.AppendLine("ARTICULO    |FOLIO|CANTI|IMPORTE");
+              linea.AppendLine("ARTICULO    |FOLIO|CANTI|IMPORTE");//32
+              linea.AppendLine("pppppppppppppppppppppppppppppppp");
         }
 
         //Creamos un metodo para poner el texto a la izquierda
@@ -422,6 +424,16 @@ namespace PVFP
                 linea.AppendLine("superan las columnas soportdas por éste.");
                 throw new Exception("Los valores ingresados para algunas filas del ticket\nsuperan las columnas soportdas por éste.");
             }
+        }
+
+        public void AgregarArticulo(string articulo, string cant, decimal precio, decimal importe)
+        {
+
+            string art, ctd, prec, impo;
+            art = articulo.Length > 10 ? articulo.Remove(10) : articulo;
+            linea.AppendLine(art);
+                         
+
         }
 
         //Metodos para enviar secuencias de escape a la impresora

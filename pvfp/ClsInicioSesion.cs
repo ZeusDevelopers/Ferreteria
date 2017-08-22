@@ -10,8 +10,8 @@ namespace PVFP
     class ClsInicioSesion
     {
         #region Path        
-  //     private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";        
-         private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
+       private static string pathfinal = "server=localhost; database=FerreteriaL1; Uid=root; pwd=1234;";        
+  //       private static string pathfinal = "server=127.0.0.1; database=FerreteriaL1; Uid=root; pwd=;";
     
         #endregion
         #region MYSQL

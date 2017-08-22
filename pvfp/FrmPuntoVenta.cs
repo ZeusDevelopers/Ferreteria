@@ -216,9 +216,14 @@ namespace PVFP
                     }
                     dt.Rows.Add(dr);
                 }
-                frmventa = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt, this);
-                frmventa.TopMost = true;
-                frmventa.Show();
+                if (frmventa == null)
+                {
+                    frmventa = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt, this);
+                    frmventa.TopMost = true;
+                    frmventa.Show();
+                    frmventa = null;
+                }
+                
             }
             else
             {

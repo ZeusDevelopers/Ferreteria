@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -134,8 +135,9 @@ namespace PVFP
                     uno = Double.Parse(item[2].ToString().Replace("$", String.Empty));
                     dos = Double.Parse(item[3].ToString().Replace("$", String.Empty));
                     vender.registrar_productos_venta(id,Int32.Parse(item[4].ToString()), Double.Parse(item[0].ToString()), 0,uno,dos);
+                    //vender.remover_cant(Double.Parse(item[110].ToString()), Convert.ToInt32(item[4].ToString()));
                     vender.remover_cant(Double.Parse(item[0].ToString()), Convert.ToInt32(item[4].ToString()));
-                }                               
+                }
                 ven.Columns.RemoveAt(4);
                 imprimir.imprime(ven, total.ToString(), cambio.ToString(), subtotal, iva, venta,id,false);
                 frm.limpiar();
@@ -148,7 +150,13 @@ namespace PVFP
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                // Get stack trace for the exception with source file information
+                //var st = new StackTrace(ex, true);
+                //// Get the top stack frame
+                //var frame = st.GetFrame(0);
+                //// Get the line number from the stack frame
+                //var line = frame.GetFileLineNumber();
+                MessageBox.Show(ex.Message + ", Linea: " +ex.LineNumber());
 
             }           
         }
@@ -157,9 +165,10 @@ namespace PVFP
         {
             double a;
 
-            if (!Double.TryParse(txtdolar.Text, out a) && !(txtdolar.Text == String.Empty))
-            { }
-            else if (txtdolar.Text == String.Empty)
+            //if (!Double.TryParse(txtdolar.Text, out a) && !(txtdolar.Text == String.Empty))
+            //{ }
+            //else
+            if (txtdolar.Text == String.Empty)
             {
                 Btn_Pagar.Enabled = false;
                 val2 = 0.0;                
@@ -276,6 +285,31 @@ namespace PVFP
                     Lblcam.ForeColor = Color.Red;
                 }                
             }
+        }
+    }
+
+
+    public static class ExceptionHelper
+    {
+        public static int LineNumber(this Exception e)
+        {
+
+            int linenum = 0;
+            try
+            {
+                //linenum = Convert.ToInt32(e.StackTrace.Substring(e.StackTrace.LastIndexOf(":line") + 5));
+
+                //For Localized Visual Studio ... In other languages stack trace  doesn't end with ":Line 12"
+                linenum = Convert.ToInt32(e.StackTrace.Substring(e.StackTrace.LastIndexOf(' ')));
+
+            }
+
+
+            catch
+            {
+                //Stack trace is not available!
+            }
+            return linenum;
         }
     }
 }
