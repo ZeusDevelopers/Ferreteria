@@ -192,7 +192,7 @@ namespace PVFP
                     string[] prov = cmbProveedores.SelectedItem.ToString().Split('-');
                     double iva = Convert.ToDouble(txtIVA.Text); double SumProd = Convert.ToDouble(txtTotalCompra.Text);
                     double ImporteTotal = SumProd+(iva*SumProd);
-                    entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt"),
+                    entradas.agrEntrada(txtEntradaID.Text, prov[0], DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss "),
                        ImporteTotal.ToString(), EmpleadoID.ToString());
 
                     //YYYY-MM-DD mysql

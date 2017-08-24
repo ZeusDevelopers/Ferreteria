@@ -216,12 +216,17 @@ namespace PVFP
                     }
                     dt.Rows.Add(dr);
                 }
-                if (frmventa == null)
+                if (frmventa != null)
+                {
+                    frmventa.BringToFront();
+                    
+                }
+                else if (frmventa == null)
                 {
                     frmventa = new FrmPuntoVenta_final(dolar, total, iva, subtotal, dt, this);
                     frmventa.TopMost = true;
                     frmventa.Show();
-                    frmventa = null;
+                    frmventa.FormClosed += Frmventa_FormClosed;
                 }
                 
             }
@@ -233,6 +238,11 @@ namespace PVFP
                     MessageBox.Show("No hay articulos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void Frmventa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmventa = null;
         }
         #endregion
         public void totales(string numero)
@@ -264,8 +274,9 @@ namespace PVFP
                 int cont = 0;
                 string n1;
                 bool codigo = true;
-                var m = table.Rows.Count > 0?  table.Rows[0][0].ToString() : "";
-                if (table.Rows.Count > 0 && !m.Equals(""))
+                var m = table.Rows.Count > 0 ?  table.Rows[0][0].ToString() : "";
+                double canti = table.Rows.Count > 0 ? Double.Parse(table.Rows[0][3].ToString()) : -110.0;
+                if (table.Rows.Count > 0 && !m.Equals("") && canti > 0)
                 {
                     m = table.Rows[0][0].ToString();
                     double VALOR = 1;
@@ -329,7 +340,14 @@ namespace PVFP
                 }
                 else
                 {
-                    MessageBox.Show("No existe producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    if (canti > -10)
+                    {
+                        MessageBox.Show("Inventario insuficiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No existe producto ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                     Txtcodigo.Text = "";
                 }
                 DgvVentas.ClearSelection();
@@ -489,7 +507,7 @@ namespace PVFP
         {
             roww = e.RowIndex;
         }
-        internal void dato_encontrado(string codigobarras, string producto, string precio, double stock, string um, string productoid)
+        internal void dato_encontrado(string codigobarras, string producto, string precio, double stock, string um, string productoid,string folio)
         {
             try
             {
@@ -524,13 +542,13 @@ namespace PVFP
                     if (!aceptado)
                     {
                        
-                        DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid);
+                        DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid,folio);
                     }
                 }
                 else
                 {
 
-                    DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid);
+                    DgvVentas.Rows.Add(VALOR, codigobarras, producto, stock, precio, precio, um, productoid,folio);
                 }
                 totales(precio);
                 DgvVentas.ClearSelection();

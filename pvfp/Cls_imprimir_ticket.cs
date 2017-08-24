@@ -59,7 +59,11 @@ namespace PVFP
                 cantidad = Double.Parse(fila[0].ToString());
                 importe = Decimal.Parse(fila[3].ToString().Replace("$", String.Empty));
                 //ticket.AgregaArticulo(fila[1].ToString(), (int)cantidad, precio, importe);
-                ticket.AgregaArticulo(fila[1].ToString(),fila[4].ToString() ,(int)cantidad, importe);
+
+                //ticket.AgregaArticulo(fila[1].ToString(),fila[4].ToString() ,(int)cantidad, importe);
+                ticket.AgregarArticulo(fila[1].ToString(), fila[4].ToString(), (decimal)cantidad, importe,true);
+                //ticket.AgregarArticulo(fila[1].ToString(),  cantidad.ToString(), decimal.Parse(fila[4].ToString()), importe,true);
+
                 //ticket.AgregaArticulo(fila[1].ToString(), fila[4].ToString(), (int)cantidad, importe);
             }
             ticket.lineasIgual();
@@ -147,7 +151,7 @@ namespace PVFP
         {
             //Escribimos los espacios para mostrar el articulo. En total tienen que ser 40 caracteres
             //linea.AppendLine("ARTICULO    |CANT|PRECIO|IMPORTE");
-              linea.AppendLine("ARTICULO    |FOLIO|CANTI|IMPORTE");//32
+              linea.AppendLine("ARTICULO  | FOLIO|CANTI|IMPORTE");//32
               linea.AppendLine("pppppppppppppppppppppppppppppppp");
         }
 
@@ -426,16 +430,45 @@ namespace PVFP
             }
         }
 
-        public void AgregarArticulo(string articulo, string cant, decimal precio, decimal importe)
+        public void AgregarArticulo(string articulo, string cant, decimal precio, decimal importe,bool m)
         {
 
-            string art, ctd, prec, impo;
-            art = articulo.Length > 10 ? articulo.Remove(10) : articulo;
-            linea.AppendLine(art);
-                         
+            string  artic="",ctd, prec, impo;
+            string[] art= new string[2];
+            ctd = cant.Length > 6 ? cant.Remove(6) : add_spaces(cant,6 - cant.Length);
+            prec = precio.ToString().Length > 4 ? precio.ToString().Remove(4) :add_spaces(precio.ToString(),4 - precio.ToString().Length);
+            if (articulo.Length >10)
+            {
+                art[0] = articulo.Remove(10);                
+                art[1] = articulo.Substring(10,articulo.Length > 14 ? 5 : articulo.Length-10 );                
+            }
+            else
+            {
+                artic = add_spaces(articulo, 10 - articulo.Length);
+            }
+
+            if (artic=="")
+            {
+                linea.AppendLine(art[0] +" " +ctd+" "+prec+" "+" $" +importe);
+                linea.AppendLine(art[1] );
+            }
+            else
+            {
+                linea.AppendLine(artic);
+            }
+                     
 
         }
-
+        public string add_spaces(string cade,int cant)
+        {
+            string prev = "";
+            for (int i = 0; i < cant; i++)
+            {
+                prev += " ";
+            }
+            cade += prev;
+            return cade;
+        }
         //Metodos para enviar secuencias de escape a la impresora
         //Para cortar el ticket
         public void CortaTicket()

@@ -68,6 +68,7 @@ namespace PVFP
                             dr[3] = item[3];
                             dr[4] = item[4];
                             dr[5] = item[5];
+                            dr[6] = item[6];
                             resul.Rows.Add(dr);
                         }
                         tb= resul;
@@ -103,7 +104,7 @@ namespace PVFP
         {
             try
             {
-                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString(), Double.Parse(DgvProductos[3, ind].Value.ToString()), DgvProductos[4, ind].Value.ToString(), DgvProductos[5, ind].Value.ToString());
+                frm.dato_encontrado(DgvProductos[0, ind].Value.ToString(), DgvProductos[1, ind].Value.ToString(), DgvProductos[2, ind].Value.ToString(), Double.Parse(DgvProductos[3, ind].Value.ToString()), DgvProductos[4, ind].Value.ToString(), DgvProductos[5, ind].Value.ToString(), DgvProductos[6, ind].Value.ToString());
                 this.Close();
             }
             catch (Exception ex)
