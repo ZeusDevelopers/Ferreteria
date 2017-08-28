@@ -66,7 +66,7 @@ namespace PVFP
         public void AgregarRenglon(string renglon)
         {
             string[] r = renglon.Split('|');
-            dgvProductos.Rows.Add(r[0], r[1], r[2],r[3],"Almacen", r[4],"Editar" );
+            dgvProductos.Rows.Add(r[0], r[1], r[2],r[3], "Piso", r[4],"Editar" );
             CalularTotal();
         }
         #region LoadForma
